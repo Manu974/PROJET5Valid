@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Observation
  *
  * @ORM\Table(name="observation", uniqueConstraints={@ORM\UniqueConstraint(name="UNIQ_C576DBE03DA5256D", columns={"image_id"})}, indexes={@ORM\Index(name="IDX_C576DBE0A76ED395", columns={"user_id"}), @ORM\Index(name="IDX_C576DBE0E813F9", columns={"bird_id"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\ObservationRepository")
  */
 class Observation
 {
