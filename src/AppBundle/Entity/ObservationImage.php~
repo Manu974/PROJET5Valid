@@ -1,0 +1,40 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * ObservationImage
+ *
+ * @ORM\Table(name="observation_image")
+ * @ORM\Entity
+ */
+class ObservationImage
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="url", type="string", length=255, nullable=false)
+     */
+    private $url;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="alt", type="string", length=255, nullable=false)
+     */
+    private $alt;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+}
+

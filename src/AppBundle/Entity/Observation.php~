@@ -1,0 +1,91 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Observation
+ *
+ * @ORM\Table(name="observation", uniqueConstraints={@ORM\UniqueConstraint(name="UNIQ_C576DBE03DA5256D", columns={"image_id"})}, indexes={@ORM\Index(name="IDX_C576DBE0A76ED395", columns={"user_id"}), @ORM\Index(name="IDX_C576DBE0E813F9", columns={"bird_id"})})
+ * @ORM\Entity
+ */
+class Observation
+{
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="latitude", type="float", precision=10, scale=0, nullable=false)
+     */
+    private $latitude;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="longitude", type="float", precision=10, scale=0, nullable=false)
+     */
+    private $longitude;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="observation", type="text", nullable=false)
+     */
+    private $observation;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="is_valid", type="boolean", nullable=false)
+     */
+    private $isValid;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="created_at", type="datetime", nullable=false)
+     */
+    private $createdAt;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \AppBundle\Entity\Bird
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Bird")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="bird_id", referencedColumnName="id")
+     * })
+     */
+    private $bird;
+
+    /**
+     * @var \AppBundle\Entity\ObservationImage
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\ObservationImage")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="image_id", referencedColumnName="id")
+     * })
+     */
+    private $image;
+
+    /**
+     * @var \AppBundle\Entity\User
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     * })
+     */
+    private $user;
+
+
+}
+

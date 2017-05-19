@@ -1,0 +1,96 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Bird
+ *
+ * @ORM\Table(name="bird")
+ * @ORM\Entity
+ */
+class Bird
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom_ref", type="string", length=255, nullable=true)
+     */
+    private $nomRef;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="synonymes_chresonymes", type="string", length=1386, nullable=true)
+     */
+    private $synonymesChresonymes;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom_vernaculaire", type="string", length=255, nullable=true)
+     */
+    private $nomVernaculaire;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=255, nullable=true)
+     */
+    private $status;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="regne", type="string", length=255, nullable=true)
+     */
+    private $regne;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="classe", type="string", length=255, nullable=true)
+     */
+    private $classe;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ordre", type="string", length=255, nullable=true)
+     */
+    private $ordre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="famille", type="string", length=255, nullable=true)
+     */
+    private $famille;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="cd_ref", type="integer", nullable=true)
+     */
+    private $cdRef;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="cd_nom", type="integer", nullable=true)
+     */
+    private $cdNom;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+}
+
