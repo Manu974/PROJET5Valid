@@ -60,9 +60,7 @@ class Observation
      * @var \AppBundle\Entity\Bird
      *
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Bird")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="bird_id", referencedColumnName="id")
-     * })
+     * @ORM\JoinColumn(name="bird_id", referencedColumnName="id", nullable=false)
      */
     private $bird;
 
@@ -70,9 +68,7 @@ class Observation
      * @var \AppBundle\Entity\ObservationImage
      *
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\ObservationImage")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="image_id", referencedColumnName="id")
-     * })
+     * @ORM\JoinColumn(name="image_id", referencedColumnName="id", nullable=true)
      */
     private $image;
 
@@ -80,9 +76,7 @@ class Observation
      * @var \AppBundle\Entity\User
      *
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="user_id", referencedColumnName="id")
-     * })
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id", nullable=false)
      */
     private $user;
 
