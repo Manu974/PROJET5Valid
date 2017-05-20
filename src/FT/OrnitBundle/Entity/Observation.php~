@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Entity;
+namespace FT\OrnitBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Observation
  *
  * @ORM\Table(name="observation", uniqueConstraints={@ORM\UniqueConstraint(name="UNIQ_C576DBE03DA5256D", columns={"image_id"})}, indexes={@ORM\Index(name="IDX_C576DBE0A76ED395", columns={"user_id"}), @ORM\Index(name="IDX_C576DBE0E813F9", columns={"bird_id"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="FT\OrnitBundle\Repository\ObservationRepository")
  */
 class Observation
 {
@@ -57,25 +57,25 @@ class Observation
     private $id;
 
     /**
-     * @var \AppBundle\Entity\Bird
+     * 
      *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Bird")
+     * @ORM\ManyToOne(targetEntity="FT\OrnitBundle\Entity\Bird")
      * @ORM\JoinColumn(name="bird_id", referencedColumnName="id", nullable=false)
      */
     private $bird;
 
     /**
-     * @var \AppBundle\Entity\ObservationImage
+     * 
      *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\ObservationImage")
+     * @ORM\ManyToOne(targetEntity="FT\OrnitBundle\Entity\ObservationImage")
      * @ORM\JoinColumn(name="image_id", referencedColumnName="id", nullable=true)
      */
     private $image;
 
     /**
-     * @var \AppBundle\Entity\User
+     * 
      *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
+     * @ORM\ManyToOne(targetEntity="FT\OrnitBundle\Entity\User")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id", nullable=false)
      */
     private $user;
@@ -215,11 +215,11 @@ class Observation
     /**
      * Set bird
      *
-     * @param \AppBundle\Entity\Bird $bird
+     * @param \FT\OrnitBundle\Entity\Bird $bird
      *
      * @return Observation
      */
-    public function setBird(\AppBundle\Entity\Bird $bird = null)
+    public function setBird(\FT\OrnitBundle\Entity\Bird $bird = null)
     {
         $this->bird = $bird;
 
@@ -229,7 +229,7 @@ class Observation
     /**
      * Get bird
      *
-     * @return \AppBundle\Entity\Bird
+     * @return \FT\OrnitBundle\Entity\Bird
      */
     public function getBird()
     {
@@ -239,11 +239,11 @@ class Observation
     /**
      * Set image
      *
-     * @param \AppBundle\Entity\ObservationImage $image
+     * @param \FT\OrnitBundle\Entity\ObservationImage $image
      *
      * @return Observation
      */
-    public function setImage(\AppBundle\Entity\ObservationImage $image = null)
+    public function setImage(\FT\OrnitBundle\Entity\ObservationImage $image = null)
     {
         $this->image = $image;
 
@@ -253,7 +253,7 @@ class Observation
     /**
      * Get image
      *
-     * @return \AppBundle\Entity\ObservationImage
+     * @return \FT\OrnitBundle\Entity\ObservationImage
      */
     public function getImage()
     {
@@ -263,11 +263,11 @@ class Observation
     /**
      * Set user
      *
-     * @param \AppBundle\Entity\User $user
+     * @param \FT\OrnitBundle\Entity\User $user
      *
      * @return Observation
      */
-    public function setUser(\AppBundle\Entity\User $user = null)
+    public function setUser(\FT\OrnitBundle\Entity\User $user = null)
     {
         $this->user = $user;
 
@@ -277,7 +277,7 @@ class Observation
     /**
      * Get user
      *
-     * @return \AppBundle\Entity\User
+     * @return \FT\OrnitBundle\Entity\User
      */
     public function getUser()
     {

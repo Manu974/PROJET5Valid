@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Entity;
+namespace FT\OrnitBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Bird
  *
  * @ORM\Table(name="bird")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="FT\OrnitBundle\Repository\BirdRepository")
  */
 class Bird
 {

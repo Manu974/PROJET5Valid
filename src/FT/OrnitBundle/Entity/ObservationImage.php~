@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Entity;
+namespace FT\OrnitBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * ObservationImage
  *
  * @ORM\Table(name="observation_image")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="FT\OrnitBundle\Repository\ObservationImageRepository")
  */
 class ObservationImage
 {
