@@ -1,3 +1,7 @@
 ft_ornit_homepage:
     path:     /home
     defaults: { _controller: FTOrnitBundle:Home:index }
+
+ft_ornit_mappage:
+    path:     /map
+    defaults: { _controller: FTOrnitBundle:Map:index }
