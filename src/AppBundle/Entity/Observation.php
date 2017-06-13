@@ -22,9 +22,10 @@ class Observation
     private $id;
 
     /**
-     * @var string
+     * @var geometry
      *
-     * @ORM\Column(name="location", type="string", length=255)
+     * @ORM\Column(name="location", type="geometry")
+     * 
      */
     private $location;
 
@@ -73,7 +74,7 @@ class Observation
     /**
      * Set location
      *
-     * @param string $location
+     * @param point $location
      *
      * @return Observation
      */
@@ -87,7 +88,7 @@ class Observation
     /**
      * Get location
      *
-     * @return string
+     * @return Observation
      */
     public function getLocation()
     {
