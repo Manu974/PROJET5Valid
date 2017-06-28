@@ -2,14 +2,62 @@
 <html>
     <head>
         <meta charset="UTF-8" />
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}
             <link rel="stylesheet" href="{{ asset('css/Skeleton-2.0.4/css/normalize.css') }}">
             <link rel="stylesheet" href="{{ asset('css/Skeleton-2.0.4/css/skeleton.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
+        <header class="header">
+            <div class="container">
+                <a href="#">
+                    <img src="{{ asset('images/logo-icones/LOGO.svg') }}" alt="" class="header-logo">
+                </a>
+                <nav class="header-navbar">
+                    <div class="header-navbar-item">
+                        <i class="icon icon--home"></i>
+                        <a href="#" class="header-navbar-link">Accueil</a>
+                    </div>
+                    <div class="header-navbar-item">
+                        <i class="icon icon--connection"></i>
+                        <a href="#" class="header-navbar-link">Connexion</a>
+                    </div>
+                    <div class="header-navbar-item">
+                        <i class="icon icon--maps"></i>
+                        <a href="#" class="header-navbar-link">Carte</a>
+                    </div>
+                    <div class="header-navbar-item">
+                        <i class="icon icon--obs"></i>
+                        <a href="#" class="header-navbar-link">Observation</a>
+                    </div>
+                    <div class="header-navbar-item">
+                        <i class="icon icon--prog"></i>
+                        <a href="#" class="header-navbar-link">Programme</a>
+                    </div>
+                    <div class="header-navbar-item">
+                        <i class="icon icon--account"></i>
+                        <a href="#" class="header-navbar-link">Compte</a>
+                    </div>
+                    <div class="header-navbar-item">
+                        <i class="icon icon--faq"></i>
+                        <a href="#" class="header-navbar-link">Faq</a>
+                    </div>
+                    <div class="header-navbar-item">
+                        <i class="icon icon--contact"></i>
+                        <a href="#" class="header-navbar-link">Contact</a>
+                    </div>
+                </nav>
+                <nav class="header-navbar-mobile">
+                    <i class="icon icon--burger"></i>
+                    <div class="header-navbar-content">
+                    </div>
+                </nav>
+            </div>
+        </header>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>

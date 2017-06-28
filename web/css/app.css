@@ -1,0 +1,119 @@
+/***** FONT *****/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+/***** ICONS *****/
+.icon {
+    display: block;
+    width: 44px;
+    height: 40px;
+    -webkit-transition: .2s;
+    transition: .2s;
+}
+.icon--home {  background: url('../images/logo-icones/MAISON  NAV DESK.svg') no-repeat;  }
+.icon--connection {  background: url('../images/logo-icones/icone rapide connexion.svg') no-repeat 8px 0;  }
+.icon--maps {  background: url('../images/logo-icones/icone rapide carte.svg') no-repeat 8px 0;  }
+.icon--obs {  background: url('../images/logo-icones/icone rapide saisir une obs.svg') no-repeat 8px 0;  }
+.icon--prog {  background: url('../images/logo-icones/PUZZLE PROG NAV.svg') no-repeat 3px 0;  }
+.icon--account {  background: url('../images/logo-icones/PROFIL USER NAV.svg') no-repeat 2px 0;  }
+.icon--burger {  background: url('../images/logo-icones/menu burger.svg') no-repeat 0 0;  }
+.icon--faq {  background: url('../images/logo-icones/FAQ NAV.svg') no-repeat 2px 0;  }
+.icon--contact {  background: url('../images/logo-icones/icone enveloppe-contact.svg') no-repeat 2px 0;  }
+.icon--burger--active {  background: url('../images/logo-icones/menu burger-green.svg') no-repeat 0 0;  }
+
+/***** HEADER *****/
+.header {
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.95em;
+    height: 125px;
+    width: 100%;
+    background-color: #282829;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-shadow: 0 8px 8px black;
+    box-shadow: 0 8px 8px black;
+}
+.header-navbar-mobile {  display: none;  }
+.header-navbar-mobile .icon:hover {  cursor: pointer;  }
+.header-navbar-mobile .icon--burger:hover {  background: url('../images/logo-icones/menu burger-green.svg') no-repeat;  }
+.header-navbar-mobile .icon--burger:active {
+
+}
+.header .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.header-logo {
+    width: 112px;
+    height: 79px;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+}
+.header-navbar {
+    margin-left: auto;
+    margin-top: 3px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.header-navbar-link {
+    position: relative;
+    color: #939498;
+    text-decoration: none;
+    font-variant-caps: all-petite-caps;
+    top: -4px;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+.header-navbar-item {
+    width: 78px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.header-navbar-item:hover {  cursor: pointer;  }
+.header-navbar-item:hover .header-navbar-link {  color: #8CC63F;  }
+.header-navbar-item:hover .icon--home {  background: url('../images/logo-icones/MAISON  NAV DESK-green.svg') no-repeat;  }
+.header-navbar-item:hover .icon--connection {  background: url('../images/logo-icones/icone rapide connexion-green.svg') no-repeat 8px 0;  }
+.header-navbar-item:hover .icon--maps {  background: url('../images/logo-icones/icone rapide carte-green.svg') no-repeat 8px 0;  }
+.header-navbar-item:hover .icon--obs {  background: url('../images/logo-icones/icone rapide saisir une obs-green.svg') no-repeat 8px 0;  }
+.header-navbar-item:hover .icon--prog {  background: url('../images/logo-icones/PUZZLE PROG NAV-green.svg') no-repeat 3px 0;  }
+.header-navbar-item:hover .icon--account {  background: url('../images/logo-icones/PROFIL USER NAV-green.svg') no-repeat 2px 0;  }
+.header-navbar-item:hover .icon--faq {  background: url('../images/logo-icones/FAQ NAV-green.svg') no-repeat 2px 0;  }
+.header-navbar-item:hover .icon--contact {  background: url('../images/logo-icones/icone enveloppe-contact-green.svg') no-repeat 2px 0;  }
+
+.header-navbar .icon:after {
+    content: '';
+    display: block;
+    position: relative;
+    right: 17px;
+    height: 40px;
+    border-left: 1px solid #939498;
+}
+@media only screen and (max-width: 1024px) {
+    .header-navbar {  display: none;  }
+    .header-navbar-mobile {
+        margin-left: auto;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+}
