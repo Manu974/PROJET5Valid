@@ -18,47 +18,122 @@
                     <img src="{{ asset('images/logo-icones/LOGO.svg') }}" alt="" class="header-logo">
                 </a>
                 <nav class="header-navbar">
-                    <div class="header-navbar-item">
+                    <a href="#" class="header-navbar-item">
                         <i class="icon icon--home"></i>
-                        <a href="#" class="header-navbar-link">Accueil</a>
-                    </div>
-                    <div class="header-navbar-item">
+                        <p class="header-navbar-link">Accueil</p>
+                    </a>
+                    <a href="#" class="header-navbar-item">
                         <i class="icon icon--connection"></i>
-                        <a href="#" class="header-navbar-link">Connexion</a>
-                    </div>
-                    <div class="header-navbar-item">
+                        <p class="header-navbar-link">Connexion</p>
+                    </a>
+                    <a href="#" class="header-navbar-item">
                         <i class="icon icon--maps"></i>
-                        <a href="#" class="header-navbar-link">Carte</a>
-                    </div>
-                    <div class="header-navbar-item">
+                        <p class="header-navbar-link">Carte</p>
+                    </a>
+                    <a href="#" class="header-navbar-item">
                         <i class="icon icon--obs"></i>
-                        <a href="#" class="header-navbar-link">Observation</a>
-                    </div>
-                    <div class="header-navbar-item">
+                        <p class="header-navbar-link">Observation</p>
+                    </a>
+                    <a href="#" class="header-navbar-item">
                         <i class="icon icon--prog"></i>
-                        <a href="#" class="header-navbar-link">Programme</a>
-                    </div>
-                    <div class="header-navbar-item">
+                        <p class="header-navbar-link">Programme</p>
+                    </a>
+                    <a href="#" class="header-navbar-item">
                         <i class="icon icon--account"></i>
-                        <a href="#" class="header-navbar-link">Compte</a>
-                    </div>
-                    <div class="header-navbar-item">
+                        <p class="header-navbar-link">Compte</p>
+                    </a>
+                    <a href="#" class="header-navbar-item">
                         <i class="icon icon--faq"></i>
-                        <a href="#" class="header-navbar-link">Faq</a>
-                    </div>
-                    <div class="header-navbar-item">
+                        <p class="header-navbar-link">Faq</p>
+                    </a>
+                    <a href="#" class="header-navbar-item">
                         <i class="icon icon--contact"></i>
-                        <a href="#" class="header-navbar-link">Contact</a>
-                    </div>
+                        <p class="header-navbar-link">Contact</p>
+                    </a>
                 </nav>
-                <nav class="header-navbar-mobile">
+                <div class="navbar-mobile">
                     <i class="icon icon--burger"></i>
-                    <div class="header-navbar-content">
-                    </div>
-                </nav>
+                </div>
             </div>
         </header>
+        <nav class="navbar-mobile-content">
+            <span>Menu de navigation</span>
+        </nav>
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="three columns">
+                        <div class="footer-item">
+                            <i class="icon icon--newsletter"></i>
+                            <a href="#" class="footer-link">Newsletter</a>
+                        </div>
+                        <div class="footer-item">
+                            <i class="icon icon--legalMention"></i>
+                            <a href="#" class="footer-link">Mentions legales</a>
+                        </div>
+                        <div class="footer-item">
+                            <i class="icon icon--contact"></i>
+                            <a href="#" class="footer-link">Contact</a>
+                        </div>
+                    </div>
+                    <div class="six columns">
+                        <div class="footer-item--center">
+                            <i class="icon icon--youtube"></i>
+                            <i class="icon icon--facebook"></i>
+                            <i class="icon icon--twitter"></i>
+                        </div>
+                    </div>
+                    <div class="three columns text-align--right">
+                        <address class="footer-address">
+                            <p>
+                                Association nao<br>
+                                Nos amis les oiseaux<br>
+                                123, rue de la rue<br>
+                                12345 France
+                            </p>
+                        </address>
+                        <div class="footer-copyright">
+                            <i class="icon--small icon--copyright"></i>
+                            <p>copyright asso-nao.org</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        {% block javascripts %}
+            <script>
+                'use strict';
+
+                let navbar = document.querySelector('.navbar-mobile-content');
+                let menuBurger = document.querySelector('.icon--burger');
+                let isOpen = false;
+                let menuWidth = '300px';
+
+                document.body.addEventListener('click', function (e) {
+                    if (isOpen) {
+                        menuBurger.className = 'icon icon--burger';
+                        navbar.style.right = '-' + menuWidth;
+                        isOpen = false
+                    }
+                });
+                menuBurger.addEventListener('click', function (e) {
+                    e.stopPropagation();
+
+                    if (!isOpen) {
+                        menuBurger.className = 'icon icon--burger--active';
+                        navbar.style.right = '0px';
+                        isOpen = true;
+                    } else {
+                        menuBurger.className = 'icon icon--burger';
+                        navbar.style.right = '-' + menuWidth;
+                        isOpen = false;
+                    }
+                });
+                navbar.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                })
+            </script>
+        {% endblock %}
     </body>
 </html>
