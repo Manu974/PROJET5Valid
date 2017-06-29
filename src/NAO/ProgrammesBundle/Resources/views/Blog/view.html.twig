@@ -1,0 +1,42 @@
+{# src/NAO/ProgrammesBundle/Resources/views/Blog/view.html.twig #}
+
+{% block title %}{{ blog.title }}{% endblock %}
+
+{% block body %}
+    <article class="blog">
+        <header>
+            <div class="date">Publié <time datetime="{{ blog.created|date('c') }}">le {{ blog.created|date('d-m-Y') }} à {{ blog.created|date('H:i:s') }}</time> - Auteur : <span class="highlight">{{blog.author}}</span></div>
+            <h2>{{ blog.title }}</h2>
+        </header>
+        <div class="article_view">
+            <p>{{ blog.blog|raw }}</p>
+        </div>
+    </article>
+    <section class="comments" id="comments">
+        <section class="previous-comments">
+            <h3>Commentaires</h3>
+            {% for comment in comments %}
+                <article class="comment {{ cycle(['odd', 'even'], loop.index0) }}" id="comment-{{ comment.id }}">
+                    <header>
+                        <p><span class="highlight">{{ comment.user }}</span> a commenté le <time datetime="{{ comment.created|date('c') }}">{{ comment.created|date('d-m-Y') }} à {{ comment.created|date('H:i:s') }}</time></p>
+                    </header>
+                    {% if comment.approved %}
+                        <p>{{ comment.comment }}</p>
+                    {% else %}
+                        <p class="comment-mod"><i class="fa fa-exclamation-triangle" aria-hidden="true"> Commentaire modéré par l'administrateur</i></p>
+                    {% endif %}
+                    <p class="comment-brother">
+                        {% if comment.reported %}
+                            <span class="highlight"><i class="fa fa-thumbs-down highlight" aria-hidden="true"> Commentaire signalé à l'administrateur</i></span>
+                        {% else %}
+                            <a href="{{ path('nao_comment_report', { 'idcomment': comment.id, 'idblog': blog.id, 'slug': blog.slug}) }}"><i class="fa fa-thumbs-down" aria-hidden="true"> Signaler ce commentaire</i></a>
+                        {% endif %}
+                    </p>
+                </article>
+            {% else %}
+                <p>Pas encore de commentaire pour ce sujet. Être le premier à commenter...</p>
+            {% endfor %}
+            {{ render(controller('NAOProgrammesBundle:Comment:create' , {'idblog': blog.id}  ))}}
+        </section>
+    </section>
+{% endblock %}

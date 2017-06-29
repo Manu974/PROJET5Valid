@@ -1,0 +1,51 @@
+{# src/NAO/ProgrammesBundle/Resources/views/Admin/index.html.twig #}
+
+{% block body %}
+    {% for blog in blogs %}
+        <li><a href="{{ path('nao_blog_contact') }}">Contact</a></li>
+        <article class="blog">
+            <header>
+                <h2><a href="{{ path('nao_admin_view', { 'id': blog.id, 'slug': blog.slug }) }}">{{ blog.title }}</a></h2>
+            </header>
+            <div class="snippet">
+                <p>{{ blog.blog(article_extract)|raw }}
+                    {% if blog.blog|length > (article_extract) %}
+                        ...<a class="lire_suite" href="{{ path('nao_admin_view', { 'id': blog.id, 'slug': blog.slug }) }}"> lire la suite</a>
+                    {% endif %}
+                </p>
+            </div>
+            <div class="article_func">
+                <p class="continue">
+                    <a href="{{ path('nao_admin_article', { 'id': blog.id, 'slug': blog.slug }) }}">Modifier ce programme</a>
+                    <span class="spanorge"> - </span>
+                    <a href="{{ path('nao_admin_view', { 'id': blog.id, 'slug': blog.slug }) }}#comments">Gérer les commentaires</a>
+                    <span class="spanorge"> - </span>
+                    <a href="{{ path('nao_admin_delblog', { 'id': blog.id }) }}">Supprimer ce programme</a>
+                    <span class="spanorge"> - </span>
+                    <a href="{{ path('nao_admin_newblog') }}">Créer un programme</a>
+                </p>
+            </div>
+            <footer>
+                <p><i class="fa fa-arrow-right" aria-hidden="true"></i> Programme publié par <span class="highlight">{{blog.author}}</span> le {{ blog.created|date('d-m-Y') }} à {{ blog.created|date('H:i:s') }}</p>
+                <p><i class="fa fa-arrow-right" aria-hidden="true"></i> Nombre de commentaires: <a href="{{ path('nao_admin_view', { 'id': blog.id, 'slug': blog.slug }) }}#comments">{{ blog.comments|length }}</a></p>
+            </footer>
+        </article>
+    {% else %}
+        <p class="text-center">Aucun programme publié pour le moment</p>
+        <div class="first_article">
+            <a href="{{ path('nao_admin_newblog') }}">Créer un premier article</a>
+        </div>
+    {% endfor %}
+    {% if nbPages > 1  %}
+        <div class="text-center">
+            <ul class="pagination">
+                {# On utilise la fonction range(a, b) qui crée un tableau de valeurs entre a et b #}
+                {% for p in range(1, nbPages) %}
+                    <li{% if p == page %} class="active"{% endif %}>
+                        <a class='idx_page' href="{{ path('nao_admin_homepage', {'page': p}) }}">{{ p }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+{% endblock %}

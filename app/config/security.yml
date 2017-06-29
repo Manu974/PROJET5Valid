@@ -3,11 +3,12 @@
 security:
   encoders:
     Symfony\Component\Security\Core\User\User: plaintext
-    JF\UserBundle\Entity\User: sha512
+    NAO\UserBundle\Entity\User: sha512
 
   role_hierarchy:
-    ROLE_ADMIN:       ROLE_USER
-    ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+    ROLE_NATURALISTE: ROLE_USER
+    ROLE_ADMIN:       [ROLE_USER, ROLE_NATURALISTE]
+    ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_NATURALISTE, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
   providers:
       main:

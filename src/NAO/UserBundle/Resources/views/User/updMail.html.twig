@@ -1,0 +1,4 @@
+{# src/NAO/UserBundle/Resources/views/updMail.html.twig #}
+
+{{ form_start(form, {'action': path('nao_user_updateMail' , {'id': app.user.id}) , 'method': 'POST'}) }}
+{{ form_end(form) }}

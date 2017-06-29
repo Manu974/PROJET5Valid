@@ -1,3 +1,19 @@
+nao_newsletter:
+    resource: "@NAONewsletterBundle/Resources/config/routing.yml"
+    prefix:   /newsletter
+
+nao_faq:
+    resource: "@NAOFaqBundle/Resources/config/routing.yml"
+    prefix:   /faq
+
+nao_programmes:
+    resource: "@NAOProgrammesBundle/Resources/config/routing.yml"
+    prefix:   /programmes
+
+nao_user_lst:
+    resource: "@NAOUserBundle/Resources/config/routing.yml"
+    prefix:   /user
+
 app:
     resource: '@AppBundle/Controller/'
     type: annotation

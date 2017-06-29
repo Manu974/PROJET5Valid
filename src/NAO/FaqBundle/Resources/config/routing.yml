@@ -1,0 +1,39 @@
+nao_faq_homepage:
+    path:     /{page}
+    defaults:
+        _controller: NAOFaqBundle:Faq:index
+        page:        1
+    requirements:
+        page: \d+
+
+nao_admin_faq:
+    path:  /admin/{page}
+    defaults:
+        _controller: NAOFaqBundle:Admin:index
+        page:        1
+    requirements:
+        page: \d+
+
+nao_admin_delfaq:
+    path:  /admin/delfaq/{id}/{page}
+    defaults:
+        _controller: NAOFaqBundle:Admin:delfaq
+        page:        1
+    requirements:
+        id: \d+
+        page: \d+
+
+nao_admin_newfaq:
+    path:  /admin/newfaq/{page}
+    defaults:
+        _controller: NAOFaqBundle:Admin:newfaq
+        page:        1
+    requirements:
+        page: \d+
+
+nao_admin_majfaq:
+    path:  /admin/majfaq/{id}
+    defaults:
+        _controller: NAOFaqBundle:Admin:majfaq
+    requirements:
+        id: \d+

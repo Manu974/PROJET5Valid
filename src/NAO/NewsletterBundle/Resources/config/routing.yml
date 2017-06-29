@@ -1,0 +1,3 @@
+nao_newsletter_homepage:
+    path:     /
+    defaults: { _controller: NAONewsletterBundle:Default:index }
