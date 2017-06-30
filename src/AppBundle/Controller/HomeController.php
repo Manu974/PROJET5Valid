@@ -15,7 +15,7 @@ use CrEOF\Spatial\Tests\Fixtures\GeometryEntity;
 use CrEOF\Spatial\Tests\Fixtures\NoHintGeometryEntity;
 
 
-class DefaultController extends Controller
+class HomeController extends Controller
 {
     /**
      * @Route("/", name="homepage")
@@ -25,7 +25,7 @@ class DefaultController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $ob = new Observation();
-        $ob->setLocation(new Point(1, 1));
+        $ob->setLocation(new Point(6, 1));
         $ob->setComment('popopopoppop');
         $ob->setIsValid(true);
         $ob->setCreatedAt(new \DateTime('now'));
@@ -34,8 +34,9 @@ class DefaultController extends Controller
 
         $em->flush();
         
-        $observation = $em->getRepository('AppBundle:Observation')->find(3);
-
+        $observation = $em->getRepository('AppBundle:Observation')->find(7);
+        dump($observation);
+        die();
         
 
         // replace this example code with whatever you need
