@@ -57,7 +57,43 @@
             </div>
         </header>
         <nav class="navbar-mobile-content">
-            <span>Menu de navigation</span>
+            <span class="navbar-mobile-title">Menu de navigation</span>
+            <div class="navbar-mobile-item">
+                <i class="icon icon--arrow"></i>
+                <a href="#" class="navbar-mobile-link">Accueil</a>
+            </div>
+            <div class="navbar-mobile-item">
+                <i class="icon icon--arrow"></i>
+                <a href="#" class="navbar-mobile-link">Connexion / Inscription</a>
+            </div>
+            <div class="navbar-mobile-item">
+                <i class="icon icon--arrow"></i>
+                <a href="#" class="navbar-mobile-link">Carte Interactive</a>
+            </div>
+            <div class="navbar-mobile-item">
+                <i class="icon icon--arrow"></i>
+                <a href="#" class="navbar-mobile-link">Saisir une observation</a>
+            </div>
+            <div class="navbar-mobile-item">
+                <i class="icon icon--arrow"></i>
+                <a href="#" class="navbar-mobile-link">Programmes</a>
+            </div>
+            <div class="navbar-mobile-item">
+                <i class="icon icon--arrow"></i>
+                <a href="#" class="navbar-mobile-link">FAQ</a>
+            </div>
+            <div class="navbar-mobile-item">
+                <i class="icon icon--arrow"></i>
+                <a href="#" class="navbar-mobile-link">Contact</a>
+            </div>
+            <div class="navbar-mobile-item">
+                <i class="icon icon--arrow"></i>
+                <a href="#" class="navbar-mobile-link">Newsletter</a>
+            </div>
+            <div class="navbar-mobile-item">
+                <i class="icon icon--arrow"></i>
+                <a href="#" class="navbar-mobile-link">Mentions legales</a>
+            </div>
         </nav>
         {% block body %}{% endblock %}
         <footer class="footer">
@@ -108,7 +144,7 @@
                 let navbar = document.querySelector('.navbar-mobile-content');
                 let menuBurger = document.querySelector('.icon--burger');
                 let isOpen = false;
-                let menuWidth = '300px';
+                let menuWidth = '290px';
 
                 document.body.addEventListener('click', function (e) {
                     if (isOpen) {
