@@ -20,9 +20,9 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new NAO\ProgrammesBundle\NAOProgrammesBundle(),
             new NAO\FaqBundle\NAOFaqBundle(),
-            new NAO\NewsletterBundle\NAONewsletterBundle(),
             new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
             new Gregwar\CaptchaBundle\GregwarCaptchaBundle(),
+            new MediaFigaro\GoogleAnalyticsApi\GoogleAnalyticsApi(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

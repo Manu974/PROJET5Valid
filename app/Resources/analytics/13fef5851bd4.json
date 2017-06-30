@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "pelagic-campus-172306",
+  "private_key_id": "13fef5851bd421fae43dcdde640e7acd326c0a9b",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDM2ae8oRqqXZRd\nTx7z4is5U5JIkQMZblhu2Sh2fXRPqYnEi7HPrGT399Zu4FLkhNtBl6gRVInvQOzj\nLYHCokq25GUbaNyWdbu7E5l3WDbx2j5ijuXTGehRDzwt2qeTeLkl4fx11gNuTGbQ\nvMoENHyDWnQvvGx36UsjVjBQCh1pS7DOT33g0SsSAvF4p3AqTaj01hozflQ9henI\n0OkY5Hgwsip/UOe0QwNdVVDx4vgAnRc0N/LSk6dpL34dnLWHvZRiQh9dtocUL3xx\nOLbvFT/2KKg18/oHtMZseug/u7ebyUj4mkC56s5k9qMZaj8j6zRWlT2MaPSJa2qs\ngpzdm773AgMBAAECggEABJlK+KpIHj9WIGV4fgftabXiwY29onXpNuKEYjJgs1x3\nSF2UCir/HRDkd8VQPGs26KsBwy+dgck/oRMc9iR3zNFszv0bucKMw22Q0yd1cTUV\nPq1MP6gLEmZY4ZGKIlPpUtVzcvvGfWMGtPu46RR6kZCQkUpyVg1Cj6CUqL9Xm1s6\naJpm2iLVK8sF9CWx6ftF5jCM8aESuRF29iMHUOU5KCFhNZxj4XIyH2KOqg+iwzML\n7pNIOeo/bqHhH9LH1X5o9I/+T7bUNid4F6/sPWGP1vgMyAcFiGnEsxJhn5MDC07X\n+SHwnxSWHJTiJLXXW4DdH72iC5zIraUfuVTxDLZhbQKBgQDyM8jyleyNdVcKo4uw\nilVnjgUw9iKyruQawY+fEdcJEuRSXM9k17XDiS5JBuUOt+yMUC/K4Brt1CU2a8dU\ngz6zAUF3xrKd1Gmja4s+U44ZCs5gnSBe+O5VONi7NWizv3P17s6Eci0izU6VW6yL\nIF0TF+7EvfI9EtOy9fFszVyDWwKBgQDYhSMt8gtarZVMBYMXysKZBC1oHHqb9HdA\nUoLWN0C8NC9+s4QpSl7ANMb8IhPqAjSETlE7Mpqr6kipg5/dzdPM62hrFt66IKJl\naWU3a9arZ3O6FYpXhN4gAsslydgQiTD1Rs6cTy/KHA0AU7YEIOcx5EfzXXFb7uEZ\nn7wgw3LRlQKBgQC+fxB8DINjt3jge0Wxcvw9WKyol88urvPmP3uQ5100W9GNHkZY\n0Hi79Lec5HlgnDTHH4KXlLBZgtRJ+3dp91hnPoOZi4SNMrZrvHhmax2GgMNVpgAB\n8tSx3uZISHezeM/iDRQNhCgQCV7XhqUtQCU0kUxRHfzbIGW1ik96/gLXpQKBgEVG\nE4NXtZpFf0bbXJ34GVqro3tz4SaUiLLjs0imVOfiKm/3L4mmabpFKITywjxUiEjs\nZcDy59mpE6ZonnVwrRsbFkVtA8W5OzwHBIM+1WfxqW0YBzMJJ6hGPIjSk3Z27lsL\nVH9eNoQLhX1dSxb3EAE+cGbEtsgbHZn9KUuyPMIhAoGAUN8i5BZeix2ke2uvHuBI\nln/HdwSd9znNrGJ3A2FMz/VmtsA52XCOy2bh7SJo+hak/HItKKpU5fcKIl6Y3df2\nvwZAdIJNnUBb5kYv9LNw+GtlAGQGByAp2iBhE6JEyel53YV1i4Y4RNGFL6Ctv1Y5\nptIbrpyho7qOs6NVV4yytC0=\n-----END PRIVATE KEY-----\n",
+  "client_email": "nao-643@pelagic-campus-172306.iam.gserviceaccount.com",
+  "client_id": "116949143816735298338",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/nao-643%40pelagic-campus-172306.iam.gserviceaccount.com"
+}

@@ -8,6 +8,13 @@
         </div>
     {% endif %}
 
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+        <a href="{{ path('fos_user_security_logout') }}">
+            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+        </a>
+    {% endif %}
+
     <!------Compte Admin / gestion des utilisateurs--->
     {% if is_granted('ROLE_ADMIN') %}
         <h2>Mon compte - Administrateur</h2>
@@ -25,7 +32,6 @@
         <p>Identifiant : {{app.user.username}}</p>
         <p>Email : {{app.user.email}}</p>
         <h3>Modification Mot de passe</h3>
-        <a href="{{ path('fos_user_change_password') }}">Modification mot de passe</a>
         {{ render(controller('FOSUserBundle:ChangePassword:changePassword' ))}}
     {% endif %}
 
@@ -36,20 +42,9 @@
         <h3>Modifier l'adresse Mail</h3>
         {{ render(controller('NAOUserBundle:Admin:updMailUser' , {'id': app.user.id}  ))}}
         <h3>Modification du mot de passe</h3>
-        <a href="{{ path('fos_user_change_password') }}">Modification mot de passe</a>
         {{ render(controller('FOSUserBundle:ChangePassword:changePassword' ))}}
         <h3>Suppression du compte</h3>
         {{ render(controller('NAOUserBundle:Admin:deleteUser' , {'id': app.user.id}  ))}}
     {% endif %}
-
-    <!------Espace Connexion/Inscription--->
-    <div class="container well">
-        <h3>Espace connexion</h3>
-        <a href="{{ path('fos_user_security_login') }}">connexion</a>
-        {{ render(controller('FOSUserBundle:Security:login' ))}}
-        <h3>Espace inscription</h3>
-        <a href="{{ path('fos_user_registration_register') }}">créer un compte</a>
-        {{ render(controller('FOSUserBundle:Registration:register' ))}}
-    </div>
 
 {% endblock %}

@@ -102,3 +102,7 @@ fos_user:
 
 #GregWar_Captcha_Bundle
 gregwar_captcha: ~
+
+# Google Analytics Bundle Cofiguration
+google_analytics_api:
+    google_analytics_json_key: "%google_analytics_json_key%"
