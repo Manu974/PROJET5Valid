@@ -1,9 +1,9 @@
 <?php
 
-namespace AppBundle;
+namespace FT\OrnitBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class AppBundle extends Bundle
+class FTOrnitBundle extends Bundle
 {
 }
