@@ -122,7 +122,7 @@ gregwar_captcha: ~
 
 # Google Analytics Bundle Cofiguration
 google_analytics_api:
-    google_analytics_json_key: "%google_analytics_json_key%"
+    google_analytics_json_key: #"%google_analytics_json_key%"
 
 fos_rest:
     body_converter:
@@ -135,6 +135,7 @@ fos_rest:
     format_listener:
         rules:
             - { path: '^/api', priorities: ['json'], fallback_format: 'json' }
+            - { path: '^/', priorities: [ 'text/html', '*/*'], fallback_format: html, prefer_extension: true }
 
 
 sensio_framework_extra:
