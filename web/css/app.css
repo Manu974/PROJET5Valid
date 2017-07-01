@@ -1,0 +1,257 @@
+/***** FONT *****/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+body {
+    overflow-x: hidden;
+}
+/***** ICONS *****/
+.icon {
+    display: block;
+    width: 44px;
+    height: 40px;
+    -webkit-transition: .2s;
+    transition: .2s;
+}
+.icon--small {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+.icon--home {  background: url('../images/logo-icones/MAISON  NAV DESK.svg') no-repeat;  }
+.icon--connection {  background: url('../images/logo-icones/icone rapide connexion.svg') no-repeat 8px 0;  }
+.icon--maps {  background: url('../images/logo-icones/icone rapide carte.svg') no-repeat 8px 0;  }
+.icon--obs {  background: url('../images/logo-icones/icone rapide saisir une obs.svg') no-repeat 8px 0;  }
+.icon--prog {  background: url('../images/logo-icones/PUZZLE PROG NAV.svg') no-repeat 3px 0;  }
+.icon--account {  background: url('../images/logo-icones/PROFIL USER NAV.svg') no-repeat 2px 0;  }
+.icon--faq {  background: url('../images/logo-icones/FAQ NAV.svg') no-repeat 1px 0;  }
+.icon--contact {  background: url('../images/logo-icones/icone enveloppe-contact.svg') no-repeat 1px 0;  }
+.icon--newsletter {  background: url('../images/logo-icones/icone newsletter.svg') no-repeat 0 0;  }
+.icon--legalMention {  background: url('../images/logo-icones/icone mentions -docs.svg') no-repeat 6px -1px; }
+.icon--youtube {  background: url('../images/logo-icones/icone you tube.svg') no-repeat 0 0; }
+.icon--youtube:hover {  background: url('../images/logo-icones/icone you tube-active.svg') no-repeat 0 0;  }
+.icon--facebook {  background: url('../images/logo-icones/icone facebook.svg') no-repeat 11px 0; }
+.icon--facebook:hover {  background: url('../images/logo-icones/icone facebook-active.svg') no-repeat 11px 0;  }
+.icon--twitter {  background: url('../images/logo-icones/icone twitter.svg') no-repeat 0 0; }
+.icon--twitter:hover {  background: url('../images/logo-icones/icone twitter-active.svg') no-repeat 0 0;  }
+.icon--copyright {  background: url('../images/logo-icones/icone copyright.svg') no-repeat 0 0;  }
+.icon--burger {  background: url('../images/logo-icones/menu burger.svg') no-repeat 0 0;  }
+.icon--arrow {  background: url('../images/logo-icones/flèche gauche transparente.svg') no-repeat 0 0;  }
+.icon--burger--active {  background: url('../images/logo-icones/menu burger-green.svg') no-repeat 0 0;  }
+
+/***** HEADER *****/
+.header {
+    position: relative;
+    z-index: 10;
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.99em;
+    height: 125px;
+    width: 100%;
+    background-color: #262626;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-shadow: 0 6px 8px #222;
+    box-shadow: 0 6px 8px #222;
+}
+.navbar-mobile {
+    display: none;
+    top: -20px;
+}
+.navbar-mobile-title {
+    display: block;
+    margin-bottom: 25px;
+}
+.navbar-mobile-content {
+    font-family: "Open Sans", sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 20px 0 0 15px;
+    transition: .4s ease-in-out;
+    color: #E6E6E6;
+    position: absolute;
+    right: -290px;
+    top: 122px;
+    width: 290px;
+    height: 790px;
+    background: #262626;
+}
+.navbar-mobile-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbar-mobile-link {
+    text-decoration: none;
+    color: #EBEBEB;
+    margin: 0 0 0 10px;
+    text-align: left;
+    font-size: 0.9em;
+    padding: 24px 0 20px 0;
+    width: 190px;
+    border-bottom: 1px solid #EBEBEB;
+    transition: .2s;
+}
+.navbar-mobile-link:hover {
+    color: #8CC63F;
+}
+.icon:hover {  cursor: pointer;  }
+.navbar-mobile .icon--burger:hover {  background: url('../images/logo-icones/menu burger-green.svg') no-repeat;  }
+
+.header .container {
+    z-index: 1000;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.header-logo {
+    width: 112px;
+    height: 79px;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+}
+.header-navbar {
+    margin-left: auto;
+    margin-top: 34px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.header-navbar-link {
+    position: relative;
+    color: #939498;
+    text-decoration: none;
+    font-variant-caps: all-petite-caps;
+    top: -4px;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+.header-navbar-item {
+    width: 78px;
+    text-decoration: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.header-navbar-item:hover {  cursor: pointer;  }
+.header-navbar-item:hover .header-navbar-link {  color: #8CC63F;  }
+.header-navbar-item:hover .icon--home {  background: url('../images/logo-icones/MAISON  NAV DESK-green.svg') no-repeat;  }
+.header-navbar-item:hover .icon--connection {  background: url('../images/logo-icones/icone rapide connexion-green.svg') no-repeat 8px 0;  }
+.header-navbar-item:hover .icon--maps {  background: url('../images/logo-icones/icone rapide carte-green.svg') no-repeat 8px 0;  }
+.header-navbar-item:hover .icon--obs {  background: url('../images/logo-icones/icone rapide saisir une obs-green.svg') no-repeat 8px 0;  }
+.header-navbar-item:hover .icon--prog {  background: url('../images/logo-icones/PUZZLE PROG NAV-green.svg') no-repeat 3px 0;  }
+.header-navbar-item:hover .icon--account {  background: url('../images/logo-icones/PROFIL USER NAV-green.svg') no-repeat 2px 0;  }
+.header-navbar-item:hover .icon--faq {  background: url('../images/logo-icones/FAQ NAV-green.svg') no-repeat 1px 0;  }
+.header-navbar-item:hover .icon--contact {  background: url('../images/logo-icones/icone enveloppe-contact-green.svg') no-repeat 1px 0;  }
+
+.header-navbar .icon:after {
+    content: '';
+    display: block;
+    position: relative;
+    right: 17px;
+    height: 40px;
+    border-left: 1px solid #939498;
+}
+
+/***** FOOTER *****/
+.footer {
+    font-family: "Open Sans", sans-serif;
+    background-color: #262626;
+    color: #939498;
+    padding: 32px 0 20px 0;
+    -webkit-box-shadow: 0 -8px 8px -8px black;
+    box-shadow: 0 -8px 10px -8px black;
+}
+
+.footer-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 10px 0;
+}
+.footer-item--center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 155px;
+}
+.footer-item:hover, .icon--facebook, .icon--twitter, .icon--youtube {  cursor: pointer;  }
+.footer-item:hover .header-navbar-link {  color: #8CC63F;  }
+.footer-item:hover .icon--home {  background: url('../images/logo-icones/MAISON  NAV DESK-green.svg') no-repeat;  }
+.footer-item:hover .icon--connection {  background: url('../images/logo-icones/icone rapide connexion-green.svg') no-repeat 8px 0;  }
+.footer-item:hover .icon--maps {  background: url('../images/logo-icones/icone rapide carte-green.svg') no-repeat 8px 0;  }
+.footer-item:hover .icon--obs {  background: url('../images/logo-icones/icone rapide saisir une obs-green.svg') no-repeat 8px 0;  }
+.footer-item:hover .icon--prog {  background: url('../images/logo-icones/PUZZLE PROG NAV-green.svg') no-repeat 3px 0;  }
+.footer-item:hover .icon--account {  background: url('../images/logo-icones/PROFIL USER NAV-green.svg') no-repeat 2px 0;  }
+.footer-item:hover .icon--faq {  background: url('../images/logo-icones/FAQ NAV-green.svg') no-repeat 2px 0;  }
+.footer-item:hover .icon--contact {  background: url('../images/logo-icones/icone enveloppe-contact-green.svg') no-repeat 1px 0;  }
+.footer-item:hover .icon--newsletter {  background: url('../images/logo-icones/icone newsletter-green.svg') no-repeat 0 0;  }
+.footer-item:hover .icon--legalMention {  background: url('../images/logo-icones/icone mentions -docs-green.svg') no-repeat 6px -1px;  }
+.footer-link {
+    margin-left: 5px;
+    margin-top: 5px;
+    transition: 0.2s;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: inherit;
+}
+.footer-item:hover .footer-link{  color: #8CC63F  }
+.footer-address {
+    font-family: "Open Sans", sans-serif;
+    text-transform: uppercase;
+    font-style: normal;
+    line-height: normal;
+    text-align: right;
+}
+.footer-copyright {
+    display: flex;
+    justify-content: flex-end;;
+}
+.footer .icon--copyright {
+    margin: 5px 2px 0 0;
+}
+
+
+@media only screen and (max-width: 980px) {
+
+    /***** HEADER *****/
+    .header-navbar {  display: none;  }
+    .navbar-mobile {
+        margin-left: auto;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+
+    /***** FOOTER *****/
+    .footer-item {  justify-content: center;  }
+    .footer-link {  text-align: center;  }
+    .footer-item--center {  height: 80px;  }
+    .footer-address {  text-align: center;  }
+    .footer-copyright {  justify-content: center;  }
+    .footer-item .icon {  display: none;  }
+}
