@@ -22,6 +22,7 @@ class HomeController extends Controller
      */
     public function indexAction(Request $request)
     {
+        /*
         $em = $this->getDoctrine()->getManager();
 
         $ob = new Observation();
@@ -38,7 +39,7 @@ class HomeController extends Controller
         dump($observation);
         die();
         
-
+*/
         // replace this example code with whatever you need
         return $this->render('default/index.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
