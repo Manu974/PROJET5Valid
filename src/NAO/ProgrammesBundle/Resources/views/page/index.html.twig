@@ -1,0 +1,47 @@
+{# src/NAO/ProgrammesBundle/Resources/views/Page/index.html.twig #}
+
+{% block body %}
+    <li><a href="{{ path('nao_blog_contact') }}">Contact</a></li>
+    {% if is_granted('ROLE_NATURALISTE') %}
+        <h2><a href="{{ path('nao_admin_homepage') }}">Administration</a></h2>
+    {% endif %}
+    {% for blog in blogs %}
+        <article class="blog">
+            <header>
+                <h2><a href="{{ path('nao_blog_view', { 'id': blog.id, 'slug': blog.slug }) }}">{{ blog.title }}</a></h2>
+            </header>
+            <div class="snippet">
+                <p>{{ blog.blog(article_extract)|raw }}
+                    {% if blog.blog|length > (article_extract) %}
+                        ...<a class="lire_suite" href="{{ path('nao_blog_view', { 'id': blog.id, 'slug': blog.slug }) }}"> lire la suite</a>
+                    {% endif %}
+                </p>
+            </div>
+            <div class="article_func">
+                <p class="continue">
+                    <a href="{{ path('nao_blog_view', { 'id': blog.id, 'slug': blog.slug }) }}#comments">Lire les commentaires</a>
+                    <span class="spanorge"> - </span>
+                    <a href="{{ path('nao_blog_view', { 'id': blog.id, 'slug': blog.slug }) }}#creat_comment">Ecrire un commentaire</a>
+                </p>
+            </div>
+            <footer>
+                <p><i class="fa fa-arrow-right" aria-hidden="true"></i> Programme publié par <span class="highlight">{{blog.author}}</span> le {{ blog.created|date('d-m-Y') }} à {{ blog.created|date('H:i:s') }}</p>
+                <p><i class="fa fa-arrow-right" aria-hidden="true"></i> Nombre de commentaires: <a href="{{ path('nao_blog_view', { 'id': blog.id, 'slug': blog.slug }) }}#comments">{{ blog.comments|length }}</a></p>
+            </footer>
+        </article>
+    {% else %}
+        <p class="text-center">Aucun programme publié pour le moment</p>
+    {% endfor %}
+    {% if nbPages > 1  %}
+        <div class="text-center">
+            <ul class="pagination">
+                {# On utilise la fonction range(a, b) qui crée un tableau de valeurs entre a et b #}
+                {% for p in range(1, nbPages) %}
+                    <li{% if p == page %} class="active"{% endif %}>
+                        <a class='idx_page' href="{{ path('nao_blog_homepage', {'page': p}) }}">{{ p }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,43 @@
+{# src/NAO/FaqBundle/Resources/views/Admin/index.html.twig #}
+
+{% block body %}
+    {% for faq in faqs %}
+        <article>
+            <header>
+                <h2>{{ faq.title }}</a></h2>
+            </header>
+            <div>
+                <p>{{ faq.faq|raw }}</p>
+            </div>
+            <div>
+                <p class="continue">
+                    <a href="{{ path('nao_admin_majfaq', { 'id': faq.id }) }}">Modifier cette question</a>
+                    <span class="spanorge"> - </span>
+                    <a href="{{ path('nao_admin_delfaq', { 'id': faq.id }) }}">Supprimer cette question</a>
+                    <span class="spanorge"> - </span>
+                    <a href="{{ path('nao_admin_newfaq') }}">Créer une question</a>
+                </p>
+            </div>
+            <footer>
+                <p><i class="fa fa-arrow-right" aria-hidden="true"></i> Question publiée par <span class="highlight">{{faq.author}}</span> le {{ faq.created|date('d-m-Y') }} à {{ faq.created|date('H:i:s') }}</p>
+            </footer>
+        </article>
+    {% else %}
+        <p class="text-center">Aucune question publiée sur la Faq pour le moment</p>
+        <div class="first_article">
+            <a href="{{ path('nao_admin_newfaq')}}">Créer une première question</a>
+        </div>
+    {% endfor %}
+    {% if nbPages > 1  %}
+        <div class="text-center">
+            <ul class="pagination">
+                {# On utilise la fonction range(a, b) qui crée un tableau de valeurs entre a et b #}
+                {% for p in range(1, nbPages) %}
+                    <li{% if p == page %} class="active"{% endif %}>
+                        <a class='idx_page' href="{{ path('nao_admin_faq', {'page': p}) }}">{{ p }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+{% endblock %}

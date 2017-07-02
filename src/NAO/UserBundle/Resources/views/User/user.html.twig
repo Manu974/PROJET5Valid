@@ -1,0 +1,50 @@
+{% block body %}
+    <!------Message---Traitement--->
+    {% if app.session.flashBag.has('error') %}
+        <div class="alert alert-danger" id="commande-error">
+            {% for msg in app.session.flashBag.get('error') %}
+                {{ msg }}
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+        <a href="{{ path('fos_user_security_logout') }}">
+            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+        </a>
+    {% endif %}
+
+    <!------Compte Admin / gestion des utilisateurs--->
+    {% if is_granted('ROLE_ADMIN') %}
+        <h2>Mon compte - Administrateur</h2>
+        <h3>Liste des users</h3>
+        {% for user in users %}
+            {% for role in user.roles|slice(0,1)  %}
+                {% if role != 'ROLE_ADMIN' %}
+                    <li>{{ user.username|e }} id: {{user.id}} role :{{ role }}</li>
+                    <a href="{{ path('nao_user_admin_delete', { 'id': user.id }) }}"><input type="submit" value="Supprimer"></a>
+                    <a href="{{ path('nao_user_demote', { 'id': user.id }) }}"><input type="submit" value="Rétrograder en utilisateur"></a>
+                    <a href="{{ path('nao_user_promote', { 'id': user.id }) }}"><input type="submit" value="Promouvoir en naturalise"></a>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+        <p>Identifiant : {{app.user.username}}</p>
+        <p>Email : {{app.user.email}}</p>
+        <h3>Modification Mot de passe</h3>
+        {{ render(controller('FOSUserBundle:ChangePassword:changePassword' ))}}
+    {% endif %}
+
+    <!------Compte User/Naturaliste--->
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") and not is_granted('ROLE_ADMIN')%}
+        <h3>Mon compte - Utilisateur - Naturaliste</h3>
+        <p>Identifiant : {{app.user.username}}</p>
+        <h3>Modifier l'adresse Mail</h3>
+        {{ render(controller('NAOUserBundle:Admin:updMailUser' , {'id': app.user.id}  ))}}
+        <h3>Modification du mot de passe</h3>
+        {{ render(controller('FOSUserBundle:ChangePassword:changePassword' ))}}
+        <h3>Suppression du compte</h3>
+        {{ render(controller('NAOUserBundle:Admin:deleteUser' , {'id': app.user.id}  ))}}
+    {% endif %}
+
+{% endblock %}

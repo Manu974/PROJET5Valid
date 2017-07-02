@@ -1,0 +1,8 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% block fos_user_content %}
+    <h3>Espace connexion</h3>
+    {{ include('@FOSUser/Security/login_content.html.twig') }}
+    <h3>Espace inscription</h3>
+    {{ render(controller('FOSUserBundle:Registration:register' ))}}
+{% endblock fos_user_content %}

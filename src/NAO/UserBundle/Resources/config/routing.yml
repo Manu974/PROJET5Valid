@@ -1,0 +1,35 @@
+#src/NAO/UserBundle/Resources/config/routing.yml
+
+nao_user_compte:
+    path:    /
+    defaults: { _controller: NAOUserBundle:Admin:user }
+
+nao_user_promote:
+    path:    /promote/{id}
+    defaults: { _controller: NAOUserBundle:Admin:promoteUser }
+    requirements:
+        id: \d+
+
+nao_user_demote:
+    path:    /demote/{id}
+    defaults: { _controller: NAOUserBundle:Admin:demoteUser }
+    requirements:
+        id: \d+
+
+nao_user_delete:
+    path:    /delete/{id}
+    defaults: { _controller: NAOUserBundle:Admin:deleteUser }
+    requirements:
+        id: \d+
+
+nao_user_admin_delete:
+    path:    /admin/delete/{id}
+    defaults: { _controller: NAOUserBundle:Admin:admindeleteUser }
+    requirements:
+        id: \d+
+
+nao_user_updateMail:
+    path:    /updateMail/{id}
+    defaults: { _controller: NAOUserBundle:Admin:updMailUser }
+    requirements:
+        id: \d+

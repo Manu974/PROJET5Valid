@@ -1,0 +1,36 @@
+{# src/NAO/ProgrammesBundle/Resources/views/Page/ContactEmail.html.twig #}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Blog - {{ site_title }}</title>
+        <meta name="description" content="NAO - Association">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="jumbotron" style="background-image: linear-gradient(#b4c2db, #7d8da7 85%, #174f6e); border: 1px solid black;">
+                <h1 class="text-center" style="font-size: 3em; color: #505B6B">{{ site_title }}</h1>
+            </div>
+
+            <!--Récapitulatif de la commande-->
+            <div class="well">
+                <h2 class="text-center" style="border: 1px solid black;">Message d'un visiteur</h2>
+                <hr>
+                <p>Nom du visiteur : {{ contactreq.nom }}</p>
+                <p>Prénom du visiteur : {{ contactreq.prenom }}</p>
+                <p>E-mail du visiteur : {{ contactreq.email }}</p>
+                <stong>Sujet : {{ contactreq.sujet }}</stong>
+                <p>Date du message : {{ "now" | date("d-m-Y H:i") }}.</p>
+                <h3>Message:</h3>
+                <h4>{{ contactreq.message }}</h4>
+            </div>
+        </div>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    </body>
+</html>

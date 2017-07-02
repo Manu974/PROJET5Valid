@@ -1,0 +1,98 @@
+#src/NAO/ProgrammesBundle/Resources/config/routing.yml
+
+nao_blog_homepage:
+    path:     /{page}
+    defaults: 
+        _controller: NAOProgrammesBundle:Page:index
+        page:        1
+    requirements:
+        page: \d+
+
+nao_blog_contact:
+    path:  /contact
+    defaults:
+        _controller: NAOProgrammesBundle:Page:contact
+
+nao_blog_view:
+    path:  /{id}/{slug}
+    defaults:
+        _controller: NAOProgrammesBundle:Blog:view
+    requirements:
+                id: \d+
+
+nao_comment_create:
+    path:  /comment/create/{idblog}
+    defaults:
+        _controller: NAOProgrammesBundle:Comment:create
+    requirements:
+                idblog: \d+
+
+nao_comment_report:
+    path:  /comment/report/{idcomment}/{idblog}/{slug}/{page}
+    defaults:
+        _controller: NAOProgrammesBundle:Comment:report
+        page:        1
+    requirements:
+                idcomment: \d+
+                idblog: \d+
+                page: \d+
+
+nao_admin_homepage:
+    path:  /admin/{page}
+    defaults:
+        _controller: NAOProgrammesBundle:Admin:index
+        page:        1
+    requirements:
+        page: \d+
+
+nao_admin_view:
+    path:  /admin/view/{id}/{slug}
+    defaults:
+        _controller: NAOProgrammesBundle:Admin:view
+    requirements:
+                id: \d+
+
+nao_admin_delblog:
+    path:  /admin/delblog/{id}/{page}
+    defaults:
+        _controller: NAOProgrammesBundle:Admin:delblog
+        page:        1
+    requirements:
+                id: \d+
+                page: \d+
+
+nao_admin_newblog:
+    path:  /admin/newblog
+    defaults:
+        _controller: NAOProgrammesBundle:Admin:newblog
+
+nao_admin_delcomment:
+    path:  /admin/delcomment/{idcomment}/{idblog}/{slug}
+    defaults:
+        _controller: NAOProgrammesBundle:Admin:delcomment
+    requirements:
+                idcomment: \d+
+                idblog: \d+
+
+nao_admin_modcomment:
+    path:  /admin/modcomment/{idcomment}/{idblog}/{action}/{slug}
+    defaults:
+        _controller: NAOProgrammesBundle:Admin:modcomment
+    requirements:
+                idcomment: \d+
+                idblog: \d+
+
+nao_admin_article:
+    path:  /admin/article/{id}/{slug}
+    defaults:
+        _controller: NAOProgrammesBundle:Admin:article
+    requirements:
+                id: \d+
+
+nao_admin_unreport:
+    path:  /admin/unreport/{idcomment}/{idblog}/{slug}
+    defaults:
+        _controller: NAOProgrammesBundle:Admin:unreport
+    requirements:
+                idcomment: \d+
+                idblog: \d+

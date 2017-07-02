@@ -15,7 +15,16 @@ class AppKernel extends Kernel
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new FT\OrnitBundle\FTOrnitBundle(),
+            new AppBundle\AppBundle(),
+            new NAO\UserBundle\NAOUserBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
+            new NAO\ProgrammesBundle\NAOProgrammesBundle(),
+            new NAO\FaqBundle\NAOFaqBundle(),
+            new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
+            new Gregwar\CaptchaBundle\GregwarCaptchaBundle(),
+            new MediaFigaro\GoogleAnalyticsApi\GoogleAnalyticsApi(),
+            new FOS\RestBundle\FOSRestBundle(),
+            new JMS\SerializerBundle\JMSSerializerBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
@@ -23,6 +32,7 @@ class AppKernel extends Kernel
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
+            $bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle();
         }
 
         return $bundles;
