@@ -60,6 +60,13 @@ class Observation
     */
     private $image;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="author", type="text")
+     */
+    private $author;
+
 
     /**
      * Get id
@@ -213,5 +220,29 @@ class Observation
     public function getImage()
     {
         return $this->image;
+    }
+
+    /**
+     * Set author
+     *
+     * @param string $author
+     *
+     * @return Observation
+     */
+    public function setAuthor($author)
+    {
+        $this->author = $author;
+
+        return $this;
+    }
+
+    /**
+     * Get author
+     *
+     * @return string
+     */
+    public function getAuthor()
+    {
+        return $this->author;
     }
 }

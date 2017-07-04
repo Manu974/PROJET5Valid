@@ -22,9 +22,10 @@ class Observation
     private $id;
 
     /**
-     * @var string
+     * @var geometry
      *
-     * @ORM\Column(name="location", type="string", length=255)
+     * @ORM\Column(name="location", type="geometry")
+     * 
      */
     private $location;
 
@@ -59,6 +60,13 @@ class Observation
     */
     private $image;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="author", type="text")
+     */
+    private $author;
+
 
     /**
      * Get id
@@ -73,7 +81,7 @@ class Observation
     /**
      * Set location
      *
-     * @param string $location
+     * @param point $location
      *
      * @return Observation
      */
@@ -87,7 +95,7 @@ class Observation
     /**
      * Get location
      *
-     * @return string
+     * @return Observation
      */
     public function getLocation()
     {
@@ -188,5 +196,29 @@ class Observation
     public function getBird()
     {
         return $this->bird;
+    }
+
+    /**
+     * Set image
+     *
+     * @param \AppBundle\Entity\ObservationImage $image
+     *
+     * @return Observation
+     */
+    public function setImage(\AppBundle\Entity\ObservationImage $image = null)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return \AppBundle\Entity\ObservationImage
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 }

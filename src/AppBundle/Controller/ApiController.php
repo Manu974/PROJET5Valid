@@ -22,6 +22,8 @@ use CrEOF\Spatial\Tests\Fixtures\NoHintGeometryEntity;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 
+use FOS\RestBundle\Controller\Annotations\View;
+
 
 
 class ApiController extends Controller
@@ -32,7 +34,9 @@ class ApiController extends Controller
      *     name = "app_obs_show",
      *     requirements = {"id"="\d+"}
      * )
-     * @Rest\View
+     * @Rest\View(
+     *     statusCode = 200
+     * )
      */
     public function showAction(Observation $observation)
     {
@@ -41,8 +45,11 @@ class ApiController extends Controller
 
 
     /**
-     * @Rest\Post("/api/observations")
-     * @Rest\View
+     * @Rest\Post( path= "/api/observations",
+     *              name= "app_obs_create")
+     * @Rest\View(
+     *     statusCode = 201
+     * )
      * 
      */
     public function createAction(Request $request)
@@ -65,5 +72,23 @@ class ApiController extends Controller
 
         
         
+    }
+
+    /**
+     * @Rest\Get(
+     *     path = "/api/observations/lists",
+     *     name = "app_obs_lists"
+     *     
+     * )
+     * @Rest\View(
+     *     statusCode = 200
+     * )
+     */
+    public function listAction()
+    {
+        $listObs = $this->getDoctrine()->getRepository('AppBundle:Observation')->findAll();
+
+        return $listObs;
+
     }
 }
