@@ -51,7 +51,7 @@ class Observation
     private $createdAt;
 
     /**
-    * @ORM\OneToOne(targetEntity="AppBundle\Entity\Bird", cascade={"persist"})
+    * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Bird", cascade={"persist"})
     */
     private $bird;
 
