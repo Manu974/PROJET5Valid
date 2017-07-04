@@ -67,6 +67,15 @@ class Observation
      */
     private $author;
 
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="department", type="integer")
+     */
+    private $department;
+
+
+
 
     /**
      * Get id
@@ -244,5 +253,29 @@ class Observation
     public function getAuthor()
     {
         return $this->author;
+    }
+
+    /**
+     * Set department
+     *
+     * @param integer $department
+     *
+     * @return Observation
+     */
+    public function setDepartment($department)
+    {
+        $this->department = $department;
+
+        return $this;
+    }
+
+    /**
+     * Get department
+     *
+     * @return integer
+     */
+    public function getDepartment()
+    {
+        return $this->department;
     }
 }
