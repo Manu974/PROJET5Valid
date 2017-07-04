@@ -1,10 +1,15 @@
 {# src/NAO/ProgrammesBundle/Resources/views/Page/index.html.twig #}
-
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/pages/programmes.css') }}"/>
+{% endblock %}
 {% block body %}
-    <li><a href="{{ path('nao_blog_contact') }}">Contact</a></li>
+    <section class="container">
     {% if is_granted('ROLE_NATURALISTE') %}
         <h2><a href="{{ path('nao_admin_homepage') }}">Administration</a></h2>
     {% endif %}
+        <h1 class="title"><i class="icon icon--prog"></i>Liste des programmes</h1>
     {% for blog in blogs %}
         <article class="blog">
             <header>
@@ -44,4 +49,5 @@
             </ul>
         </div>
     {% endif %}
+    </section>
 {% endblock %}
