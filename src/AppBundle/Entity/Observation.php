@@ -51,7 +51,7 @@ class Observation
     private $createdAt;
 
     /**
-    * @ORM\OneToOne(targetEntity="AppBundle\Entity\Bird", cascade={"persist"})
+    * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Bird", cascade={"persist"})
     */
     private $bird;
 
@@ -59,6 +59,43 @@ class Observation
     * @ORM\OneToOne(targetEntity="AppBundle\Entity\ObservationImage", cascade={"persist"})
     */
     private $image;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="author", type="text")
+     */
+    private $author;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="department", type="integer")
+     */
+    private $department;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombreOiseaux", type="text")
+     */
+    private $nombreOiseaux;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="maturite", type="text")
+     */
+    private $maturite;
+
+    /**
+     *
+     *
+     * @ORM\Column(name="nidification", type="boolean")
+     */
+    private $nidification;
+
+
 
 
     /**
@@ -213,5 +250,125 @@ class Observation
     public function getImage()
     {
         return $this->image;
+    }
+
+    /**
+     * Set author
+     *
+     * @param string $author
+     *
+     * @return Observation
+     */
+    public function setAuthor($author)
+    {
+        $this->author = $author;
+
+        return $this;
+    }
+
+    /**
+     * Get author
+     *
+     * @return string
+     */
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+    /**
+     * Set department
+     *
+     * @param integer $department
+     *
+     * @return Observation
+     */
+    public function setDepartment($department)
+    {
+        $this->department = $department;
+
+        return $this;
+    }
+
+    /**
+     * Get department
+     *
+     * @return integer
+     */
+    public function getDepartment()
+    {
+        return $this->department;
+    }
+
+    /**
+     * Set nombreOiseaux
+     *
+     * @param string $nombreOiseaux
+     *
+     * @return Observation
+     */
+    public function setNombreOiseaux($nombreOiseaux)
+    {
+        $this->nombreOiseaux = $nombreOiseaux;
+
+        return $this;
+    }
+
+    /**
+     * Get nombreOiseaux
+     *
+     * @return string
+     */
+    public function getNombreOiseaux()
+    {
+        return $this->nombreOiseaux;
+    }
+
+    /**
+     * Set maturite
+     *
+     * @param string $maturite
+     *
+     * @return Observation
+     */
+    public function setMaturite($maturite)
+    {
+        $this->maturite = $maturite;
+
+        return $this;
+    }
+
+    /**
+     * Get maturite
+     *
+     * @return string
+     */
+    public function getMaturite()
+    {
+        return $this->maturite;
+    }
+
+    /**
+     * Set nidification
+     *
+     * @param boolean $nidification
+     *
+     * @return Observation
+     */
+    public function setNidification($nidification)
+    {
+        $this->nidification = $nidification;
+
+        return $this;
+    }
+
+    /**
+     * Get nidification
+     *
+     * @return boolean
+     */
+    public function getNidification()
+    {
+        return $this->nidification;
     }
 }
