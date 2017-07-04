@@ -5,6 +5,7 @@ namespace AppBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class BirdType extends AbstractType
 {
@@ -13,7 +14,22 @@ class BirdType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('regne')->add('phylum')->add('classe')->add('ordre')->add('famille')->add('cdNom')->add('cdTaxsup')->add('cdRef')->add('rang')->add('lbNom')->add('lbAuteur')->add('nomComplet')->add('nomValide')->add('nomVern')->add('nomVernEng')->add('habitat')->add('fr')->add('gf')->add('mar')->add('gua')->add('sm')->add('sb')->add('spm')->add('may')->add('epa')->add('reu')->add('sa')->add('ta')->add('taaf')->add('nc')->add('wf')->add('pf')->add('cli');
+        $builder
+            ->add('famille', EntityType::class, [
+                'class'        => 'AppBundle:Bird',
+                'choice_label' => 'famille',
+                'multiple'     => false,
+              ])
+            ->add('lb_nom', EntityType::class, [
+                'class'        => 'AppBundle:Bird',
+                'choice_label' => 'lb_nom',
+                'multiple'     => false,
+              ])
+            ->add('nomVern', EntityType::class, [
+                'class'        => 'AppBundle:Bird',
+                'choice_label' => 'nomVern',
+                'multiple'     => false,
+              ]);
     }
     
     /**
