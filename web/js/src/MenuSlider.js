@@ -1,4 +1,4 @@
-export default class MenuSlider {
+class MenuSlider {
     constructor (menu, navbar, width) {
         this.navbarMobile = document.querySelector(navbar);
         this.menuBurger   = document.querySelector(menu);
