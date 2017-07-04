@@ -73,21 +73,7 @@ class Observation
      * @ORM\Column(name="department", type="integer")
      */
     private $department;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="nomVernaculaire", type="text")
-     */
-    private $nomVernaculaire;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="nomScientifique", type="text")
-     */
-    private $nomScientifique;
-
+    
     /**
      * @var string
      *
@@ -312,54 +298,6 @@ class Observation
     public function getDepartment()
     {
         return $this->department;
-    }
-
-    /**
-     * Set nomVernaculaire
-     *
-     * @param string $nomVernaculaire
-     *
-     * @return Observation
-     */
-    public function setNomVernaculaire($nomVernaculaire)
-    {
-        $this->nomVernaculaire = $nomVernaculaire;
-
-        return $this;
-    }
-
-    /**
-     * Get nomVernaculaire
-     *
-     * @return string
-     */
-    public function getNomVernaculaire()
-    {
-        return $this->nomVernaculaire;
-    }
-
-    /**
-     * Set nomScientifique
-     *
-     * @param string $nomScientifique
-     *
-     * @return Observation
-     */
-    public function setNomScientifique($nomScientifique)
-    {
-        $this->nomScientifique = $nomScientifique;
-
-        return $this;
-    }
-
-    /**
-     * Get nomScientifique
-     *
-     * @return string
-     */
-    public function getNomScientifique()
-    {
-        return $this->nomScientifique;
     }
 
     /**
