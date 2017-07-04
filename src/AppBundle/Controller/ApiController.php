@@ -69,9 +69,6 @@ class ApiController extends Controller
         $em->persist($observation);
         $em->flush();
 
-
-        
-        
     }
 
     /**

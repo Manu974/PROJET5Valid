@@ -25,7 +25,11 @@ class ObservationType extends AbstractType
     {
         $builder
             ->add('createdAt', DateTimeType::class)
-            ->add('department', ChoiceType::class)
+            ->add('department', EntityType::class, [
+                'class'        => 'AppBundle:Departement',
+                'choice_label' => 'code',
+                'multiple'     => false,
+              ])
             ->add('location')
             ->add('nomVernaculaire', EntityType::class, [
                 'class'        => 'AppBundle:Bird',
