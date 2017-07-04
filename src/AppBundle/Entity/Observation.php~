@@ -74,6 +74,41 @@ class Observation
      */
     private $department;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nomVernaculaire", type="text")
+     */
+    private $nomVernaculaire;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nomScientifique", type="text")
+     */
+    private $nomScientifique;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombreOiseaux", type="text")
+     */
+    private $nombreOiseaux;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="maturite", type="text")
+     */
+    private $maturite;
+
+    /**
+     *
+     *
+     * @ORM\Column(name="nidification", type="boolean")
+     */
+    private $nidification;
+
 
 
 
@@ -253,5 +288,29 @@ class Observation
     public function getAuthor()
     {
         return $this->author;
+    }
+
+    /**
+     * Set department
+     *
+     * @param integer $department
+     *
+     * @return Observation
+     */
+    public function setDepartment($department)
+    {
+        $this->department = $department;
+
+        return $this;
+    }
+
+    /**
+     * Get department
+     *
+     * @return integer
+     */
+    public function getDepartment()
+    {
+        return $this->department;
     }
 }

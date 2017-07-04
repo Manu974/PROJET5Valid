@@ -74,6 +74,41 @@ class Observation
      */
     private $department;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nomVernaculaire", type="text")
+     */
+    private $nomVernaculaire;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nomScientifique", type="text")
+     */
+    private $nomScientifique;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombreOiseaux", type="text")
+     */
+    private $nombreOiseaux;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="maturite", type="text")
+     */
+    private $maturite;
+
+    /**
+     *
+     *
+     * @ORM\Column(name="nidification", type="boolean")
+     */
+    private $nidification;
+
 
 
 
@@ -277,5 +312,125 @@ class Observation
     public function getDepartment()
     {
         return $this->department;
+    }
+
+    /**
+     * Set nomVernaculaire
+     *
+     * @param string $nomVernaculaire
+     *
+     * @return Observation
+     */
+    public function setNomVernaculaire($nomVernaculaire)
+    {
+        $this->nomVernaculaire = $nomVernaculaire;
+
+        return $this;
+    }
+
+    /**
+     * Get nomVernaculaire
+     *
+     * @return string
+     */
+    public function getNomVernaculaire()
+    {
+        return $this->nomVernaculaire;
+    }
+
+    /**
+     * Set nomScientifique
+     *
+     * @param string $nomScientifique
+     *
+     * @return Observation
+     */
+    public function setNomScientifique($nomScientifique)
+    {
+        $this->nomScientifique = $nomScientifique;
+
+        return $this;
+    }
+
+    /**
+     * Get nomScientifique
+     *
+     * @return string
+     */
+    public function getNomScientifique()
+    {
+        return $this->nomScientifique;
+    }
+
+    /**
+     * Set nombreOiseaux
+     *
+     * @param string $nombreOiseaux
+     *
+     * @return Observation
+     */
+    public function setNombreOiseaux($nombreOiseaux)
+    {
+        $this->nombreOiseaux = $nombreOiseaux;
+
+        return $this;
+    }
+
+    /**
+     * Get nombreOiseaux
+     *
+     * @return string
+     */
+    public function getNombreOiseaux()
+    {
+        return $this->nombreOiseaux;
+    }
+
+    /**
+     * Set maturite
+     *
+     * @param string $maturite
+     *
+     * @return Observation
+     */
+    public function setMaturite($maturite)
+    {
+        $this->maturite = $maturite;
+
+        return $this;
+    }
+
+    /**
+     * Get maturite
+     *
+     * @return string
+     */
+    public function getMaturite()
+    {
+        return $this->maturite;
+    }
+
+    /**
+     * Set nidification
+     *
+     * @param boolean $nidification
+     *
+     * @return Observation
+     */
+    public function setNidification($nidification)
+    {
+        $this->nidification = $nidification;
+
+        return $this;
+    }
+
+    /**
+     * Get nidification
+     *
+     * @return boolean
+     */
+    public function getNidification()
+    {
+        return $this->nidification;
     }
 }
