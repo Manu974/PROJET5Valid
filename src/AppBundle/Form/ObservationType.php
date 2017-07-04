@@ -42,8 +42,23 @@ class ObservationType extends AbstractType
                 'choice_label' => 'famille',
                 'multiple'     => false,
               ])
-            ->add('nombreOiseaux', ChoiceType::class)
-            ->add('maturite', ChoiceType::class)
+            ->add('nombreOiseaux', ChoiceType::class, [
+                'choices' => [
+                    'Seul' => 'Seul',
+                    'Couple' => 'Couple',
+                    'Famille' => 'Famille',
+                    'Groupe' => 'Groupe',
+                ],
+                ])
+            ->add('maturite', ChoiceType::class, [
+                'choices' => [
+                    'Poussin' => 'Poussin',
+                    'Juvénile' => 'Juvénile',
+                    'Immature' => 'Immature',
+                    'Sub-adulte' => 'Sub-adulte',
+                    'Adulte' => 'Adulte',
+                ],
+                ])
             ->add('nidification', CheckboxType::class, [
                 'label' => 'nidification',
                 'required' => false
@@ -51,7 +66,7 @@ class ObservationType extends AbstractType
                 ])
             ->add('comment', TextareaType::class)
             ->add('image', ObservationImageType::class)
-            ->add('author')
+            ->add('author', TextType::class)
             ->add('save',      SubmitType::class);
     }
     
