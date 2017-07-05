@@ -91,7 +91,7 @@ a {
 
 /***** HEADER *****/
 .header {
-    position: relative;
+    position: fixed;
     z-index: 10;
     font-size: 0.99em;
     height: 125px;
@@ -120,13 +120,13 @@ a {
 }
 .navbar-mobile-content {
     display: none;
+    position: fixed;
     z-index: 1;
     text-transform: uppercase;
     text-align: center;
     padding: 20px 0 0 15px;
     transition: .4s ease-in-out;
     color: #E6E6E6;
-    position: absolute;
     box-shadow: -3px 0 6px #111;
     right: -305px;
     top: 122px;
