@@ -2,11 +2,231 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c466b500-8ed3-4b85-8082-6e8aee2694a8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/CARTE DESK NAV.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/CARTE DESK NAV.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/CARTE DESK NAV@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/CARTE DESK NAV@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/CARTE DESK NAV@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/CARTE DESK NAV@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/CONNEXION CADENAS DESK.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/CONNEXION CADENAS DESK.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/CONNEXION CADENAS DESK@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/CONNEXION CADENAS DESK@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/CONNEXION CADENAS DESK@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/CONNEXION CADENAS DESK@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/CONTACT NAV.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/CONTACT NAV.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/CONTACT NAV@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/CONTACT NAV@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/CONTACT NAV@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/CONTACT NAV@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/EXPORTER LES DONNEES.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/EXPORTER LES DONNEES.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/EXPORTER LES DONNEES@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/EXPORTER LES DONNEES@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/FAQ NAV-green.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/FAQ NAV-green.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/FAQ NAV.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/FAQ NAV.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/FAQ NAV@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/FAQ NAV@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/FAQ NAV@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/FAQ NAV@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/LOGO.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/LOGO.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/LOGO@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/LOGO@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/LOGO@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/LOGO@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/MAISON  NAV DESK-green.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/MAISON  NAV DESK-green.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/MAISON  NAV DESK.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/MAISON  NAV DESK.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/MAISON  NAV DESK@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/MAISON  NAV DESK@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/MAISON  NAV DESK@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/MAISON  NAV DESK@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/PROFIL USER NAV-green.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/PROFIL USER NAV-green.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/PROFIL USER NAV.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/PROFIL USER NAV.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/PROFIL USER NAV@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/PROFIL USER NAV@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/PROFIL USER NAV@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/PROFIL USER NAV@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/PUZZLE PROG NAV-green.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/PUZZLE PROG NAV-green.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/PUZZLE PROG NAV.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/PUZZLE PROG NAV.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/PUZZLE PROG NAV@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/PUZZLE PROG NAV@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/PUZZLE PROG NAV@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/PUZZLE PROG NAV@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/SAISIR OBS NAV.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/SAISIR OBS NAV.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/SAISIR OBS NAV@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/SAISIR OBS NAV@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/SAISIR OBS NAV@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/SAISIR OBS NAV@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bloc copyright.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bloc copyright.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bloc copyright@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bloc copyright@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bloc copyright@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bloc copyright@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton bloquer auteur.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton bloquer auteur.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton bloquer auteur@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton bloquer auteur@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton bloquer auteur@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton bloquer auteur@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton carte interactive.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton carte interactive.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton carte interactive@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton carte interactive@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton carte interactive@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton carte interactive@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton connexion.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton connexion.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton connexion@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton connexion@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton connexion@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton connexion@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton contribuer.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton contribuer.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton contribuer@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton contribuer@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton contribuer@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton contribuer@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton debloquer auteur.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton debloquer auteur.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton debloquer auteur@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton debloquer auteur@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton debloquer auteur@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton debloquer auteur@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton desabonner.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton desabonner.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton desabonner@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton desabonner@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton desabonner@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton desabonner@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton ecrire com.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton ecrire com.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton ecrire com@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton ecrire com@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton ecrire com@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton ecrire com@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton envoyer.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton envoyer.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton envoyer@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton envoyer@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton envoyer@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton envoyer@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton envoyer_1.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton envoyer_1.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton envoyer_1@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton envoyer_1@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton envoyer_1@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton envoyer_1@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton gerer com.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton gerer com.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton gerer com@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton gerer com@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton gerer com@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton gerer com@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton lire la suite.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton lire la suite.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton lire la suite@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton lire la suite@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton lire la suite@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton lire la suite@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton lire les coms.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton lire les coms.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton lire les coms@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton lire les coms@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton lire les coms@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton lire les coms@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton m4abonner.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton m4abonner.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton m4abonner@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton m4abonner@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton m4abonner@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton m4abonner@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton me localiser.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton me localiser.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton me localiser@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton me localiser@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton me localiser@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton me localiser@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton moderer.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton moderer.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton moderer@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton moderer@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton moderer@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton moderer@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton modifier.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton modifier.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton modifier@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton modifier@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton modifier@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton modifier@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton nous contacter.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton nous contacter.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton nous contacter@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton nous contacter@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton nous contacter@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton nous contacter@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton ok cookies.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton ok cookies.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton ok cookies@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton ok cookies@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton ok cookies@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton ok cookies@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton publier.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton publier.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton publier@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton publier@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton publier@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton publier@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton rechercher.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton rechercher.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton rechercher@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton rechercher@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton rechercher@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton rechercher@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton reediter.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton reediter.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton reediter@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton reediter@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton reediter@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton reediter@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton retirer signalement.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton retirer signalement.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton retirer signalement@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton retirer signalement@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton retirer signalement@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton retirer signalement@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton s4inscrire.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton s4inscrire.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton s4inscrire@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton s4inscrire@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton s4inscrire@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton s4inscrire@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton saisir obs.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton saisir obs.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton saisir obs@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton saisir obs@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton saisir obs@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton saisir obs@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton se connecter.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton se connecter.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton se connecter@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton se connecter@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton se connecter@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton se connecter@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton signaler.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton signaler.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton signaler@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton signaler@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton signaler@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton signaler@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton sup compte.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton sup compte.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton sup compte@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton sup compte@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton sup compte@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton sup compte@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton supprimer.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton supprimer.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton supprimer@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton supprimer@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton supprimer@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton supprimer@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton supprimler.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton supprimler.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton supprimler@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton supprimler@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton supprimler@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton supprimler@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton valider.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton valider.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton valider@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton valider@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton valider@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton valider@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton vue detaillee.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton vue detaillee.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton vue detaillee@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton vue detaillee@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/bouton vue detaillee@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/bouton vue detaillee@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/case check.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/case check.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/case check@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/case check@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/case check@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/case check@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/compte admin nav.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/compte admin nav.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/compte admin nav@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/compte admin nav@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/compte admin nav@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/compte admin nav@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/compte pro nav.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/compte pro nav.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/compte pro nav@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/compte pro nav@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/compte pro nav@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/compte pro nav@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/flèche gauche transparente.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/flèche gauche transparente.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone agenda.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone agenda.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone agenda@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone agenda@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone agenda@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone agenda@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone copyright.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone copyright.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone copyright@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone copyright@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone copyright@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone copyright@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone courrier electronique.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone courrier electronique.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone courrier electronique@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone courrier electronique@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone courrier electronique@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone courrier electronique@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone dialogue-echange.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone dialogue-echange.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone dialogue-echange@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone dialogue-echange@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone dialogue-echange@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone dialogue-echange@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone enveloppe-contact-green.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone enveloppe-contact-green.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone enveloppe-contact.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone enveloppe-contact.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone enveloppe-contact@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone enveloppe-contact@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone enveloppe-contact@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone enveloppe-contact@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone exporter.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone exporter.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone exporter@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone exporter@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone exporter@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone exporter@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone facebook-active.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone facebook-active.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone facebook.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone facebook.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone facebook@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone facebook@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone facebook@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone facebook@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone importer.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone importer.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone importer@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone importer@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone importer@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone importer@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone maison grise.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone maison grise.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone maison grise@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone maison grise@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone maison grise@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone maison grise@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone maison verte.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone maison verte.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone maison verte@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone maison verte@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone maison verte@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone maison verte@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone mentions -docs-green.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone mentions -docs-green.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone mentions -docs.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone mentions -docs.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone mentions -docs@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone mentions -docs@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone mentions -docs@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone mentions -docs@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone newsletter-green.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone newsletter-green.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone newsletter.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone newsletter.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone newsletter@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone newsletter@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone newsletter@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone newsletter@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone poubelle.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone poubelle.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone poubelle@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone poubelle@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone poubelle@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone poubelle@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone rapide carte-green.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone rapide carte-green.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone rapide carte.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone rapide carte.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone rapide carte@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone rapide carte@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone rapide carte@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone rapide carte@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone rapide connexion-green.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone rapide connexion-green.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone rapide connexion.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone rapide connexion.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone rapide connexion@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone rapide connexion@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone rapide connexion@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone rapide connexion@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone rapide espace pro.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone rapide espace pro.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone rapide espace pro@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone rapide espace pro@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone rapide espace pro@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone rapide espace pro@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone rapide saisir une obs-green.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone rapide saisir une obs-green.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone rapide saisir une obs.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone rapide saisir une obs.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone rapide saisir une obs@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone rapide saisir une obs@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone rapide saisir une obs@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone rapide saisir une obs@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone recherche carte.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone recherche carte.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone recherche carte@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone recherche carte@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone recherche carte@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone recherche carte@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone twitter-active.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone twitter-active.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone twitter.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone twitter.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone twitter@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone twitter@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone twitter@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone twitter@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone you tube-active.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone you tube-active.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone you tube.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone you tube.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone you tube@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone you tube@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/icone you tube@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/icone you tube@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/img defaut oiseau.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/img defaut oiseau.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/img defaut oiseau@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/img defaut oiseau@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/img defaut oiseau@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/img defaut oiseau@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/menu burger-green.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/menu burger-green.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/menu burger.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/menu burger.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/menu burger@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/menu burger@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/menu burger@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/menu burger@3x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/pouce inverse com.svg" afterPath="$PROJECT_DIR$/web/asset/logo-icones/pouce inverse com.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/pouce inverse com@2x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/pouce inverse com@2x.png.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/images/logo-icones/pouce inverse com@3x.png.png" afterPath="$PROJECT_DIR$/web/asset/logo-icones/pouce inverse com@3x.png.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/PROJET5.iml" afterPath="$PROJECT_DIR$/.idea/PROJET5.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/security.yml" afterPath="$PROJECT_DIR$/app/config/security.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/NAO/ProgrammesBundle/Resources/views/page/index.html.twig" afterPath="$PROJECT_DIR$/src/NAO/ProgrammesBundle/Resources/views/page/index.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/app.css" afterPath="$PROJECT_DIR$/web/css/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/app.js" afterPath="$PROJECT_DIR$/web/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/src/MenuSlider.js" afterPath="$PROJECT_DIR$/web/js/src/MenuSlider.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/pages/programmes.css" afterPath="$PROJECT_DIR$/web/css/pages/programmes.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,32 +241,88 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/app.js">
+      <file leaf-file-name="programmes.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/css/pages/programmes.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <state relative-caret-position="487">
+              <caret line="55" column="17" lean-forward="false" selection-start-line="55" selection-start-column="17" selection-end-line="55" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/css/app.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="198" column="15" lean-forward="false" selection-start-line="198" selection-start-column="15" selection-end-line="198" selection-end-column="15" />
+            <state relative-caret-position="-3874">
+              <caret line="51" column="18" lean-forward="false" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MenuSlider.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/src/MenuSlider.js">
+      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/NAO/ProgrammesBundle/Resources/views/page/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="16" column="43" lean-forward="false" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
+            <state relative-caret-position="415">
+              <caret line="49" column="94" lean-forward="false" selection-start-line="49" selection-start-column="94" selection-end-line="49" selection-end-column="94" />
+              <folding>
+                <element signature="e#1789#1802#0#Twig" expanded="true" />
+                <element signature="e#1928#1941#0#Twig" expanded="true" />
+                <element signature="e#2138#2151#0#Twig" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BlogFixtures.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/NAO/ProgrammesBundle/DataFixtures/ORM/BlogFixtures.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="443">
+              <caret line="52" column="34" lean-forward="false" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommentController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/NAO/ProgrammesBundle/Controller/CommentController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdminController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/NAO/ProgrammesBundle/Controller/AdminController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="585">
+              <caret line="226" column="14" lean-forward="false" selection-start-line="226" selection-start-column="14" selection-end-line="226" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BlogController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/NAO/ProgrammesBundle/Controller/BlogController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PageController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/NAO/ProgrammesBundle/Controller/PageController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-477">
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding>
+                <element signature="e#109#152#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -54,8 +330,8 @@
       <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="115" column="45" lean-forward="false" selection-start-line="115" selection-start-column="45" selection-end-line="115" selection-end-column="45" />
+            <state relative-caret-position="440">
+              <caret line="97" column="24" lean-forward="false" selection-start-line="97" selection-start-column="24" selection-end-line="97" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -67,6 +343,8 @@
     <findStrings>
       <find>jf_</find>
       <find>jf</find>
+      <find>box-shadow</find>
+      <find>text</find>
     </findStrings>
     <replaceStrings>
       <replace>nao_</replace>
@@ -78,9 +356,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/views/Security/login_content.html.twig" />
-        <option value="$PROJECT_DIR$/app/config/security.yml" />
-        <option value="$PROJECT_DIR$/src/NAO/UserBundle/Resources/views/user.html.twig" />
         <option value="$PROJECT_DIR$/src/NAO/ProgrammesBundle/Resources/views/Admin/article.html.twig" />
         <option value="$PROJECT_DIR$/src/NAO/ProgrammesBundle/Controller/AdminController.php" />
         <option value="$PROJECT_DIR$/src/NAO/UserBundle/Resources/views/user/user.html.twig" />
@@ -100,7 +375,6 @@
         <option value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Form/Type/RegistrationFormType.php" />
         <option value="$PROJECT_DIR$/src/NAO/FaqBundle/Resources/views/Admin/index.html.twig" />
         <option value="$PROJECT_DIR$/src/NAO/FaqBundle/Resources/views/Faq/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/NAO/ProgrammesBundle/Resources/views/page/index.html.twig" />
         <option value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/config/routing/registration.xml" />
         <option value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php" />
         <option value="$PROJECT_DIR$/src/NAO/UserBundle/PswdCtrl/PswdCtrl.php" />
@@ -127,8 +401,12 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/web/js/src/MenuSlider.js" />
         <option value="$PROJECT_DIR$/web/js/app.js" />
-        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/web/css/app.css" />
+        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/background-img/background-img.html.twg" />
+        <option value="$PROJECT_DIR$/web/css/pages/programmes.css" />
+        <option value="$PROJECT_DIR$/src/NAO/ProgrammesBundle/DataFixtures/ORM/BlogFixtures.php" />
+        <option value="$PROJECT_DIR$/src/NAO/ProgrammesBundle/Resources/views/page/index.html.twig" />
       </list>
     </option>
   </component>
@@ -140,7 +418,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="716" />
+    <option name="x" value="611" />
     <option name="y" value="23" />
     <option name="width" value="1437" />
     <option name="height" value="1125" />
@@ -163,6 +441,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -185,7 +465,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -199,11 +479,11 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
+              <option name="myItemId" value="NAO" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -217,11 +497,71 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="NAO" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProgrammesBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project5" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NAO" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProgrammesBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DataFixtures" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ORM" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project5" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NAO" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProgrammesBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controller" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -256,11 +596,31 @@
               <option name="myItemId" value="Resources" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project5" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -270,16 +630,18 @@
     <property name="js.eslint.eslintPackage" value="" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\wamp2\www\projet_5\PROJET5\src\NAO\FaqBundle\Resources" />
-      <recent name="D:\wamp2\www\projet_5\PROJET5\src\NAO\UserBundle\Resources\views\user" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/asset/images" />
       <recent name="D:\wamp2\www\projet_5\PROJET5\app\Resources\FOSUserBundle" />
       <recent name="D:\wamp2\www\projet_5\PROJET5\src\NAO\UserBundle\Form" />
       <recent name="D:\wamp2\www\projet_5\PROJET5\src\NAO\UserBundle" />
       <recent name="D:\wamp2\www\projet_5\PROJET5\src\NAO\UserBundle\Resources\views\User" />
-      <recent name="D:\wamp2\www\projet_5\PROJET5\src\NAO\FaqBundle" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/images" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="D:\wamp2\www\projet_5\PROJET5\src\NAO\FaqBundle\Resources" />
+      <recent name="D:\wamp2\www\projet_5\PROJET5\src\NAO\UserBundle\Resources\views\user" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -367,46 +729,34 @@
       <workItem from="1498451901674" duration="52149000" />
       <workItem from="1498629011034" duration="32091000" />
       <workItem from="1498795804181" duration="8565000" />
+      <workItem from="1499187888595" duration="11969000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99616000" />
+    <option name="totallyTimeSpent" value="117251000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="716" y="23" width="1437" height="1125" extended-state="0" />
-    <editor active="true" />
+    <frame x="611" y="23" width="1437" height="1125" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26379928" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25734767" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913843" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913843" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32913843" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32913843" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25376344" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -436,64 +786,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/views/Registration/register_content.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/config/routing/resetting.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/NAO/UserBundle/CtrlNbBillet/MdLCtrlNbBillet.php" />
-    <entry file="file://$PROJECT_DIR$/src/NAO/UserBundle/PswdCtrl/PswdCtrl.php" />
-    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" column="38" lean-forward="true" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/NAO/UserBundle/PswdCtrl/NAOPswdCtrl.php" />
-    <entry file="file://$PROJECT_DIR$/src/NAO/UserBundle/Resources/config/services.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Doctrine/UserListener.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1200">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Doctrine/UserManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2019">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/views/ChangePassword/change_password.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/NAO/UserBundle/Form/PswdType.php" />
     <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/views/Security/login_content.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -731,15 +1028,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1011">
           <caret line="116" column="40" lean-forward="false" selection-start-line="116" selection-start-column="40" selection-end-line="116" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="115" column="45" lean-forward="false" selection-start-line="115" selection-start-column="45" selection-end-line="115" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -747,7 +1035,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="16" column="43" lean-forward="false" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -755,15 +1042,107 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/asset/images/aigle-150px.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/asset/images/aigle-3872px.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/asset/images/bouvreuil-600px.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="97" column="24" lean-forward="false" selection-start-line="97" selection-start-column="24" selection-end-line="97" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NAO/ProgrammesBundle/Controller/PageController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-477">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <element signature="e#109#152#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NAO/ProgrammesBundle/Controller/BlogController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NAO/ProgrammesBundle/Controller/CommentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NAO/ProgrammesBundle/Controller/AdminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="226" column="14" lean-forward="false" selection-start-line="226" selection-start-column="14" selection-end-line="226" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/background-img/background-img.html.twg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="12" lean-forward="false" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/css/app.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="198" column="15" lean-forward="false" selection-start-line="198" selection-start-column="15" selection-end-line="198" selection-end-column="15" />
+        <state relative-caret-position="-3874">
+          <caret line="51" column="18" lean-forward="false" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/pages/programmes.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="487">
+          <caret line="55" column="17" lean-forward="false" selection-start-line="55" selection-start-column="17" selection-end-line="55" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NAO/ProgrammesBundle/DataFixtures/ORM/BlogFixtures.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="52" column="34" lean-forward="false" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NAO/ProgrammesBundle/Resources/views/page/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="49" column="94" lean-forward="false" selection-start-line="49" selection-start-column="94" selection-end-line="49" selection-end-column="94" />
+          <folding>
+            <element signature="e#1789#1802#0#Twig" expanded="true" />
+            <element signature="e#1928#1941#0#Twig" expanded="true" />
+            <element signature="e#2138#2151#0#Twig" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
