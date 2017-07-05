@@ -7,6 +7,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Bird;
 use AppBundle\Entity\Observation;
+use AppBundle\Entity\ObservationImage;
+use AppBundle\Form\ObservationType;
+use AppBundle\Form\BirdType;
+use AppBundle\Form\ObservationImageType;
 use CrEOF\Spatial\PHP\Types\Geometry\LineString;
 use CrEOF\Spatial\PHP\Types\Geometry\Point;
 use CrEOF\Spatial\PHP\Types\Geometry\Polygon;
@@ -44,5 +48,31 @@ class HomeController extends Controller
         return $this->render('default/index.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
         ]);
+    }
+
+    /**
+     * @Route("/observation", name="observationpage")
+     */
+    public function observationAction(Request $request)
+    {  
+        $observation = new Observation();
+        $form   = $this->get('form.factory')->create(ObservationType::class, $observation);
+
+        if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($observation);
+            $em->flush();
+
+             $request->getSession()->getFlashBag()->add('notice', 'Annonce bien enregistrée.');
+
+                
+            }
+
+    return $this->render('observation/add.html.twig', array(
+      'form' => $form->createView(),
+    ));
+
+
+
     }
 }
