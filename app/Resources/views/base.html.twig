@@ -15,7 +15,7 @@
         <header class="header">
             <div class="container">
                 <a href="#">
-                    <img src="{{ asset('images/logo-icones/LOGO.svg') }}" alt="" class="header-logo">
+                    <img src="{{ asset('asset/logo-icones/LOGO.svg') }}" alt="" class="header-logo">
                 </a>
                 <nav class="header-navbar hidden-sm">
                     <a href="#" class="header-navbar-item">
@@ -138,6 +138,7 @@
             </div>
         </footer>
         {% block javascripts %}
+            <script src="{{ asset('js/src/HeaderShrink.js') }}"></script>
             <script src="{{ asset('js/src/MenuSlider.js') }}"></script>
             <script src="{{ asset('js/app.js') }}"></script>
         {% endblock %}

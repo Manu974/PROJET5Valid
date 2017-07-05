@@ -1,4 +1,10 @@
 class MenuSlider {
+    /**
+     *
+     * @param menu, Element to listen on the click
+     * @param navbar, This navigation bar
+     * @param width, The new width for the display of the navigation bar
+     */
     constructor (menu, navbar, width) {
         this.navbarMobile = document.querySelector(navbar);
         this.menuBurger   = document.querySelector(menu);
@@ -11,6 +17,12 @@ class MenuSlider {
         this.navbarMobile.addEventListener('click', e => { e.stopPropagation(); });
     }
 
+    /**
+     * @param event
+     * @param element
+     *
+     * Display the menu of when he is visible or not.
+     */
     slideMenu (event = null, element = null) {
         if (event) { event.stopPropagation(); }
 
