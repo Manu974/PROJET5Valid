@@ -8,6 +8,10 @@ body {
 a {
     text-decoration: none;
 }
+/***** BACKGROUND IMG *****/
+.section-img {
+    padding-top: 130px;
+}
 /***** TEXT *****/
 .text-pull-right.md {
     text-align: right;
@@ -96,6 +100,7 @@ a {
     font-size: 0.99em;
     height: 125px;
     width: 100%;
+    transition: .2s;
     background-color: #282829;
     display: -webkit-box;
     display: -ms-flexbox;
