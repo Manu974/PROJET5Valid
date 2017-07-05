@@ -49,12 +49,7 @@ class Observation
      * @ORM\Column(name="createdAt", type="datetime")
      */
     private $createdAt;
-
-    /**
-    * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Bird", cascade={"persist"})
-    */
-    private $bird;
-
+    
     /**
     * @ORM\OneToOne(targetEntity="AppBundle\Entity\ObservationImage", cascade={"persist"})
     */
@@ -94,6 +89,27 @@ class Observation
      * @ORM\Column(name="nidification", type="boolean")
      */
     private $nidification;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nomVernaculaire", type="text")
+     */
+    private $nomVernaculaire;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nomScientifique", type="text")
+     */
+    private $nomScientifique;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="famille", type="text")
+     */
+    private $famille;
 
 
 
@@ -204,29 +220,7 @@ class Observation
         return $this->createdAt;
     }
 
-    /**
-     * Set bird
-     *
-     * @param \AppBundle\Entity\Bird $bird
-     *
-     * @return Observation
-     */
-    public function setBird(\AppBundle\Entity\Bird $bird = null)
-    {
-        $this->bird = $bird;
 
-        return $this;
-    }
-
-    /**
-     * Get bird
-     *
-     * @return \AppBundle\Entity\Bird
-     */
-    public function getBird()
-    {
-        return $this->bird;
-    }
 
     /**
      * Set image

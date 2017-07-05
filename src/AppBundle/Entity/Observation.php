@@ -49,12 +49,7 @@ class Observation
      * @ORM\Column(name="createdAt", type="datetime")
      */
     private $createdAt;
-
-    /**
-    * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Bird", cascade={"persist"})
-    */
-    private $bird;
-
+    
     /**
     * @ORM\OneToOne(targetEntity="AppBundle\Entity\ObservationImage", cascade={"persist"})
     */
@@ -94,6 +89,27 @@ class Observation
      * @ORM\Column(name="nidification", type="boolean")
      */
     private $nidification;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nomVernaculaire", type="text")
+     */
+    private $nomVernaculaire;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nomScientifique", type="text")
+     */
+    private $nomScientifique;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="famille", type="text")
+     */
+    private $famille;
 
 
 
@@ -204,29 +220,7 @@ class Observation
         return $this->createdAt;
     }
 
-    /**
-     * Set bird
-     *
-     * @param \AppBundle\Entity\Bird $bird
-     *
-     * @return Observation
-     */
-    public function setBird(\AppBundle\Entity\Bird $bird = null)
-    {
-        $this->bird = $bird;
 
-        return $this;
-    }
-
-    /**
-     * Get bird
-     *
-     * @return \AppBundle\Entity\Bird
-     */
-    public function getBird()
-    {
-        return $this->bird;
-    }
 
     /**
      * Set image
@@ -370,5 +364,77 @@ class Observation
     public function getNidification()
     {
         return $this->nidification;
+    }
+
+    /**
+     * Set nomVernaculaire
+     *
+     * @param string $nomVernaculaire
+     *
+     * @return Observation
+     */
+    public function setNomVernaculaire($nomVernaculaire)
+    {
+        $this->nomVernaculaire = $nomVernaculaire;
+
+        return $this;
+    }
+
+    /**
+     * Get nomVernaculaire
+     *
+     * @return string
+     */
+    public function getNomVernaculaire()
+    {
+        return $this->nomVernaculaire;
+    }
+
+    /**
+     * Set nomScientifique
+     *
+     * @param string $nomScientifique
+     *
+     * @return Observation
+     */
+    public function setNomScientifique($nomScientifique)
+    {
+        $this->nomScientifique = $nomScientifique;
+
+        return $this;
+    }
+
+    /**
+     * Get nomScientifique
+     *
+     * @return string
+     */
+    public function getNomScientifique()
+    {
+        return $this->nomScientifique;
+    }
+
+    /**
+     * Set famille
+     *
+     * @param string $famille
+     *
+     * @return Observation
+     */
+    public function setFamille($famille)
+    {
+        $this->famille = $famille;
+
+        return $this;
+    }
+
+    /**
+     * Get famille
+     *
+     * @return string
+     */
+    public function getFamille()
+    {
+        return $this->famille;
     }
 }
