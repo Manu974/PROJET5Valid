@@ -1,0 +1,31 @@
+.blog-title {
+    margin-top: 40px;
+    display: flex;
+    padding: 20px 14px;
+    align-items: center;
+    height: 80px;
+}
+.blog-title h1 {
+    position: relative;
+    bottom: 6px;
+    font-variant-caps: all-petite-caps;
+    margin: auto 30px;
+    font-size: 2.4em;
+    color: #8CC63F;
+    letter-spacing: 1px;
+}
+.article {
+    padding: 20px;
+    box-shadow: 0 5px 10px #111;
+    color: #FCFAFA;
+}
+.article-title h2 {
+    font-size: 1.8em;
+}
+.comments .blogger, .comments h3{
+    color: #8CC63F;
+}
+.form-control {
+    width: 100%;
+    background-color: #BFBFBF;
+}

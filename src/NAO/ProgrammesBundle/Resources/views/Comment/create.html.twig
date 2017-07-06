@@ -1,6 +1,6 @@
 {# src/NAO/ProgrammesBundle/Resources/views/Comment/form.html.twig #}
 
-<h3 id="creat_comment"><i class="fa fa-pencil" aria-hidden="true"></i> Ajouter un commentaire</h3>
+<h3 id="creat_comment"> Ajouter un commentaire</h3>
 {{ form_start(form, {'action': path('nao_comment_create' , {'idblog' : comment.blog.id}) , 'method': 'POST', 'attr': {'class' : 'well blogger'}}) }}
     {{ form_row(form.user, {'attr': {'class': 'form-control'}}) }}
     {{ form_row(form.comment, {'attr': {'class': 'form-control'}}) }}
