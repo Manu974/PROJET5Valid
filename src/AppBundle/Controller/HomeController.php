@@ -75,4 +75,19 @@ class HomeController extends Controller
 
 
     }
+
+
+    /**
+     * @Route("/observation/carte", name="observationcartepage")
+     */
+    public function observationCarteAction(Request $request)
+    {  
+        
+    return $this->render('observation/carte.html.twig');
+
+
+
+    }
+
+    
 }

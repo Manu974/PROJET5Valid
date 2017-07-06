@@ -39,7 +39,7 @@ class Observation
     /**
      * @var bool
      *
-     * @ORM\Column(name="isValid", type="boolean")
+     * @ORM\Column(name="isValid", type="boolean", nullable=true)
      */
     private $isValid;
 
@@ -65,7 +65,7 @@ class Observation
     /**
      * @var int
      *
-     * @ORM\Column(name="department", type="integer")
+    * @ORM\Column(name="department", type="integer")
      */
     private $department;
     
@@ -222,29 +222,7 @@ class Observation
 
 
 
-    /**
-     * Set image
-     *
-     * @param \AppBundle\Entity\ObservationImage $image
-     *
-     * @return Observation
-     */
-    public function setImage(\AppBundle\Entity\ObservationImage $image = null)
-    {
-        $this->image = $image;
-
-        return $this;
-    }
-
-    /**
-     * Get image
-     *
-     * @return \AppBundle\Entity\ObservationImage
-     */
-    public function getImage()
-    {
-        return $this->image;
-    }
+    
 
     /**
      * Set author
@@ -270,29 +248,7 @@ class Observation
         return $this->author;
     }
 
-    /**
-     * Set department
-     *
-     * @param integer $department
-     *
-     * @return Observation
-     */
-    public function setDepartment($department)
-    {
-        $this->department = $department;
-
-        return $this;
-    }
-
-    /**
-     * Get department
-     *
-     * @return integer
-     */
-    public function getDepartment()
-    {
-        return $this->department;
-    }
+   
 
     /**
      * Set nombreOiseaux
@@ -364,6 +320,128 @@ class Observation
     public function getNidification()
     {
         return $this->nidification;
+    }
+
+    /**
+     * Set nomVernaculaire
+     *
+     * @param string $nomVernaculaire
+     *
+     * @return Observation
+     */
+    public function setNomVernaculaire($nomVernaculaire)
+    {
+        $this->nomVernaculaire = $nomVernaculaire;
+
+        return $this;
+    }
+
+    /**
+     * Get nomVernaculaire
+     *
+     * @return string
+     */
+    public function getNomVernaculaire()
+    {
+        return $this->nomVernaculaire;
+    }
+
+    /**
+     * Set nomScientifique
+     *
+     * @param string $nomScientifique
+     *
+     * @return Observation
+     */
+    public function setNomScientifique($nomScientifique)
+    {
+        $this->nomScientifique = $nomScientifique;
+
+        return $this;
+    }
+
+    /**
+     * Get nomScientifique
+     *
+     * @return string
+     */
+    public function getNomScientifique()
+    {
+        return $this->nomScientifique;
+    }
+
+    /**
+     * Set famille
+     *
+     * @param string $famille
+     *
+     * @return Observation
+     */
+    public function setFamille($famille)
+    {
+        $this->famille = $famille;
+
+        return $this;
+    }
+
+    /**
+     * Get famille
+     *
+     * @return string
+     */
+    public function getFamille()
+    {
+        return $this->famille;
+    }
+
+    
+
+    /**
+     * Set department
+     *
+     * @param integer $department
+     *
+     * @return Observation
+     */
+    public function setDepartment($department)
+    {
+        $this->department = $department;
+
+        return $this;
+    }
+
+    /**
+     * Get department
+     *
+     * @return integer
+     */
+    public function getDepartment()
+    {
+        return $this->department;
+    }
+
+    /**
+     * Set image
+     *
+     * @param \AppBundle\Entity\ObservationImage $image
+     *
+     * @return Observation
+     */
+    public function setImage(\AppBundle\Entity\ObservationImage $image = null)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return \AppBundle\Entity\ObservationImage
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 
     /**
