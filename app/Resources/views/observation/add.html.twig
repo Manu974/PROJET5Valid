@@ -61,6 +61,17 @@
           var geocoder = new google.maps.Geocoder();
           var address = $('#appbundle_observation_location').val();
 
+          var comment = $('#appbundle_observation_comment').val();
+          var department = $('#appbundle_observation_department').val();
+          var nombreOiseaux = $('#appbundle_observation_nombreOiseaux').val();
+          var maturite = $('#appbundle_observation_maturite').val();
+          var nidification = $('#appbundle_observation_nidification').val();
+          var nom_vernaculaire = $('#appbundle_observation_nomVernaculaire option:selected').text();
+          var nom_scientifique = $('#appbundle_observation_nomScientifique option:selected' ).text();
+          var famille = $('#appbundle_observation_famille option:selected').text();
+          var author = "pop";
+
+
           geocoder.geocode({'address': address}, function(results, status) {
             if (status === 'OK') {
               latGeolocalise = results[0].geometry.location.lat();
@@ -71,16 +82,16 @@
                   "x": latGeolocalise,
                   "y": lngGeolocalise
                 },
-                "comment": "petit oiseaux rouhe",
+                "comment": comment,
                 "image": "aa",
-                "author": "pop",
-                "department": 974,
-                "nombreOiseaux": "Seul",
-                "maturite": "Poussin",
-                "nidification": true,
-                "nom_vernaculaire": "hg",
-                "nom_scientifique": "gh",
-                "famille": "dfZEAZEAZEg"
+                "author": author,
+                "department": department,
+                "nombreOiseaux": nombreOiseaux,
+                "maturite": maturite,
+                "nidification": nidification,
+                "nom_vernaculaire": nom_vernaculaire,
+                "nom_scientifique": nom_scientifique,
+                "famille": famille
               };
 
               $.ajax({
