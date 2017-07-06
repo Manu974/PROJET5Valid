@@ -1,94 +1,114 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset="utf-8" />
     <title>observation</title>
   </head>
 
   <body>
-<h3>Saisie d'une observation</h3>
+    <h3>Saisie d'une observation</h3>
 
-<div class="well">
-  {{ form(form) }}
-</div>
+    <div class="well">
+    {{ form(form) }}
+    </div>
+    <button type="button" id="geolocalisation">Geolocaliser</button>
 
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script>
       $(function() {
 
-        
+        var latGeolocalise = 0;
+        var lngGeolocalise = 0;
+
+        $('#geolocalisation').one('click', function(){
+
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+
+              latGeolocalise = position.coords.latitude;
+              lngGeolocalise = position.coords.longitude;
+
+              var geocoder = new google.maps.Geocoder();
+              var latlng = {lat: parseFloat(latGeolocalise), lng: parseFloat(lngGeolocalise)};
+
+              geocoder.geocode({'location': latlng}, function(results, status) {
+                if (status === 'OK') {
+                  if (results[1]) {
+                    $('#appbundle_observation_location').val(results[1].formatted_address);
+                  } 
+                  else {
+                    window.alert('No results found');
+                  }
+                } 
+                else {
+                  window.alert('Geocoder failed due to: ' + status);
+                }
+              });
+
+            });
+          } 
+          else {
+          // Browser doesn't support Geolocation
+            alert("Browser doesn't support Geolocation");
+          }
+        });
 
         $('[name$="appbundle_observation"]').on('submit', function(e){
 
-          	e.preventDefault();
+          e.preventDefault();  
 
-            var geocoder = new google.maps.Geocoder();
-            var address = $('#appbundle_observation_location').val();
-            var latAddress;
-            var longtAddress;
-            
-            geocoder.geocode({'address': address}, function(results, status) {
-              if (status === 'OK') {
-              latAddress = results[0].geometry.location.lat();
-              longtAddress = results[0].geometry.location.lng();          
+          var geocoder = new google.maps.Geocoder();
+          var address = $('#appbundle_observation_location').val();
+
+          geocoder.geocode({'address': address}, function(results, status) {
+            if (status === 'OK') {
+              latGeolocalise = results[0].geometry.location.lat();
+              lngGeolocalise = results[0].geometry.location.lng();          
 
               var Observation = {
-            "location":{
-                "x": latAddress,
-                "y": longtAddress
-              },
-            "comment": "petit oiseaux rouhe",
-            "image": "aa",
-            "author": "pop",
-            "department": 974,
-            "nombreOiseaux": "Seul",
-            "maturite": "Poussin",
-            "nidification": true,
-            "nom_vernaculaire": "hg",
-            "nom_scientifique": "gh",
-            "famille": "dfZEAZEAZEg"
+                "location":{
+                  "x": latGeolocalise,
+                  "y": lngGeolocalise
+                },
+                "comment": "petit oiseaux rouhe",
+                "image": "aa",
+                "author": "pop",
+                "department": 974,
+                "nombreOiseaux": "Seul",
+                "maturite": "Poussin",
+                "nidification": true,
+                "nom_vernaculaire": "hg",
+                "nom_scientifique": "gh",
+                "famille": "dfZEAZEAZEg"
+              };
 
-            };
+              $.ajax({
+                url:'http://localhost:8000/api/observations', 
+                type : 'POST',
+                data: JSON.stringify(Observation),
+                //dataType: 'json',
+                contentType: 'application/json',
+                success: function(data){
+                  alert("succes observation enregistrer");
+                },
+                error: function(xhr, ajaxOptions, thrownError){
+                  alert(xhr.status);
+                  alert(thrownError);
+                }
+              });
 
-            $.ajax({
-            url:'http://localhost:8000/api/observations', 
-            type : 'POST',
-            data: JSON.stringify(Observation),
-            //dataType: 'json',
-            contentType: 'application/json',
-            success: function(data){
-              alert("succes observation enregistrer");
-            },
-            error: function(xhr, ajaxOptions, thrownError){
-              alert(xhr.status);
-        alert(thrownError);
+            } 
+            else {
+              alert('Geocode was not successful for the following reason: ' + status);
             }
           });
-            
-              } else {
-            alert('Geocode was not successful for the following reason: ' + status);
-             }
-
-
-        });
-
-            
-
-          	/*var dateDay = $('#appbundle_observation_createdAt_date_day').val();
-          	var dateMonth = $('#appbundle_observation_createdAt_date_m').val();
-          	var dateYears = $('#appbundle_observation_createdAt_date_day').val();
-          	alert(date);*/
-
-          	
         });
       });
-
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyZgz9fFFmD4Vf_0nJTlde0VEq6KxhFrw">
     </script>
-   </body>
+  </body>
 </html>
 
 
