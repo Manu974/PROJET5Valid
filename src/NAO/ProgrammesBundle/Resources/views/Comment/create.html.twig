@@ -4,5 +4,5 @@
 {{ form_start(form, {'action': path('nao_comment_create' , {'idblog' : comment.blog.id}) , 'method': 'POST', 'attr': {'class' : 'well blogger'}}) }}
     {{ form_row(form.user, {'attr': {'class': 'form-control'}}) }}
     {{ form_row(form.comment, {'attr': {'class': 'form-control'}}) }}
-    <input type="submit" value="Envoyer" class="btn btn-default btn-contact center-block"/>
+    <input type="submit" value="Envoyer" class="btn"/>
 {{ form_end(form) }}

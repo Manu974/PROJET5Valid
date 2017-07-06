@@ -29,7 +29,16 @@
         </header>
         <div class="article-content">
             <p>{{ blog.blog|raw }}</p>
-            <div class="date">Publié <time datetime="{{ blog.created|date('c') }}">le {{ blog.created|date('d-m-Y') }} à {{ blog.created|date('H:i:s') }}</time> - Auteur : <span class="highlight">{{blog.author}}</span></div>
+            <footer class="article-footer row">
+                <p class="columns four text-pull-left md">Publié le {{ blog.created|date('d/m/Y') }} à {{ blog.created|date('H:i:s') }}</p>
+                <p class="columns four text-center md">Auteur : {{ blog.author }}</p>
+                <a
+                    class="article-link columns four text-pull-right md"
+                    href="{{ path('nao_blog_view', { 'id': blog.id, 'slug': blog.slug }) }}#comments">
+                    {{ blog.comments|length }}
+                    Commentaires
+                </a>
+            </footer>
         </div>
     </article>
     <section class="comments container" id="comments">
@@ -45,14 +54,14 @@
                     {% else %}
                         <p class="comment-mod"><i class="fa fa-exclamation-triangle" aria-hidden="true"> Commentaire modéré par l'administrateur</i></p>
                     {% endif %}
-                    <p class="comment-brother">
-                        {% if comment.reported %}
-                            <span class="highlight"><i class="fa fa-thumbs-down highlight" aria-hidden="true"> Commentaire signalé à l'administrateur</i></span>
-                        {% else %}
-                            <a href="{{ path('nao_comment_report', { 'idcomment': comment.id, 'idblog': blog.id, 'slug': blog.slug}) }}"><i class="fa fa-thumbs-down" aria-hidden="true"> Signaler ce commentaire</i></a>
-                        {% endif %}
-                    </p>
                 </article>
+                <div class="button-group button-group--pull-right">
+                    {% if comment.reported %}
+                        <span class="highlight"><i class="fa fa-thumbs-down highlight" aria-hidden="true"> Commentaire signalé à l'administrateur</i></span>
+                    {% else %}
+                        <a class="btn btn-red btn--icon" href="{{ path('nao_comment_report', { 'idcomment': comment.id, 'idblog': blog.id, 'slug': blog.slug}) }}"><i class="icon--small icon--thumb"></i><span>Signaler</span></a>
+                    {% endif %}
+                </div>
             {% else %}
                 <p>Pas encore de commentaire pour ce sujet. Être le premier à commenter...</p>
             {% endfor %}

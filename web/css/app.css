@@ -22,6 +22,12 @@ a {
 .text-center.md {
     text-align: center;
 }
+
+/***** FORM *****/
+.form-control {
+    width: 100%;
+    background-color: #BFBFBF;
+}
 /***** DIVIDER *****/
 .divider {
     display: block;
@@ -35,28 +41,43 @@ a {
 .btn {
     display: inline-block;
     text-align: center;
+    min-width: 155px;
     height: 22px;
     line-height: 18px;
     padding: 5px 8px 5px 8px;
     font-weight: bolder;
     background-color: #8CC63F;
-    width: 145px;
     box-shadow: 0 5px 8px black;
     color: #282829;
+    border: none;
     font-variant-caps: all-small-caps;
     border-radius: 16px;
     transition: .2s;
+}
+.btn-red {
+    background-color: #C1272D;
+    color: #FAFAFA;
+}
+.btn.btn-red:hover {
+    color: #FAFAFA;
 }
 .btn:hover {
     color: #282829;
     box-shadow: 0 3px 6px black;;
 }
+.btn--icon {
+    display: flex;
+    justify-content: space-around;
+}
 .button-group {
     display: flex;
-    margin: 26px 0;
+    margin: 10px 0 10px 0;
 }
 .button-group.button-group--space-between {
     justify-content: space-between;
+}
+.button-group--pull-right {
+    justify-content: flex-end;
 }
 /***** ICONS *****/
 .icon {
@@ -67,7 +88,7 @@ a {
     transition: .2s;
 }
 .icon--small {
-    display: inline-block;
+    display: inline-flex;
     width: 16px;
     height: 16px;
 }
@@ -91,6 +112,11 @@ a {
 .icon--copyright {  background: url('../asset/logo-icones/icone copyright.svg') no-repeat 0 0;  }
 .icon--burger {  background: url('../asset/logo-icones/menu burger.svg') no-repeat 0 0;  }
 .icon--arrow {  background: url('../asset/logo-icones/flèche gauche transparente.svg') no-repeat 0 0;  }
+.icon--thumb {
+    position: relative;
+    top: 4px;
+    background: url('../asset/logo-icones/icone pouce inversé.svg') no-repeat 0 0;
+}
 .icon--burger.is_active {  background: url('../asset/logo-icones/menu burger-green.svg') no-repeat 0 0;  }
 
 /***** HEADER *****/
