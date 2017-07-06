@@ -15,9 +15,9 @@
         <header class="header">
             <div class="container">
                 <a href="#">
-                    <img src="{{ asset('images/logo-icones/LOGO.svg') }}" alt="" class="header-logo">
+                    <img src="{{ asset('asset/logo-icones/LOGO.svg') }}" alt="" class="header-logo">
                 </a>
-                <nav class="header-navbar">
+                <nav class="header-navbar hidden-sm">
                     <a href="#" class="header-navbar-item">
                         <i class="icon icon--home"></i>
                         <p class="header-navbar-link">Accueil</p>
@@ -101,20 +101,20 @@
                 <div class="row">
                     <div class="three columns">
                         <div class="footer-item">
-                            <i class="icon icon--newsletter"></i>
+                            <i class="icon icon--newsletter hidden-sm"></i>
                             <a href="#" class="footer-link">Newsletter</a>
                         </div>
                         <div class="footer-item">
-                            <i class="icon icon--legalMention"></i>
+                            <i class="icon icon--legalMention hidden-sm"></i>
                             <a href="#" class="footer-link">Mentions legales</a>
                         </div>
                         <div class="footer-item">
-                            <i class="icon icon--contact"></i>
+                            <i class="icon icon--contact hidden-sm"></i>
                             <a href="#" class="footer-link">Contact</a>
                         </div>
                     </div>
                     <div class="six columns">
-                        <div class="footer-item--center">
+                        <div class="footer-item footer-item--center">
                             <i class="icon icon--youtube"></i>
                             <i class="icon icon--facebook"></i>
                             <i class="icon icon--twitter"></i>
@@ -138,38 +138,9 @@
             </div>
         </footer>
         {% block javascripts %}
-            <script>
-                'use strict';
-
-                let navbar = document.querySelector('.navbar-mobile-content');
-                let menuBurger = document.querySelector('.icon--burger');
-                let isOpen = false;
-                let menuWidth = '305px';
-
-                document.body.addEventListener('click', function (e) {
-                    if (isOpen) {
-                        menuBurger.className = 'icon icon--burger';
-                        navbar.style.right = '-' + menuWidth;
-                        isOpen = false
-                    }
-                });
-                menuBurger.addEventListener('click', function (e) {
-                    e.stopPropagation();
-
-                    if (!isOpen) {
-                        menuBurger.className = 'icon icon--burger--active';
-                        navbar.style.right = '0px';
-                        isOpen = true;
-                    } else {
-                        menuBurger.className = 'icon icon--burger';
-                        navbar.style.right = '-' + menuWidth;
-                        isOpen = false;
-                    }
-                });
-                navbar.addEventListener('click', function (e) {
-                    e.stopPropagation();
-                })
-            </script>
+            <script src="{{ asset('js/src/HeaderShrink.js') }}"></script>
+            <script src="{{ asset('js/src/MenuSlider.js') }}"></script>
+            <script src="{{ asset('js/app.js') }}"></script>
         {% endblock %}
     </body>
 </html>

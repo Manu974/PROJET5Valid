@@ -1,47 +1,74 @@
 {# src/NAO/ProgrammesBundle/Resources/views/Page/index.html.twig #}
-
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/pages/programmes.css') }}"/>
+{% endblock %}
 {% block body %}
-    <li><a href="{{ path('nao_blog_contact') }}">Contact</a></li>
+    <section class="section-img container">
+        <div class="row">
+            <picture>
+                <source media="(min-width: 640px)" srcset="{{ asset('asset/images/rouge-gorge-1024px.jpg') }}">
+                <source media="(max-width: 640px)" srcset="{{ asset('asset/images/rouge-gorge-640px.jpg') }}">
+                <img src="{{ asset('asset/images/rouge-gorge-1024px.jpg') }}" alt="Rouge gorge" width="100%">
+            </picture>
+        </div>
+    </section>
+    <section class="blog container">
     {% if is_granted('ROLE_NATURALISTE') %}
         <h2><a href="{{ path('nao_admin_homepage') }}">Administration</a></h2>
     {% endif %}
+        <div class="blog-title">
+            <i class="icon icon--prog is_active"></i>
+            <h1>Liste des programmes</h1>
+        </div>
+        <hr class="divider">
     {% for blog in blogs %}
-        <article class="blog">
-            <header>
-                <h2><a href="{{ path('nao_blog_view', { 'id': blog.id, 'slug': blog.slug }) }}">{{ blog.title }}</a></h2>
+        <article class="blog-content">
+            <header class="blog-header">
+                <h2 class="title">
+                    <a class="blog-link" href="{{ path('nao_blog_view', { 'id': blog.id, 'slug': blog.slug }) }}">{{ blog.title }}</a>
+                </h2>
             </header>
             <div class="snippet">
-                <p>{{ blog.blog(article_extract)|raw }}
+                <p>
+                    {{ blog.blog(article_extract)|raw }}
                     {% if blog.blog|length > (article_extract) %}
-                        ...<a class="lire_suite" href="{{ path('nao_blog_view', { 'id': blog.id, 'slug': blog.slug }) }}"> lire la suite</a>
+                        ...
                     {% endif %}
                 </p>
             </div>
-            <div class="article_func">
-                <p class="continue">
-                    <a href="{{ path('nao_blog_view', { 'id': blog.id, 'slug': blog.slug }) }}#comments">Lire les commentaires</a>
-                    <span class="spanorge"> - </span>
-                    <a href="{{ path('nao_blog_view', { 'id': blog.id, 'slug': blog.slug }) }}#creat_comment">Ecrire un commentaire</a>
-                </p>
+            <div class="button-group button-group--space-between">
+                <a class="btn" href="{{ path('nao_blog_view', { 'id': blog.id, 'slug': blog.slug }) }}#comments">Lire les commentaires</a>
+                <a class="btn" href="{{ path('nao_blog_view', { 'id': blog.id, 'slug': blog.slug }) }}#creat_comment">Ecrire un commentaire</a>
+                {% if blog.blog|length > (article_extract) %}
+                    <a class="btn" href="{{ path('nao_blog_view', { 'id': blog.id, 'slug': blog.slug }) }}"> lire la suite</a>
+                {% endif %}
             </div>
-            <footer>
-                <p><i class="fa fa-arrow-right" aria-hidden="true"></i> Programme publié par <span class="highlight">{{blog.author}}</span> le {{ blog.created|date('d-m-Y') }} à {{ blog.created|date('H:i:s') }}</p>
-                <p><i class="fa fa-arrow-right" aria-hidden="true"></i> Nombre de commentaires: <a href="{{ path('nao_blog_view', { 'id': blog.id, 'slug': blog.slug }) }}#comments">{{ blog.comments|length }}</a></p>
+            <hr class="divider">
+            <footer class="blog-footer row">
+                <p class="columns four text-pull-left md">Publié le {{ blog.created|date('d/m/Y') }} à {{ blog.created|date('H:i:s') }}</p>
+                <p class="columns four text-center md">Auteur : {{ blog.author }}</p>
+                    <a
+                        class="blog-link columns four text-pull-right md"
+                        href="{{ path('nao_blog_view', { 'id': blog.id, 'slug': blog.slug }) }}#comments">
+                        {{ blog.comments|length }}
+                        Commentaires
+                    </a>
             </footer>
         </article>
     {% else %}
         <p class="text-center">Aucun programme publié pour le moment</p>
     {% endfor %}
-    {% if nbPages > 1  %}
-        <div class="text-center">
-            <ul class="pagination">
-                {# On utilise la fonction range(a, b) qui crée un tableau de valeurs entre a et b #}
-                {% for p in range(1, nbPages) %}
-                    <li{% if p == page %} class="active"{% endif %}>
-                        <a class='idx_page' href="{{ path('nao_blog_homepage', {'page': p}) }}">{{ p }}</a>
-                    </li>
-                {% endfor %}
-            </ul>
-        </div>
-    {% endif %}
+        {% if nbPages > 1  %}
+        <ul class="pagination row">
+            {# On utilise la fonction range(a, b) qui crée un tableau de valeurs entre a et b #}
+            {% for p in range(1, nbPages) %}
+                <li class="pagination-item {% if p == page %} is_active {% endif %}">
+                    <a class="pagination-link" href="{{ path('nao_blog_homepage', {'page': p}) }}">{{ p }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </section>
 {% endblock %}
