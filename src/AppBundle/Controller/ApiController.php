@@ -6,6 +6,7 @@ use FOS\RestBundle\Controller\Annotations as Rest;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use FOS\RestBundle\Controller\FOSRestController;
 use AppBundle\Entity\Bird;
 use AppBundle\Entity\Observation;
 use AppBundle\Entity\Departement;
@@ -27,7 +28,7 @@ use FOS\RestBundle\Controller\Annotations\View;
 
 
 
-class ApiController extends Controller
+class ApiController extends FOSRestController
 {
     /**
      * @Rest\Get(
@@ -56,6 +57,7 @@ class ApiController extends Controller
     public function createAction(Request $request)
     {
         $data = $this->get('jms_serializer')->deserialize($request->getContent(), 'array', 'json');
+        
         $observation = new Observation();
         
         $form = $this->get('form.factory')->create(ObservationType::class, $observation);
@@ -75,6 +77,8 @@ class ApiController extends Controller
 
         $em->persist($observation);
         $em->flush();
+
+        return $this->view(Response::HTTP_CREATED);
 
     }
 
