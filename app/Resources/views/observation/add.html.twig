@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>observation</title>
+  </head>
+
+  <body>
+<h3>Saisie d'une observation</h3>
+
+<div class="well">
+  {{ form(form) }}
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script>
+      $(function() {
+
+        $('[name$="appbundle_observation"]').on('submit', function(e){
+
+          	e.preventDefault();
+
+          	/*var dateDay = $('#appbundle_observation_createdAt_date_day').val();
+          	var dateMonth = $('#appbundle_observation_createdAt_date_m').val();
+          	var dateYears = $('#appbundle_observation_createdAt_date_day').val();
+          	alert(date);*/
+
+          	var Observation = {
+
+				    "location": {
+				        "x": 1,
+				        "y": 4
+				    },
+				    "comment": "petit oiseaux rouhe",
+				    "image": "aa",
+				    "author": "pop",
+				    "department": 974,
+				    "nombreOiseaux": "Seul",
+				    "maturite": "Poussin",
+				    "nidification": true,
+				    "nom_vernaculaire": "hg",
+				    "nom_scientifique": "gh",
+				    "famille": "dfg"
+
+          	};
+
+          	$.ajax({
+            url:'http://localhost:8000/api/observations', 
+            type : 'POST',
+            data: JSON.stringify(Observation),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function(data){
+              alert("succes observation enregistrer");
+            },
+            error: function(xhr, ajaxOptions, thrownError){
+              alert(xhr.status);
+        alert(thrownError);
+            }
+          });
+        });
+      });
+
+    </script>
+   </body>
+</html>
+
+
+

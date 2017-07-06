@@ -8,6 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Entity\Bird;
 use AppBundle\Entity\Observation;
+use AppBundle\Entity\Departement;
 use AppBundle\Entity\ObservationImage;
 use AppBundle\Form\BirdType;
 use AppBundle\Form\ObservationType;
@@ -63,15 +64,18 @@ class ApiController extends Controller
         $localisation = $request->get('location');
         $observation->setLocation(new Point($localisation["x"], $localisation["y"]));
         $observation->setCreatedAt(new \DateTime('now'));
+
+        $observation->setNomVernaculaire($request->get('nom_vernaculaire'));
+        $observation->setNomScientifique($request->get('nom_scientifique'));
+        $observation->setFamille($request->get('famille'));
+        $observation->setDepartment($request->get('department'));
+        $observation->setIsValid(false);
         
         $em = $this->getDoctrine()->getManager();
 
         $em->persist($observation);
         $em->flush();
 
-
-        
-        
     }
 
     /**
