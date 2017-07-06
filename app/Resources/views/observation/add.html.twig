@@ -14,37 +14,45 @@
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
     <script>
       $(function() {
+
+        
 
         $('[name$="appbundle_observation"]').on('submit', function(e){
 
           	e.preventDefault();
 
-          	/*var dateDay = $('#appbundle_observation_createdAt_date_day').val();
-          	var dateMonth = $('#appbundle_observation_createdAt_date_m').val();
-          	var dateYears = $('#appbundle_observation_createdAt_date_day').val();
-          	alert(date);*/
+            var geocoder = new google.maps.Geocoder();
+            var address = $('#appbundle_observation_location').val();
+            var latAddress;
+            var longtAddress;
+            
+            geocoder.geocode({'address': address}, function(results, status) {
+              if (status === 'OK') {
+              latAddress = results[0].geometry.location.lat();
+              longtAddress = results[0].geometry.location.lng();          
 
-          	var Observation = {
-				    "location":{
-				        "x": 1,
-				        "y": 4
+              var Observation = {
+            "location":{
+                "x": latAddress,
+                "y": longtAddress
               },
-				    "comment": "petit oiseaux rouhe",
-				    "image": "aa",
-				    "author": "pop",
-				    "department": 974,
-				    "nombreOiseaux": "Seul",
-				    "maturite": "Poussin",
-				    "nidification": true,
-				    "nom_vernaculaire": "hg",
-				    "nom_scientifique": "gh",
-				    "famille": "dfZEAZEAZEg"
+            "comment": "petit oiseaux rouhe",
+            "image": "aa",
+            "author": "pop",
+            "department": 974,
+            "nombreOiseaux": "Seul",
+            "maturite": "Poussin",
+            "nidification": true,
+            "nom_vernaculaire": "hg",
+            "nom_scientifique": "gh",
+            "famille": "dfZEAZEAZEg"
 
-          	};
+            };
 
-          	$.ajax({
+            $.ajax({
             url:'http://localhost:8000/api/observations', 
             type : 'POST',
             data: JSON.stringify(Observation),
@@ -58,9 +66,27 @@
         alert(thrownError);
             }
           });
+            
+              } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+             }
+
+
+        });
+
+            
+
+          	/*var dateDay = $('#appbundle_observation_createdAt_date_day').val();
+          	var dateMonth = $('#appbundle_observation_createdAt_date_m').val();
+          	var dateYears = $('#appbundle_observation_createdAt_date_day').val();
+          	alert(date);*/
+
+          	
         });
       });
 
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyZgz9fFFmD4Vf_0nJTlde0VEq6KxhFrw">
     </script>
    </body>
 </html>
