@@ -27,6 +27,7 @@ a {
 .form-control {
     width: 100%;
     background-color: #BFBFBF;
+    color: #282829;
 }
 /***** DIVIDER *****/
 .divider {
@@ -39,13 +40,14 @@ a {
 }
 /***** BUTTONS *****/
 .btn {
-    display: inline-block;
+    display: inline-flex;
+    justify-content: center;
     text-align: center;
     min-width: 155px;
     height: 22px;
     line-height: 18px;
-    padding: 5px 8px 5px 8px;
     font-weight: bolder;
+    padding: 5px;
     background-color: #8CC63F;
     box-shadow: 0 5px 8px black;
     color: #282829;
@@ -81,7 +83,7 @@ a {
 }
 /***** ICONS *****/
 .icon {
-    display: block;
+    display: inline-block;
     width: 44px;
     height: 40px;
     -webkit-transition: .2s;
@@ -112,6 +114,7 @@ a {
 .icon--copyright {  background: url('../asset/logo-icones/icone copyright.svg') no-repeat 0 0;  }
 .icon--burger {  background: url('../asset/logo-icones/menu burger.svg') no-repeat 0 0;  }
 .icon--arrow {  background: url('../asset/logo-icones/flèche gauche transparente.svg') no-repeat 0 0;  }
+.icon--discuss { background: url('../asset/logo-icones/icone bulles de discussion user vert.svg') no-repeat 0 0; }
 .icon--thumb {
     position: relative;
     top: 4px;

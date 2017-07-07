@@ -19,6 +19,13 @@
     box-shadow: 0 5px 10px #111;
     color: #FCFAFA;
 }
+.article-title {
+    margin-top: 40px;
+    display: flex;
+}
+.article-title h3 {
+    margin-left: 25px;
+}
 .article-link {
     color: #FCFAFA;
     transition: .2s;
@@ -42,11 +49,22 @@
     background-color: #BFBFBF;
     border-radius: 2px;
 }
+button[type=submit] {
+    padding: 15px;
+}
+button[type=submit] span {
+    position: relative;
+    bottom: 10px;
+}
 .comments .blogger, .comments h3{
     color: #8CC63F;
 }
 
 @media only screen and (max-width: 980px) {
+    button[type=submit] span {
+        position: relative;
+        bottom: 14px;
+    }
     .blog-title {
         display: flex;
         align-items: center;

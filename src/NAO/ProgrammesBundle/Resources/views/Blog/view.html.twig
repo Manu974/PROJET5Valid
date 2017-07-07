@@ -43,7 +43,10 @@
     </article>
     <section class="comments container" id="comments">
         <section class="previous-comments">
-            <h3>Commentaires</h3>
+            <div class="article-title">
+                <i class="icon icon--discuss"></i>
+                <h3>Commentaires</h3>
+            </div>
             {% for comment in comments %}
                 <article class="comment {{ cycle(['odd', 'even'], loop.index0) }}" id="comment-{{ comment.id }}">
                     <header>
