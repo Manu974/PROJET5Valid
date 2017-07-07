@@ -6,8 +6,10 @@ use FOS\RestBundle\Controller\Annotations as Rest;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use FOS\RestBundle\Controller\FOSRestController;
 use AppBundle\Entity\Bird;
 use AppBundle\Entity\Observation;
+use AppBundle\Entity\Departement;
 use AppBundle\Entity\ObservationImage;
 use AppBundle\Form\BirdType;
 use AppBundle\Form\ObservationType;
@@ -26,7 +28,7 @@ use FOS\RestBundle\Controller\Annotations\View;
 
 
 
-class ApiController extends Controller
+class ApiController extends FOSRestController
 {
     /**
      * @Rest\Get(
@@ -55,6 +57,7 @@ class ApiController extends Controller
     public function createAction(Request $request)
     {
         $data = $this->get('jms_serializer')->deserialize($request->getContent(), 'array', 'json');
+        
         $observation = new Observation();
         
         $form = $this->get('form.factory')->create(ObservationType::class, $observation);
@@ -63,11 +66,19 @@ class ApiController extends Controller
         $localisation = $request->get('location');
         $observation->setLocation(new Point($localisation["x"], $localisation["y"]));
         $observation->setCreatedAt(new \DateTime('now'));
+
+        $observation->setNomVernaculaire($request->get('nom_vernaculaire'));
+        $observation->setNomScientifique($request->get('nom_scientifique'));
+        $observation->setFamille($request->get('famille'));
+        $observation->setDepartment($request->get('department'));
+        $observation->setIsValid(false);
         
         $em = $this->getDoctrine()->getManager();
 
         $em->persist($observation);
         $em->flush();
+
+        return $this->view(Response::HTTP_CREATED);
 
     }
 

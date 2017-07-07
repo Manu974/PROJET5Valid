@@ -1,5 +1,126 @@
-<h3>Saisie d'une observation</h3>
+<!DOCTYPE html>
+<html>
 
-<div class="well">
-  {{ form(form) }}
-</div>
+  <head>
+    <meta charset="utf-8" />
+    <title>observation</title>
+  </head>
+
+  <body>
+    <h3>Saisie d'une observation</h3>
+
+    <div class="well">
+    {{ form(form) }}
+    </div>
+    <button type="button" id="geolocalisation">Geolocaliser</button>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script>
+      $(function() {
+
+        var latGeolocalise = 0;
+        var lngGeolocalise = 0;
+
+        $('#geolocalisation').one('click', function(){
+
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+
+              latGeolocalise = position.coords.latitude;
+              lngGeolocalise = position.coords.longitude;
+
+              var geocoder = new google.maps.Geocoder();
+              var latlng = {lat: parseFloat(latGeolocalise), lng: parseFloat(lngGeolocalise)};
+
+              geocoder.geocode({'location': latlng}, function(results, status) {
+                if (status === 'OK') {
+                  if (results[1]) {
+                    $('#appbundle_observation_location').val(results[1].formatted_address);
+                  } 
+                  else {
+                    window.alert('No results found');
+                  }
+                } 
+                else {
+                  window.alert('Geocoder failed due to: ' + status);
+                }
+              });
+
+            });
+          } 
+          else {
+          // Browser doesn't support Geolocation
+            alert("Browser doesn't support Geolocation");
+          }
+        });
+
+        $('[name$="appbundle_observation"]').on('submit', function(e){
+
+          e.preventDefault();  
+
+          var geocoder = new google.maps.Geocoder();
+          var address = $('#appbundle_observation_location').val();
+
+          var comment = $('#appbundle_observation_comment').val();
+          var department = $('#appbundle_observation_department').val();
+          var nombreOiseaux = $('#appbundle_observation_nombreOiseaux').val();
+          var maturite = $('#appbundle_observation_maturite').val();
+          var nidification = $('#appbundle_observation_nidification').val();
+          var nom_vernaculaire = $('#appbundle_observation_nomVernaculaire option:selected').text();
+          var nom_scientifique = $('#appbundle_observation_nomScientifique option:selected' ).text();
+          var famille = $('#appbundle_observation_famille option:selected').text();
+          var author = "pop";
+
+
+          geocoder.geocode({'address': address}, function(results, status) {
+            if (status === 'OK') {
+              latGeolocalise = results[0].geometry.location.lat();
+              lngGeolocalise = results[0].geometry.location.lng();          
+
+              var Observation = {
+                "location":{
+                  "x": latGeolocalise,
+                  "y": lngGeolocalise
+                },
+                "comment": comment,
+                "image": "aa",
+                "author": author,
+                "department": department,
+                "nombreOiseaux": nombreOiseaux,
+                "maturite": maturite,
+                "nidification": nidification,
+                "nom_vernaculaire": nom_vernaculaire,
+                "nom_scientifique": nom_scientifique,
+                "famille": famille
+              };
+
+              $.ajax({
+                url:'http://localhost:8000/api/observations', 
+                type : 'POST',
+                data: JSON.stringify(Observation),
+                //dataType: 'json',
+                contentType: 'application/json',
+                success: function(data){
+                  alert("succes observation enregistrer");
+                },
+                error: function(xhr, ajaxOptions, thrownError){
+                  alert(xhr.status);
+                  alert(thrownError);
+                }
+              });
+
+            } 
+            else {
+              alert('Geocode was not successful for the following reason: ' + status);
+            }
+          });
+        });
+      });
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyZgz9fFFmD4Vf_0nJTlde0VEq6KxhFrw">
+    </script>
+  </body>
+</html>
+
+
+
