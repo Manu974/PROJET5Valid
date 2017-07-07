@@ -185,7 +185,7 @@ class Faq
     }
 
     /**
-     * @ORM\preUpdate
+     * @ORM\PreUpdate
      */
     public function setUpdatedValue()
     {
