@@ -150,7 +150,7 @@ a {
 }
 .navbar-mobile-title {
     display: block;
-    margin-bottom: 25px;
+    margin-bottom: 22px;
 }
 .navbar-mobile-content {
     display: none;
@@ -179,7 +179,7 @@ a {
     margin: 0 0 0 10px;
     text-align: left;
     font-size: 0.9em;
-    padding: 24px 0 20px 0;
+    padding: 16px 0 14px 0;
     width: 190px;
     border-bottom: 1px solid #EBEBEB;
     transition: .2s;
