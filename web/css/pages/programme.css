@@ -1,0 +1,83 @@
+.blog-title {
+    margin-top: 40px;
+    display: flex;
+    padding: 20px 14px;
+    align-items: center;
+    height: 80px;
+}
+.blog-title h1 {
+    position: relative;
+    bottom: 6px;
+    font-variant-caps: all-petite-caps;
+    margin: auto 30px;
+    font-size: 2.4em;
+    color: #8CC63F;
+    letter-spacing: 1px;
+}
+.article {
+    padding: 20px;
+    box-shadow: 0 5px 10px #111;
+    color: #FCFAFA;
+}
+.article-title {
+    margin-top: 40px;
+    display: flex;
+}
+.article-title h3 {
+    margin-left: 25px;
+}
+.article-link {
+    color: #FCFAFA;
+    transition: .2s;
+}
+.article-link:hover {
+    color: #8CC63F;
+}
+.article-title h2 {
+    font-size: 1.8em;
+}
+.article-footer {
+}
+.comments {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.comment {
+    box-shadow: 0 5px 10px #111;
+    padding: 15px;
+    margin-top: 25px;
+    background-color: #BFBFBF;
+    border-radius: 2px;
+}
+button[type=submit] {
+    padding: 15px;
+    justify-content: space-around;
+}
+button .icon--small {
+    position: relative;
+    bottom: 7px;
+}
+.comments .blogger, .comments h3{
+    color: #8CC63F;
+}
+
+@media only screen and (max-width: 980px) {
+    button[type=submit] span {
+        position: relative;
+        bottom: 14px;
+    }
+    .blog-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .blog-title h1 {
+        position: relative;
+        bottom: 6px;
+        font-variant-caps: all-petite-caps;
+        margin: 0 0 0 25px;
+        font-size: 1.9em;
+        color: #8CC63F;
+        letter-spacing: 1px;
+    }
+}

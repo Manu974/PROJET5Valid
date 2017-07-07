@@ -165,11 +165,7 @@ a:hover {
 
 /* Buttons
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.button,
-button,
-input[type="submit"],
-input[type="reset"],
-input[type="button"] {
+input[type="reset"] {
   display: inline-block;
   height: 38px;
   padding: 0 30px;
@@ -189,20 +185,16 @@ input[type="button"] {
   box-sizing: border-box; }
 .button:hover,
 button:hover,
-input[type="submit"]:hover,
 input[type="reset"]:hover,
 input[type="button"]:hover,
 .button:focus,
 button:focus,
-input[type="submit"]:focus,
-input[type="reset"]:focus,
 input[type="button"]:focus {
   color: #333;
   border-color: #888;
   outline: 0; }
 .button.button-primary,
 button.button-primary,
-input[type="submit"].button-primary,
 input[type="reset"].button-primary,
 input[type="button"].button-primary {
   color: #FFF;
@@ -210,12 +202,10 @@ input[type="button"].button-primary {
   border-color: #33C3F0; }
 .button.button-primary:hover,
 button.button-primary:hover,
-input[type="submit"].button-primary:hover,
 input[type="reset"].button-primary:hover,
 input[type="button"].button-primary:hover,
 .button.button-primary:focus,
 button.button-primary:focus,
-input[type="submit"].button-primary:focus,
 input[type="reset"].button-primary:focus,
 input[type="button"].button-primary:focus {
   color: #FFF;
@@ -236,10 +226,9 @@ textarea,
 select {
   height: 38px;
   padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
-  background-color: #fff;
-  border: 1px solid #D1D1D1;
-  border-radius: 4px;
-  box-shadow: none;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 3px 3px 6px #111;
   box-sizing: border-box; }
 /* Removes awkward default styles on some inputs for iOS */
 input[type="email"],
@@ -266,7 +255,6 @@ input[type="url"]:focus,
 input[type="password"]:focus,
 textarea:focus,
 select:focus {
-  border: 1px solid #33C3F0;
   outline: 0; }
 label,
 legend {
@@ -337,9 +325,6 @@ td:last-child {
 
 /* Spacing
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-button,
-.button {
-  margin-bottom: 1rem; }
 input,
 textarea,
 select,
