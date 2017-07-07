@@ -51,10 +51,11 @@
 }
 button[type=submit] {
     padding: 15px;
+    justify-content: space-around;
 }
-button[type=submit] span {
+button .icon--small {
     position: relative;
-    bottom: 10px;
+    bottom: 7px;
 }
 .comments .blogger, .comments h3{
     color: #8CC63F;

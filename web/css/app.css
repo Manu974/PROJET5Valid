@@ -115,6 +115,7 @@ a {
 .icon--burger {  background: url('../asset/logo-icones/menu burger.svg') no-repeat 0 0;  }
 .icon--arrow {  background: url('../asset/logo-icones/flèche gauche transparente.svg') no-repeat 0 0;  }
 .icon--discuss { background: url('../asset/logo-icones/icone bulles de discussion user vert.svg') no-repeat 0 0; }
+.icon--send { background: url('../asset/logo-icones/icone-envoyer.svg') no-repeat 0 0; }
 .icon--thumb {
     position: relative;
     top: 4px;
