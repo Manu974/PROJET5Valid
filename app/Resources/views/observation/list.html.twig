@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8" />
+    <title>observation</title>
+  </head>
+
+  <body>
+    <h3>liste observation</h3>
+
+	<div class="well">
+  
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script>
+      $(function() {
+
+       	$.ajax({
+    		url:'http://127.0.0.1:8000/api/observations/lists', 
+    		type : 'GET',
+    		//timeout : 3000,
+    		success: function(data){
+
+		     console.log(data);
+
+		    },
+		    error: function(){
+		      alert('La requête n\'a pas abouti');
+		    }
+		  });
+
+
+      });
+    </script>
+
+    </body>
+</html>

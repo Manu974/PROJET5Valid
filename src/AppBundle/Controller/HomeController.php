@@ -103,5 +103,17 @@ class HomeController extends Controller
 
     }
 
+    /**
+     * @Route("/observation/lists", name="observationlistspage")
+     */
+    public function observationListAction(Request $request)
+    {  
+        
+    return $this->render('observation/list.html.twig');
+
+
+
+    }
+
     
 }

@@ -27,6 +27,7 @@ class AppKernel extends Kernel
             new JMS\SerializerBundle\JMSSerializerBundle(),
             new Vich\UploaderBundle\VichUploaderBundle(),
             new Fresh\VichUploaderSerializationBundle\FreshVichUploaderSerializationBundle(),
+            new Nelmio\CorsBundle\NelmioCorsBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
