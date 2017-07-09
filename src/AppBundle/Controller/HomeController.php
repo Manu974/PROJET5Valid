@@ -111,7 +111,20 @@ class HomeController extends Controller
         
     return $this->render('observation/list.html.twig');
 
+    }
 
+
+    /**
+     * @Route("/observation/validation/{id}", name="observationvalidpage")
+     */
+    public function observationValidAction(Request $request, $id)
+    {  
+      $observation = $this->getDoctrine()->getManager()->getRepository('AppBundle:Observation')->find($id);
+      $observation->setIsValid(true);
+      $em = $this->getDoctrine()->getManager();
+      $em->persist($observation);
+      $em->flush();
+      return $this->render('observation/list.html.twig');
 
     }
 
