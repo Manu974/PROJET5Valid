@@ -1,0 +1,98 @@
+section {
+    color: #939498;
+}
+.section-img--home {
+    height: 670px;
+}
+.section-img--home .btn {
+    position: relative;
+    padding: 10px 0 10px 22px;
+    width: 205px;
+    display: flex;
+    margin: 20px auto 10px;
+    align-items: center;
+    background-color: #282829;
+    color: #FAFAFA;
+    bottom: 10px;
+}
+.home-background {
+    position: relative;
+    background: url('../../asset/images/cormorans-1920.jpg') no-repeat;
+    background-size: contain;
+    height: 100%;
+}
+.home-title {
+    padding: 10px;
+    text-shadow: 2px 2px 3px #444;
+    color: #FBFBFB;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.7em;
+    height: 72%;
+}
+.home-container {
+    padding: 26px;
+    margin-bottom:16px;
+}
+.home-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.home-container a {
+    color: inherit;
+    transition: .2s;
+}
+.home-container a:hover{
+    color: #8CC63F;
+}
+.home-container span {
+    text-align: center;
+}
+.home-container .icon--maps, .home-container .icon--obs {
+    position: relative;
+    left: 4px;
+}
+@media only screen and (max-width: 980px) {
+    .section-img--home .btn {
+        position: relative;
+        bottom: 70px;
+    }
+    .home-title {
+        font-size: 1.2em;
+    }
+    .section-img--home {
+        height: 590px;
+    }
+}
+@media only screen and (max-width: 720px) {
+    .home-container {
+        padding: 0;
+    }
+    .section-img--home {
+        height: 480px;
+    }
+    .section-img--home .btn {
+        position: relative;
+        bottom: 90px;
+    }
+}
+@media only screen and (max-width: 550px) {
+    .section-img--home {
+        height: 410px;
+    }
+    .section-img--home .btn {
+        bottom: 90px;
+    }
+}
+@media only screen and (max-width: 420px) {
+    .section-img--home {
+        height: 350px;
+    }
+    .section-img--home .btn {
+        bottom: 110px;
+    }
+}
