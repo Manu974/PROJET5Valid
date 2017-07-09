@@ -108,9 +108,8 @@ class ApiController extends FOSRestController
      */
     public function listObservationAction()
     {
-        $listObs = $this->getDoctrine()->getRepository('AppBundle:Observation')->find(91);
-        dump($listObs->getImage());
-        die();
+        $listObs = $this->getDoctrine()->getRepository('AppBundle:Observation')->findAll();
+
 
         return $listObs;
 
@@ -139,6 +138,8 @@ class ApiController extends FOSRestController
         
 
     }
+
+
 
     
 
