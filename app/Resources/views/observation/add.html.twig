@@ -13,6 +13,7 @@
     {{ form(form) }}
     </div>
     <button type="button" id="geolocalisation">Geolocaliser</button>
+
     <div class="well">
     {{ form(formImage) }}
     </div>
@@ -25,7 +26,15 @@
         var latGeolocalise = 0;
         var lngGeolocalise = 0;
 
+        $('[name$="appbundle_observationimage"]').on('submit', function(e){
+          
+          if($(this).find('input[type=file]').val()== ''){
+            alert("Veuillez choisir une image");
+           return false;
+          }
+        });
 
+        appbundle_observationimage
         $('#geolocalisation').one('click', function(){
 
           if (navigator.geolocation) {
