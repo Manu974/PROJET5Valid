@@ -41,7 +41,7 @@ class ApiController extends FOSRestController
      *     statusCode = 200
      * )
      */
-    public function showAction(Observation $observation)
+    public function showObservationAction(Observation $observation)
     {
         return $observation;
     }
@@ -55,7 +55,7 @@ class ApiController extends FOSRestController
      * )
      * 
      */
-    public function createAction(Request $request)
+    public function createObservationAction(Request $request)
     {   
 
         
@@ -97,42 +97,6 @@ class ApiController extends FOSRestController
 
 
     /**
-     * @Rest\Post( path= "/api/observations/image",
-     *              name= "app_obs_image_create")
-     * @Rest\View(
-     *     statusCode = 201
-     * )
-     * 
-     */
-    public function createImageAction(Request $request)
-    {
-
-        $ObservationImage = new ObservationImage();
-
-        $image = $request->files->get('file');
-        
-
-        $ObservationImage->setImageFile($image);
-        
-        $ObservationImage->setImageName("name");
-        $ObservationImage->setUpdatedAt(new \DateTime("now"));
-        
-        $em = $this->getDoctrine()->getManager();
-
-        $em->persist($ObservationImage);
-        $em->flush();
-
-        
-       
-        
-        return $this->view(Response::HTTP_CREATED);
-
-    }
-
-
-
-
-    /**
      * @Rest\Get(
      *     path = "/api/observations/lists",
      *     name = "app_obs_lists"
@@ -142,11 +106,37 @@ class ApiController extends FOSRestController
      *     statusCode = 200
      * )
      */
-    public function listAction()
+    public function listObservationAction()
     {
-        $listObs = $this->getDoctrine()->getRepository('AppBundle:Observation')->findAll();
+        $listObs = $this->getDoctrine()->getRepository('AppBundle:Observation')->find(91);
+        dump($listObs->getImage());
+        die();
 
         return $listObs;
+
+    }
+
+    /**
+     * @Rest\Delete(
+     *     path = "/api/observations/delete/{id}",
+     *     name = "app_obs_delete",
+     *     requirements = {"id"="\d+"}
+     *     
+     * )
+     * @Rest\View(
+     *     statusCode = 200
+     * )
+     */
+    public function deleteObservationAction(Observation $observation)
+    {
+        $em = $this->getDoctrine()->getManager();
+       
+
+        $image = $this->getDoctrine()->getRepository('AppBundle:ObservationImage')->find($observation->getImage()->getId());
+        $em->remove($image);        
+        $em->remove($observation);
+        $em->flush();
+        
 
     }
 

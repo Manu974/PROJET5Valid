@@ -28,6 +28,11 @@ class ObservationImage
    */
   private $id;
 
+    /**
+     * @ORM\Column(name="url", type="string", length=255)
+     */
+    private $url;
+
    /**
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
      * 
@@ -70,7 +75,7 @@ class ObservationImage
         if ($image) {
             // It is required that at least one field changes if you are using doctrine
             // otherwise the event listeners won't be called and the file is lost
-            $this->updatedAt = new \DateTimeImmutable();
+            $this->updatedAt = new \DateTime('now');
         }
         
         return $this;
@@ -104,4 +109,38 @@ class ObservationImage
         return $this->imageName;
     }
     
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set updatedAt
+     *
+     * @param \DateTime $updatedAt
+     *
+     * @return ObservationImage
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get updatedAt
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
 }

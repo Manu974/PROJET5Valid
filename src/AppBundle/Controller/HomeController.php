@@ -65,8 +65,16 @@ class HomeController extends Controller
             
               //$observation->upload();
               // Le reste de la méthode reste inchangé
+              
               $em = $this->getDoctrine()->getManager();
+
               $em->persist($observationImage);
+
+              $helper = $this->container->get('vich_uploader.templating.helper.uploader_helper');
+              $path = $helper->asset($observationImage, 'imageFile');
+
+              $observationImage->setUrl($path);
+
               $em->flush();
 
               $session = $request->getSession();
