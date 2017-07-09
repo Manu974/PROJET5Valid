@@ -118,7 +118,8 @@
                 contentType: 'application/json',
                 processData: false,
                 success: function(data){
-                  alert("succes observation enregistrer");
+                  alert("observation enregistrée");
+                  window.location.replace('http://localhost:8000/observation');
                 },
                 error: function(xhr, ajaxOptions, thrownError){
                   alert(xhr.status);

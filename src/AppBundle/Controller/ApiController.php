@@ -89,6 +89,7 @@ class ApiController extends FOSRestController
         $em->persist($observation);
         $em->flush();
 
+        $session->clear();
 
         return $this->view(Response::HTTP_CREATED);
 
