@@ -4,14 +4,22 @@
   <head>
     <meta charset="utf-8" />
     <title>observation</title>
+    <link rel="stylesheet" href="{{ asset('css/list.css') }}">
   </head>
 
   <body>
     <h3>liste observation</h3>
 
-	<div class="well">
-  
-    </div>
+	<table id="listObservation" style="width:50%">
+		  <tr>
+		  	<th>Status</th>
+		    <th>N°</th>
+		    <th>Dpt</th> 
+		    <th>Famille</th>
+		    <th>Nom de l'oiseau</th>
+		    <th>Auteur</th>
+		  </tr>
+</table>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script>
       $(function() {
@@ -21,8 +29,13 @@
     		type : 'GET',
     		//timeout : 3000,
     		success: function(data){
+    			$.each(data,function(i, observation){
 
-		     console.log(data);
+    				var trUser = '<tr><td is_valid = '+observation.is_valid+'></td><td>'+observation.id+'</td><td>'+observation.department+'</td><td>'+observation.famille+'</td><td>'+observation.nom_vernaculaire+'</td><td>'+observation.author+'</td></tr>';
+    				$('#listObservation').append(trUser);
+    				
+    			});
+		     
 
 		    },
 		    error: function(){
