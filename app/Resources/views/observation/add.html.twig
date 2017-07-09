@@ -13,6 +13,10 @@
     {{ form(form) }}
     </div>
     <button type="button" id="geolocalisation">Geolocaliser</button>
+    <div class="well">
+    {{ form(formImage) }}
+    </div>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script>
@@ -20,6 +24,7 @@
 
         var latGeolocalise = 0;
         var lngGeolocalise = 0;
+
 
         $('#geolocalisation').one('click', function(){
 
@@ -58,9 +63,9 @@
 
           e.preventDefault();  
 
+  
           var geocoder = new google.maps.Geocoder();
           var address = $('#appbundle_observation_location').val();
-
           var comment = $('#appbundle_observation_comment').val();
           var department = $('#appbundle_observation_department').val();
           var nombreOiseaux = $('#appbundle_observation_nombreOiseaux').val();
@@ -72,19 +77,20 @@
           var author = "pop";
 
 
+
           geocoder.geocode({'address': address}, function(results, status) {
             if (status === 'OK') {
               latGeolocalise = results[0].geometry.location.lat();
               lngGeolocalise = results[0].geometry.location.lng();          
-
+              
               var Observation = {
                 "location":{
                   "x": latGeolocalise,
                   "y": lngGeolocalise
                 },
                 "comment": comment,
-                "image": "aa",
                 "author": author,
+                "image": "",
                 "department": department,
                 "nombreOiseaux": nombreOiseaux,
                 "maturite": maturite,
@@ -93,13 +99,15 @@
                 "nom_scientifique": nom_scientifique,
                 "famille": famille
               };
+            
 
               $.ajax({
                 url:'http://localhost:8000/api/observations', 
                 type : 'POST',
                 data: JSON.stringify(Observation),
-                //dataType: 'json',
+                dataType: 'json',
                 contentType: 'application/json',
+                processData: false,
                 success: function(data){
                   alert("succes observation enregistrer");
                 },

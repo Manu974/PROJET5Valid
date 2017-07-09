@@ -25,6 +25,8 @@ class AppKernel extends Kernel
             new MediaFigaro\GoogleAnalyticsApi\GoogleAnalyticsApi(),
             new FOS\RestBundle\FOSRestBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
+            new Vich\UploaderBundle\VichUploaderBundle(),
+            new Fresh\VichUploaderSerializationBundle\FreshVichUploaderSerializationBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

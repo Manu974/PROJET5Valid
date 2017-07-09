@@ -56,26 +56,32 @@ class HomeController extends Controller
     public function observationAction(Request $request)
     {  
         $observation = new Observation();
+        $observationImage = new ObservationImage();
         $form   = $this->get('form.factory')->create(ObservationType::class, $observation);
+        $formImage   = $this->get('form.factory')->create(ObservationImageType::class, $observationImage);
+        $formImage->handleRequest($request);
 
-        if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($observation);
-            $em->flush();
+        if ($formImage->isSubmitted() && $formImage->isValid()) {
+            
+              //$observation->upload();
+              // Le reste de la méthode reste inchangé
+              $em = $this->getDoctrine()->getManager();
+              $em->persist($observationImage);
+              $em->flush();
 
-             $request->getSession()->getFlashBag()->add('notice', 'Annonce bien enregistrée.');
-
-                
-            }
+              $session = $request->getSession();
+              $session->set('imageId', $observationImage->getId());
+      
+    }
 
     return $this->render('observation/add.html.twig', array(
       'form' => $form->createView(),
+      'formImage'=> $formImage->createView(),
     ));
 
 
 
     }
-
 
     /**
      * @Route("/observation/carte", name="observationcartepage")

@@ -17,6 +17,8 @@ parameters:
     nao_faq.auteur: NAO association
     # Nombre d'articles à afficher par page pour la Faq
     nao_faq.nbaff.faq_limit: 5
+    
+    images_directory: '%kernel.root_dir%/web/uploads/images'
 
 
 framework:
@@ -140,4 +142,17 @@ fos_rest:
 
 sensio_framework_extra:
     request: { converters: true }
+
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+        product_image:
+            upload_destination: '%kernel.root_dir%/../web/images/products'
+            namer: vich_uploader.namer_origname
+            uri_prefix: /images/products
+            inject_on_load:     true
+            delete_on_update:   true
+            delete_on_remove:   true
+
 

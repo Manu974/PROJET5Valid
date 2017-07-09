@@ -25,6 +25,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 
 use FOS\RestBundle\Controller\Annotations\View;
+use FOS\RestBundle\Controller\Annotations\FileParam;
 
 
 
@@ -55,13 +56,19 @@ class ApiController extends FOSRestController
      * 
      */
     public function createAction(Request $request)
-    {
+    {   
+
+        
+        $session = $request->getSession();
+        $imageId = $session->get('imageId');
+
         $data = $this->get('jms_serializer')->deserialize($request->getContent(), 'array', 'json');
         
         $observation = new Observation();
-        
+
         $form = $this->get('form.factory')->create(ObservationType::class, $observation);
         $form->submit($data);
+
         
         $localisation = $request->get('location');
         $observation->setLocation(new Point($localisation["x"], $localisation["y"]));
@@ -72,15 +79,57 @@ class ApiController extends FOSRestController
         $observation->setFamille($request->get('famille'));
         $observation->setDepartment($request->get('department'));
         $observation->setIsValid(false);
-        
-        $em = $this->getDoctrine()->getManager();
 
+        if ($imageId){
+            
+        $image = $this->getDoctrine()->getManager()->getRepository('AppBundle:ObservationImage')->find($imageId);
+        $observation->setImage($image);
+        }
+        $em = $this->getDoctrine()->getManager();
         $em->persist($observation);
         $em->flush();
+
 
         return $this->view(Response::HTTP_CREATED);
 
     }
+
+
+    /**
+     * @Rest\Post( path= "/api/observations/image",
+     *              name= "app_obs_image_create")
+     * @Rest\View(
+     *     statusCode = 201
+     * )
+     * 
+     */
+    public function createImageAction(Request $request)
+    {
+
+        $ObservationImage = new ObservationImage();
+
+        $image = $request->files->get('file');
+        
+
+        $ObservationImage->setImageFile($image);
+        
+        $ObservationImage->setImageName("name");
+        $ObservationImage->setUpdatedAt(new \DateTime("now"));
+        
+        $em = $this->getDoctrine()->getManager();
+
+        $em->persist($ObservationImage);
+        $em->flush();
+
+        
+       
+        
+        return $this->view(Response::HTTP_CREATED);
+
+    }
+
+
+
 
     /**
      * @Rest\Get(
