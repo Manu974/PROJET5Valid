@@ -1,0 +1,36 @@
+#src/NAO/NewsletterBundle/Resources/config/routing.yml
+
+nao_newsletter_homepage:
+    path:     /
+    defaults:
+        _controller: NAONewsletterBundle:Newsletter:view
+
+nao_newsletter_sub:
+    path:     /newsletter/sub/{username}/{usermail}
+    defaults:
+        _controller: NAONewsletterBundle:Newsletter:sub
+
+nao_newsletter_unsub:
+    path:     /newsletter/unsub/{username}
+    defaults:
+        _controller: NAONewsletterBundle:Newsletter:unsub
+
+nao_admin_newsletter:
+    path:  /admin
+    defaults:
+        _controller: NAONewsletterBundle:Admin:view
+
+nao_admin_newnewsletter:
+    path:  /admin/newnewsletter
+    defaults:
+        _controller: NAONewsletterBundle:Admin:newnewsletter
+
+nao_admin_majnewsletter:
+    path:  /admin/majnewsletter
+    defaults:
+        _controller: NAONewsletterBundle:Admin:majnewsletter
+
+nao_admin_diffnewsletter:
+    path:  /admin/diffnewsletter
+    defaults:
+        _controller: NAONewsletterBundle:Admin:subdiff

@@ -1,0 +1,17 @@
+{# src/NAO/NewsletterBundle/Resources/views/Admin/new.html.twig #}
+
+{% block body %}
+    <article class="newsletter">
+        <div class="snippet">
+            {{ form_start(form) }}
+                {{ form_row(form.title, {'attr': {'class': 'form-control'}}) }}
+                {{ form_row(form.newsletter) }}
+                {{ form_row(form.author, {'attr': {'class': 'form-control', 'value': 'NAO - Association'}}) }}
+                <input type="submit" value="Enregistrer" class="btn btn-default btn-contact center-block"/>
+            {{ form_end(form) }}
+        </div>
+    </article>
+
+    <!--TinyMCE - BUNDLE-->
+    {{ tinymce_init({'theme': {'simple': {'language': app.request.locale, 'menubar': false}}}) }}
+{% endblock %}

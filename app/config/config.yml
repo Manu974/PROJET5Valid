@@ -17,6 +17,8 @@ parameters:
     nao_faq.auteur: NAO association
     # Nombre d'articles à afficher par page pour la Faq
     nao_faq.nbaff.faq_limit: 5
+    # Auteur de la Faq par défaut
+    nao_newsletter.auteur: NAO association
 
 
 framework:
