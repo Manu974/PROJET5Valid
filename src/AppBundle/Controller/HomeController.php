@@ -26,28 +26,7 @@ class HomeController extends Controller
      */
     public function indexAction(Request $request)
     {
-        /*
-        $em = $this->getDoctrine()->getManager();
-
-        $ob = new Observation();
-        $ob->setLocation(new Point(6, 1));
-        $ob->setComment('popopopoppop');
-        $ob->setIsValid(true);
-        $ob->setCreatedAt(new \DateTime('now'));
-
-        $em->persist($ob);
-
-        $em->flush();
-        
-        $observation = $em->getRepository('AppBundle:Observation')->find(7);
-        dump($observation);
-        die();
-        
-*/
-        // replace this example code with whatever you need
-        return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
-        ]);
+        return $this->render('default/index.html.twig');
     }
 
     /**

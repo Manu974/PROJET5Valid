@@ -53,6 +53,10 @@ button[type=submit] {
     padding: 15px;
     justify-content: space-around;
 }
+button[type=submit] span {
+    position: relative;
+    bottom: 10px;
+}
 button .icon--small {
     position: relative;
     bottom: 7px;
@@ -65,6 +69,9 @@ button .icon--small {
     button[type=submit] span {
         position: relative;
         bottom: 14px;
+    }
+    .icon--thumb {
+        top: 7px
     }
     .blog-title {
         display: flex;
