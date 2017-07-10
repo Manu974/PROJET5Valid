@@ -10,4 +10,16 @@ namespace AppBundle\Repository;
  */
 class BirdRepository extends \Doctrine\ORM\EntityRepository
 {
+
+
+	public function getFamilleBuilder()
+  {
+  	$qb = $this->createQueryBuilder('c');
+
+  	$qb->select('DISTINCT c.famille')
+  	->orderBy('c.famille', 'ASC');
+	   
+	 return $qb; 
+  }
+
 }

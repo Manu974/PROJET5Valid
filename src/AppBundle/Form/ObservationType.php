@@ -13,6 +13,8 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use AppBundle\Repository\BirdRepository;
+
 
 
 
@@ -46,6 +48,10 @@ class ObservationType extends AbstractType
                 'class'        => 'AppBundle:Bird',
                 'choice_label' => 'famille',
                 'multiple'     => false,
+                'query_builder' => function(BirdRepository $repository) {
+                      return $repository->getFamilleBuilder();
+                      
+                    }
               ])
             ->add('nombreOiseaux', ChoiceType::class, [
                 'choices' => [

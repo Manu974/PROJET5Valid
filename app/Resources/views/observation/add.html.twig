@@ -21,7 +21,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script>
-      $(function() {
+      $(function(){
 
         var latGeolocalise = 0;
         var lngGeolocalise = 0;
@@ -133,6 +133,12 @@
             }
           });
         });
+
+          /*$("#appbundle_observation_famille option").val(function(){
+            //console.log($(this).text());
+            $(this).siblings($(this).text()).remove();
+          });*/
+
       });
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyZgz9fFFmD4Vf_0nJTlde0VEq6KxhFrw">
