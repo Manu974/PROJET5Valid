@@ -28,6 +28,7 @@
 	<p id="Situation"></p>
 	<p id="Auteur"></p>
 	<p id="Commentaire"></p>
+  <div id="bouttonDetails"></div>
   
 </div>
 
@@ -71,8 +72,8 @@
        	});
 
 
-       	$('table').one("click",'button[name="vueDetails"]', function(){
-     
+       	$('table').on("click",'button[name="vueDetails"]', function(e){
+          $('#bouttonDetails').empty();
          		$.ajax({
       		url:'http://127.0.0.1:8000/api/observations/'+this.id, 
       		type : 'GET',
@@ -85,7 +86,12 @@
       				$('#Auteur').text(data.author);
       				$('#Commentaire').text(data.comment);
               var buttonDetails = '<button type="button" id="detailsBloque">Bloquer auteur</button><button type="button" id="detailsDebloque">Débloquer auteur</button><button type="button" id="'+data.id+'" name="detailsSupprimer">Supprimer</button><button type="button" id="'+data.id+'" name="detailsValider">Valider</button>';
-              $('#detailObs').append(buttonDetails);		
+              $('#bouttonDetails').append(buttonDetails);
+
+              if(data.is_valid==true){
+                $('[name$="detailsValider"]').attr("disabled",true);
+              }
+             
   		    },
   		    error: function(){
   		      alert('La requête n\'a pas abouti');
