@@ -48,10 +48,6 @@ class ObservationType extends AbstractType
                 'class'        => 'AppBundle:Bird',
                 'choice_label' => 'famille',
                 'multiple'     => false,
-                'query_builder' => function(BirdRepository $repository) {
-                      return $repository->getFamilleBuilder();
-                      
-                    }
               ])
             ->add('nombreOiseaux', ChoiceType::class, [
                 'choices' => [
