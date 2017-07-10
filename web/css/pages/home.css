@@ -17,7 +17,7 @@ section {
 }
 .home-background {
     position: relative;
-    background: url('../../asset/images/cormorans-1920.jpg') no-repeat;
+    background: url('../../images/cormorans-1920.jpg') no-repeat;
     background-size: contain;
     height: 100%;
 }
