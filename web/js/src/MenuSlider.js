@@ -27,7 +27,7 @@ class MenuSlider {
         if (event) { event.stopPropagation(); }
 
         if (!this.isOpen && element !== 'body') {
-            this.menuBurger.className = this.className + ' is_active';
+            this.menuBurger.classList.add('is_active');
             this.navbarMobile.style.display = 'block';
             this.isOpen = true;
 
