@@ -4,13 +4,13 @@
     padding-right: 30px;
 }
 .form-group .btn {
-    padding: 5px;
+    padding: 8px;
     display: flex;
     align-items: center;
     justify-content: space-around;
     line-height: 3px;
     border-radius: 26px;
-    width: 21%;
+    width: 170px;
     height: 60px;
     background-color: #282829;
     color: #FAFAFA;
