@@ -123,16 +123,19 @@ class ApiController extends FOSRestController
      *     
      * )
      * @Rest\View(
-     *     statusCode = 200
+     *     statusCode = 204
      * )
      */
     public function deleteObservationAction(Observation $observation)
     {
         $em = $this->getDoctrine()->getManager();
-       
 
-        $image = $this->getDoctrine()->getRepository('AppBundle:ObservationImage')->find($observation->getImage()->getId());
-        $em->remove($image);        
+
+        if($observation->getImage()){
+            $image = $this->getDoctrine()->getRepository('AppBundle:ObservationImage')->find($observation->getImage()->getId());
+        $em->remove($image);      
+        }
+
         $em->remove($observation);
         $em->flush();
         
