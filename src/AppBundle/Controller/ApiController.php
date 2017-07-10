@@ -78,7 +78,7 @@ class ApiController extends FOSRestController
         $observation->setNomScientifique($request->get('nom_scientifique'));
         $observation->setFamille($request->get('famille'));
         $observation->setDepartment($request->get('department'));
-        $observation->setIsValid(false);
+        $observation->setIsValid(0);
 
         if ($imageId){
             

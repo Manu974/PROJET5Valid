@@ -103,7 +103,7 @@ class HomeController extends Controller
       $em = $this->getDoctrine()->getManager();
       $em->persist($observation);
       $em->flush();
-      return $this->render('observation/list.html.twig');
+      return $this->redirectToRoute('observationlistspage');
 
     }
 
