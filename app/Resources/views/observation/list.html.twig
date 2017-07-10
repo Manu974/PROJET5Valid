@@ -45,7 +45,7 @@
     		//timeout : 3000,
     		success: function(data){
     			$.each(data,function(i, observation){
-            console.log(observation);
+            //console.log(observation);
     				var trUser = '<tr><td name="status" is_valid = '+observation.is_valid+' id="'+observation.id+'"></td><td>'+observation.id+'</td><td>'+observation.department+'</td><td>'+observation.famille+'</td><td>'+observation.nom_vernaculaire+'</td><td>'+observation.author+'</td><td><button name="validationObservation" type="button" id="'+observation.id+'">valider</button><button name="vueDetails" type="button" id="'+observation.id+'">Vue Detailee</button></td></tr>';
     				$('#listObservation').append(trUser);
 
@@ -121,6 +121,33 @@
          window.location.replace('http://localhost:8000/observation/validation/'+this.id);
         });
 
+        var familleNames = {};
+          var nomScientifiqueNames = {};
+          var nomVernaculaireNames = {};
+
+            $("select[name='observation_espace_pro[famille]'] > option").each(function () {
+                if(familleNames[this.text]) {
+                    $(this).remove();
+                } else {
+                    familleNames[this.text] = this.value;
+                }
+            });
+
+            $("select[name='observation_espace_pro[nomScientifique]'] > option").each(function () {
+                if(nomScientifiqueNames[this.text]) {
+                    $(this).remove();
+                } else {
+                    nomScientifiqueNames[this.text] = this.value;
+                }
+            });
+
+            $("select[name='observation_espace_pro[nomVernaculaire]'] > option").each(function () {
+                if(nomVernaculaireNames[this.text]) {
+                    $(this).remove();
+                } else {
+                    nomVernaculaireNames[this.text] = this.value;
+                }
+            });
 
 
 
@@ -136,7 +163,19 @@
           center: France
         });
 
-        
+
+/*
+    var film = {
+    
+    famille: "Accipitridae",
+    nom_vernaculaire: "Épervier bicolore",
+    nom_scientifique: "Accipiter bicolor",
+    department: 1,
+    is_valid: true,
+    author: "pop"
+    
+};
+   
         /*var marker = new google.maps.Marker({
           position: France,
           map: map
@@ -164,7 +203,71 @@
         }*/
       }
 
-      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+
+      function ajaxPost(url, data, callback, isJson) {
+    var req = new XMLHttpRequest();
+    req.open("POST", url);
+    req.addEventListener("load", function () {
+        if (req.status >= 200 && req.status < 400) {
+            // Appelle la fonction callback en lui passant la réponse de la requête
+            callback(req.responseText);
+        } else {
+            console.error(req.status + " " + req.statusText + " " + url);
+        }
+    });
+    req.addEventListener("error", function () {
+        console.error("Erreur réseau avec l'URL " + url);
+    });
+    if (isJson) {
+        // Définit le contenu de la requête comme étant du JSON
+        req.setRequestHeader("Content-Type", "application/json");
+        // Transforme la donnée du format JSON vers le format texte avant l'envoi
+        data = JSON.stringify(data);
+    }
+    req.send(data);
+}
+
+var form = document.querySelector("form");
+
+form.addEventListener("submit", function(e){
+      e.preventDefault();
+    
+      var famille = document.getElementById("observation_espace_pro_famille").options[document.getElementById("observation_espace_pro_famille").selectedIndex].text;
+
+      var nomVern = document.getElementById("observation_espace_pro_nomVernaculaire").options[document.getElementById("observation_espace_pro_nomVernaculaire").selectedIndex].text;
+      var nomScien = document.getElementById("observation_espace_pro_nomScientifique").options[document.getElementById("observation_espace_pro_nomScientifique").selectedIndex].text;
+      var departement = document.getElementById("observation_espace_pro_department").options[document.getElementById("observation_espace_pro_department").selectedIndex].text;
+      var status =  document.getElementById("observation_espace_pro_isValid").options[document.getElementById("observation_espace_pro_isValid").selectedIndex].text;
+      var author = document.getElementById("observation_espace_pro_author").value;
+
+      var ListObs = {
+    
+    "famille": famille,
+    "nom_vernaculaire": nomVern,
+    "nom_scientifique": nomScien,
+    "department": departement,
+    "is_valid": status,
+    "author": author
+};
+  
+ $.ajax({
+                url:'http://localhost:8000/api/observations/lists/carte', 
+                type : 'POST',
+                data: JSON.stringify(ListObs),
+                dataType: 'json',
+                contentType: 'application/json',
+                processData: false,
+                success: function(data){
+                  alert("nice");
+                },
+                error: function(xhr, ajaxOptions, thrownError){
+                  alert(xhr.status);
+                  alert(thrownError);
+                }
+              });
+});
+
+    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
         infoWindow.setContent(browserHasGeolocation ?
                               'Error: The Geolocation service failed.' :

@@ -116,6 +116,36 @@ class ApiController extends FOSRestController
     }
 
     /**
+     * @Rest\Post(
+     *     path = "/api/observations/lists/carte",
+     *     name = "app_obs_carte_lists"
+     *     
+     * )
+     * @Rest\View(
+     *     statusCode = 200
+     * )
+     */
+    public function listObservationCarteAction(Request $request)
+    {
+        
+        $repository = $this
+              ->getDoctrine()
+              ->getManager()
+              ->getRepository('AppBundle:Observation')
+            ;
+            $data = $this->get('jms_serializer')->deserialize($request->getContent(), 'array', 'json');
+            
+            
+
+        $listObs = $repository->findBy(
+            array('famille' => $data['famille'],'nomVernaculaire'=>$data['nom_vernaculaire'],'nomScientifique'=>$data['nom_scientifique'],'isValid'=>$data['is_valid'], 'author'=>$data['author'])
+            );
+        
+        return $listObs;
+
+    }
+
+    /**
      * @Rest\Delete(
      *     path = "/api/observations/delete/{id}",
      *     name = "app_obs_delete",

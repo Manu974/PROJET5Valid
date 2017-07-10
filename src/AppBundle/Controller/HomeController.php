@@ -91,6 +91,13 @@ class HomeController extends Controller
         $observation = new Observation();
         
         $form   = $this->get('form.factory')->create(ObservationEspaceProType::class, $observation); 
+
+        /*$form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+          dump($form);
+          die();
+        }*/
     return $this->render('observation/list.html.twig', array(
       'form' => $form->createView(),
       
