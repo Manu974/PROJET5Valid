@@ -35,26 +35,40 @@ class HomeController extends Controller
     public function observationAction(Request $request)
     {  
         $observation = new Observation();
+        $observationImage = new ObservationImage();
         $form   = $this->get('form.factory')->create(ObservationType::class, $observation);
+        $formImage   = $this->get('form.factory')->create(ObservationImageType::class, $observationImage);
+        $formImage->handleRequest($request);
 
-        if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($observation);
-            $em->flush();
+        if ($formImage->isSubmitted() && $formImage->isValid()) {
+            
+              //$observation->upload();
+              // Le reste de la méthode reste inchangé
+              
+              $em = $this->getDoctrine()->getManager();
 
-             $request->getSession()->getFlashBag()->add('notice', 'Annonce bien enregistrée.');
+              $em->persist($observationImage);
 
-                
-            }
+              $helper = $this->container->get('vich_uploader.templating.helper.uploader_helper');
+              $path = $helper->asset($observationImage, 'imageFile');
+
+              $observationImage->setUrl($path);
+
+              $em->flush();
+
+              $session = $request->getSession();
+              $session->set('imageId', $observationImage->getId());
+      
+    }
 
     return $this->render('observation/add.html.twig', array(
       'form' => $form->createView(),
+      'formImage'=> $formImage->createView(),
     ));
 
 
 
     }
-
 
     /**
      * @Route("/observation/carte", name="observationcartepage")
@@ -65,6 +79,31 @@ class HomeController extends Controller
     return $this->render('observation/carte.html.twig');
 
 
+
+    }
+
+    /**
+     * @Route("/observation/lists", name="observationlistspage")
+     */
+    public function observationListAction(Request $request)
+    {  
+        
+    return $this->render('observation/list.html.twig');
+
+    }
+
+
+    /**
+     * @Route("/observation/validation/{id}", name="observationvalidpage")
+     */
+    public function observationValidAction(Request $request, $id)
+    {  
+      $observation = $this->getDoctrine()->getManager()->getRepository('AppBundle:Observation')->find($id);
+      $observation->setIsValid(true);
+      $em = $this->getDoctrine()->getManager();
+      $em->persist($observation);
+      $em->flush();
+      return $this->render('observation/list.html.twig');
 
     }
 

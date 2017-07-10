@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8" />
+    <title>observation</title>
+    <link rel="stylesheet" href="{{ asset('css/list.css') }}">
+  </head>
+
+  <body>
+    <h3>liste observation</h3>
+
+	<table id="listObservation" style="width:50%">
+		  <tr>
+		  	<th>Status</th>
+		    <th>N°</th>
+		    <th>Dpt</th> 
+		    <th>Famille</th>
+		    <th>Nom de l'oiseau</th>
+		    <th>Auteur</th>
+		  </tr>
+</table>
+
+<div id="detailObs" class="well">
+	<p id="NomOiseau"></p>
+	<p id="Famille"></p>
+	<p id="Nombre"></p>
+	<p id="Situation"></p>
+	<p id="Auteur"></p>
+	<p id="Commentaire"></p>
+</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script>
+      $(function() {
+
+       	$.ajax({
+    		url:'http://127.0.0.1:8000/api/observations/lists', 
+    		type : 'GET',
+    		//timeout : 3000,
+    		success: function(data){
+    			$.each(data,function(i, observation){
+
+    				var trUser = '<tr><td is_valid = '+observation.is_valid+'></td><td>'+observation.id+'</td><td>'+observation.department+'</td><td>'+observation.famille+'</td><td>'+observation.nom_vernaculaire+'</td><td>'+observation.author+'</td><td><button name="validationObservation" type="button" id="'+observation.id+'">valider</button><button name="vueDetails" type="button" id="'+observation.id+'">Vue Detailee</button></td></tr>';
+    				$('#listObservation').append(trUser);
+
+    				if($('[is_valid$="true"]')){
+   						$('[is_valid$="true"]').css('background', 'green');
+   					}
+
+   					if($('[is_valid$="false"]')){
+   						$('[is_valid$="false"]').css('background', 'red');
+   					}
+    				
+    			});
+		    },
+		    error: function(){
+		      alert('La requête n\'a pas abouti');
+		    }
+		  });
+
+       	$('table').on("click",'button[name="validationObservation"]', function(){
+     
+       		window.location.replace('http://localhost:8000/observation/validation/'+this.id);
+       	});
+
+
+       	$('table').on("click",'button[name="vueDetails"]', function(){
+     
+       		$.ajax({
+    		url:'http://127.0.0.1:8000/api/observations/'+this.id, 
+    		type : 'GET',
+    		//timeout : 3000,
+    		success: function(data){
+    			
+    				console.log(data);
+    				$('#NomOiseau').text(data.nom_vernaculaire);
+    				$('#Famille').text(data.famille);
+    				$('#Nombre').text(data.nombre_oiseaux);
+    				$('#Situation').text(data.nidification);
+    				$('#Auteur').text(data.author);
+    				$('#Commentaire').text(data.comment);
+    				/*var trUser = '<tr><td is_valid = '+observation.is_valid+'></td><td>'+observation.id+'</td><td>'+observation.department+'</td><td>'+observation.famille+'</td><td>'+observation.nom_vernaculaire+'</td><td>'+observation.author+'</td><td><button name="validationObservation" type="button" id="'+observation.id+'">valider</button><button name="vueDetails" type="button" id="'+observation.id+'">Vue Detailee</button></td></tr>';
+    				$('#listObservation').append(trUser);
+*/
+    			
+		    },
+		    error: function(){
+		      alert('La requête n\'a pas abouti');
+		    }
+		  });
+       	});
+
+      });
+    </script>
+
+    </body>
+</html>

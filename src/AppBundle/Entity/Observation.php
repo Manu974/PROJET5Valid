@@ -52,6 +52,7 @@ class Observation
     
     /**
     * @ORM\OneToOne(targetEntity="AppBundle\Entity\ObservationImage", cascade={"persist"})
+    * @ORM\JoinColumn(nullable=true)
     */
     private $image;
 
@@ -419,6 +420,8 @@ class Observation
     {
         return $this->department;
     }
+
+    
 
     /**
      * Set image

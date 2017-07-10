@@ -70,7 +70,6 @@ class ObservationType extends AbstractType
 
                 ])
             ->add('comment', TextareaType::class)
-            ->add('image', ObservationImageType::class)
             ->add('author', TextType::class)
             ->add('save',      SubmitType::class);
     }

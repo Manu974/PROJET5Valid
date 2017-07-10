@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0537a7177684a912bf0edc84c7710070",
+    "content-hash": "63bc375b3d8731dc56fff6a6b20e8645",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -1093,6 +1093,76 @@
             "time": "2016-07-18T04:51:16+00:00"
         },
         {
+            "name": "fresh/vich-uploader-serialization-bundle",
+            "version": "v1.0.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fre5h/VichUploaderSerializationBundle.git",
+                "reference": "8136178e8c327c8e631c86e987fbf47f4d066b28"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fre5h/VichUploaderSerializationBundle/zipball/8136178e8c327c8e631c86e987fbf47f4d066b28",
+                "reference": "8136178e8c327c8e631c86e987fbf47f4d066b28",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/orm": "~2.5",
+                "jms/serializer-bundle": "~1.1",
+                "php": ">=5.6.0",
+                "symfony/symfony": "^2.7.13 || ^3.0.6",
+                "vich/uploader-bundle": "~1.1"
+            },
+            "require-dev": {
+                "escapestudios/symfony2-coding-standard": "~2.9",
+                "phpunit/phpunit": "5.6.*",
+                "squizlabs/php_codesniffer": "~2.7"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Fresh\\VichUploaderSerializationBundle\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Artem Genvald",
+                    "email": "genvaldartem@gmail.com",
+                    "role": "Creator"
+                },
+                {
+                    "name": "Community",
+                    "homepage": "https://github.com/fre5h/VichUploaderSerializationBundle/graphs/contributors",
+                    "role": "Developers"
+                }
+            ],
+            "description": "Provides integration between VichUploaderBundle and JMSSerializerBundle.",
+            "homepage": "https://github.com/fre5h/VichUploaderSerializationBundle",
+            "keywords": [
+                "JMSSerializerBundle",
+                "VichUploaderBundle",
+                "bundle",
+                "file upload",
+                "integration",
+                "serialization",
+                "symfony",
+                "upload"
+            ],
+            "time": "2016-11-12T10:05:18+00:00"
+        },
+        {
             "name": "friendsofsymfony/rest-bundle",
             "version": "2.2.0",
             "source": {
@@ -1965,16 +2035,17 @@
         },
         {
             "name": "jms/serializer-bundle",
-            "version": "2.0.0",
+            "version": "1.5.0",
+            "target-dir": "JMS/SerializerBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/JMSSerializerBundle.git",
-                "reference": "90373f0ed225b204bed66cc3f6837746c5902ac5"
+                "reference": "85ee039a2b7f89d77c403e33cee7b43a875c31e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/JMSSerializerBundle/zipball/90373f0ed225b204bed66cc3f6837746c5902ac5",
-                "reference": "90373f0ed225b204bed66cc3f6837746c5902ac5",
+                "url": "https://api.github.com/repos/schmittjoh/JMSSerializerBundle/zipball/85ee039a2b7f89d77c403e33cee7b43a875c31e5",
+                "reference": "85ee039a2b7f89d77c403e33cee7b43a875c31e5",
                 "shasum": ""
             },
             "require": {
@@ -2005,26 +2076,19 @@
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.x-dev"
+                    "dev-master": "1.5-dev"
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "JMS\\SerializerBundle\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
+                "psr-0": {
+                    "JMS\\SerializerBundle": ""
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "Apache-2.0"
             ],
             "authors": [
-                {
-                    "name": "Asmir Mustafic",
-                    "email": "goetas@gmail.com"
-                },
                 {
                     "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com"
@@ -2039,7 +2103,7 @@
                 "serialization",
                 "xml"
             ],
-            "time": "2017-05-17T10:26:43+00:00"
+            "time": "2017-05-10T10:17:17+00:00"
         },
         {
             "name": "jsor/doctrine-postgis",
@@ -2229,6 +2293,63 @@
                 "psr-3"
             ],
             "time": "2017-06-19T01:22:40+00:00"
+        },
+        {
+            "name": "nelmio/cors-bundle",
+            "version": "1.5.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nelmio/NelmioCorsBundle.git",
+                "reference": "ac6576a599d7db9c2c6022602c188a5594216056"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nelmio/NelmioCorsBundle/zipball/ac6576a599d7db9c2c6022602c188a5594216056",
+                "reference": "ac6576a599d7db9c2c6022602c188a5594216056",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/framework-bundle": "^2.7 || ^3.0"
+            },
+            "require-dev": {
+                "matthiasnoback/symfony-dependency-injection-test": "^0.7.6",
+                "mockery/mockery": "0.9.*"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.5.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Nelmio\\CorsBundle\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nelmio",
+                    "homepage": "http://nelm.io"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://github.com/nelmio/NelmioCorsBundle/contributors"
+                }
+            ],
+            "description": "Adds CORS (Cross-Origin Resource Sharing) headers support in your Symfony2 application",
+            "keywords": [
+                "api",
+                "cors",
+                "crossdomain"
+            ],
+            "time": "2017-04-24T09:12:42+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -3556,6 +3677,88 @@
                 "templating"
             ],
             "time": "2017-06-07T18:47:58+00:00"
+        },
+        {
+            "name": "vich/uploader-bundle",
+            "version": "1.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dustin10/VichUploaderBundle.git",
+                "reference": "209510ace7c218783f5c0528dd0bfa1c89515f69"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dustin10/VichUploaderBundle/zipball/209510ace7c218783f5c0528dd0bfa1c89515f69",
+                "reference": "209510ace7c218783f5c0528dd0bfa1c89515f69",
+                "shasum": ""
+            },
+            "require": {
+                "jms/metadata": "^1.5",
+                "php": "^5.5|^7.0",
+                "symfony/asset": "^2.3|^3.0",
+                "symfony/dependency-injection": "^2.3|^3.0",
+                "symfony/finder": "^2.2|^3.0",
+                "symfony/framework-bundle": "^2.3|^3.0",
+                "symfony/property-access": "^2.5|^3.0",
+                "symfony/security": "^2.3|^3.0",
+                "symfony/templating": "^2.3|^3.0"
+            },
+            "require-dev": {
+                "doctrine/doctrine-bundle": "^1.6",
+                "doctrine/mongodb-odm": "^1.0",
+                "doctrine/orm": "^2.2.3",
+                "ext-sqlite3": "*",
+                "knplabs/knp-gaufrette-bundle": "^0.3",
+                "matthiasnoback/symfony-dependency-injection-test": "^0.7",
+                "mikey179/vfsstream": "^1.2",
+                "oneup/flysystem-bundle": "^1.0",
+                "phpunit/phpunit": "^5.6",
+                "symfony/browser-kit": "^2.3|^3.0",
+                "symfony/css-selector": "^2.3|^3.0",
+                "symfony/dom-crawler": "^2.3|^3.0",
+                "symfony/form": "^2.3|^3.0",
+                "symfony/twig-bridge": "^2.3.10|^3.0",
+                "symfony/twig-bundle": "^2.3|^3.0",
+                "symfony/validator": "^2.3|^3.0",
+                "symfony/yaml": "^2.0.5|^3.0"
+            },
+            "suggest": {
+                "doctrine/doctrine-bundle": "~1.6",
+                "doctrine/mongodb-odm-bundle": "*",
+                "doctrine/orm": "^2.2.3",
+                "doctrine/phpcr-odm": "~1.0",
+                "knplabs/knp-gaufrette-bundle": "~0.3",
+                "symfony/yaml": "^2.0.5",
+                "willdurand/propel-eventdispatcher-bundle": "~1.2"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Vich\\UploaderBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dustin Dobervich",
+                    "email": "ddobervich@gmail.com"
+                }
+            ],
+            "description": "Ease file uploads attached to entities",
+            "homepage": "https://github.com/dustin10/VichUploaderBundle",
+            "keywords": [
+                "file uploads",
+                "upload"
+            ],
+            "time": "2017-07-04T14:09:56+00:00"
         },
         {
             "name": "willdurand/jsonp-callback-validator",

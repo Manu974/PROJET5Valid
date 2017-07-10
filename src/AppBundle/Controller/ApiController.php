@@ -25,6 +25,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 
 use FOS\RestBundle\Controller\Annotations\View;
+use FOS\RestBundle\Controller\Annotations\FileParam;
 
 
 
@@ -40,7 +41,7 @@ class ApiController extends FOSRestController
      *     statusCode = 200
      * )
      */
-    public function showAction(Observation $observation)
+    public function showObservationAction(Observation $observation)
     {
         return $observation;
     }
@@ -54,14 +55,20 @@ class ApiController extends FOSRestController
      * )
      * 
      */
-    public function createAction(Request $request)
-    {
+    public function createObservationAction(Request $request)
+    {   
+
+        
+        $session = $request->getSession();
+        $imageId = $session->get('imageId');
+
         $data = $this->get('jms_serializer')->deserialize($request->getContent(), 'array', 'json');
         
         $observation = new Observation();
-        
+
         $form = $this->get('form.factory')->create(ObservationType::class, $observation);
         $form->submit($data);
+
         
         $localisation = $request->get('location');
         $observation->setLocation(new Point($localisation["x"], $localisation["y"]));
@@ -72,15 +79,22 @@ class ApiController extends FOSRestController
         $observation->setFamille($request->get('famille'));
         $observation->setDepartment($request->get('department'));
         $observation->setIsValid(false);
-        
-        $em = $this->getDoctrine()->getManager();
 
+        if ($imageId){
+            
+        $image = $this->getDoctrine()->getManager()->getRepository('AppBundle:ObservationImage')->find($imageId);
+        $observation->setImage($image);
+        }
+        $em = $this->getDoctrine()->getManager();
         $em->persist($observation);
         $em->flush();
+
+        $session->clear();
 
         return $this->view(Response::HTTP_CREATED);
 
     }
+
 
     /**
      * @Rest\Get(
@@ -92,13 +106,40 @@ class ApiController extends FOSRestController
      *     statusCode = 200
      * )
      */
-    public function listAction()
+    public function listObservationAction()
     {
         $listObs = $this->getDoctrine()->getRepository('AppBundle:Observation')->findAll();
+
 
         return $listObs;
 
     }
+
+    /**
+     * @Rest\Delete(
+     *     path = "/api/observations/delete/{id}",
+     *     name = "app_obs_delete",
+     *     requirements = {"id"="\d+"}
+     *     
+     * )
+     * @Rest\View(
+     *     statusCode = 200
+     * )
+     */
+    public function deleteObservationAction(Observation $observation)
+    {
+        $em = $this->getDoctrine()->getManager();
+       
+
+        $image = $this->getDoctrine()->getRepository('AppBundle:ObservationImage')->find($observation->getImage()->getId());
+        $em->remove($image);        
+        $em->remove($observation);
+        $em->flush();
+        
+
+    }
+
+
 
     
 
