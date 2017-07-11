@@ -44,9 +44,10 @@
     color: #8CC63F;
 }
 .login-content {
+    transition: all 1s;
     padding: 42px;
     top: 0;
-    left: 0;
+    left: -1400px;
     background-color: #282829;
     z-index: 10;
     position: absolute;

@@ -287,7 +287,12 @@ a {
     height: 40px;
     border-left: 1px solid #939498;
 }
-
+/**** STYLE FOR THE LOGIN PAGE MENU ****/
+#login-page {
+    position: absolute;
+    width: 100%;
+    display: none;
+}
 /***** FOOTER *****/
 .footer {
     background-color: #282829;
