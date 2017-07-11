@@ -21,7 +21,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script>
-      $(function() {
+      $(function(){
 
         var latGeolocalise = 0;
         var lngGeolocalise = 0;
@@ -133,6 +133,35 @@
             }
           });
         });
+
+          var familleNames = {};
+          var nomScientifiqueNames = {};
+          var nomVernaculaireNames = {};
+
+            $("select[name='appbundle_observation[famille]'] > option").each(function () {
+                if(familleNames[this.text]) {
+                    $(this).remove();
+                } else {
+                    familleNames[this.text] = this.value;
+                }
+            });
+
+            $("select[name='appbundle_observation[nomScientifique]'] > option").each(function () {
+                if(nomScientifiqueNames[this.text]) {
+                    $(this).remove();
+                } else {
+                    nomScientifiqueNames[this.text] = this.value;
+                }
+            });
+
+            $("select[name='appbundle_observation[nomVernaculaire]'] > option").each(function () {
+                if(nomVernaculaireNames[this.text]) {
+                    $(this).remove();
+                } else {
+                    nomVernaculaireNames[this.text] = this.value;
+                }
+            });
+
       });
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyZgz9fFFmD4Vf_0nJTlde0VEq6KxhFrw">

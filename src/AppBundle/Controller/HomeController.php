@@ -9,6 +9,8 @@ use AppBundle\Entity\Bird;
 use AppBundle\Entity\Observation;
 use AppBundle\Entity\ObservationImage;
 use AppBundle\Form\ObservationType;
+use AppBundle\Form\ObservationEspaceProType;
+use AppBundle\Form\ObservationCarteType;
 use AppBundle\Form\BirdType;
 use AppBundle\Form\ObservationImageType;
 use CrEOF\Spatial\PHP\Types\Geometry\LineString;
@@ -74,21 +76,34 @@ class HomeController extends Controller
      * @Route("/observation/carte", name="observationcartepage")
      */
     public function observationCarteAction(Request $request)
-    {  
+    { 
+
+      $observation = new Observation();
         
-    return $this->render('observation/carte.html.twig');
+        $form   = $this->get('form.factory')->create(ObservationCarteType::class, $observation); 
+
+        return $this->render('observation/carte.html.twig', array(
+      'form' => $form->createView(),
+      
+    ));
 
 
 
     }
 
     /**
-     * @Route("/observation/lists", name="observationlistspage")
+     * @Route("/observation/espacepro", name="observationpropage")
      */
-    public function observationListAction(Request $request)
+    public function observationProAction(Request $request)
     {  
+        $observation = new Observation();
         
-    return $this->render('observation/list.html.twig');
+        $form   = $this->get('form.factory')->create(ObservationEspaceProType::class, $observation); 
+
+        return $this->render('observation/list.html.twig', array(
+      'form' => $form->createView(),
+      
+    ));
 
     }
 
@@ -103,7 +118,7 @@ class HomeController extends Controller
       $em = $this->getDoctrine()->getManager();
       $em->persist($observation);
       $em->flush();
-      return $this->render('observation/list.html.twig');
+      return $this->redirectToRoute('observationpropage');
 
     }
 
