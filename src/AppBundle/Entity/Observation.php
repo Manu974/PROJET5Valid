@@ -3,12 +3,71 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Hateoas\Configuration\Annotation as Hateoas;
+
+
+
 
 /**
  * Observation
  *
  * @ORM\Table(name="observation")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\ObservationRepository")
+ * @Hateoas\Relation(
+ *      "self",
+ *      href = @Hateoas\Route(
+ *          "app_obs_show",
+ *          parameters = { "id" = "expr(object.getId())" },
+ *          absolute = true
+ *      )
+ * )
+* @Hateoas\Relation(
+ *      "create",
+ *      href = @Hateoas\Route(
+ *          "app_obs_create",
+ *          absolute = true
+ *      )
+ * )
+* @Hateoas\Relation(
+ *      "lists",
+ *      href = @Hateoas\Route(
+ *          "app_obs_lists",
+ *          absolute = true
+ *      )
+ * )
+ * @Hateoas\Relation(
+ *      "lists observation pour espace pro",
+ *      href = @Hateoas\Route(
+ *          "app_obs_espacepro_lists",
+ *          absolute = true
+ *      )
+ * )
+ *
+ * @Hateoas\Relation(
+ *      "lists observation pour carte",
+ *      href = @Hateoas\Route(
+ *          "app_obs_carte_lists",
+ *          absolute = true
+ *      )
+ * )
+ *
+ * @Hateoas\Relation(
+ *      "delete observation",
+ *      href = @Hateoas\Route(
+ *          "app_obs_delete",
+ *          parameters = { "id" = "expr(object.getId())" },
+ *          absolute = true
+ *      )
+ * )
+ * @Hateoas\Relation(
+ *     "image",
+ *     embedded = @Hateoas\Embedded("expr(object.getImage())")
+ * )
+ *
+ *
+ *
+ *
+ *
  */
 class Observation
 {

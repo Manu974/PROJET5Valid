@@ -29,6 +29,7 @@ class AppKernel extends Kernel
             new Fresh\VichUploaderSerializationBundle\FreshVichUploaderSerializationBundle(),
             new Nelmio\CorsBundle\NelmioCorsBundle(),
             new NAO\NewsletterBundle\NAONewsletterBundle(),
+            new Bazinga\Bundle\HateoasBundle\BazingaHateoasBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

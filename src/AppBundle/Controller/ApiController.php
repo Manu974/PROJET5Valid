@@ -59,6 +59,8 @@ class ApiController extends FOSRestController
     {   
 
         
+
+        
         $session = $request->getSession();
         $imageId = $session->get('imageId');
 
