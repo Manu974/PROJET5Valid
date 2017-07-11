@@ -1,0 +1,4 @@
+services:
+    nao_newsletter.subdiffusion:
+        class: NAO\NewsletterBundle\SubDiffusion\NAOSubDiffusion
+        arguments: ["@doctrine.orm.entity_manager"]
