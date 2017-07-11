@@ -118,14 +118,14 @@ class ApiController extends FOSRestController
     /**
      * @Rest\Post(
      *     path = "/api/observations/lists/carte",
-     *     name = "app_obs_carte_lists"
+     *     name = "app_obs_espacepro_lists"
      *     
      * )
      * @Rest\View(
      *     statusCode = 200
      * )
      */
-    public function listObservationCarteAction(Request $request)
+    public function listObservationEspaceProAction(Request $request)
     {
         
         $repository = $this
