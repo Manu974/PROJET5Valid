@@ -53,12 +53,13 @@
 
             if(observation.is_valid==true){
               $('[is_valid$="true"]').css('background', 'green');
-              $('[name$="validationObservation"]').attr("disabled",true);
+              $('[name$="validationObservation"][id="'+observation.id+'"]').attr("disabled", true);
 
-            }
+            } else {
 
-            if(observation.is_valid==false){
+            
               $('[is_valid$="false"]').css('background', 'red');
+              //$('[name$="validationObservation"]').removeAttr("disabled");
               
             }
 
@@ -91,6 +92,7 @@
               var buttonDetails = '<button type="button" id="detailsBloque">Bloquer auteur</button><button type="button" id="detailsDebloque">Débloquer auteur</button><button type="button" id="'+data.id+'" name="detailsSupprimer">Supprimer</button><button type="button" id="'+data.id+'" name="detailsValider">Valider</button>';
               $('#bouttonDetails').append(buttonDetails);
 
+
               if(data.is_valid==true){
                 $('[name$="detailsValider"]').attr("disabled",true);
               }
@@ -103,7 +105,6 @@
       });
 
         $('#detailObs').on("click",'button[name="detailsSupprimer"]', function(){
-          console.log(this.id);
           $.ajax({
           url:'http://127.0.0.1:8000/api/observations/delete/'+this.id, 
           type : 'DELETE',
@@ -155,7 +156,7 @@
     </script>
     <script>
     
-
+    var point = {};
       function initMap() {
         var France = {lat: 46.227638, lng: 2.213749000000007};
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -163,71 +164,7 @@
           center: France
         });
 
-
-/*
-    var film = {
-    
-    famille: "Accipitridae",
-    nom_vernaculaire: "Épervier bicolore",
-    nom_scientifique: "Accipiter bicolor",
-    department: 1,
-    is_valid: true,
-    author: "pop"
-    
-};
-   
-        /*var marker = new google.maps.Marker({
-          position: France,
-          map: map
-        });*/
-        //var infoWindow = new google.maps.InfoWindow({map: map});
-        
-
-        // Try HTML5 geolocation.
-        /*if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-            var pos = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-            };
-
-            infoWindow.setPosition(pos);
-            infoWindow.setContent('Location found.');
-            map.setCenter(pos);
-          }, function() {
-            handleLocationError(true, infoWindow, map.getCenter());
-          });
-        } else {
-          // Browser doesn't support Geolocation
-          handleLocationError(false, infoWindow, map.getCenter());
-        }*/
-      }
-
-
-      function ajaxPost(url, data, callback, isJson) {
-    var req = new XMLHttpRequest();
-    req.open("POST", url);
-    req.addEventListener("load", function () {
-        if (req.status >= 200 && req.status < 400) {
-            // Appelle la fonction callback en lui passant la réponse de la requête
-            callback(req.responseText);
-        } else {
-            console.error(req.status + " " + req.statusText + " " + url);
-        }
-    });
-    req.addEventListener("error", function () {
-        console.error("Erreur réseau avec l'URL " + url);
-    });
-    if (isJson) {
-        // Définit le contenu de la requête comme étant du JSON
-        req.setRequestHeader("Content-Type", "application/json");
-        // Transforme la donnée du format JSON vers le format texte avant l'envoi
-        data = JSON.stringify(data);
-    }
-    req.send(data);
-}
-
-var form = document.querySelector("form");
+        var form = document.querySelector("form");
 
 form.addEventListener("submit", function(e){
       e.preventDefault();
@@ -258,7 +195,14 @@ form.addEventListener("submit", function(e){
                 contentType: 'application/json',
                 processData: false,
                 success: function(data){
-                console.log(data);
+                  $.each(data, function(i, val){
+                    var marker = new google.maps.Marker({
+
+                    position: {lat: val.location['x'], lng: val.location['y']},
+                    map: map
+                });
+                  });
+                
                 },
                 error: function(xhr, ajaxOptions, thrownError){
                   alert(xhr.status);
@@ -267,12 +211,42 @@ form.addEventListener("submit", function(e){
               });
 });
 
+        /**/
+        //var infoWindow = new google.maps.InfoWindow({map: map});
+        
+
+        // Try HTML5 geolocation.
+        /*if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('Location found.');
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }*/
+      }
+
+
+
+
+
     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
         infoWindow.setContent(browserHasGeolocation ?
                               'Error: The Geolocation service failed.' :
                               'Error: Your browser doesn\'t support geolocation.');
       }
+
+
     </script>
     </script>
     <script type="text/javascript" async defer
