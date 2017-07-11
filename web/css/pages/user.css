@@ -1,0 +1,17 @@
+.user-container {
+    color: #FAFAFA;
+}
+h1.user-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    color: #8CC63F;
+    box-shadow: 0 5px 5px #111;
+}
+h1.user-title span{
+    margin-left: 30px;
+}
+.user-container form input {
+    color: #282829;
+}

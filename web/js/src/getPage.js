@@ -9,10 +9,9 @@ class loadLoginPage {
         this.loginContent = null;
         this.page = page;
         this.getPage();
-
         let links = document.querySelectorAll(clickEvent);
         links.forEach((link) => {
-            link.addEventListener('click', e => {
+            link.parentNode.addEventListener('click', e => {
                 e.stopPropagation();
                 this.element.style.display = 'block';
                 setTimeout(() => {

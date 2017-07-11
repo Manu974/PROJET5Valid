@@ -18,7 +18,7 @@
                     <img src="{{ asset('logo-icones/LOGO.svg') }}" alt="" class="header-logo">
                 </a>
                 <nav class="header-navbar hidden-sm">
-                    <a href="#" class="header-navbar-item">
+                    <a href="{{ path('homepage') }}" class="header-navbar-item">
                         <i class="icon icon--home"></i>
                         <p class="header-navbar-link">Accueil</p>
                     </a>
@@ -34,19 +34,19 @@
                         <i class="icon icon--obs"></i>
                         <p class="header-navbar-link">Observation</p>
                     </a>
-                    <a href="#" class="header-navbar-item">
+                    <a href="{{ path('nao_blog_homepage') }}" class="header-navbar-item">
                         <i class="icon icon--prog"></i>
                         <p class="header-navbar-link">Programme</p>
                     </a>
-                    <a href="#" class="header-navbar-item">
+                    <a href="{{ path('nao_user_compte') }}" class="header-navbar-item">
                         <i class="icon icon--account"></i>
                         <p class="header-navbar-link">Compte</p>
                     </a>
-                    <a href="#" class="header-navbar-item">
+                    <a href="{{ path('nao_faq_homepage') }}" class="header-navbar-item">
                         <i class="icon icon--faq"></i>
                         <p class="header-navbar-link">Faq</p>
                     </a>
-                    <a href="#" class="header-navbar-item">
+                    <a href="{{ path('nao_blog_contact') }}" class="header-navbar-item">
                         <i class="icon icon--contact"></i>
                         <p class="header-navbar-link">Contact</p>
                     </a>

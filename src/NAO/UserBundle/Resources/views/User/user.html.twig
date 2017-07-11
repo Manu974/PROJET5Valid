@@ -1,3 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/pages/user.css') }}">
+{% endblock %}
+
 {% block body %}
     <!------Message---Traitement--->
     {% if app.session.flashBag.has('error') %}
@@ -7,44 +14,58 @@
             {% endfor %}
         </div>
     {% endif %}
-
-    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-        {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
-        <a href="{{ path('fos_user_security_logout') }}">
-            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
-        </a>
-    {% endif %}
+    <section class="section-img container">
+        <div class="row">
+            <picture>
+                <source media="(min-width: 640px)" srcset="{{ asset('images/rouge-gorge-1024px.jpg') }}">
+                <source media="(max-width: 640px)" srcset="{{ asset('images/rouge-gorge-640px.jpg') }}">
+                <img src="{{ asset('images/rouge-gorge-1024px.jpg') }}" alt="Rouge gorge" width="100%">
+            </picture>
+        </div>
+    </section>
 
     <!------Compte Admin / gestion des utilisateurs--->
-    {% if is_granted('ROLE_ADMIN') %}
-        <h2>Mon compte - Administrateur</h2>
-        <h3>Liste des users</h3>
-        {% for user in users %}
-            {% for role in user.roles|slice(0,1)  %}
-                {% if role != 'ROLE_ADMIN' %}
-                    <li>{{ user.username|e }} id: {{user.id}} role :{{ role }}</li>
-                    <a href="{{ path('nao_user_admin_delete', { 'id': user.id }) }}"><input type="submit" value="Supprimer"></a>
-                    <a href="{{ path('nao_user_demote', { 'id': user.id }) }}"><input type="submit" value="Rétrograder en utilisateur"></a>
-                    <a href="{{ path('nao_user_promote', { 'id': user.id }) }}"><input type="submit" value="Promouvoir en naturalise"></a>
-                {% endif %}
+    <div class="container user-container">
+        <h1 class="user-title">
+            <i class="icon--large icon--account is_active"></i>
+            <span>Mon Compte</span>
+        </h1>
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+            <a href="{{ path('fos_user_security_logout') }}">
+                {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+            </a>
+        {% endif %}
+
+        {% if is_granted('ROLE_ADMIN') %}
+            <h2>Mon compte - Administrateur</h2>
+            <h3>Liste des users</h3>
+            {% for user in users %}
+                {% for role in user.roles|slice(0,1)  %}
+                    {% if role != 'ROLE_ADMIN' %}
+                        <li>{{ user.username|e }} id: {{user.id}} role :{{ role }}</li>
+                        <a href="{{ path('nao_user_admin_delete', { 'id': user.id }) }}"><input type="submit" value="Supprimer"></a>
+                        <a href="{{ path('nao_user_demote', { 'id': user.id }) }}"><input type="submit" value="Rétrograder en utilisateur"></a>
+                        <a href="{{ path('nao_user_promote', { 'id': user.id }) }}"><input type="submit" value="Promouvoir en naturalise"></a>
+                    {% endif %}
+                {% endfor %}
             {% endfor %}
-        {% endfor %}
-        <p>Identifiant : {{app.user.username}}</p>
-        <p>Email : {{app.user.email}}</p>
-        <h3>Modification Mot de passe</h3>
-        {{ render(controller('FOSUserBundle:ChangePassword:changePassword' ))}}
-    {% endif %}
+            <p>Identifiant : {{app.user.username}}</p>
+            <p>Email : {{app.user.email}}</p>
+            <h3>Modification Mot de passe</h3>
+            {{ render(controller('FOSUserBundle:ChangePassword:changePassword' ))}}
+        {% endif %}
 
-    <!------Compte User/Naturaliste--->
-    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") and not is_granted('ROLE_ADMIN')%}
-        <h3>Mon compte - Utilisateur - Naturaliste</h3>
-        <p>Identifiant : {{app.user.username}}</p>
-        <h3>Modifier l'adresse Mail</h3>
-        {{ render(controller('NAOUserBundle:Admin:updMailUser' , {'id': app.user.id}  ))}}
-        <h3>Modification du mot de passe</h3>
-        {{ render(controller('FOSUserBundle:ChangePassword:changePassword' ))}}
-        <h3>Suppression du compte</h3>
-        {{ render(controller('NAOUserBundle:Admin:deleteUser' , {'id': app.user.id}  ))}}
-    {% endif %}
-
+        <!------Compte User/Naturaliste--->
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") and not is_granted('ROLE_ADMIN')%}
+            <h3>Mon compte - Utilisateur - Naturaliste</h3>
+            <p>Identifiant : {{app.user.username}}</p>
+            <h3>Modifier l'adresse Mail</h3>
+            {{ render(controller('NAOUserBundle:Admin:updMailUser' , {'id': app.user.id}  ))}}
+            <h3>Modification du mot de passe</h3>
+            {{ render(controller('FOSUserBundle:ChangePassword:changePassword' ))}}
+            <h3>Suppression du compte</h3>
+            {{ render(controller('NAOUserBundle:Admin:deleteUser' , {'id': app.user.id}  ))}}
+        {% endif %}
+    </div>
 {% endblock %}
