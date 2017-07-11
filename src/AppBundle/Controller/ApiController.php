@@ -14,6 +14,8 @@ use AppBundle\Entity\ObservationImage;
 use AppBundle\Form\BirdType;
 use AppBundle\Form\ObservationType;
 use AppBundle\Form\ObservationImageType;
+use AppBundle\Form\ObservationEspaceProType;
+use AppBundle\Form\ObservationCarteType;
 
 use CrEOF\Spatial\PHP\Types\Geometry\LineString;
 use CrEOF\Spatial\PHP\Types\Geometry\Point;
@@ -26,6 +28,8 @@ use Symfony\Component\HttpFoundation\Request;
 
 use FOS\RestBundle\Controller\Annotations\View;
 use FOS\RestBundle\Controller\Annotations\FileParam;
+use Nelmio\ApiDocBundle\Annotation as Doc;
+
 
 
 
@@ -40,6 +44,27 @@ class ApiController extends FOSRestController
      * @Rest\View(
      *     statusCode = 200
      * )
+     * @Doc\ApiDoc(
+     *     section="SHOW",
+     *     resource=true,
+     *     description="Get one observation.",
+     *     requirements={
+     *         {
+     *             "name"="id",
+     *             "dataType"="integer",
+     *             "requirements"="\d+",
+     *             "description"="The observation unique identifier."
+     *         }
+     *     },
+     *     statusCodes={
+     *         200="Returned when successful",
+     *         400="Returned when a violation is raised by validation",
+     *         404={
+     *           "Returned when the observation is not found",
+     *           "Returned when something else is not found"
+     *         }
+     *     }
+     * )
      */
     public function showObservationAction(Observation $observation)
     {
@@ -52,6 +77,18 @@ class ApiController extends FOSRestController
      *              name= "app_obs_create")
      * @Rest\View(
      *     statusCode = 201
+     * )
+     * @Doc\ApiDoc(
+     *     section="CREATE",
+     *     resource=true,
+     *     description="create one observation.",
+     *      input="AppBundle\Form\ObservationType",
+     *     statusCodes={
+     *         201="Returned when observation was created",
+     *         400="Returned when a violation is raised by validation",
+     *         404="Returned when something else is not found" 
+     *         
+     *     }     
      * )
      * 
      */
@@ -107,6 +144,21 @@ class ApiController extends FOSRestController
      * @Rest\View(
      *     statusCode = 200
      * )
+     * @Doc\ApiDoc(
+     *     section="LIST",
+     *     resource=true,
+     *     description="list all observations.",
+     *     statusCodes={
+     *         200="Returned when successful",
+     *         400="Returned when a violation is raised by validation",
+     *         404={
+     *           "Returned when list observation is not found",
+     *           "Returned when something else is not found"
+     *         }
+     *     }
+     *          
+     * )
+     * 
      */
     public function listObservationAction()
     {
@@ -126,6 +178,21 @@ class ApiController extends FOSRestController
      * @Rest\View(
      *     statusCode = 200
      * )
+     * @Doc\ApiDoc(
+     *     section="LIST",
+     *     resource=true,
+     *     description="list all observation for page espace pro.",
+     *      input="AppBundle\Form\ObservationEspaceProType",     
+     * ),
+     *     statusCodes={
+     *         200="Returned when successful",
+     *         400="Returned when a violation is raised by validation",
+     *         404={
+     *           "Returned when list observation is not found",
+     *           "Returned when something else is not found"
+     *         }
+     *     }
+     * 
      */
     public function listObservationEspaceProAction(Request $request)
     {
@@ -157,6 +224,21 @@ class ApiController extends FOSRestController
      * @Rest\View(
      *     statusCode = 200
      * )
+     * @Doc\ApiDoc(
+     *     section="LIST",
+     *     resource=true,
+     *     description="list all observation for page carte.",
+     *      input="AppBundle\Form\ObservationCarteType",     
+     * ),
+     *     statusCodes={
+     *         200="Returned when successful",
+     *         400="Returned when a violation is raised by validation",
+     *         404={
+     *           "Returned when list observation is not found",
+     *           "Returned when something else is not found"
+     *         }
+     *     }
+     * 
      */
     public function listObservationCarteAction(Request $request)
     {
@@ -287,6 +369,27 @@ class ApiController extends FOSRestController
      * @Rest\View(
      *     statusCode = 204
      * )
+     * @Doc\ApiDoc(
+     *     section="DELETE",
+     *     resource=true,
+     *     description="delete one observation.",
+     *     requirements={
+     *         {
+     *             "name"="id",
+     *             "dataType"="integer",
+     *             "requirements"="\d+",
+     *             "description"="The observation unique identifier."
+     *         }
+     *     }
+     * ),
+     *     statusCodes={
+     *         204="Returned when not content",
+     *         400="Returned when a violation is raised by validation",
+     *         404={
+     *           "Returned when the observation is not delete",
+     *           "Returned when something else is not found"
+     *         }
+     *     }
      */
     public function deleteObservationAction(Observation $observation)
     {
