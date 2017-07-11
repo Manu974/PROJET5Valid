@@ -162,7 +162,7 @@
 
     <script>
 
-    var point = {};
+    
     var markers = [];
     var map;
     function initMap() {
@@ -197,7 +197,7 @@
         
 
         $.ajax({
-          url:'http://localhost:8000/api/observations/lists/carte', 
+          url:'http://localhost:8000/api/observations/lists/carte/espacepro', 
           type : 'POST',
           data: JSON.stringify(ListObs),
           dataType: 'json',

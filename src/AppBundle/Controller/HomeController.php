@@ -10,6 +10,7 @@ use AppBundle\Entity\Observation;
 use AppBundle\Entity\ObservationImage;
 use AppBundle\Form\ObservationType;
 use AppBundle\Form\ObservationEspaceProType;
+use AppBundle\Form\ObservationCarteType;
 use AppBundle\Form\BirdType;
 use AppBundle\Form\ObservationImageType;
 use CrEOF\Spatial\PHP\Types\Geometry\LineString;
@@ -75,9 +76,16 @@ class HomeController extends Controller
      * @Route("/observation/carte", name="observationcartepage")
      */
     public function observationCarteAction(Request $request)
-    {  
+    { 
+
+      $observation = new Observation();
         
-    return $this->render('observation/carte.html.twig');
+        $form   = $this->get('form.factory')->create(ObservationCarteType::class, $observation); 
+
+        return $this->render('observation/carte.html.twig', array(
+      'form' => $form->createView(),
+      
+    ));
 
 
 

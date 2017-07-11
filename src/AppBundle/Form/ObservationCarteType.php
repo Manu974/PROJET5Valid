@@ -14,7 +14,7 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
-class ObservationEspaceProType extends AbstractType
+class ObservationCarteType extends AbstractType
 {
     
     public function buildForm(FormBuilderInterface $builder, array $options)
@@ -40,14 +40,6 @@ class ObservationEspaceProType extends AbstractType
                 'choice_label' => 'code',
                 'multiple'     => false,
               ])
-            ->add('isValid', ChoiceType::class, [
-               'choices'  => [
-                      'Validée' => true,
-                      'Non-Validée' => false,
-                  ],
-              ])           
-            ->add('author')
-            ->add('createdAt', DateTimeType::class)
             ->add('save',      SubmitType::class);
     }
     
