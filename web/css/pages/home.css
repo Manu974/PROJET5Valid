@@ -6,7 +6,7 @@ section {
 }
 .section-img--home .btn {
     position: relative;
-    padding: 10px 0 10px 22px;
+    padding: 12px;
     width: 205px;
     display: flex;
     margin: 20px auto 10px;
@@ -17,7 +17,7 @@ section {
 }
 .home-background {
     position: relative;
-    background: url('../../asset/images/cormorans-1920.jpg') no-repeat;
+    background: url('../../images/cormorans-1920.jpg') no-repeat;
     background-size: contain;
     height: 100%;
 }

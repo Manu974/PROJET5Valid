@@ -1,0 +1,155 @@
+.form-group {
+    display: flex;
+    flex-direction: column;
+    padding-right: 30px;
+}
+.form-group .btn {
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    line-height: 3px;
+    border-radius: 26px;
+    width: 170px;
+    height: 60px;
+    background-color: #282829;
+    color: #FAFAFA;
+    align-self: flex-end;
+}
+.form--register #fos_user_registration_form {
+    display: flex;
+    flex-direction: column;
+}
+.form--register #fos_user_registration_form > div {
+    margin: 5px 0;
+    display: flex;
+}
+.form--register #fos_user_registration_form + div:nth-child(2) {
+    align-self: flex-end;
+}
+.password-forget {
+    color: #8CC63F;
+    display: block;
+    position: relative;
+    left: 66px;
+    margin-bottom: 10px;
+    align-self: center;
+    transition: .2s;
+}
+.password-forget:hover {
+    color: #8CC63F;
+    text-decoration: underline;
+}
+.login-title {
+    color: #8CC63F;
+}
+.login-content {
+    transition: all 1s;
+    padding: 42px;
+    top: 0;
+    left: -1400px;
+    background-color: #282829;
+    z-index: 10;
+    position: absolute;
+    box-shadow: 10px 4px 4px rgba(30, 30, 30, 0.8);
+    width: 65%;
+    height: 1300px;
+}
+.login-content label {
+    font-weight: lighter;
+}
+.remember_me {
+    margin: auto 0;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    position: relative;
+    left: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .2s;
+}
+#remember_me {
+    width: 20px;
+    display: none;
+    transition: all .2s;
+}
+.remember_me label {
+    color: #FAFAFA !important;
+}
+#remember_me:checked + label:after{
+    position: relative;
+    right: 160px;
+    display: inline-block;
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    content: url('../../logo-icones/checked.svg');
+    transition: all .2s;
+}
+#remember_me:not(:checked) + label:before,
+#remember_me:checked + label:before {
+    position: relative;
+    top: 3px;
+    right: 10px;
+    content: url('../../logo-icones/box-checked.svg');
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    transition: all .2s; /* on prévoit une animation */
+}
+#remember_me:not(:checked) + label:after {
+    transition: all .2s;
+    opacity: 0; /* coche invisible */
+    transform: scale(0); /* mise à l'échelle à 0 */
+}
+ #remember_me:checked + label:after {
+    transition: all .2s;
+    opacity: 1; /* coche opaque */
+    transform: scale(1); /* mise à l'échelle 1:1 */
+}
+.login-content form > div:not(.remember_me) {
+    display: flex;
+    justify-content: space-between;
+}
+.login-content form label {
+    color: #8CC63F;
+    width: 33%;
+}
+.login-content form input {
+    width: 100%;
+    border: 1px solid #8CC63F;
+}
+
+@media only screen and (max-width: 980px) {
+    .login-content {
+        padding: 34px;
+    }
+    .form-group .btn {
+        align-self: flex-end;
+    }
+    .remember_me {
+        left: 0;
+    }
+    .password-forget {
+        left: 0;
+    }
+    .login-content form div label {
+        width: 80%;
+    }
+    .login-content form .remember_me label {
+        width: 89%;
+    }
+    .login-content form > div:not(.remember_me)  {
+        display: flex;
+        flex-direction: column;
+    }
+    .form--register #fos_user_registration_form > div {
+        flex-direction: column;
+    }
+}
+@media only screen and (max-width: 363px) {
+    #remember_me:checked + label:after{
+        margin: 0;
+    }
+}
