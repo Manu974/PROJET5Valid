@@ -1,3 +1,7 @@
+nao_newsletter:
+    resource: "@NAONewsletterBundle/Resources/config/routing.yml"
+    prefix:   /newsletter
+
 nao_faq:
     resource: "@NAOFaqBundle/Resources/config/routing.yml"
     prefix:   /faq

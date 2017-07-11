@@ -17,8 +17,9 @@ parameters:
     nao_faq.auteur: NAO association
     # Nombre d'articles à afficher par page pour la Faq
     nao_faq.nbaff.faq_limit: 5
-    
-    images_directory: '%kernel.root_dir%/web/uploads/images'
+    # Auteur de la newsletter par défaut
+    nao_newsletter.auteur: NAO association
+
 
 
 framework:
