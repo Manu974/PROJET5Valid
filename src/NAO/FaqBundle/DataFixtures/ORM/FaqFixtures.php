@@ -52,6 +52,14 @@ class FaqFixtures extends AbstractFixture implements OrderedFixtureInterface
         $faq5->setUpdated($faq5->getCreated());
         $manager->persist($faq5);
 
+        $faq6 = new Faq();
+        $faq6->setTitle('Faq 6');
+        $faq6->setFaq('Lorem commodo. Vestibulum vulputate mauris eget erat congue dapibus imperdiet justo scelerisque. Nulla consectetur tempus nisl vitae viverra.');
+        $faq6->setAuthor('Jean Bon');
+        $faq6->setCreated(new \DateTime("2016-06-03 21:10:12"));
+        $faq6->setUpdated($faq6->getCreated());
+        $manager->persist($faq6);
+
         $manager->flush();
 
         $this->addReference('faq-1', $faq1);
