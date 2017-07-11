@@ -237,7 +237,7 @@ form.addEventListener("submit", function(e){
       var nomVern = document.getElementById("observation_espace_pro_nomVernaculaire").options[document.getElementById("observation_espace_pro_nomVernaculaire").selectedIndex].text;
       var nomScien = document.getElementById("observation_espace_pro_nomScientifique").options[document.getElementById("observation_espace_pro_nomScientifique").selectedIndex].text;
       var departement = document.getElementById("observation_espace_pro_department").options[document.getElementById("observation_espace_pro_department").selectedIndex].text;
-      var status =  document.getElementById("observation_espace_pro_isValid").options[document.getElementById("observation_espace_pro_isValid").selectedIndex].text;
+      var status =  document.getElementById("observation_espace_pro_isValid").value;
       var author = document.getElementById("observation_espace_pro_author").value;
 
       var ListObs = {
@@ -258,7 +258,7 @@ form.addEventListener("submit", function(e){
                 contentType: 'application/json',
                 processData: false,
                 success: function(data){
-                  alert("nice");
+                console.log(data);
                 },
                 error: function(xhr, ajaxOptions, thrownError){
                   alert(xhr.status);
