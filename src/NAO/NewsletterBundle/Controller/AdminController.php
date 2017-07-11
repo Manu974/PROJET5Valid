@@ -85,7 +85,10 @@ class AdminController extends Controller
             // Enregistrement BDD
             $em->persist($newsletter);
             $em->flush();
-
+            // Service de diffusion de la newsletter
+        //---------------------------------------
+            $diffusion = $this->container->get('nao_newsletter.subdiffusion');
+            $rsltdiff =$diffusion->subdiffusion();
             return $this->redirect($this->generateUrl('nao_admin_newsletter'));
         }
         return $this->render('NAONewsletterBundle:Admin:maj.html.twig', array(
