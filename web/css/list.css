@@ -12,3 +12,7 @@ table, th, td {
         margin: 0;
         padding: 0;
       }
+
+#listObservation{
+  display: none;
+}
