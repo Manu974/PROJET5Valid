@@ -121,8 +121,23 @@
 }
 
 @media only screen and (max-width: 980px) {
-    .login-content form .remember_me label {
+    .login-content {
+        padding: 34px;
+    }
+    .form-group .btn {
+        align-self: flex-end;
+    }
+    .remember_me {
+        left: 0;
+    }
+    .password-forget {
+        left: 0;
+    }
+    .login-content form div label {
         width: 80%;
+    }
+    .login-content form .remember_me label {
+        width: 89%;
     }
     .login-content form > div:not(.remember_me)  {
         display: flex;
@@ -130,5 +145,10 @@
     }
     .form--register #fos_user_registration_form > div {
         flex-direction: column;
+    }
+}
+@media only screen and (max-width: 363px) {
+    #remember_me:checked + label:after{
+        margin: 0;
     }
 }
