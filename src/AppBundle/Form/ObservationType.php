@@ -13,6 +13,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Gregwar\CaptchaBundle\Type\CaptchaType;
 use AppBundle\Repository\BirdRepository;
 
 
@@ -73,6 +74,7 @@ class ObservationType extends AbstractType
                 ])
             ->add('comment', TextareaType::class)
             ->add('author', TextType::class)
+            ->add('captcha', CaptchaType::class)
             ->add('save',      SubmitType::class);
     }
     
