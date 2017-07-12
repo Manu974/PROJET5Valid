@@ -17,9 +17,9 @@
     <section class="section-img container">
         <div class="row">
             <picture>
-                <source media="(min-width: 640px)" srcset="{{ asset('images/rouge-gorge-1024px.jpg') }}">
-                <source media="(max-width: 640px)" srcset="{{ asset('images/rouge-gorge-640px.jpg') }}">
-                <img src="{{ asset('images/rouge-gorge-1024px.jpg') }}" alt="Rouge gorge" width="100%">
+                <source media="(min-width: 640px)" srcset="{{ asset('images/mesange-1024px.jpg') }}">
+                <source media="(max-width: 640px)" srcset="{{ asset('images/mesange-640px.jpg') }}">
+                <img src="{{ asset('images/mesange-640px.jpg') }}" alt="Rouge gorge" width="100%">
             </picture>
         </div>
     </section>
@@ -30,42 +30,93 @@
             <i class="icon--large icon--account is_active"></i>
             <span>Mon Compte</span>
         </h1>
+        {#
         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-            {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
-            <a href="{{ path('fos_user_security_logout') }}">
+            <a class="btn btn-red" href="{{ path('fos_user_security_logout') }}">
                 {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
             </a>
         {% endif %}
-
+        #}
         {% if is_granted('ROLE_ADMIN') %}
-            <h2>Mon compte - Administrateur</h2>
+            <h3 class="user-title">
+                <i class="icon icon--account is_active"></i>
+                <span>Mes infos</span>
+            </h3>
             <h3>Liste des users</h3>
             {% for user in users %}
                 {% for role in user.roles|slice(0,1)  %}
                     {% if role != 'ROLE_ADMIN' %}
-                        <li>{{ user.username|e }} id: {{user.id}} role :{{ role }}</li>
-                        <a href="{{ path('nao_user_admin_delete', { 'id': user.id }) }}"><input type="submit" value="Supprimer"></a>
-                        <a href="{{ path('nao_user_demote', { 'id': user.id }) }}"><input type="submit" value="Rétrograder en utilisateur"></a>
-                        <a href="{{ path('nao_user_promote', { 'id': user.id }) }}"><input type="submit" value="Promouvoir en naturalise"></a>
+                        <span class="user-name">Pseudo : {{ user.username|e }}</span>
+                        <span>ID: {{user.id}} role :{{ role }}</span>
+                        <div class="user-admin-edit">
+                            <a href="{{ path('nao_user_admin_delete', { 'id': user.id }) }}"><input class="btn btn-red" type="submit" value="Supprimer"></a>
+                            <a href="{{ path('nao_user_demote', { 'id': user.id }) }}"><input class="btn" type="submit" value="Rétrograder en utilisateur"></a>
+                            <a href="{{ path('nao_user_promote', { 'id': user.id }) }}"><input class="btn" type="submit" value="Promouvoir en naturalise"></a>
+                        </div>
                     {% endif %}
                 {% endfor %}
             {% endfor %}
             <p>Identifiant : {{app.user.username}}</p>
             <p>Email : {{app.user.email}}</p>
             <h3>Modification Mot de passe</h3>
-            {{ render(controller('FOSUserBundle:ChangePassword:changePassword' ))}}
+            <div class="user-delete-account admin">
+                {{ render(controller('FOSUserBundle:ChangePassword:changePassword' ))}}
+            </div>
         {% endif %}
 
         <!------Compte User/Naturaliste--->
         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") and not is_granted('ROLE_ADMIN')%}
-            <h3>Mon compte - Utilisateur - Naturaliste</h3>
-            <p>Identifiant : {{app.user.username}}</p>
-            <h3>Modifier l'adresse Mail</h3>
-            {{ render(controller('NAOUserBundle:Admin:updMailUser' , {'id': app.user.id}  ))}}
-            <h3>Modification du mot de passe</h3>
-            {{ render(controller('FOSUserBundle:ChangePassword:changePassword' ))}}
-            <h3>Suppression du compte</h3>
-            {{ render(controller('NAOUserBundle:Admin:deleteUser' , {'id': app.user.id}  ))}}
+            <div class="user-content">
+                <h3 class="user-title">
+                    <i class="icon icon--account is_active"></i>
+                    <span>Mes infos</span>
+                </h3>
+                <label class="identifiant">
+                    <div>Identifiant</div>
+                    <input type="text" value="{{app.user.username}}">
+                </label>
+                <div class="user-mail">
+                    {{ render(controller('NAOUserBundle:Admin:updMailUser' , {'id': app.user.id}  ))}}
+                </div>
+                <h3 class="user-title">
+                    <i class="icon icon--lock is_active"></i>
+                    <span>Modifier mon mot de passe</span>
+                </h3>
+                <div class="user-password">
+                    {{ render(controller('FOSUserBundle:ChangePassword:changePassword' ))}}
+                </div>
+            </div>
+            <h3 class="user-title">
+                <i class="icon icon--trash is_active"></i>
+                <span>Suppression du compte <span class="text-red">(irréverssible)</span></span>
+            </h3>
+            <div class="user-delete-account">
+                {{ render(controller('NAOUserBundle:Admin:deleteUser' , {'id': app.user.id}  ))}}
+            </div>
         {% endif %}
     </div>
+{% endblock %}
+
+{% block javascripts %}
+    {% if is_granted('ROLE_ADMIN') %}
+    <script>
+        (function () {
+            let buttons = document.querySelectorAll('.btn:not(.btn-red), input[type=submit]:not(.btn-red)');
+            buttons.forEach(button => {
+                button.style.backgroundColor = '#00A99D';
+            });
+
+            let textOnBlue = document.querySelectorAll('.user-container p,.user-container h1,.user-container h2,.user-container h3,.user-container h4, .user-container label')
+            textOnBlue.forEach(text => {
+                text.style.color = '#00A99D';
+            });
+
+            let iconsAccount = document.querySelectorAll('.user-container .icon.icon--account, .user-container .icon--large.icon--account');
+            iconsAccount.forEach(icon => {
+                icon.classList.add('is_pro')
+            })
+        })()
+    </script>
+    {% endif %}
+    {{ parent() }}
 {% endblock %}

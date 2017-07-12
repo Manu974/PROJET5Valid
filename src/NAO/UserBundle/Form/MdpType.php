@@ -20,7 +20,11 @@ class MdpType extends AbstractType
             ->add('password', TextType::class, array(
                 'label' => 'Mot de passe'))
             ->add('captcha', CaptchaType::class)
-            ->add('Supprimer le compte', SubmitType::class);
+            ->add('Supprimer le compte', SubmitType::class, array(
+                'attr' => array(
+                    'class' => 'btn btn-red'
+                )
+            ));
         ;
     }
 }
