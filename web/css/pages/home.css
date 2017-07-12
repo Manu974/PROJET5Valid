@@ -57,7 +57,7 @@ section {
 }
 .home-container .icon--maps, .home-container .icon--obs {
     position: relative;
-    left: 4px;
+    left: 7px;
 }
 @media only screen and (max-width: 980px) {
     .section-img--home .btn {

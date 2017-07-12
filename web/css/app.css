@@ -118,16 +118,16 @@ a {
 }
 .icon--large {
     display: inline-flex;
-    width: 82px;
+    width: 86px;
     height: 82px;
     transition: .2s;
 }
 .icon--home {  background: url('../logo-icones/MAISON  NAV DESK.svg') no-repeat;  }
-.icon--connection {  background: url('../logo-icones/icone rapide connexion.svg') no-repeat 8px 0;  }
+.icon--connection {  background: url('../logo-icones/icone-cadenas-connexion.svg') no-repeat 8px 0;  }
 .icon--maps {  background: url('../logo-icones/icone rapide carte.svg') no-repeat 8px 0;  }
-.icon--obs {  background: url('../logo-icones/icone saisie obs gris.svg') no-repeat 6px 0;  }
-.icon--prog {  background: url('../logo-icones/PUZZLE PROG NAV.svg') no-repeat 3px 0;  }
-.icon--prog.is_active {  background: url('../logo-icones/PUZZLE PROG NAV-green.svg') no-repeat 3px 0;  }
+.icon--obs {  background: url('../logo-icones/icone-saisir-obs.svg') no-repeat 4px 0;  }
+.icon--prog {  background: url('../logo-icones/icone-programme.svg') no-repeat 3px 0;  }
+.icon--prog.is_active {  background: url('../logo-icones/icone-programme-green.svg') no-repeat 3px 0;  }
 .icon--account {  background: url('../logo-icones/PROFIL USER NAV.svg') no-repeat 2px 0;  }
 .icon--account.is_active { background: url('../logo-icones/PROFIL USER NAV-green.svg') no-repeat 2px 0; }
 .is_pro.icon--account {  background: url('../logo-icones/icone-mon-compte-pro.svg') no-repeat 2px 0;  }
@@ -136,7 +136,7 @@ a {
 .icon--faq.is_active { background: url('../logo-icones/icone-faq-vert.svg') no-repeat 0 0; }
 .icon--contact {  background: url('../logo-icones/icone enveloppe-contact.svg') no-repeat 1px 0;  }
 .icon--newsletter {  background: url('../logo-icones/icone newsletter.svg') no-repeat 0 0;  }
-.icon--legalMention {  background: url('../logo-icones/icone mentions -docs.svg') no-repeat 6px -1px; }
+.icon--legalMention {  background: url('../logo-icones/icone-mentions-gris.svg') no-repeat 6px -1px; }
 .icon--youtube {  background: url('../logo-icones/icone you tube.svg') no-repeat 0 0; }
 .icon--youtube:hover {  background: url('../logo-icones/icone you tube-active.svg') no-repeat 0 0;  }
 .icon--facebook {  background: url('../logo-icones/icone facebook.svg') no-repeat 11px 0; }
@@ -159,10 +159,10 @@ a {
 }
 .icon--trash.is_active { background: url('../logo-icones/poubelle-verte.svg') no-repeat;}
 .icon--home:hover {  background: url('../logo-icones/MAISON  NAV DESK-green.svg') no-repeat;  }
-.icon--connection:hover {  background: url('../logo-icones/icone rapide connexion-green.svg') no-repeat 8px 0;  }
+.icon--connection:hover {  background: url('../logo-icones/icone-cadenas-connexion-green.svg') no-repeat 8px 0;  }
 .icon--connection.is_active {  background: url('../logo-icones/icone rapide connexion-green.svg') no-repeat 8px 0;  }
 .icon--maps:hover {  background: url('../logo-icones/icone rapide carte-green.svg') no-repeat 8px 0;  }
-.icon--obs:hover {  background: url('../logo-icones/icone rapide saisir une obs-green.svg') no-repeat 8px 0;  }
+.icon--obs:hover {  background: url('../logo-icones/icone-saisir-obs-green.svg') no-repeat 4px 0;  }
 .icon--prog:hover {  background: url('../logo-icones/PUZZLE PROG NAV-green.svg') no-repeat 3px 0;  }
 .icon--account:hover {  background: url('../logo-icones/PROFIL USER NAV-green.svg') no-repeat 2px 0;  }
 .icon--faq:hover {  background: url('../logo-icones/FAQ NAV-green.svg') no-repeat 1px 0;  }
@@ -289,12 +289,12 @@ a {
 /***** HEADER ICONS *****/
 .header-navbar-item:hover .icon--home {  background: url('../logo-icones/MAISON  NAV DESK-green.svg') no-repeat;  }
 .is_pro.header-navbar-item:hover .icon--home {  background: url('../logo-icones/icone-accueil-pro.svg') no-repeat;  }
-.header-navbar-item:hover .icon--connection {  background: url('../logo-icones/icone rapide connexion-green.svg') no-repeat 8px 0;  }
+.header-navbar-item:hover .icon--connection {  background: url('../logo-icones/icone-cadenas-connexion-green.svg') no-repeat 7px 0;  }
 .is_pro.header-navbar-item:hover .icon--connection {  background: url('../logo-icones/icone-cadenas-connexion-pro.svg') no-repeat 8px 0;  }
 .header-navbar-item:hover .icon--maps {  background: url('../logo-icones/icone rapide carte-green.svg') no-repeat 8px 0;  }
 .is_pro.header-navbar-item:hover .icon--maps {  background: url('../logo-icones/icone-carte-pro.svg') no-repeat 8px 0;  }
-.header-navbar-item:hover .icon--obs {  background: url('../logo-icones/icone-rapide-user-vert-saisir-une-obs.svg') no-repeat 8px 0;  }
-.is_pro.header-navbar-item:hover .icon--obs {  background: url('../logo-icones/icone-saisir-obs-pro.svg') no-repeat 5px 0;  }
+.header-navbar-item:hover .icon--obs {  background: url('../logo-icones/icone-saisir-obs-green.svg') no-repeat 4px 0;  }
+.is_pro.header-navbar-item:hover .icon--obs {  background: url('../logo-icones/icone-saisir-obs-pro.svg') no-repeat 4px 0;  }
 .header-navbar-item:hover .icon--prog {  background: url('../logo-icones/PUZZLE PROG NAV-green.svg') no-repeat 3px 0;  }
 .is_pro.header-navbar-item:hover .icon--prog {  background: url('../logo-icones/icone-programme-pro.svg') no-repeat 3px 0;  }
 .header-navbar-item:hover .icon--account {  background: url('../logo-icones/PROFIL USER NAV-green.svg') no-repeat 2px 0;  }
@@ -307,7 +307,6 @@ a {
 .header-navbar-item:hover .icon--home {  background: url('../logo-icones/MAISON  NAV DESK-green.svg') no-repeat;  }
 .header-navbar-item:hover .icon--connection {  background: url('../logo-icones/icone rapide connexion-green.svg') no-repeat 8px 0;  }
 .header-navbar-item:hover .icon--maps {  background: url('../logo-icones/icone rapide carte-green.svg') no-repeat 8px 0;  }
-.header-navbar-item:hover .icon--obs {  background: url('../logo-icones/icone rapide saisir une obs-green.svg') no-repeat 8px 0;  }
 .header-navbar-item:hover .icon--prog {  background: url('../logo-icones/PUZZLE PROG NAV-green.svg') no-repeat 3px 0;  }
 .header-navbar-item:hover .icon--account {  background: url('../logo-icones/PROFIL USER NAV-green.svg') no-repeat 2px 0;  }
 .header-navbar-item:hover .icon--faq {  background: url('../logo-icones/FAQ NAV-green.svg') no-repeat 1px 0;  }
@@ -411,7 +410,6 @@ a {
 .footer-item:hover .icon--home {  background: url('../logo-icones/MAISON  NAV DESK-green.svg') no-repeat;  }
 .footer-item:hover .icon--connection {  background: url('../logo-icones/icone rapide connexion-green.svg') no-repeat 8px 0;  }
 .footer-item:hover .icon--maps {  background: url('../logo-icones/icone rapide carte-green.svg') no-repeat 8px 0;  }
-.footer-item:hover .icon--obs {  background: url('../logo-icones/icone rapide saisir une obs-green.svg') no-repeat 8px 0;  }
 .footer-item:hover .icon--prog {  background: url('../logo-icones/PUZZLE PROG NAV-green.svg') no-repeat 3px 0;  }
 .footer-item:hover .icon--account {  background: url('../logo-icones/PROFIL USER NAV-green.svg') no-repeat 2px 0;  }
 .footer-item:hover .icon--faq {  background: url('../logo-icones/FAQ NAV-green.svg') no-repeat 2px 0;  }
@@ -419,7 +417,7 @@ a {
 .is_pro.footer-item:hover .icon--contact {  background: url('../logo-icones/icone-contact-pro.svg') no-repeat 1px 0;  }
 .footer-item:hover .icon--newsletter {  background: url('../logo-icones/icone newsletter-green.svg') no-repeat 0 0;  }
 .is_pro.footer-item:hover .icon--newsletter {  background: url('../logo-icones/icone-newsletter-bleu-pros.svg') no-repeat 0 0;  }
-.footer-item:hover .icon--legalMention {  background: url('../logo-icones/icone mentions -docs-green.svg') no-repeat 6px -1px;  }
+.footer-item:hover .icon--legalMention {  background: url('../logo-icones/icone-mentions-green.svg') no-repeat 5px -1px;  }
 .is_pro.footer-item:hover .icon--legalMention {  background: url('../logo-icones/icone-mentions-bleu-pros.svg') no-repeat 6px -1px;  }
 
 .footer-link {

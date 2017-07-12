@@ -146,7 +146,11 @@ h3.user-title span {
 .user-admin-edit {
     margin-top: 30px;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.user-admin-edit .btn-red {
+    color: #FAFAFA;
 }
 .user-name {
 }
@@ -202,5 +206,9 @@ h3.user-title span {
         height: 30px;
         line-height: 26px;
         margin: 15px 0;
+    }
+    .user-admin-edit {
+        display: flex;
+        flex-direction: column;
     }
 }
