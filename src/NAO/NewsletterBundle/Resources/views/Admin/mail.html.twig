@@ -1,0 +1,12 @@
+<h2>Newsletter utilisateur</h2>
+    {% block body %}
+        <article class="newsletter">
+            <header>
+                <div class="date">Publié <time datetime="{{ newsletter.created|date('c') }}">le {{ newsletter.created|date('d-m-Y') }} à {{newsletter.created|date('H:i:s') }}</time> - Auteur : <span class="highlight">{{newsletter.author}}</span></div>
+                <h2>{{ newsletter.title }}</h2>
+            </header>
+            <div class="newsletter_view">
+                <p>{{ newsletter.newsletter|raw }}</p>
+            </div>
+        </article>
+    {% endblock %}
