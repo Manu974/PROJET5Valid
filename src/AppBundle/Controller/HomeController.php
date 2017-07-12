@@ -46,7 +46,7 @@ class HomeController extends Controller
             
               //$observation->upload();
               // Le reste de la méthode reste inchangé
-              
+
               $em = $this->getDoctrine()->getManager();
 
               $em->persist($observationImage);
@@ -60,7 +60,7 @@ class HomeController extends Controller
 
               $session = $request->getSession();
               $session->set('imageId', $observationImage->getId());
-      
+
     }
 
     return $this->render('observation/add.html.twig', array(
@@ -97,12 +97,12 @@ class HomeController extends Controller
     public function observationProAction(Request $request)
     {  
         $observation = new Observation();
-        
-        $form   = $this->get('form.factory')->create(ObservationEspaceProType::class, $observation); 
+
+        $form   = $this->get('form.factory')->create(ObservationEspaceProType::class, $observation);
 
         return $this->render('observation/list.html.twig', array(
       'form' => $form->createView(),
-      
+
     ));
 
     }

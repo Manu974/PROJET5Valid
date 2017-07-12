@@ -23,11 +23,10 @@ class HeaderShrink {
         document.addEventListener('scroll', () => {
             if (document.body.scrollTop > this.shrink) {
                 this.header.style.height = this.newHeight;
-                //this.menuSlider.navbarMobile.style.top = (this.menuPositionTop - this.differenceOfHeight) + 'px';
-                this.menuSlider.navbarMobile.style.top = this.newHeight + 'px';
+                this.menuSlider.navbarMobile.style.top = (this.menuPositionTop - this.differenceOfHeight) + 'px';
             } else if (document.body.scrollTop <= 0) {
                 this.header.style.height = this.oldHeight;
-                this.menuSlider.navbarMobile.style.top = this.oldHeight + 'px';
+                this.menuSlider.navbarMobile.style.top = this.oldHeight;
             }
         })
     }

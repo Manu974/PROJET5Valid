@@ -18,7 +18,11 @@ class UserType extends AbstractType
         $builder
             ->add('email', EmailType::class, array(
                 'label' => 'Adresse mail'))
-            ->add('Modifier l\'adresse email', SubmitType::class);
+            ->add('Modifier email', SubmitType::class, array(
+                'attr' => array(
+                    'class' => 'btn'
+                )
+            ));
     }
     /**
      * {@inheritdoc}

@@ -1,0 +1,214 @@
+.user-container {
+    color: #FAFAFA;
+}
+h1.user-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    color: #8CC63F;
+    box-shadow: 0 5px 5px #111;
+}
+h1.user-title span{
+    margin-left: 30px;
+}
+h3.user-title {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: #8CC63F;
+}
+h3.user-title span {
+    margin-left: 12px;
+}
+.user-container label {
+    color: #8CC63F;
+}
+.user-container input {
+    color: #282829;
+    width: 400px;
+}
+.user-container .identifiant {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 79.5%;
+}
+.user-content {
+    box-shadow: 0 10px 5px -4px #111;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+.user-mail form {
+    display: flex;
+    align-items: center;
+}
+.user-mail form div:nth-child(1) {
+    width: 79.5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.user-mail form div:nth-child(2) {
+    width: 20.5%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.user-mail form div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.user-password form {
+    display: flex;
+}
+.user-password form > div:nth-child(1) {
+    width: 80%;
+}
+.user-password form > div:nth-child(2) {
+    display: flex;
+    align-items: flex-end;
+    margin-left: 40px;
+}
+.user-password form > div:nth-child(2) input {
+    width: 160px;
+    text-align: center;
+    height: 22px;
+    line-height: 19px;
+    font-weight: bolder;
+    padding: 0;
+    background-color: #8CC63F;
+    box-shadow: 0 5px 8px black;
+    color: #282829;
+    border: none;
+    font-variant-caps: all-small-caps;
+    border-radius: 16px;
+    transition: .2s;
+}
+.user-password form > div:nth-child(2) input:hover {
+    color: #282829;
+    box-shadow: 0 3px 6px black;
+}
+.user-password form > div:nth-child(1) div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.user-password input {
+    width: 400px;
+}
+.user-delete-account.admin form div {
+    display: flex;
+    flex-direction: column;
+}
+.user-delete-account.admin form div > div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.user-delete-account.admin input[type=submit] {
+    width: 160px;
+    text-align: center;
+    height: 22px;
+    line-height: 19px;
+    font-weight: bolder;
+    padding: 0;
+    background-color: #8CC63F;
+    box-shadow: 0 5px 8px black;
+    color: #282829;
+    border: none;
+    font-variant-caps: all-small-caps;
+    border-radius: 16px;
+    transition: .2s;
+}
+.user-delete-account.admin input[type=submit]:hover {
+    color: #282829;
+    box-shadow: 0 3px 6px black;
+}
+.user-delete-account form {
+    display: flex;
+    flex-direction: column;
+}
+.user-delete-account form > div {
+    display: flex;
+    justify-content: space-between;
+    width: 79.5%;
+}
+.user-delete-account form > div:nth-child(2) {
+    align-items: flex-end;
+}
+.user-delete-account form > div > button[type=submit] {
+    margin-top: 10px;
+    padding-bottom: 4px;
+}
+.user-admin-edit {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.user-admin-edit .btn-red {
+    color: #FAFAFA;
+}
+.user-name {
+}
+.user-delete-account form > div:nth-child(3) {
+    justify-content: flex-end;
+}
+@media only screen and (max-width: 980px) {
+    .user-container input {
+        width: 100%;
+    }
+    .user-container .identifiant {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+    .user-mail form {
+        display: flex;
+        flex-direction: column;
+    }
+    .user-mail form div:nth-child(1) {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+    .user-mail form div:nth-child(2) {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+    .user-password form {
+        flex-direction: column;
+    }
+    .user-password form > div:nth-child(1) div {
+        flex-direction: column;
+    }
+    .user-password form > div:nth-child(2) {
+        margin-left: 0;
+    }
+    .user-password form > div:nth-child(2) input {
+        padding: 0;
+        width: 165px;
+        height: 30px;
+        line-height: 26px;
+        margin: 15px 0;
+    }
+    .user-delete-account.admin form div > div {
+        flex-direction: column;
+    }
+    .user-delete-account.admin input[type=submit] {
+        padding: 0;
+        width: 165px;
+        height: 30px;
+        line-height: 26px;
+        margin: 15px 0;
+    }
+    .user-admin-edit {
+        display: flex;
+        flex-direction: column;
+    }
+}

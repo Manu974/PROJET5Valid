@@ -15,6 +15,9 @@ section {
     color: #FAFAFA;
     bottom: 10px;
 }
+.section-img--home .btn:hover {
+    color: #8CC63F;
+}
 .home-background {
     position: relative;
     background: url('../../images/cormorans-1920.jpg') no-repeat;
@@ -54,7 +57,7 @@ section {
 }
 .home-container .icon--maps, .home-container .icon--obs {
     position: relative;
-    left: 4px;
+    left: 7px;
 }
 @media only screen and (max-width: 980px) {
     .section-img--home .btn {
