@@ -36,11 +36,12 @@
 .article-title h2 {
     font-size: 1.8em;
 }
-.article-footer {
-}
 .comments {
     margin-top: 25px;
     margin-bottom: 25px;
+}
+.comments .btn {
+    padding: 5px;
 }
 .comment {
     box-shadow: 0 5px 10px #111;
@@ -49,8 +50,8 @@
     background-color: #BFBFBF;
     border-radius: 2px;
 }
-button[type=submit] {
-    padding: 15px;
+.comments button[type=submit].btn {
+    padding: 18px;
     justify-content: space-around;
 }
 button[type=submit] span {

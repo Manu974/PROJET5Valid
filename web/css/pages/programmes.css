@@ -28,6 +28,9 @@
     color: white;
     width: 300px;
 }
+.blog-content .btn {
+    padding: 5px;
+}
 .blog-link {
     color: #FCFAFA;
     transition: .26s;
@@ -35,8 +38,7 @@
 .blog-link:hover {
     color: #8CC63F;
 }
-.blog-footer {
-}
+
 @media only screen and (max-width: 980px) {
     .blog-title {
         display: flex;

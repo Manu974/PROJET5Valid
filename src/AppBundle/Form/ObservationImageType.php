@@ -18,10 +18,10 @@ class ObservationImageType extends AbstractType
     {
         $builder
              ->add('imageFile', VichFileType::class, [
-            'required' => false,
-            'allow_delete' => true, 
-        ])
-             ->add('save', SubmitType::class);
+                'required' => false,
+                'allow_delete' => true,
+             ])
+             ->add('Sauvegarder', SubmitType::class);
             
             
         

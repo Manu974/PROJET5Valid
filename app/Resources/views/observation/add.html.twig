@@ -1,173 +1,228 @@
-<!DOCTYPE html>
-<html>
+{% extends 'base.html.twig' %}
 
-  <head>
-    <meta charset="utf-8" />
-    <title>observation</title>
-  </head>
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/pages/observation.css') }}">
+{% endblock %}
 
-  <body>
-    <h3>Saisie d'une observation</h3>
+{% block body %}
+    <section class="section-img container">
+        <div class="row">
+            <picture>
+                <source media="(min-width: 640px)" srcset="{{ asset('images/foulque-1600px.jpg') }}">
+                <source media="(max-width: 640px)" srcset="{{ asset('images/foulque-640px.jpg') }}">
+                <img src="{{ asset('images/foulque-640px.jpg') }}" alt="Rouge gorge" width="100%">
+            </picture>
+        </div>
+    </section>
+    <div class="container observation-container">
+        <h3 class="observation-title">
+            <i class="icon--large icon--obs"></i>
+            <span>Saisir une observation</span>
+        </h3>
+        <div class="row">
+            <div class="two columns icons-column">
+                <i class="icon--large icon--agenda"></i>
+                <i class="icon--large icon--maps"></i>
+                <img src="{{ asset('images/image-par-defaut-90x90.svg') }}" width="100" alt="">
+            </div>
+            <div class="well ten columns">
+                {{ form(form) }}
+            </div>
+        </div>
 
-    <div class="well">
-    {{ form(form) }}
+        <div class="row">
+            <div class="two columns">
+                <p>a</p>
+            </div>
+            <div class="ten columns save-image-container">
+                <img src="{{ asset('images/image-par-defaut-90x90.svg') }}" width="100" alt="">
+                <h4 class="choose-img-title">
+                    <i class="icon--large icon--maps is_active"></i>
+                    <span>Importer une image</span>
+                </h4>
+                {{ form(formImage) }}
+            </div>
+        </div>
     </div>
-    <button type="button" id="geolocalisation">Geolocaliser</button>
 
-    <div class="well">
-    {{ form(formImage) }}
-    </div>
+{% endblock %}
 
+{% block javascripts %}
+    {{ parent() }}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script>
+      $(function () {
+          var divForButton = $('<div></div>');
+          divForButton.css({
+              display: 'flex',
+              justifyContent: 'flex-end'
+          })
+          var button = $("<button class='btn btn--large' type='button' id='geolocalisation'><i class='icon icon--maps is_active'></i>Me Localiser</button>");
+          button.css({
+              backgroundColor: '#282826',
+              color: '#FAFAFA',
+              height: '60px',
+              borderRadius: '30px',
+              fontSize: '1.2em',
+              display: 'flex',
+              justifyContent: 'space-around',
+              alignItems: 'center',
+              width: '185px',
+              padding: '5px 15px 5px 5px',
+              margin: '10px 0 40px 0'
+          })
+          divForButton.append(button);
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script>
+          $('#appbundle_observation_location').parent().after(divForButton);
+
+      })
       $(function(){
 
-        var latGeolocalise = 0;
-        var lngGeolocalise = 0;
+          var latGeolocalise = 0;
+          var lngGeolocalise = 0;
 
-        $('[name$="appbundle_observationimage"]').on('submit', function(e){
-          
-          if($(this).find('input[type=file]').val()== ''){
-            alert("Veuillez choisir une image");
-           return false;
-          }
-        });
+          $('[name$="appbundle_observationimage"]').on('submit', function(e){
 
-        appbundle_observationimage
-        $('#geolocalisation').one('click', function(){
+              if($(this).find('input[type=file]').val()== ''){
+                  alert("Veuillez choisir une image");
+                  return false;
+              }
+          });
 
-          if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
+          appbundle_observationimage
+          $('#geolocalisation').one('click', function(){
 
-              latGeolocalise = position.coords.latitude;
-              lngGeolocalise = position.coords.longitude;
+              if (navigator.geolocation) {
+                  navigator.geolocation.getCurrentPosition(function(position) {
+
+                      latGeolocalise = position.coords.latitude;
+                      lngGeolocalise = position.coords.longitude;
+
+                      var geocoder = new google.maps.Geocoder();
+                      var latlng = {lat: parseFloat(latGeolocalise), lng: parseFloat(lngGeolocalise)};
+
+                      geocoder.geocode({'location': latlng}, function(results, status) {
+                          if (status === 'OK') {
+                              if (results[1]) {
+                                  $('#appbundle_observation_location').val(results[1].formatted_address);
+                              }
+                              else {
+                                  window.alert('No results found');
+                              }
+                          }
+                          else {
+                              window.alert('Geocoder failed due to: ' + status);
+                          }
+                      });
+
+                  });
+              }
+              else {
+                  // Browser doesn't support Geolocation
+                  alert("Browser doesn't support Geolocation");
+              }
+          });
+
+          $('[name$="appbundle_observation"]').on('submit', function(e){
+
+              e.preventDefault();
+
 
               var geocoder = new google.maps.Geocoder();
-              var latlng = {lat: parseFloat(latGeolocalise), lng: parseFloat(lngGeolocalise)};
+              var address = $('#appbundle_observation_location').val();
+              var comment = $('#appbundle_observation_comment').val();
+              var department = $('#appbundle_observation_department').val();
+              var nombreOiseaux = $('#appbundle_observation_nombreOiseaux').val();
+              var maturite = $('#appbundle_observation_maturite').val();
+              var nidification = $('#appbundle_observation_nidification').val();
+              var nom_vernaculaire = $('#appbundle_observation_nomVernaculaire option:selected').text();
+              var nom_scientifique = $('#appbundle_observation_nomScientifique option:selected' ).text();
+              var famille = $('#appbundle_observation_famille option:selected').text();
+              var author = $('#appbundle_observation_author').val();
 
-              geocoder.geocode({'location': latlng}, function(results, status) {
-                if (status === 'OK') {
-                  if (results[1]) {
-                    $('#appbundle_observation_location').val(results[1].formatted_address);
-                  } 
-                  else {
-                    window.alert('No results found');
+
+
+              geocoder.geocode({'address': address}, function(results, status) {
+                  if (status === 'OK') {
+                      latGeolocalise = results[0].geometry.location.lat();
+                      lngGeolocalise = results[0].geometry.location.lng();
+
+                      var Observation = {
+                          "location":{
+                              "x": latGeolocalise,
+                              "y": lngGeolocalise
+                          },
+                          "comment": comment,
+                          "author": author,
+                          "image": "",
+                          "department": department,
+                          "nombreOiseaux": nombreOiseaux,
+                          "maturite": maturite,
+                          "nidification": nidification,
+                          "nom_vernaculaire": nom_vernaculaire,
+                          "nom_scientifique": nom_scientifique,
+                          "famille": famille
+                      };
+
+
+                      $.ajax({
+                          url:'http://localhost:8000/api/observations',
+                          type : 'POST',
+                          data: JSON.stringify(Observation),
+                          dataType: 'json',
+                          contentType: 'application/json',
+                          processData: false,
+                          success: function(data){
+                              alert("observation enregistrée");
+                              window.location.replace('http://localhost:8000/observation');
+                          },
+                          error: function(xhr, ajaxOptions, thrownError){
+                              alert(xhr.status);
+                              alert(thrownError);
+                          }
+                      });
+
                   }
-                } 
-                else {
-                  window.alert('Geocoder failed due to: ' + status);
-                }
+                  else {
+                      alert('Geocode was not successful for the following reason: ' + status);
+                  }
               });
-
-            });
-          } 
-          else {
-          // Browser doesn't support Geolocation
-            alert("Browser doesn't support Geolocation");
-          }
-        });
-
-        $('[name$="appbundle_observation"]').on('submit', function(e){
-
-          e.preventDefault();  
-
-  
-          var geocoder = new google.maps.Geocoder();
-          var address = $('#appbundle_observation_location').val();
-          var comment = $('#appbundle_observation_comment').val();
-          var department = $('#appbundle_observation_department').val();
-          var nombreOiseaux = $('#appbundle_observation_nombreOiseaux').val();
-          var maturite = $('#appbundle_observation_maturite').val();
-          var nidification = $('#appbundle_observation_nidification').val();
-          var nom_vernaculaire = $('#appbundle_observation_nomVernaculaire option:selected').text();
-          var nom_scientifique = $('#appbundle_observation_nomScientifique option:selected' ).text();
-          var famille = $('#appbundle_observation_famille option:selected').text();
-          var author = $('#appbundle_observation_author').val();
-
-
-
-          geocoder.geocode({'address': address}, function(results, status) {
-            if (status === 'OK') {
-              latGeolocalise = results[0].geometry.location.lat();
-              lngGeolocalise = results[0].geometry.location.lng();          
-              
-              var Observation = {
-                "location":{
-                  "x": latGeolocalise,
-                  "y": lngGeolocalise
-                },
-                "comment": comment,
-                "author": author,
-                "image": "",
-                "department": department,
-                "nombreOiseaux": nombreOiseaux,
-                "maturite": maturite,
-                "nidification": nidification,
-                "nom_vernaculaire": nom_vernaculaire,
-                "nom_scientifique": nom_scientifique,
-                "famille": famille
-              };
-            
-
-              $.ajax({
-                url:'http://localhost:8000/api/observations', 
-                type : 'POST',
-                data: JSON.stringify(Observation),
-                dataType: 'json',
-                contentType: 'application/json',
-                processData: false,
-                success: function(data){
-                  alert("observation enregistrée");
-                  window.location.replace('http://localhost:8000/observation');
-                },
-                error: function(xhr, ajaxOptions, thrownError){
-                  alert(xhr.status);
-                  alert(thrownError);
-                }
-              });
-
-            } 
-            else {
-              alert('Geocode was not successful for the following reason: ' + status);
-            }
           });
-        });
 
           var familleNames = {};
           var nomScientifiqueNames = {};
           var nomVernaculaireNames = {};
 
-            $("select[name='appbundle_observation[famille]'] > option").each(function () {
-                if(familleNames[this.text]) {
-                    $(this).remove();
-                } else {
-                    familleNames[this.text] = this.value;
-                }
-            });
+          $("select[name='appbundle_observation[famille]'] > option").each(function () {
+              if(familleNames[this.text]) {
+                  $(this).remove();
+              } else {
+                  familleNames[this.text] = this.value;
+              }
+          });
 
-            $("select[name='appbundle_observation[nomScientifique]'] > option").each(function () {
-                if(nomScientifiqueNames[this.text]) {
-                    $(this).remove();
-                } else {
-                    nomScientifiqueNames[this.text] = this.value;
-                }
-            });
+          $("select[name='appbundle_observation[nomScientifique]'] > option").each(function () {
+              if(nomScientifiqueNames[this.text]) {
+                  $(this).remove();
+              } else {
+                  nomScientifiqueNames[this.text] = this.value;
+              }
+          });
 
-            $("select[name='appbundle_observation[nomVernaculaire]'] > option").each(function () {
-                if(nomVernaculaireNames[this.text]) {
-                    $(this).remove();
-                } else {
-                    nomVernaculaireNames[this.text] = this.value;
-                }
-            });
+          $("select[name='appbundle_observation[nomVernaculaire]'] > option").each(function () {
+              if(nomVernaculaireNames[this.text]) {
+                  $(this).remove();
+              } else {
+                  nomVernaculaireNames[this.text] = this.value;
+              }
+          });
 
       });
-    </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyZgz9fFFmD4Vf_0nJTlde0VEq6KxhFrw">
-    </script>
-  </body>
-</html>
+  </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyZgz9fFFmD4Vf_0nJTlde0VEq6KxhFrw">
+  </script>
+{% endblock %}
 
 
 

@@ -44,16 +44,17 @@
     color: #8CC63F;
 }
 .login-content {
+    display: none;
     transition: all 1s;
     padding: 42px;
     top: 0;
-    left: -1400px;
+    left: -1500px;
     background-color: #282829;
     z-index: 10;
     position: absolute;
     box-shadow: 10px 4px 4px rgba(30, 30, 30, 0.8);
     width: 65%;
-    height: 1300px;
+    height: 100vh;
 }
 .login-content label {
     font-weight: lighter;

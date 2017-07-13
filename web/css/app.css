@@ -62,15 +62,15 @@ a {
     justify-content: center;
     text-align: center;
     min-width: 155px;
-    height: 22px;
+    height: 24px;
     line-height: 19px;
     font-weight: bolder;
-    padding: 0;
     background-color: #8CC63F;
     box-shadow: 0 5px 8px black;
     color: #282829;
     border: none;
     font-variant-caps: all-small-caps;
+    font-size: 1.2em;
     border-radius: 16px;
     transition: .2s;
 }
@@ -125,6 +125,7 @@ a {
 .icon--home {  background: url('../logo-icones/MAISON  NAV DESK.svg') no-repeat;  }
 .icon--connection {  background: url('../logo-icones/icone-cadenas-connexion.svg') no-repeat 8px 0;  }
 .icon--maps {  background: url('../logo-icones/icone rapide carte.svg') no-repeat 8px 0;  }
+.icon--maps.is_active { background: url('../logo-icones/icone rapide carte-green.svg') no-repeat 8px 0; }
 .icon--obs {  background: url('../logo-icones/icone-saisir-obs.svg') no-repeat 4px 0;  }
 .icon--prog {  background: url('../logo-icones/icone-programme.svg') no-repeat 3px 0;  }
 .icon--prog.is_active {  background: url('../logo-icones/icone-programme-green.svg') no-repeat 3px 0;  }
@@ -157,6 +158,7 @@ a {
     top: 4px;
     background: url('../logo-icones/icone pouce inversé.svg') no-repeat 0 0;
 }
+.icon--agenda { background: url('../logo-icones/icone-agenda-gris.svg') no-repeat 0 0; }
 .icon--trash.is_active { background: url('../logo-icones/poubelle-verte.svg') no-repeat;}
 .icon--home:hover {  background: url('../logo-icones/MAISON  NAV DESK-green.svg') no-repeat;  }
 .icon--connection:hover {  background: url('../logo-icones/icone-cadenas-connexion-green.svg') no-repeat 8px 0;  }
