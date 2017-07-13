@@ -1,0 +1,189 @@
+.observation-container .icons-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 430px;
+}
+.observation-container .icons-column img {
+    position: relative;
+    top: 56px;
+}
+.observation-title {
+    margin: 25px 0 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 4px -2px #111;
+    padding-bottom: 25px;
+}
+.observation-title span {
+    margin-left: 20px;
+    color: #8CC63F;
+}
+.well form select, .well form input, .well form textarea {
+    color: #282829;
+    width: 60%;
+}
+.well label {
+    color: #8CC63F;
+    font-size: 1.2em;
+}
+.well form > div div {
+    display: flex;
+    justify-content: space-between;
+}
+.well form > div div:first-child div:first-child {
+    flex-direction: column;
+}
+#appbundle_observation button[type=submit]{
+    display: inline-flex;
+    justify-content: center;
+    text-align: center;
+    min-width: 155px;
+    height: 24px;
+    line-height: 19px;
+    font-weight: bolder;
+    background-color: #8CC63F;
+    box-shadow: 0 5px 8px black;
+    color: #282829;
+    border: none;
+    font-variant-caps: all-small-caps;
+    font-size: 1.2em;
+    border-radius: 16px;
+    transition: .2s;
+    margin: 0 auto;
+}
+#appbundle_observation_createdAt {
+    display: block;
+    margin-bottom: 60px;
+}
+#appbundle_observation_createdAt select{
+    width: 100%;
+}
+#appbundle_observation_createdAt_date {
+    display: flex;
+    flex-direction: row;
+}
+#appbundle_observation_createdAt_date select {
+    width: 120px;
+    margin-left: 10px;
+}
+#appbundle_observation_createdAt_time {
+    justify-content: flex-end;
+}
+#appbundle_observation_createdAt_time select {
+    width: 120px;
+    margin-left: 5px;
+}
+#appbundle_observation_department {
+    width: 22%;
+}
+#appbundle_observation_nidification.nidification-checkbox {
+    width: 60%;
+    transform: scale(1.6);
+}
+#appbundle_observation_nidification.nidification-checkbox:checked:before {
+    content: 'Oui';
+    position: relative;
+    left: 39%;
+    bottom: 4px;
+    display: inline-flex;
+    color: #8CC63F;
+    width: 35px;
+}
+#appbundle_observation_nidification.nidification-checkbox:not(:checked):before {
+    content: 'Non';
+    position: relative;
+    left: 39%;
+    bottom: 4px;
+    display: inline-flex;
+    color: #8CC63F;
+    width: 35px;
+}
+.save-image-container {
+    display: flex;
+}
+.save-image-container img {
+    margin-right: 30px;
+}
+.save-image-container form {
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+.save-image-container form button[type=submit] {
+    display: inline-flex;
+    justify-content: center;
+    text-align: center;
+    min-width: 155px;
+    height: 24px;
+    line-height: 19px;
+    font-weight: bolder;
+    background-color: #8CC63F;
+    box-shadow: 0 5px 8px black;
+    color: #282829;
+    border: none;
+    font-variant-caps: all-small-caps;
+    font-size: 1.2em;
+    border-radius: 16px;
+    transition: .2s;
+}
+.save-image-container label {
+    display: none;
+}
+#appbundle_observationimage {
+    color: #8CC63F;
+}
+#appbundle_observationimage > div {
+    display: flex;
+    flex-direction: column;
+}
+.choose-img-title {
+    color: #8CC63F;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    padding: 12px;
+}
+@media only screen and (max-width: 980px) {
+    .observation-title {
+        flex-direction: column;
+    }
+    .well form > div div {
+        flex-direction: column;
+    }
+    .well form select, .well form input, .well form textarea {
+        width: 100%;
+    }
+    #appbundle_observation_createdAt_time {
+        flex-direction: row;
+        justify-content: center;
+    }
+    #appbundle_observation_nidification.nidification-checkbox:checked:before {
+        content: 'Oui';
+        position: relative;
+        left: 29%;
+        bottom: 4px;
+        display: inline-flex;
+        color: #8CC63F;
+        width: 35px;
+    }
+    #appbundle_observation_nidification.nidification-checkbox:not(:checked):before {
+        content: 'Non';
+        position: relative;
+        left: 29%;
+        bottom: 4px;
+        display: inline-flex;
+        color: #8CC63F;
+        width: 35px;
+    }
+    .save-image-container {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .observation-container .icons-column {
+        display: none;
+    }
+}

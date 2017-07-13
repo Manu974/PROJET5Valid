@@ -13,18 +13,22 @@ class loadLoginPage {
         links.forEach((link) => {
             link.parentNode.addEventListener('click', e => {
                 e.stopPropagation();
+                this.loginContent.style.display = 'block';
                 this.element.style.display = 'block';
                 setTimeout(() => {
                     this.loginContent.style.left = 0;
-                }, 100);
+                }, 90);
             });
         });
         document.body.addEventListener('click', e => {
             e.stopPropagation();
-            this.loginContent.style.left = '-1400px';
+            this.loginContent.style.left = '-1500px';
             setTimeout(() => {
-                this.element.style.display = 'block';
-            }, 200);
+                this.element.style.display = 'none';
+            }, 700);
+            setTimeout(() => {
+                this.loginContent.style.display = 'none';
+            }, 700)
         });
     }
 

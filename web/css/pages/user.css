@@ -99,6 +99,7 @@ h3.user-title span {
     width: 400px;
 }
 .user-delete-account.admin form div {
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -109,7 +110,7 @@ h3.user-title span {
     flex-direction: row;
 }
 .user-delete-account.admin input[type=submit] {
-    width: 160px;
+    width: 170px;
     text-align: center;
     height: 22px;
     line-height: 19px;

@@ -28,9 +28,12 @@ class ObservationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('createdAt', DateTimeType::class)
+            ->add('createdAt', DateTimeType::class, [
+                'label' => 'Date et Heure'
+            ])
             ->add('department', EntityType::class, [
                 'class'        => 'AppBundle:Departement',
+                'label'        => 'Département',
                 'choice_label' => 'code',
                 'multiple'     => false,
               ])
@@ -68,14 +71,16 @@ class ObservationType extends AbstractType
                 ],
                 ])
             ->add('nidification', CheckboxType::class, [
-                'label' => 'nidification',
+                'label' => 'Nidification',
+                'attr'  => [
+                    'class' => 'nidification-checkbox'
+                ],
                 'required' => false
-
                 ])
             ->add('comment', TextareaType::class)
             ->add('author', TextType::class)
             ->add('captcha', CaptchaType::class)
-            ->add('save',      SubmitType::class);
+            ->add('Sauvegarder',      SubmitType::class);
     }
     
     /**
