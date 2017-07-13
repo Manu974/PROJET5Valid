@@ -146,6 +146,7 @@
         </footer>
         {% block javascripts %}
             {% if is_granted('ROLE_ADMIN') %}
+            <script src="{{ asset('js/src/admin/admin-pages.js') }}"></script>
             <script src="{{ asset('js/src/admin/admin-app.js') }}"></script>
             {% endif %}
             <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js"></script>
@@ -153,6 +154,40 @@
             <script src="{{ asset('js/src/MenuSlider.js') }}"></script>
             <script src="{{ asset('js/src/getPage.js') }}"></script>
             <script src="{{ asset('js/app.js') }}"></script>
+            {% if is_granted('ROLE_ADMIN') %}
+                <script>
+                    (function () {
+                        let pageLogin;
+                        let waitingPage = setInterval(function () {
+                            pageLogin = document.querySelector('.login-content');
+                            if (pageLogin !== null) {
+                                let adminColor = '#00A99D';
+
+                                let titles = document.querySelectorAll('.login-content h1, .login-content h2, .login-content h3');
+                                let labels = document.querySelectorAll('.login-content label');
+                                let icons = document.querySelectorAll('.login-content .icon');
+                                let links = document.querySelectorAll('.login-content a');
+
+                                icons.forEach(icon => {
+                                    icon.classList.remove('is_active');
+                                    icon.classList.add('is_pro');
+                                });
+                                labels.forEach(label => {
+                                    label.style.color = adminColor;
+                                });
+                                links.forEach(link => {
+                                    link.style.color = adminColor;
+                                });
+                                titles.forEach(title => {
+                                    title.style.color = adminColor;
+                                });
+                                clearInterval(waitingPage);
+                            }
+                        }, 1000);
+
+                    })();
+                </script>
+            {% endif %}
         {% endblock %}
     </body>
 </html>

@@ -8,3 +8,7 @@
     <div class="divider"></div>
     {{ render(controller('FOSUserBundle:Registration:register' ))}}
 {% endblock fos_user_content %}
+
+{% block javascript %}
+    {{ parent() }}
+{% endblock %}

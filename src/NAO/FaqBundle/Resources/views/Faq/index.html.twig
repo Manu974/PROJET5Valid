@@ -49,3 +49,17 @@
     {% endif %}
 
 {% endblock %}
+
+{% block javascripts %}
+    {% if is_granted('ROLE_ADMIN') %}
+    <script>
+        (function () {
+            let icons = document.querySelectorAll('.faq .icon, .faq .icon--large');
+            icons.forEach(icon => {
+                icon.classList.add('is_pro');
+            })
+        })();
+    </script>
+    {% endif %}
+    {{ parent() }}
+{% endblock %}

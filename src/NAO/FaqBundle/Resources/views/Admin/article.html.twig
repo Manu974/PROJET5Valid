@@ -1,19 +1,25 @@
 {# src/NAO/FaqBundle/Resources/views/Admin/article.html.twig #}
-
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/pages/faq.css') }}">
+{% endblock %}
 {% block body %}
-    <article>
-        <header>
-            <h2><a href="{{ path('nao_admin_homepage', { 'id': faq.id }) }}">{{ faq.title }}</a></h2>
-        </header>
-        <div>
-            {{ form_start(form) }}
-                {{ form_row(form.title, {'attr': {'class': 'form-control'}}) }}
-                {{ form_row(form.faq) }}
-                {{ form_row(form.author, {'attr': {'class': 'form-control'}}) }}
-                <input type="submit" value="Enregistrer" class="btn btn-default btn-contact center-block"/>
-            {{ form_end(form) }}
-        </div>
-    </article>
+    <section class="admin container">
+        <article>
+            <header>
+                <h2><a href="{{ path('nao_admin_homepage', { 'id': faq.id }) }}">{{ faq.title }}</a></h2>
+            </header>
+            <div>
+                {{ form_start(form) }}
+                    {{ form_row(form.title, {'attr': {'class': 'form-control'}}) }}
+                    {{ form_row(form.faq) }}
+                    {{ form_row(form.author, {'attr': {'class': 'form-control'}}) }}
+                    <input type="submit" value="Enregistrer" class="btn btn-default btn-contact center-block"/>
+                {{ form_end(form) }}
+            </div>
+        </article>
+    </section>
 
     <!--TinyMCE - BUNDLE-->
     {{ tinymce_init({'theme': {'simple': {'language': app.request.locale, 'menubar': false}}}) }}

@@ -1,7 +1,14 @@
 {# src/NAO/ProgrammesBundle/Resources/views/Admin/new.html.twig #}
-
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/pages/programme.css') }}">
+{% endblock %}
 {% block body %}
-    <article class="blog">
+    <article class="blog-new container">
+        <h1 class="title">
+            <span>Nouveau programme</span>
+        </h1>
         <div class="snippet">
             {{ form_start(form) }}
                 {{ form_row(form.title, {'attr': {'class': 'form-control'}}) }}

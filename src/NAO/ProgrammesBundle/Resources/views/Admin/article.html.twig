@@ -1,8 +1,12 @@
 {# src/NAO/ProgrammesBundle/Resources/views/Admin/article.html.twig #}
-
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/pages/programme.css') }}">
+{% endblock %}
 {% block body %}
-    <article class="blog">
-        <header>
+    <article class="blog-new container">
+        <header class="title">
             <h2><a href="{{ path('nao_admin_view', { 'id': blog.id, 'slug': blog.slug }) }}">{{ blog.title }}</a></h2>
         </header>
         <div class="snippet">
