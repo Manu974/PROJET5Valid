@@ -1,3 +1,43 @@
+.blog-new {
+    position: relative;
+    top: 160px;
+    height: 100%;
+    margin-bottom: 180px;
+    color: #00A99D;
+}
+.blog-new .title {
+    color: #00A99D;
+}
+.blog-new h2 a {
+    color: #00A99D;
+}
+.blog-new input:not(.btn) {
+    border: 1px solid black;
+    min-height: 60px;
+    margin-bottom: 30px;
+}
+.blog-new textarea {
+    min-height: 320px;
+}
+.blog-new .btn {
+    background: #00A99D;
+}
+.blog-comment a {
+    color: #00A99D;
+}
+.blog-comment {
+    position: relative;
+    top: 160px;
+    height: 100%;
+    margin-bottom: 180px;
+    color: #FAFAFA;
+}
+.blog-comment .comments {
+    color: #282829;
+}
+.blog-comment .title, .blog-comment .comments h3 {
+    color: #00A99D;
+}
 .blog-title {
     margin-top: 40px;
     display: flex;

@@ -89,7 +89,7 @@
     left: 39%;
     bottom: 4px;
     display: inline-flex;
-    color: #8CC63F;
+    color: #FAFAFA;
     width: 35px;
 }
 #appbundle_observation_nidification.nidification-checkbox:not(:checked):before {
@@ -98,7 +98,7 @@
     left: 39%;
     bottom: 4px;
     display: inline-flex;
-    color: #8CC63F;
+    color: #FAFAFA;
     width: 35px;
 }
 .save-image-container {
@@ -111,6 +111,11 @@
     margin: 0;
     display: flex;
     align-items: center;
+}
+
+.save-image-container h4 i {
+    margin-left: 20px;
+    margin-right: 20px;
 }
 .save-image-container form button[type=submit] {
     display: inline-flex;
@@ -166,7 +171,7 @@
         left: 29%;
         bottom: 4px;
         display: inline-flex;
-        color: #8CC63F;
+        color: #FAFAFA;
         width: 35px;
     }
     #appbundle_observation_nidification.nidification-checkbox:not(:checked):before {
@@ -175,7 +180,7 @@
         left: 29%;
         bottom: 4px;
         display: inline-flex;
-        color: #8CC63F;
+        color: #FAFAFA;
         width: 35px;
     }
     .save-image-container {

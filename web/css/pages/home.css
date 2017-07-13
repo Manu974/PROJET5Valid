@@ -7,7 +7,7 @@ section {
 .section-img--home .btn {
     position: relative;
     padding: 12px;
-    width: 205px;
+    width: 225px;
     display: flex;
     margin: 20px auto 10px;
     align-items: center;
@@ -15,8 +15,14 @@ section {
     color: #FAFAFA;
     bottom: 10px;
 }
+.section-img--home .btn span {
+    width: 120px;
+}
 .section-img--home .btn:hover {
     color: #8CC63F;
+}
+.section-img--home .btn.is_pro:hover {
+    color: #00A99D;
 }
 .home-background {
     position: relative;

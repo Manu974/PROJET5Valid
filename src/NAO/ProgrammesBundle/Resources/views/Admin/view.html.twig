@@ -1,55 +1,61 @@
 {# src/NAO/ProgrammesBundle/Resources/views/Admin/view.html.twig #}
-
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/pages/programme.css') }}"/>
+{% endblock %}
 {% block title %}{{ blog.title }}{% endblock %}
 
 {% block body %}
-    <article class="blog">
-        <header>
-            <div class="date">Publié <time datetime="{{ blog.created|date('c') }}">le {{ blog.created|date('d-m-Y') }} à {{ blog.created|date('H:i:s') }}</time> - Auteur : <span class="highlight">{{blog.author}}</span></div>
-            <h2>{{ blog.title }}</h2>
-        </header>
-        <div class="article_view">
-            <p>{{ blog.blog|raw }}</p>
-            <p class="continue"><a href="{{ path('nao_admin_article', { 'id': blog.id, 'slug': blog.slug }) }}"><i class="fa fa-pencil-square-o" aria-hidden="true"> Modifier l'article</i></a></p>
-        </div>
-    </article>
-    <section class="comments" id="comments">
-        <section class="previous-comments">
-            <h3>Commentaires</h3>
-            {% for comment in comments %}
-                <article class="comment {{ cycle(['odd', 'even'], loop.index0) }}" id="comment-{{ comment.id }}">
-                    <header>
-                        <p><span class="highlight">{{ comment.user }}</span> a commenté le <time datetime="{{ comment.created|date('c') }}">{{ comment.created|date('d-m-Y') }} à {{ comment.created|date('H:i:s') }}</time>
+    <section class="blog-comment container">
+        <article>
+            <header>
+                <div class="date">Publié <time datetime="{{ blog.created|date('c') }}">le {{ blog.created|date('d-m-Y') }} à {{ blog.created|date('H:i:s') }}</time> - Auteur : <span class="highlight">{{blog.author}}</span></div>
+                <h2 class="title">{{ blog.title }}</h2>
+            </header>
+            <div class="article_view">
+                <p>{{ blog.blog|raw }}</p>
+                <p class="continue"><a href="{{ path('nao_admin_article', { 'id': blog.id, 'slug': blog.slug }) }}"><i class="fa fa-pencil-square-o" aria-hidden="true"> Modifier l'article</i></a></p>
+            </div>
+        </article>
+        <section class="comments" id="comments">
+            <section class="previous-comments">
+                <h3>Commentaires</h3>
+                {% for comment in comments %}
+                    <article class="comment {{ cycle(['odd', 'even'], loop.index0) }}" id="comment-{{ comment.id }}">
+                        <header>
+                            <p><span class="highlight">{{ comment.user }}</span> a commenté le <time datetime="{{ comment.created|date('c') }}">{{ comment.created|date('d-m-Y') }} à {{ comment.created|date('H:i:s') }}</time>
+                                {% if comment.reported %}
+                                    <span class="highlight pull-right">
+                                        <i class="fa fa-thumbs-down highlight" aria-hidden="true"> signalé</i>
+                                    </span>
+                                {% endif %}
+                            </p>
+                        </header>
+                        {% if comment.approved %}
+                            <p>{{ comment.comment }}</p>
+                        {% else %}
+                            <p class="comment-mod"><i class="fa fa-exclamation-triangle" aria-hidden="true"> Commentaire modéré par l'administrateur</i></p>
+                        {% endif %}
+                        <p class="comment-brother">
+                            <a href="{{ path('nao_admin_delcomment', { 'idcomment': comment.id, 'idblog': blog.id, 'slug': blog.slug }) }}#comments"><i class="fa fa-eraser" aria-hidden="true"> Supprimer ce commentaire</i></a>
+                            <span class="spanorge"> - </span>
+                            {% if comment.approved %}
+                                <a href="{{ path('nao_admin_modcomment', { 'idcomment': comment.id, 'idblog': blog.id, 'action': 'mod', 'slug': blog.slug }) }}"><i class="fa fa-exclamation-triangle" aria-hidden="true"> Modérer ce commentaire</i></a>
+                            {% else %}
+                                <a href="{{ path('nao_admin_modcomment', { 'idcomment': comment.id, 'idblog': blog.id, 'action': 'edt', 'slug': blog.slug }) }}"><i class="fa fa-pencil-square-o" aria-hidden="true"> Rééditer ce commentaire</i></a>
+                            {% endif %}
                             {% if comment.reported %}
-                                <span class="highlight pull-right">
-                                    <i class="fa fa-thumbs-down highlight" aria-hidden="true"> signalé</i>
-                                </span>
+                                <span class="spanorge"> - </span>
+                                <a href="{{ path('nao_admin_unreport', { 'idcomment': comment.id, 'idblog': blog.id, 'slug': blog.slug }) }}"><i class="fa fa-thumbs-up" aria-hidden="true"> Supprimer le signalement</i></a>
                             {% endif %}
                         </p>
-                    </header>
-                    {% if comment.approved %}
-                        <p>{{ comment.comment }}</p>
-                    {% else %}
-                        <p class="comment-mod"><i class="fa fa-exclamation-triangle" aria-hidden="true"> Commentaire modéré par l'administrateur</i></p>
-                    {% endif %}
-                    <p class="comment-brother">
-                        <a href="{{ path('nao_admin_delcomment', { 'idcomment': comment.id, 'idblog': blog.id, 'slug': blog.slug }) }}#comments"><i class="fa fa-eraser" aria-hidden="true"> Supprimer ce commentaire</i></a>
-                        <span class="spanorge"> - </span>
-                        {% if comment.approved %}
-                            <a href="{{ path('nao_admin_modcomment', { 'idcomment': comment.id, 'idblog': blog.id, 'action': 'mod', 'slug': blog.slug }) }}"><i class="fa fa-exclamation-triangle" aria-hidden="true"> Modérer ce commentaire</i></a>
-                        {% else %}
-                            <a href="{{ path('nao_admin_modcomment', { 'idcomment': comment.id, 'idblog': blog.id, 'action': 'edt', 'slug': blog.slug }) }}"><i class="fa fa-pencil-square-o" aria-hidden="true"> Rééditer ce commentaire</i></a>
-                        {% endif %}
-                        {% if comment.reported %}
-                            <span class="spanorge"> - </span>
-                            <a href="{{ path('nao_admin_unreport', { 'idcomment': comment.id, 'idblog': blog.id, 'slug': blog.slug }) }}"><i class="fa fa-thumbs-up" aria-hidden="true"> Supprimer le signalement</i></a>
-                        {% endif %}
-                    </p>
-                </article>
-            {% else %}
-                <p>Pas encore de commentaire pour ce sujet.</p>
-            {% endfor %}
-            {{ render(controller('NAOProgrammesBundle:Comment:create' , {'idblog': blog.id} ))}}
+                    </article>
+                {% else %}
+                    <p>Pas encore de commentaire pour ce sujet.</p>
+                {% endfor %}
+                {{ render(controller('NAOProgrammesBundle:Comment:create' , {'idblog': blog.id} ))}}
+            </section>
         </section>
     </section>
 {% endblock %}

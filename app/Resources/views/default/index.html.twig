@@ -38,5 +38,13 @@
 
 
 {% block javascripts %}
+    {% if is_granted('ROLE_ADMIN') %}
+        <script>
+            (function () {
+                let buttonProg = document.querySelector('.btn.btn--large');
+                buttonProg.classList.add('is_pro');
+            })();
+        </script>
+    {% endif %}
     {{ parent() }}
 {% endblock %}

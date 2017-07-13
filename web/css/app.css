@@ -124,10 +124,19 @@ a {
 }
 .icon--home {  background: url('../logo-icones/MAISON  NAV DESK.svg') no-repeat;  }
 .icon--connection {  background: url('../logo-icones/icone-cadenas-connexion.svg') no-repeat 8px 0;  }
+.is_pro.icon--connection {  background: url('../logo-icones/icone-cadenas-connexion-pro.svg') no-repeat 8px 0;  }
+.is_pro.icon--connection:hover {  background: url('../logo-icones/icone-cadenas-connexion-pro.svg') no-repeat 8px 0;  }
 .icon--maps {  background: url('../logo-icones/icone rapide carte.svg') no-repeat 8px 0;  }
-.icon--maps.is_active { background: url('../logo-icones/icone rapide carte-green.svg') no-repeat 8px 0; }
+.is_pro.icon--maps {  background: url('../logo-icones/icone-carte-pro.svg') no-repeat 8px 0;  }
+.is_pro.icon--maps:hover {  background: url('../logo-icones/icone-carte-pro.svg') no-repeat 8px 0;  }
+.icon--maps.is_active { background: url('../logo-icones/icone-carte-pro.svg') no-repeat 8px 0; }
+.is_pro.icon--maps.is_active { background: url('../logo-icones/icone rapide carte-green.svg') no-repeat 8px 0; }
 .icon--obs {  background: url('../logo-icones/icone-saisir-obs.svg') no-repeat 4px 0;  }
+.is_pro.icon--obs {  background: url('../logo-icones/icone-saisir-obs-pro.svg') no-repeat 4px 0;  }
+.is_pro.icon--obs:hover {  background: url('../logo-icones/icone-saisir-obs-pro.svg') no-repeat 4px 0;  }
 .icon--prog {  background: url('../logo-icones/icone-programme.svg') no-repeat 3px 0;  }
+.is_pro.icon--prog {  background: url('../logo-icones/icone-programme-pro.svg') no-repeat 3px 0;  }
+.is_pro.icon--prog:hover {  background: url('../logo-icones/icone-programme-pro.svg') no-repeat 3px 0;  }
 .icon--prog.is_active {  background: url('../logo-icones/icone-programme-green.svg') no-repeat 3px 0;  }
 .icon--account {  background: url('../logo-icones/PROFIL USER NAV.svg') no-repeat 2px 0;  }
 .icon--account.is_active { background: url('../logo-icones/PROFIL USER NAV-green.svg') no-repeat 2px 0; }
@@ -135,6 +144,8 @@ a {
 .is_active.is_pro.icon--account {  background: url('../logo-icones/icone-mon-compte-pro.svg') no-repeat 2px 0;  }
 .icon--faq {  background: url('../logo-icones/FAQ NAV.svg') no-repeat 1px 0;  }
 .icon--faq.is_active { background: url('../logo-icones/icone-faq-vert.svg') no-repeat 0 0; }
+.is_pro.icon--faq.is_active { background: url('../logo-icones/icone-faq-pro.svg') no-repeat 0 0; }
+.is_pro.icon--faq {  background: url('../logo-icones/icone-faq-pro.svg') no-repeat 1px 0;  }
 .icon--contact {  background: url('../logo-icones/icone enveloppe-contact.svg') no-repeat 1px 0;  }
 .icon--newsletter {  background: url('../logo-icones/icone newsletter.svg') no-repeat 0 0;  }
 .icon--legalMention {  background: url('../logo-icones/icone-mentions-gris.svg') no-repeat 6px -1px; }
@@ -149,9 +160,12 @@ a {
 .icon--burger.is_active {  background: url('../logo-icones/menu burger-green.svg') no-repeat 0 0;  }
 .is_pro.icon--burger.is_active {  background: url('../logo-icones/menu-burger-pro-bleu.svg') no-repeat 0 0;  }
 .icon--arrow {  background: url('../logo-icones/flèche gauche transparente.svg') no-repeat 0 0;  }
+.is_pro.icon--arrow { background: url('../logo-icones/flèche-gauche-transparente-pro.svg') no-repeat 0 0;  }
 .icon--discuss { background: url('../logo-icones/icone bulles de discussion user vert.svg') no-repeat 0 0; }
+.is_pro.icon--discuss { background: url('../logo-icones/icone-bulles-de-discussion-pro.svg') no-repeat 0 0; }
 .icon--send { background: url('../logo-icones/icone-envoyer.svg') no-repeat 0 0; }
 .icon--tag { background: url('../logo-icones/tag-icone-user-green.svg') no-repeat 0 0; }
+.is_pro.icon--tag { background: url('../logo-icones/icone-tag-user-pro.svg') no-repeat 0 0; }
 .icon--lock { background: url('../logo-icones/cadenas-fermé-user-green.svg') no-repeat 0 0;}
 .icon--thumb {
     position: relative;
@@ -159,6 +173,9 @@ a {
     background: url('../logo-icones/icone pouce inversé.svg') no-repeat 0 0;
 }
 .icon--agenda { background: url('../logo-icones/icone-agenda-gris.svg') no-repeat 0 0; }
+.is_pro.icon--agenda { background: url('../logo-icones/icone-agenda-pro.svg') no-repeat 0 0; }
+.icon--uploadImg { background: url('../logo-icones/icone-importer-user.svg') no-repeat 0 0;}
+.is_pro.icon--uploadImg { background: url('../logo-icones/icone-importer-pro.svg') no-repeat 0 0;}
 .icon--trash.is_active { background: url('../logo-icones/poubelle-verte.svg') no-repeat;}
 .icon--home:hover {  background: url('../logo-icones/MAISON  NAV DESK-green.svg') no-repeat;  }
 .icon--connection:hover {  background: url('../logo-icones/icone-cadenas-connexion-green.svg') no-repeat 8px 0;  }
@@ -234,6 +251,9 @@ a {
 }
 .navbar-mobile-link:hover {
     color: #8CC63F;
+}
+.is_pro.navbar-mobile-content .navbar-mobile-link:hover {
+    color: #00A99D;
 }
 .icon:hover {  cursor: pointer;  }
 .navbar-mobile .icon--burger:hover {  background: url('../logo-icones/menu burger-green.svg') no-repeat;  }

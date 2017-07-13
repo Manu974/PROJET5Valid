@@ -38,7 +38,7 @@
             <div class="ten columns save-image-container">
                 <img src="{{ asset('images/image-par-defaut-90x90.svg') }}" width="100" alt="">
                 <h4 class="choose-img-title">
-                    <i class="icon--large icon--maps is_active"></i>
+                    <i class="icon--large icon--uploadImg"></i>
                     <span>Importer une image</span>
                 </h4>
                 {{ form(formImage) }}
@@ -58,7 +58,7 @@
               display: 'flex',
               justifyContent: 'flex-end'
           })
-          var button = $("<button class='btn btn--large' type='button' id='geolocalisation'><i class='icon icon--maps is_active'></i>Me Localiser</button>");
+          var button = $("<button class='btn btn--large' type='button' id='geolocalisation'><i class='icon icon--maps{% if is_granted('ROLE_ADMIN') %} is_pro{% endif %} is_active'></i>Me Localiser</button>");
           button.css({
               backgroundColor: '#282826',
               color: '#FAFAFA',
@@ -220,8 +220,7 @@
 
       });
   </script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyZgz9fFFmD4Vf_0nJTlde0VEq6KxhFrw">
-  </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyZgz9fFFmD4Vf_0nJTlde0VEq6KxhFrw"></script>
 {% endblock %}
 
 
