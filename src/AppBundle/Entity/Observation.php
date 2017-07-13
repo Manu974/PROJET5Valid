@@ -505,4 +505,8 @@ class Observation
     {
         return $this->image;
     }
+
+    public function getObjectVars () {
+        return get_object_vars($this);
+    }
 }

@@ -31,6 +31,7 @@ class AppKernel extends Kernel
             new NAO\NewsletterBundle\NAONewsletterBundle(),
             new Bazinga\Bundle\HateoasBundle\BazingaHateoasBundle(),
             new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
+           
 
         ];
 

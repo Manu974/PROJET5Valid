@@ -16,6 +16,8 @@
     {{ form(form) }}
     </div>
 
+    <div><button type="button" id="bouttonExport">Exporter les donnees</button> </div>
+
     <table id="listObservation" style="width:50%">
       <thead id="enteteTab">
       <tr class="enteteTr">
@@ -43,33 +45,7 @@
     <script>
       $(function() {
 
-       /* $.ajax({
-          url:'http://127.0.0.1:8000/api/observations/lists', 
-          type : 'GET',
-          //timeout : 3000,
-          success: function(data){
-            $.each(data,function(i, observation){
-              //console.log(observation);
-              var trUser = '<tr><td name="status" is_valid = '+observation.is_valid+' id="'+observation.id+'"></td><td>'+observation.id+'</td><td>'+observation.department+'</td><td>'+observation.famille+'</td><td>'+observation.nom_vernaculaire+'</td><td>'+observation.author+'</td><td><button name="validationObservation" type="button" id="'+observation.id+'">valider</button><button name="vueDetails" type="button" id="'+observation.id+'">Vue Detailee</button></td></tr>';
-
-              $('#listObservation').append(trUser);
-
-              if(observation.is_valid==true){
-
-                $('[is_valid$="true"]').css('background', 'green');
-                $('[name$="validationObservation"][id="'+observation.id+'"]').attr("disabled", true);
-              } 
-              else {
-              $('[is_valid$="false"]').css('background', 'red');
-              //$('[name$="validationObservation"]').removeAttr("disabled");
-              }
-            });
-          },
-          error: function(){
-            alert('La requête n\'a pas abouti');
-          }
-        });*/
-
+  
         $('table').on("click",'button[name="validationObservation"]', function(){
 
           window.location.replace('http://localhost:8000/observation/validation/'+this.id);
@@ -156,6 +132,10 @@
           else {
             nomVernaculaireNames[this.text] = this.value;
           }
+        });
+
+        $("#bouttonExport").on("click",function(){
+          window.location.replace('http://localhost:8000/observation/espacepro/export');
         });
       });
     </script>
