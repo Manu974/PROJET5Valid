@@ -26,11 +26,18 @@ class FaqController extends Controller
 
         // Calcul du nombre total de pages
         $nbPages = ceil(count($faqs) / $nbPerPage);
-
-        return $this->render('NAOFaqBundle:Faq:index.html.twig', array(
-            'faqs' => $faqs,
-            'nbPages' => $nbPages,
-            'page' => $page
-        ));
+        if ($this->get('security.authorization_checker')->isGranted('ROLE_NATURALISTE')) {
+            return $this->render('NAOFaqBundle:Admin:index.html.twig', array(
+                'faqs' => $faqs,
+                'nbPages' => $nbPages,
+                'page' => $page
+            ));
+        } else {
+            return $this->render('NAOFaqBundle:Faq:index.html.twig', array(
+                'faqs' => $faqs,
+                'nbPages' => $nbPages,
+                'page' => $page
+            ));
+        }
     }
 }
