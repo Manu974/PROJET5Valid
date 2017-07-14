@@ -28,11 +28,19 @@ class NewsletterController extends Controller
             $rsltSub = ' ';
         }
 
-        return $this->render('NAONewsletterBundle:Newsletter:view.html.twig', array(
-            'newsletter'      => $newsletter,
-            'user'            => $user,
-            'rsltSub'         => $rsltSub
-        ));
+        if ($this->get('security.authorization_checker')->isGranted('ROLE_NATURALISTE')) {
+            return $this->render('NAONewsletterBundle:Admin:view.html.twig', array(
+                'newsletter'      => $newsletter,
+                'user'            => $user,
+                'rsltSub'         => $rsltSub
+            ));
+        } else {
+            return $this->render('NAONewsletterBundle:Newsletter:view.html.twig', array(
+                'newsletter'      => $newsletter,
+                'user'            => $user,
+                'rsltSub'         => $rsltSub
+            ));
+        }
     }
 
     /**

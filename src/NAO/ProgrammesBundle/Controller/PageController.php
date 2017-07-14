@@ -29,11 +29,19 @@ class PageController extends Controller
         // Calcul du nombre total de pages
         $nbPages = ceil(count($blogs) / $nbPerPage);
 
-        return $this->render('NAOProgrammesBundle:Page:index.html.twig', array(
-            'blogs' => $blogs,
-            'nbPages' => $nbPages,
-            'page' => $page
-        ));
+        if ($this->get('security.authorization_checker')->isGranted('ROLE_NATURALISTE')) {
+            return $this->render('NAOProgrammesBundle:Admin:index.html.twig', array(
+                'blogs' => $blogs,
+                'nbPages' => $nbPages,
+                'page' => $page
+            ));
+        } else {
+            return $this->render('NAOProgrammesBundle:Page:index.html.twig', array(
+                'blogs' => $blogs,
+                'nbPages' => $nbPages,
+                'page' => $page
+            ));
+        }
     }
 
     // Page "Contact"
