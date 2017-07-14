@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Bird;
 use AppBundle\Entity\Observation;
@@ -19,6 +20,23 @@ use CrEOF\Spatial\PHP\Types\Geometry\Polygon;
 use CrEOF\Spatial\Tests\OrmTestCase;
 use CrEOF\Spatial\Tests\Fixtures\GeometryEntity;
 use CrEOF\Spatial\Tests\Fixtures\NoHintGeometryEntity;
+use Exporter\Handler;
+use Exporter\Source\PDOStatementSourceIterator;
+
+use Symfony\Component\HttpFoundation\StreamedResponse;
+
+use Ddeboer\DataImport\Workflow;
+use Ddeboer\DataImport\Reader\ArrayReader;
+use Ddeboer\DataImport\Writer\CsvWriter;
+use Ddeboer\DataImport\ValueConverter\CallbackValueConverter;
+
+
+
+
+
+
+
+
 
 
 class HomeController extends Controller
@@ -61,7 +79,7 @@ class HomeController extends Controller
               $session = $request->getSession();
               $session->set('imageId', $observationImage->getId());
 
-    }
+        }
 
     return $this->render('observation/add.html.twig', array(
       'form' => $form->createView(),
@@ -112,7 +130,7 @@ class HomeController extends Controller
      * @Route("/observation/validation/{id}", name="observationvalidpage")
      */
     public function observationValidAction(Request $request, $id)
-    {  
+    { 
       $observation = $this->getDoctrine()->getManager()->getRepository('AppBundle:Observation')->find($id);
       $observation->setIsValid(true);
       $em = $this->getDoctrine()->getManager();
@@ -121,6 +139,12 @@ class HomeController extends Controller
       return $this->redirectToRoute('observationpropage');
 
     }
+
+    
+   
+
+
+
 
     
 }
