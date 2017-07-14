@@ -14,6 +14,7 @@ class SecurityController extends BaseController
     public function loginAction(Request $request)
     {
 
+
         /** @var $session Session */
         $session = $request->getSession();
 
@@ -23,15 +24,14 @@ class SecurityController extends BaseController
         // get the error if any (works with forward and redirect -- see below)
         if ($request->attributes->has($authErrorKey)) {
             $error = $request->attributes->get($authErrorKey);
-            $lastUsername = (null === $session) ? '' : $session->get($lastUsernameKey);
+                $lastUsername = (null === $session) ? '' : $session->get($lastUsernameKey);
 
         $csrfToken = $this->has('security.csrf.token_manager')
             ? $this->get('security.csrf.token_manager')->getToken('authenticate')->getValue()
             : null;
 
-            $session->getFlashBag()->add('info', 'Identifiant ou mot de passe incorect');
 
-            return $this->render('@FOSUser/Security/pop.html.twig',array(
+            return $this->showLogin(array(
             'last_username' => $lastUsername,
             'error' => $error,
             'csrf_token' => $csrfToken,
@@ -39,13 +39,15 @@ class SecurityController extends BaseController
         } elseif (null !== $session && $session->has($authErrorKey)) {
             $error = $session->get($authErrorKey);
             $session->remove($authErrorKey);
+
+           
             $lastUsername = (null === $session) ? '' : $session->get($lastUsernameKey);
-            $session->getFlashBag()->add('info', 'Identifiant ou mot de passe incorect');
+
         $csrfToken = $this->has('security.csrf.token_manager')
             ? $this->get('security.csrf.token_manager')->getToken('authenticate')->getValue()
             : null;
 
-            return $this->render('@FOSUser/Security/pop.html.twig',array(
+            return $this->showLogin(array(
             'last_username' => $lastUsername,
             'error' => $error,
             'csrf_token' => $csrfToken,
@@ -65,11 +67,21 @@ class SecurityController extends BaseController
             ? $this->get('security.csrf.token_manager')->getToken('authenticate')->getValue()
             : null;
 
-        return $this->renderLogin(array(
+        if($request->isXmlHttpRequest()){
+            return $this->renderLogin(array(
             'last_username' => $lastUsername,
             'error' => $error,
             'csrf_token' => $csrfToken,
         ));
+        }
+
+        else {return $this->showLogin(array(
+            'last_username' => $lastUsername,
+            'error' => $error,
+            'csrf_token' => $csrfToken,
+        ));
+    }
+        
     }
 
     /**
@@ -94,4 +106,18 @@ class SecurityController extends BaseController
     {
         throw new \RuntimeException('You must activate the logout in your security firewall configuration.');
     }
+
+    /**
+     *
+     * @param array $data
+     *
+     * @return Response
+     */
+     protected function showLogin(array $data)
+    {
+        return $this->render('@FOSUser/Security/pop.html.twig', $data);
+    }
+
+
+    
 }

@@ -34,6 +34,5 @@ nao_user_updateMail:
     requirements:
         id: \d+
 
-nao_user_login:
-    path:    /login
-    defaults: { _controller: NAOUserBundle:Security:login }
+
+
