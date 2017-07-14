@@ -1,8 +1,9 @@
 <html>
+    {% block style %}
     <head>
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/pages/login.css') }}">
     </head>
+    {% endblock %}
     <div>
         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
             {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |

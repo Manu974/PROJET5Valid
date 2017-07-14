@@ -1,250 +1,269 @@
-<!DOCTYPE html>
-<html>
+{% extends 'base.html.twig' %}
 
-  <head>
-    <meta charset="utf-8" />
-    <title>observation</title>
-    <link rel="stylesheet" href="{{ asset('css/list.css') }}">
-  </head>
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/carte.css') }}">
+{% endblock %}
 
-  <body>
+{% block body %}
 
-    <div id="map" ></div>
+    <div id="map" class="container"></div>
 
-    <h3>Resultats de recherche</h3>
-    <div class="well">
-    {{ form(form) }}
-    </div>
+    <section class="container carte-container pro">
+        <header class="title">
+            <a href="{{ path('observationcartepage') }}" class="header-navbar-item">
+                <i class="icon--large icon--search"></i>
+                <p class="header-navbar-link">carte</p>
+            </a>
+            <a href="{{ path('nao_newsletter_homepage') }}" class="header-navbar-item">
+                <i class="icon--large icon--newsletter"></i>
+                <p class="header-navbar-link">Newsletter</p>
+            </a>
+            <a href="{{ path('nao_faq_homepage') }}" class="header-navbar-item">
+                <i class="icon--large icon--faq"></i>
+                <p class="header-navbar-link">Faq</p>
+            </a>
+            <a href="{{ path('nao_blog_homepage') }}" class="header-navbar-item">
+                <i class="icon--large icon--prog"></i>
+                <p class="header-navbar-link">Programme</p>
+            </a>
+            <a id="bouttonExport" class="header-navbar-item">
+                <i class="icon--large icon--maps"></i>
+                <p class="header-navbar-link">Exporter les donnees</p>
+            </a>
+        </header>
+        <div class="well">
+            {{ form(form) }}
+        </div>
 
-    <div><button type="button" id="bouttonExport">Exporter les donnees</button> </div>
 
-    <table id="listObservation" style="width:50%">
-      <thead id="enteteTab">
-      <tr class="enteteTr">
-      <th>Status</th>
-      <th>N°</th>
-      <th>Dpt</th> 
-      <th>Famille</th>
-      <th>Nom de l'oiseau</th>
-      <th>Auteur</th>
-      </tr>
-      </thead>
-    </table>
+        <table id="listObservation">
+            <thead id="enteteTab">
+            <tr class="enteteTr">
+                <th>Status</th>
+                <th>N°</th>
+                <th>Dpt</th>
+                <th>Famille</th>
+                <th>Nom de l'oiseau</th>
+                <th>Auteur</th>
+                <th>Valider</th>
+            </tr>
+            </thead>
+        </table>
 
-    <div id="detailObs" class="well">
-      <p id="NomOiseau"></p>
-      <p id="Famille"></p>
-      <p id="Nombre"></p>
-      <p id="Situation"></p>
-      <p id="Auteur"></p>
-      <p id="Commentaire"></p>
-      <div id="bouttonDetails"></div>
-    </div>
+        <div id="detailObs">
+            <p id="Commentaire"></p>
+            <div id="bouttonDetails"></div>
+        </div>
+    </section>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script>
       $(function() {
 
-  
-        $('table').on("click",'button[name="validationObservation"]', function(){
 
-          window.location.replace('http://localhost:8000/observation/validation/'+this.id);
-        });
+          $('table').on("click",'button[name="validationObservation"]', function(){
 
-
-        $('table').on("click",'button[name="vueDetails"]', function(e){
-
-          $('#bouttonDetails').empty();
-
-
-          $.ajax({
-            url:'http://127.0.0.1:8000/api/observations/'+this.id, 
-            type : 'GET',
-            success: function(data){
-
-              $('#NomOiseau').text(data.nom_vernaculaire);
-              $('#Famille').text(data.famille);
-              $('#Nombre').text(data.nombre_oiseaux);
-              $('#Situation').text(data.nidification);
-              $('#Auteur').text(data.author);
-              $('#Commentaire').text(data.comment);
-              $('#detailObs').css("display","block");
-              var buttonDetails = '<button type="button" id="detailsBloque">Bloquer auteur</button><button type="button" id="detailsDebloque">Débloquer auteur</button><button type="button" id="'+data.id+'" name="detailsSupprimer">Supprimer</button><button type="button" id="'+data.id+'" name="detailsValider">Valider</button>';
-
-              $('#bouttonDetails').append(buttonDetails);
-
-              if(data.is_valid==true){
-                $('[name$="detailsValider"]').attr("disabled",true);
-              }
-
-            },
-            error: function(){
-              alert('La requête n\'a pas abouti');
-            }
+              window.location.replace('http://localhost:8000/observation/validation/'+this.id);
           });
-        });
 
-        $('#detailObs').on("click",'button[name="detailsSupprimer"]', function(){
-          $.ajax({
-            url:'http://127.0.0.1:8000/api/observations/delete/'+this.id, 
-            type : 'DELETE',
-            success: function(data){
-              alert("observaiton supprimer");
-              location.reload(true);
-            },
-            error: function(){
-              alert('La requête n\'a pas abouti');
-            }
-          });
-        });
 
-        $('#detailObs').on("click",'button[name="detailsValider"]', function(){
+          $('table').on("click",'button[name="vueDetails"]', function(e){
 
-          window.location.replace('http://localhost:8000/observation/validation/'+this.id);
-        });
+              $('#bouttonDetails').empty();
 
-        var familleNames = {};
-        var nomScientifiqueNames = {};
-        var nomVernaculaireNames = {};
 
-        $("select[name='observation_espace_pro[famille]'] > option").each(function () {
-          if(familleNames[this.text]) {
-            $(this).remove();
-          } 
-          else {
-            familleNames[this.text] = this.value;
-          }
-        });
+              $.ajax({
+                  url:'http://127.0.0.1:8000/api/observations/'+this.id,
+                  type : 'GET',
+                  success: function(data){
 
-        $("select[name='observation_espace_pro[nomScientifique]'] > option").each(function () {
-          if(nomScientifiqueNames[this.text]) {
-            $(this).remove();
-          } 
-          else {
-            nomScientifiqueNames[this.text] = this.value;
-          }
-        });
+                      $('#NomOiseau').text(data.nom_vernaculaire);
+                      $('#Famille').text(data.famille);
+                      $('#Nombre').text(data.nombre_oiseaux);
+                      $('#Situation').text(data.nidification);
+                      $('#Auteur').text(data.author);
+                      $('#Commentaire').text(data.comment).show();
+                      $('#detailObs').css("display","block");
+                      var buttonDetails = '<button class="btn" type="button" id="detailsBloque" style="background-color: #C1272D">Bloquer auteur</button><button class="btn" type="button" id="detailsDebloque">Débloquer auteur</button><button type="button" id="'+data.id+'" name="detailsSupprimer" style="background-color: #C1272D">Supprimer</button><button type="button" id="'+data.id+'" name="detailsValider" style="background-color: #8CC63F">Valider</button>';
 
-        $("select[name='observation_espace_pro[nomVernaculaire]'] > option").each(function () {
-          if(nomVernaculaireNames[this.text]) {
-            $(this).remove();
-          } 
-          else {
-            nomVernaculaireNames[this.text] = this.value;
-          }
-        });
+                      $('#bouttonDetails').append(buttonDetails);
 
-        $("#bouttonExport").on("click",function(){
-          window.location.replace('http://localhost:8000/observation/espacepro/export');
-        });
-      });
-    </script>
+                      if(data.is_valid==true){
+                          $('[name$="detailsValider"]').attr("disabled",true);
+                      }
 
-    <script>
-
-    
-    var markers = [];
-    var map;
-    function initMap() {
-
-      var France = {lat: 46.227638, lng: 2.213749000000007};
-       map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 5,
-        center: France
-      });
-
-      var form = document.querySelector("form");
-
-      form.addEventListener("submit", function(e){
-        e.preventDefault();
-        
-        var famille = document.getElementById("observation_espace_pro_famille").options[document.getElementById("observation_espace_pro_famille").selectedIndex].text;
-
-        var nomVern = document.getElementById("observation_espace_pro_nomVernaculaire").options[document.getElementById("observation_espace_pro_nomVernaculaire").selectedIndex].text;
-        var nomScien = document.getElementById("observation_espace_pro_nomScientifique").options[document.getElementById("observation_espace_pro_nomScientifique").selectedIndex].text;
-        var departement = document.getElementById("observation_espace_pro_department").options[document.getElementById("observation_espace_pro_department").selectedIndex].text;
-        var status =  document.getElementById("observation_espace_pro_isValid").value;
-        var author = document.getElementById("observation_espace_pro_author").value;
-
-        var ListObs = {
-          "famille": famille,
-          "nom_vernaculaire": nomVern,
-          "nom_scientifique": nomScien,
-          "department": departement,
-          "is_valid": status,
-          "author": author
-        };
-        
-
-        $.ajax({
-          url:'http://localhost:8000/api/observations/lists/carte/espacepro', 
-          type : 'POST',
-          data: JSON.stringify(ListObs),
-          dataType: 'json',
-          contentType: 'application/json',
-          processData: false,
-          success: function(data){
-            $('tr').remove(".listTableau");
-            $('#listObservation').css("display","table");
-            $('#detailObs').css("display","none");
-            deleteMarkers();
-            $.each(data, function(i, observation){
-
-              var marker = new google.maps.Marker({
-                position: {lat: observation.location['x'], lng: observation.location['y']},
-                map: map
+                  },
+                  error: function(){
+                      alert('La requête n\'a pas abouti');
+                  }
               });
-              markers.push(marker);
+          });
 
-              //console.log(observation);
-              var trUser = '<tr class="listTableau"><td name="status" is_valid = '+observation.is_valid+' id="'+observation.id+'"></td><td>'+observation.id+'</td><td>'+observation.department+'</td><td>'+observation.famille+'</td><td>'+observation.nom_vernaculaire+'</td><td>'+observation.author+'</td><td><button name="validationObservation" type="button" id="'+observation.id+'">valider</button><button name="vueDetails" type="button" id="'+observation.id+'">Vue Detailee</button></td></tr>';
+          $('#detailObs').on("click",'button[name="detailsSupprimer"]', function(){
+              $.ajax({
+                  url:'http://127.0.0.1:8000/api/observations/delete/'+this.id,
+                  type : 'DELETE',
+                  success: function(data){
+                      alert("observaiton supprimer");
+                      location.reload(true);
+                  },
+                  error: function(){
+                      alert('La requête n\'a pas abouti');
+                  }
+              });
+          });
 
-              $('#listObservation').append(trUser);
+          $('#detailObs').on("click",'button[name="detailsValider"]', function(){
 
-              if(observation.is_valid==true){
+              window.location.replace('http://localhost:8000/observation/validation/'+this.id);
+          });
 
-                $('[is_valid$="true"]').css('background', 'green');
-                $('[name$="validationObservation"][id="'+observation.id+'"]').attr("disabled", true);
-              } 
-              else {
-              $('[is_valid$="false"]').css('background', 'red');
-              //$('[name$="validationObservation"]').removeAttr("disabled");
+          var familleNames = {};
+          var nomScientifiqueNames = {};
+          var nomVernaculaireNames = {};
+
+          $("select[name='observation_espace_pro[famille]'] > option").each(function () {
+              if(familleNames[this.text]) {
+                  $(this).remove();
               }
-            });
+              else {
+                  familleNames[this.text] = this.value;
+              }
+          });
 
+          $("select[name='observation_espace_pro[nomScientifique]'] > option").each(function () {
+              if(nomScientifiqueNames[this.text]) {
+                  $(this).remove();
+              }
+              else {
+                  nomScientifiqueNames[this.text] = this.value;
+              }
+          });
 
-          },
-          error: function(xhr, ajaxOptions, thrownError){
-            alert(xhr.status);
-            alert(thrownError);
-          }
-        });
+          $("select[name='observation_espace_pro[nomVernaculaire]'] > option").each(function () {
+              if(nomVernaculaireNames[this.text]) {
+                  $(this).remove();
+              }
+              else {
+                  nomVernaculaireNames[this.text] = this.value;
+              }
+          });
+
+          $("#bouttonExport").on("click",function(){
+              window.location.replace('http://localhost:8000/observation/espacepro/export');
+          });
       });
+  </script>
+
+  <script>
 
 
-      
+      var markers = [];
+      var map;
+      function initMap() {
 
-    }
+          var France = {lat: 46.227638, lng: 2.213749000000007};
+          map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 5,
+              center: France
+          });
 
-    // Removes the markers from the map, but keeps them in the array.
+          var form = document.querySelector("form");
+
+          form.addEventListener("submit", function(e){
+              e.preventDefault();
+
+              var famille = document.getElementById("observation_espace_pro_famille").options[document.getElementById("observation_espace_pro_famille").selectedIndex].text;
+
+              var nomVern = document.getElementById("observation_espace_pro_nomVernaculaire").options[document.getElementById("observation_espace_pro_nomVernaculaire").selectedIndex].text;
+              var nomScien = document.getElementById("observation_espace_pro_nomScientifique").options[document.getElementById("observation_espace_pro_nomScientifique").selectedIndex].text;
+              var departement = document.getElementById("observation_espace_pro_department").options[document.getElementById("observation_espace_pro_department").selectedIndex].text;
+              var status =  document.getElementById("observation_espace_pro_isValid").value;
+              var author = document.getElementById("observation_espace_pro_author").value;
+
+              var ListObs = {
+                  "famille": famille,
+                  "nom_vernaculaire": nomVern,
+                  "nom_scientifique": nomScien,
+                  "department": departement,
+                  "is_valid": status,
+                  "author": author
+              };
+
+
+              $.ajax({
+                  url:'http://localhost:8000/api/observations/lists/carte/espacepro',
+                  type : 'POST',
+                  data: JSON.stringify(ListObs),
+                  dataType: 'json',
+                  contentType: 'application/json',
+                  processData: false,
+                  success: function(data){
+                      $('tr').remove(".listTableau");
+                      $('#listObservation').css("display","table");
+                      $('#detailObs').css("display","none");
+                      deleteMarkers();
+                      $.each(data, function(i, observation){
+
+                          var marker = new google.maps.Marker({
+                              position: {lat: observation.location['x'], lng: observation.location['y']},
+                              map: map
+                          });
+                          markers.push(marker);
+
+                          //console.log(observation);
+                          var trUser = '<tr class="listTableau"><td name="status" is_valid = '+observation.is_valid+' id="'+observation.id+'"></td><td>'+observation.id+'</td><td>'+observation.department+'</td><td>'+observation.famille+'</td><td>'+observation.nom_vernaculaire+'</td><td>'+observation.author+'</td><td><button name="validationObservation" type="button" id="'+observation.id+'"><i class="icon--small icon--checked"></i>valider</button><button name="vueDetails" type="button" id="'+observation.id+'">Vue Detailee</button></td></tr>';
+
+                          $('#listObservation').append(trUser);
+
+                          if(observation.is_valid==true){
+
+                              $('[is_valid$="true"]').css('background', 'green');
+                              $('[name$="validationObservation"][id="'+observation.id+'"]').attr("disabled", true);
+                          }
+                          else {
+                              $('[is_valid$="false"]').css('background', 'red');
+                              //$('[name$="validationObservation"]').removeAttr("disabled");
+                          }
+                      });
+
+
+                  },
+                  error: function(xhr, ajaxOptions, thrownError){
+                      alert(xhr.status);
+                      alert(thrownError);
+                  }
+              });
+          });
+
+
+
+
+      }
+
+      // Removes the markers from the map, but keeps them in the array.
       function clearMarkers() {
-        setMapOnAll(null);
+          setMapOnAll(null);
       }
       // Deletes all markers in the array by removing references to them.
       function deleteMarkers() {
-        clearMarkers();
-        markers = [];
+          clearMarkers();
+          markers = [];
       }
 
       // Sets the map on all markers in the array.
       function setMapOnAll(map) {
-        for (var i = 0; i < markers.length; i++) {
-          markers[i].setMap(map);
-        }
+          for (var i = 0; i < markers.length; i++) {
+              markers[i].setMap(map);
+          }
       }
-    </script>
-    <script type="text/javascript" async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyZgz9fFFmD4Vf_0nJTlde0VEq6KxhFrw&callback=initMap">
-    </script>
-  </body>
-</html>
+  </script>
+  <script type="text/javascript" async defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyZgz9fFFmD4Vf_0nJTlde0VEq6KxhFrw&callback=initMap">
+  </script>
+{% endblock %}

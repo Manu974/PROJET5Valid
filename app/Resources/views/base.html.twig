@@ -22,10 +22,17 @@
                         <i class="icon icon--home"></i>
                         <p class="header-navbar-link">Accueil</p>
                     </a>
+                    {% if not app.user %}
                     <a href="#" class="header-navbar-item">
                         <i class="icon icon--connection"></i>
                         <p class="header-navbar-link">Connexion</p>
                     </a>
+                    {% else  %}
+                    <a href="{{ path('fos_user_security_logout') }}" class="header-navbar-item">
+                        <i class="icon icon--logout"></i>
+                        <p class="header-navbar-link">Deconnexion</p>
+                    </a>
+                    {% endif %}
                     <a href="{{ path('observationcartepage') }}" class="header-navbar-item">
                         <i class="icon icon--maps"></i>
                         <p class="header-navbar-link">Carte</p>
@@ -48,7 +55,7 @@
                     </a>
                     {% if is_granted('ROLE_NATURALISTE') %}
                         <a href="{{ path('observationpropage') }}" class="header-navbar-item">
-                            <i class="icon icon--contact"></i>
+                            <i class="icon icon--espacepro"></i>
                             <p class="header-navbar-link">Espace pro</p>
                         </a>
                     {% else %}
@@ -59,6 +66,10 @@
                     {% endif %}
                 </nav>
                 <div class="navbar-mobile">
+                    <a href="{{ path('nao_user_compte') }}" class="header-navbar-item">
+                        <i class="icon icon--account"></i>
+                        <p class="header-navbar-link">compte</p>
+                    </a>
                     <i class="icon icon--burger"></i>
                 </div>
             </div>

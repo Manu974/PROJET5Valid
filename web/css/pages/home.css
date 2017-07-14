@@ -27,8 +27,9 @@ section {
 .home-background {
     position: relative;
     background: url('../../images/cormorans-1920.jpg') no-repeat;
-    background-size: contain;
+    background-size: cover;
     height: 100%;
+    margin-bottom: 20px;
 }
 .home-title {
     padding: 10px;
@@ -66,12 +67,18 @@ section {
     left: 7px;
 }
 @media only screen and (max-width: 980px) {
+    .home-container {
+        margin-top: 20px;
+    }
     .section-img--home .btn {
         position: relative;
         bottom: 70px;
     }
     .home-title {
         font-size: 1.2em;
+    }
+    .home-title span {
+        text-align: center;
     }
     .section-img--home {
         height: 590px;

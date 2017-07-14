@@ -1,5 +1,9 @@
 {% extends "@FOSUser/layout.html.twig" %}
 
+{% block style %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/pages/login.css') }}">
+{% endblock %}
 {% block fos_user_content %}
     <h3 class="login-title">Connexion</h3>
     <div class="divider"></div>

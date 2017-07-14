@@ -41,14 +41,17 @@ class ObservationEspaceProType extends AbstractType
                 'multiple'     => false,
               ])
             ->add('isValid', ChoiceType::class, [
+               'label' => 'Validée ?',
                'choices'  => [
                       'Validée' => true,
                       'Non-Validée' => false,
                   ],
               ])           
             ->add('author')
-            ->add('createdAt', DateTimeType::class)
-            ->add('save',      SubmitType::class);
+            ->add('createdAt', DateTimeType::class, [
+                'label' => 'Ajouter le'
+            ])
+            ->add('Rechercher',      SubmitType::class);
     }
     
     

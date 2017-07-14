@@ -123,6 +123,7 @@ a {
     transition: .2s;
 }
 .icon--home {  background: url('../logo-icones/MAISON  NAV DESK.svg') no-repeat;  }
+.icon--logout { background: url('../logo-icones/icone-cadenas-logout.svg') no-repeat 8px 0;}
 .icon--connection {  background: url('../logo-icones/icone-cadenas-connexion.svg') no-repeat 8px 0;  }
 .is_pro.icon--connection {  background: url('../logo-icones/icone-cadenas-connexion-pro.svg') no-repeat 8px 0;  }
 .is_pro.icon--connection:hover {  background: url('../logo-icones/icone-cadenas-connexion-pro.svg') no-repeat 8px 0;  }
@@ -169,6 +170,8 @@ a {
 .icon--lock { background: url('../logo-icones/cadenas-fermé-user-green.svg') no-repeat 0 0; }
 .icon--search { background: url('../logo-icones/icone_carteloupe_gris.svg') no-repeat 0 0; }
 .icon--search.is_active { background: url('../logo-icones/icone-carteloupe-user_vert.svg') no-repeat 0 0; }
+.icon--espacepro { background: url('../logo-icones/espace_pro_bleu.svg') no-repeat 0 0; }
+.icon--checked { background: url('../logo-icones/icone-case-cochee.svg') no-repeat 0 3px; }
 .icon--thumb {
     position: relative;
     top: 4px;
@@ -498,6 +501,7 @@ a {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
+        padding-top: 36px;
     }
 
     /***** FOOTER *****/

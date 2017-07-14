@@ -15,8 +15,9 @@
         <div class="well">
         {{ form(form) }}
         </div>
+
         <div class="container search-title">
-            <i class="icon--large icon--maps is_active"></i>
+            <i class="icon--large icon--maps"></i>
             <h3>RESULTAT DE RECHERCHE :</h3>
         </div>
         <table id="listObservationCarte" class="container">
@@ -34,7 +35,6 @@
     </section>
 {% endblock %}
 {% block javascripts %}
-    {{ parent() }}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script>
     $(function() {
@@ -164,4 +164,5 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyZgz9fFFmD4Vf_0nJTlde0VEq6KxhFrw&callback=initMap">
     </script>
+    {{ parent() }}
 {% endblock %}
