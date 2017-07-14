@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block body %}
+<div class="well">
+{% if error %}
+    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
+<div class="panel panel-default" id="messageLogin">
+  
+      {% for message in app.session.flashbag.get('info') %}
+        <p>Message flash : {{ message }}</p>
+      {% endfor %}
+       <button class="btn" id="_submit" name="_submit">
+        <i class="icon icon--connection is_active"></i>
+        Me Connecter
+    </button>
+    </div></div>
+{% endblock %}
+
