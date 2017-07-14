@@ -15,7 +15,7 @@ Class Filtrage
     }
 
 	public function filtreObsCarte($data)
-	{
+	{       
 			$repository = $this->em->getRepository('AppBundle:Observation');
 		// filtre unique
              $choixFamille = ['famille'=>$data['famille']];
@@ -119,6 +119,13 @@ Class Filtrage
             // All
             if(!empty($data['famille']) && !empty($data['nom_vernaculaire']) && !empty($data['nom_scientifique']) && !empty($data['department'])){
                 $listObs = $repository->findBy($choixAll);
+            }
+            
+            foreach ($listObs as $key => $observation) {
+                if($observation->getIsValid() == false){
+                    unset($listObs[$key]);
+                }
+                
             }
 
             return $listObs;

@@ -198,7 +198,6 @@ class ApiController extends FOSRestController
     {
         
         $data = $this->get('jms_serializer')->deserialize($request->getContent(), 'array', 'json');
-
         $listObs= $this->container->get('observation.filtrage')->filtreObsEspacePro($data); 
         
         return $listObs;
@@ -233,14 +232,13 @@ class ApiController extends FOSRestController
      */
     public function listObservationCarteAction(Request $request)
     {
-        
             $data = $this->get('jms_serializer')->deserialize($request->getContent(), 'array', 'json');
 
-            $listObs= $this->container->get('observation.filtrage')->filtreObsCarte($data);
 
+            $listObs= $this->container->get('observation.filtrage')->filtreObsCarte($data);
+            
         
         return $listObs;
-
     }
 
     /**
