@@ -7,7 +7,11 @@
 
 {% block body %}
     <div id="map" class="container"></div>
-    <section class="container">
+    <section class="carte-container container">
+        <h2 class="title">
+            <i class="icon--large icon--maps"></i>
+            <span>Carte Interactive</span>
+        </h2>
         <div class="well">
         {{ form(form) }}
         </div>
@@ -27,6 +31,7 @@
     </section>
 {% endblock %}
 {% block javascripts %}
+    {{ parent() }}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script>
     $(function() {
@@ -67,7 +72,7 @@
     </script>
     <script>
 
-      var markers = [];
+    var markers = [];
     var map;
       function initMap() {
         var France = {lat: 46.227638, lng: 2.213749000000007};

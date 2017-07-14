@@ -3,16 +3,43 @@ table, th, td {
 }
 
 #map {
-        height: 50%;
-        width: 50%;
-      }
+    position: relative;
+    top: 160px;
+    margin-bottom: 80px;
+    height: 90%;
+    width: 90%;
+}
       /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
 
 #listObservationCarte{
-  display: none;
+    display: none;
+}
+
+.carte-container {
+    position: relative;
+    top: 120px;
+    margin-bottom: 140px;
+}
+.carte-container .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 5px -2px #111;
+    padding-bottom: 30px;
+    color: #8CC63F;
+}
+.carte-container .well {
+    display: flex;
+    justify-content: center;
+}
+#observation_carte select {
+    width: 100%;
+}
+#observation_carte label {
+    color: #8CC63F;
 }
