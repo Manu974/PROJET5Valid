@@ -16,17 +16,21 @@
         {{ form(form) }}
         </div>
 
-        <table id="listObservationCarte" style="width:50%">
+        <div class="container search-title">
+            <i class="icon--large icon--maps is_active"></i>
+            <h3>RESULTAT DE RECHERCHE :</h3>
+        </div>
+        <table id="listObservationCarte" class="container">
           <thead id="enteteCarteTab">
-          <tr class="enteteCarteTr">
-          <th>N°</th>
-          <th>Dpt</th>
-          <th>Date</th>
-          <th>Famille</th>
-          <th>Nom de l'oiseau</th>
-          <th>Auteur</th>
-          </tr>
-          </thead>
+            <tr class="enteteCarteTr">
+            <th>N°</th>
+            <th>Dpt</th>
+            <th>Date</th>
+            <th>Famille</th>
+            <th>Nom de l'oiseau</th>
+            <th>Auteur</th>
+            </tr>
+            </thead>
         </table>
     </section>
 {% endblock %}
@@ -120,9 +124,10 @@
                 map: map
               });
               markers.push(marker);
+              var date = new Date(observation.created_at);
+              var dateFormatting = ('0'+(date.getDay())).slice(-2) + '/' + ('0'+(date.getMonth())).slice(-2) + '/' + date.getFullYear();
 
-
-              var trUser = '<tr class="listTableau"><td>'+observation.id+'</td><td>'+observation.department+'</td><td>'+observation.created_at+'</td><td>'+observation.famille+'</td><td>'+observation.nom_vernaculaire+'</td><td>'+observation.author+'</td></tr>';
+              var trUser = '<tr class="listTableau"><td>'+observation.id+'</td><td>'+observation.department+'</td><td>'+dateFormatting+'</td><td>'+observation.famille+'</td><td>'+observation.nom_vernaculaire+'</td><td>'+observation.author+'</td></tr>';
 
               $('#listObservationCarte').append(trUser);
             });

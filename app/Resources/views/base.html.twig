@@ -46,10 +46,17 @@
                         <i class="icon icon--faq"></i>
                         <p class="header-navbar-link">Faq</p>
                     </a>
-                    <a href="{{ path('nao_blog_contact') }}" class="header-navbar-item">
-                        <i class="icon icon--contact"></i>
-                        <p class="header-navbar-link">Contact</p>
-                    </a>
+                    {% if is_granted('ROLE_NATURALISTE') %}
+                        <a href="{{ path('observationpropage') }}" class="header-navbar-item">
+                            <i class="icon icon--contact"></i>
+                            <p class="header-navbar-link">Espace pro</p>
+                        </a>
+                    {% else %}
+                        <a href="{{ path('nao_blog_contact') }}" class="header-navbar-item">
+                            <i class="icon icon--contact"></i>
+                            <p class="header-navbar-link">Contact</p>
+                        </a>
+                    {% endif %}
                 </nav>
                 <div class="navbar-mobile">
                     <i class="icon icon--burger"></i>

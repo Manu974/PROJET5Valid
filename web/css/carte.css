@@ -37,9 +37,49 @@ html, body {
     display: flex;
     justify-content: center;
 }
+.search-title {
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    color: #8CC63F;
+}
+.search-title h3 {
+    position: relative;
+    top: 5px;
+    text-decoration: underline;
+    font-size: 1.4em;
+}
 #observation_carte select {
     width: 100%;
 }
 #observation_carte label {
     color: #8CC63F;
+}
+#listObservationCarte {
+    width: 100%;
+    color: #FAFAFA;
+    border: none;
+}
+#listObservationCarte td, #listObservationCarte th {
+    border: none;
+}
+#listObservationCarte thead {
+    color: #8CC63F;
+}
+#listObservationCarte tbody tr {
+    box-shadow: 0px -5px 4px -2px #111;
+}
+#listObservationCarte th:first-child, td:first-child {
+    padding: 12px 15px;
+}
+@media only screen and (max-width: 980px) {
+    #listObservationCarte tr td, #listObservationCarte th {
+        padding: 9px 9px;
+    }
+    #listObservationCarte tr td:first-child, #listObservationCarte th:first-child  {
+        display: none;
+    }
+    #listObservationCarte tr td:nth-child(4), #listObservationCarte th:nth-child(4) {
+        display: none;
+    }
 }
