@@ -1,30 +1,36 @@
 {# src/NAO/NewsletterBundle/Resources/views/Newsletter/view.html.twig #}
-<h2>Newsletter utilisateur</h2>
-
- {% if is_granted('ROLE_NATURALISTE') %}
-     <h2><a href="{{ path('nao_admin_newsletter') }}">Administration</a></h2>
- {% endif %}
- {% if is_granted('ROLE_USER') %}
-     <div>Nom utilisateur : {{ user.username }}</div>
-     <div>Email utilisateur : {{ user.email }}</div>
-     {%  if rsltSub %}
-        <p><a href="{{ path('nao_newsletter_unsub', { 'username': user.username }) }}">Se désabonner</a></p>
-     {%  else %}
-         <p><a href="{{ path('nao_newsletter_sub', { 'username': user.username, 'usermail': user.email}) }}">S'abonner</a></p>
-     {% endif %}
- {% endif %}
- {%  if newsletter is empty %}
-     <p class="text-center">Aucune newsletter publiée pour le moment</p>
- {%  else %}
-    {% block body %}
-        <article class="newsletter">
-            <header>
-                <div class="date">Publié <time datetime="{{ newsletter.created|date('c') }}">le {{ newsletter.created|date('d-m-Y') }} à {{newsletter.created|date('H:i:s') }}</time> - Auteur : <span class="highlight">{{newsletter.author}}</span></div>
-                <h2>{{ newsletter.title }}</h2>
-            </header>
-            <div class="newsletter_view">
-                <p>{{ newsletter.newsletter|raw }}</p>
-            </div>
-        </article>
-    {% endblock %}
- {% endif %}
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/pages/newsletter.css') }}">
+{% endblock %}
+{% block body %}
+    <div class="container container-newsletter">
+         {% if is_granted('ROLE_NATURALISTE') %}
+             <h2><a href="{{ path('nao_admin_newsletter') }}">Administration</a></h2>
+         {% endif %}
+         {% if is_granted('ROLE_USER') %}
+             <div class="subscribe">
+                 {%  if rsltSub %}
+                    <p><a class="btn btn-red" href="{{ path('nao_newsletter_unsub', { 'username': user.username }) }}">Se désabonner</a></p>
+                 {%  else %}
+                     <p><a class="btn" href="{{ path('nao_newsletter_sub', { 'username': user.username, 'usermail': user.email}) }}">S'abonner</a></p>
+                 {% endif %}
+             </div>
+         {% endif %}
+         {%  if newsletter is empty %}
+             <h2>Newsletter utilisateur</h2>
+             <p class="text-center">Aucune newsletter publiée pour le moment</p>
+         {%  else %}
+                <article class="newsletter">
+                    <header>
+                        <div class="date">Publié <time datetime="{{ newsletter.created|date('c') }}">le {{ newsletter.created|date('d-m-Y') }} à {{newsletter.created|date('H:i:s') }}</time> - Auteur : <span class="highlight">{{newsletter.author}}</span></div>
+                        <h2>{{ newsletter.title }}</h2>
+                    </header>
+                    <div class="newsletter_view">
+                        <p>{{ newsletter.newsletter|raw }}</p>
+                    </div>
+                </article>
+         {% endif %}
+    </div>
+{% endblock %}

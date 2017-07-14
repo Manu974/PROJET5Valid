@@ -1,0 +1,22 @@
+.container-newsletter {
+    position: relative;
+    top: 140px;
+    margin-bottom: 160px;
+    color: #FAFAFA;
+}
+.container-newsletter .btn {
+    justify-content: center;
+    align-items: center;
+    border-radius: 22px;
+    height: 42px;
+    width: 180px;
+}
+.container-newsletter .btn-group {
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.container-newsletter.admin .btn {
+    background-color: #00A99D;
+}
