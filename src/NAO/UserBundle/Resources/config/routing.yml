@@ -33,3 +33,6 @@ nao_user_updateMail:
     defaults: { _controller: NAOUserBundle:Admin:updMailUser }
     requirements:
         id: \d+
+
+
+

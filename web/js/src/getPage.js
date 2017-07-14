@@ -33,7 +33,10 @@ class loadLoginPage {
     }
 
     getPage() {
-        axios.get(this.page)
+        let instance = axios.create({
+            headers:{'X-Requested-With': 'XMLHttpRequest'}
+        });
+        instance.get(this.page)
             .then(res => {
                 this.element.innerHTML = res.data;
                 this.loginContent = document.querySelector('.login-content');
