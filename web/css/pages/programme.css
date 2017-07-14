@@ -80,6 +80,9 @@
     margin-top: 25px;
     margin-bottom: 25px;
 }
+.comments .highlight {
+    color: #C1272D;
+}
 .comments .btn {
     padding: 5px;
 }

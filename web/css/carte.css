@@ -3,16 +3,213 @@ table, th, td {
 }
 
 #map {
-        height: 50%;
-        width: 50%;
-      }
+    position: relative;
+    top: 160px;
+    margin-bottom: 80px;
+    height: 90%;
+    width: 90%;
+}
       /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
 
 #listObservationCarte{
-  display: none;
+    display: none;
+}
+
+.carte-container {
+    position: relative;
+    top: 120px;
+    margin-bottom: 140px;
+}
+.carte-container .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 5px -2px #111;
+    padding-bottom: 30px;
+    color: #8CC63F;
+}
+.carte-container.pro .title {
+    justify-content: space-between;
+    padding: 0 20px;
+}
+.carte-container .title a:first-child i {
+    position: relative;
+    left: 7px;
+}
+.carte-container .title a {
+    width: 100px;
+    display: flex;
+    align-items: center;
+}
+.carte-container .title p {
+    width: 130px;
+    text-align: center;
+}
+.carte-container .well {
+    display: flex;
+    justify-content: center;
+}
+.carte-container .well button {
+    display: inline-flex;
+    justify-content: center;
+    text-align: center;
+    min-width: 155px;
+    height: 42px;
+    line-height: 19px;
+    font-weight: bolder;
+    background-color: #282829;
+    box-shadow: 0 5px 8px black;
+    color: #FAFAFA;
+    border: none;
+    font-variant-caps: all-small-caps;
+    font-size: 1.2em;
+    border-radius: 20px;
+    margin-left: auto;
+    transition: .2s;
+}
+.carte-container .well button:hover {
+    box-shadow: 0 3px 6px black;
+}
+.search-title {
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    color: #8CC63F;
+}
+.search-title h3 {
+    position: relative;
+    top: 5px;
+    text-decoration: underline;
+    font-size: 1.4em;
+}
+#observation_carte select {
+    width: 100%;
+}
+.carte-container .well label {
+    color: #8CC63F;
+}
+.carte-container.pro .well label {
+    color: #00A99D;
+}
+#observation_espace_pro {
+    margin-top: 40px;
+}
+#observation_espace_pro div {
+    display: flex;
+    justify-content: space-between;
+}
+#observation_espace_pro div input, #observation_espace_pro div select, #observation_espace_pro div textarea {
+    width: 60%;
+}
+#observation_espace_pro_createdAt_time_hour {
+    display: none;
+}
+#observation_espace_pro_createdAt_time_minute {
+    display: none;
+}
+#observation_espace_pro #observation_espace_pro_createdAt_date select {
+    width: 120px;
+    margin-left: 8px;
+}
+#listObservationCarte {
+    width: 100%;
+    color: #FAFAFA;
+    border: none;
+}
+#listObservation {
+    width: 100%;
+    color: #FAFAFA;
+    border: none;
+}
+#listObservation td,
+#listObservationCarte td,
+#listObservation th,
+#listObservationCarte th {
+    border: none;
+}
+#listObservation thead {
+    color: #00A99D;
+}
+#listObservationCarte thead {
+    color: #8CC63F;
+}
+#listObservationCarte tbody tr {
+    box-shadow: 0px -5px 4px -2px #111;
+}
+#listObservationCarte th:first-child, td:first-child {
+    padding: 12px 15px;
+}
+#detailObs {
+    color: #FAFAFA;
+}
+.listTableau button {
+    display: inline-flex;
+    justify-content: center;
+    text-align: center;
+    min-width: 115px;
+    height: 30px;
+    line-height: 19px;
+    font-weight: bolder;
+    background-color: #00A99D;
+    box-shadow: 0 5px 8px black;
+    color: #FAFAFA;
+    border: none;
+    font-variant-caps: all-small-caps;
+    font-size: 1.2em;
+    border-radius: 20px;
+    margin-left: 4px;
+    transition: .2s;
+}
+.listTableau button:hover {
+    box-shadow: 0 3px 6px black;
+}
+button[disabled=disabled] {
+    cursor: not-allowed;
+    filter: grayscale(50);
+}
+#detailObs #Commentaire {
+    display: none;
+    padding: 15px 10px;
+    border: 1px solid #FAFAFA;
+}
+#detailObs #bouttonDetails {
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-around;
+}
+#bouttonDetails button {
+    display: inline-flex;
+    justify-content: center;
+    text-align: center;
+    min-width: 115px;
+    height: 30px;
+    line-height: 19px;
+    font-weight: bolder;
+    background-color: #00A99D;
+    box-shadow: 0 5px 8px black;
+    color: #FAFAFA;
+    border: none;
+    font-variant-caps: all-small-caps;
+    font-size: 1.2em;
+    border-radius: 20px;
+    transition: .2s;
+}
+#bouttonDetails button:hover {
+    box-shadow: 0 3px 6px black;
+}
+@media only screen and (max-width: 980px) {
+    #listObservationCarte tr td, #listObservationCarte th {
+        padding: 9px 9px;
+    }
+    #listObservationCarte tr td:first-child, #listObservationCarte th:first-child  {
+        display: none;
+    }
+    #listObservationCarte tr td:nth-child(4), #listObservationCarte th:nth-child(4) {
+        display: none;
+    }
 }

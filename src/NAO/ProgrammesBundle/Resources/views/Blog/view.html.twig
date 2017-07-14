@@ -50,7 +50,7 @@
             {% for comment in comments %}
                 <article class="comment {{ cycle(['odd', 'even'], loop.index0) }}" id="comment-{{ comment.id }}">
                     <header>
-                        <p><span class="highlight">{{ comment.user }}</span> a commenté le <time datetime="{{ comment.created|date('c') }}">{{ comment.created|date('d-m-Y') }} à {{ comment.created|date('H:i:s') }}</time></p>
+                        <p><span>{{ comment.user }}</span> a commenté le <time datetime="{{ comment.created|date('c') }}">{{ comment.created|date('d-m-Y') }} à {{ comment.created|date('H:i:s') }}</time></p>
                     </header>
                     {% if comment.approved %}
                         <p>{{ comment.comment }}</p>

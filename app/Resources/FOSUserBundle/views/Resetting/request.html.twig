@@ -1,5 +1,36 @@
 {% extends "@FOSUser/layout.html.twig" %}
 
+{% block style %}
+    {{ parent() }}
+    <style>
+        .login-content {
+            padding: 30px;
+            color: #FAFAFA;
+        }
+        .login-content input[type=text] {
+            width: 200px;
+            margin-left: 10px;
+        }
+        .login-content input[type=submit] {
+            margin-top: 20px;
+            display: inline-flex;
+            justify-content: center;
+            text-align: center;
+            min-width: 155px;
+            height: 28px;
+            line-height: 19px;
+            font-weight: bolder;
+            background-color: #8CC63F;
+            box-shadow: 0 5px 8px black;
+            color: #282829;
+            border: none;
+            font-variant-caps: all-small-caps;
+            font-size: 1.1em;
+            border-radius: 16px;
+            transition: .2s;
+        }
+    </style>
+{% endblock %}
 {% block fos_user_content %}
 {% include "@FOSUser/Resetting/request_content.html.twig" %}
 {% endblock fos_user_content %}
