@@ -47,7 +47,11 @@ class ObservationEspaceProType extends AbstractType
                       'Non-Validée' => false,
                   ],
               ])           
-            ->add('author')
+            ->add('author', EntityType::class, [
+                'class'        => 'AppBundle:Observation',
+                'choice_label' => 'author',
+                'multiple'     => false,
+              ])
             ->add('createdAt', DateTimeType::class, [
                 'label' => 'Ajouter le'
             ])
