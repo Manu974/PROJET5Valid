@@ -1,6 +1,7 @@
 # Select image from https://hub.docker.com/r/_/php/
 image: php:7.0
-tag: php
+tags: 
+    - php
 # Services
 services:
   - mysql:latest
