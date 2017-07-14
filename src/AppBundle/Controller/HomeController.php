@@ -24,25 +24,14 @@ use Exporter\Handler;
 use Exporter\Source\PDOStatementSourceIterator;
 
 use Symfony\Component\HttpFoundation\StreamedResponse;
-
-use Ddeboer\DataImport\Workflow;
-use Ddeboer\DataImport\Reader\ArrayReader;
-use Ddeboer\DataImport\Writer\CsvWriter;
-use Ddeboer\DataImport\ValueConverter\CallbackValueConverter;
-
-
-
-
-
-
-
-
-
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 class HomeController extends Controller
 {
     /**
      * @Route("/", name="homepage")
+     *
+     *
      */
     public function indexAction(Request $request)
     {
@@ -51,6 +40,7 @@ class HomeController extends Controller
 
     /**
      * @Route("/observation", name="observationpage")
+     * @Security("has_role('ROLE_USER')")
      */
     public function observationAction(Request $request)
     {  
@@ -92,6 +82,7 @@ class HomeController extends Controller
 
     /**
      * @Route("/observation/carte", name="observationcartepage")
+     * @Security("has_role('ROLE_USER')")
      */
     public function observationCarteAction(Request $request)
     { 
@@ -111,6 +102,7 @@ class HomeController extends Controller
 
     /**
      * @Route("/observation/espacepro", name="observationpropage")
+     * @Security("has_role('ROLE_NATURALISTE')")
      */
     public function observationProAction(Request $request)
     {  
@@ -128,6 +120,7 @@ class HomeController extends Controller
 
     /**
      * @Route("/observation/validation/{id}", name="observationvalidpage")
+     * @Security("has_role('ROLE_NATURALISTE')")
      */
     public function observationValidAction(Request $request, $id)
     { 
