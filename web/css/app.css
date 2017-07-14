@@ -166,7 +166,9 @@ a {
 .icon--send { background: url('../logo-icones/icone-envoyer.svg') no-repeat 0 0; }
 .icon--tag { background: url('../logo-icones/tag-icone-user-green.svg') no-repeat 0 0; }
 .is_pro.icon--tag { background: url('../logo-icones/icone-tag-user-pro.svg') no-repeat 0 0; }
-.icon--lock { background: url('../logo-icones/cadenas-fermé-user-green.svg') no-repeat 0 0;}
+.icon--lock { background: url('../logo-icones/cadenas-fermé-user-green.svg') no-repeat 0 0; }
+.icon--search { background: url('../logo-icones/icone_carteloupe_gris.svg') no-repeat 0 0; }
+.icon--search.is_active { background: url('../logo-icones/icone-carteloupe-user_vert.svg') no-repeat 0 0; }
 .icon--thumb {
     position: relative;
     top: 4px;

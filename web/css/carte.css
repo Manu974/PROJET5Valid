@@ -37,6 +37,27 @@ html, body {
     display: flex;
     justify-content: center;
 }
+.carte-container button {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-left: auto;
+    min-width: 155px;
+    height: 44px;
+    line-height: 19px;
+    font-weight: bolder;
+    background-color: #282829;
+    box-shadow: 0 5px 8px black;
+    color: #FAFAFA;
+    border: none;
+    font-variant-caps: all-small-caps;
+    font-size: 1.2em;
+    border-radius: 26px;
+    transition: .2s;
+}
+.carte-container button:hover {
+    box-shadow: 0 3px 6px black;
+}
 .search-title {
     margin: 30px 0;
     display: flex;
