@@ -20,3 +20,19 @@
 .container-newsletter.admin .btn {
     background-color: #00A99D;
 }
+
+@media only screen and (max-width: 980px) {
+    .container-newsletter h2 {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+    .container-newsletter .btn {
+        width: 220px;
+    }
+    .container-newsletter .btn-group {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
