@@ -98,7 +98,7 @@
 {% endblock %}
 
 {% block javascripts %}
-    {% if is_granted('ROLE_ADMIN') %}
+    {% if is_granted('ROLE_NATURALISTE') %}
     <script>
         (function () {
             let buttons = document.querySelectorAll('.btn:not(.btn-red), input[type=submit]:not(.btn-red)');
