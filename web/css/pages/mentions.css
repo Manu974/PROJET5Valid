@@ -1,0 +1,27 @@
+.container-mentions {
+    position: relative;
+    top: 140px;
+    margin-bottom: 160px;
+}
+.container-mentions h3 {
+    display: flex;
+    color: #8CC63F;
+    justify-content: center;
+    align-items: center;
+}
+.container-mentions h3 span {
+    margin-left: 20px;
+}
+.container-mentions .mentions-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 34px;
+    text-align: center;
+    background-color: #727272;
+    color: #C0C0C0;
+}
+.mentions-content .anchor {
+    color: #8CC63F;
+    text-decoration: underline;
+}
