@@ -10,10 +10,9 @@ use Symfony\Component\Security\Core\Security;
 
 class SecurityController extends BaseController
 {
-    
+
     public function loginAction(Request $request)
     {
-
 
         /** @var $session Session */
         $session = $request->getSession();
@@ -24,35 +23,39 @@ class SecurityController extends BaseController
         // get the error if any (works with forward and redirect -- see below)
         if ($request->attributes->has($authErrorKey)) {
             $error = $request->attributes->get($authErrorKey);
-                $lastUsername = (null === $session) ? '' : $session->get($lastUsernameKey);
+            $lastUsername = (null === $session) ? '' : $session->get($lastUsernameKey);
 
-        $csrfToken = $this->has('security.csrf.token_manager')
+            $csrfToken = $this->has('security.csrf.token_manager')
             ? $this->get('security.csrf.token_manager')->getToken('authenticate')->getValue()
             : null;
 
 
-            return $this->showLogin(array(
-            'last_username' => $lastUsername,
-            'error' => $error,
-            'csrf_token' => $csrfToken,
-        ));
-        } elseif (null !== $session && $session->has($authErrorKey)) {
+            return $this->showLogin([
+                'last_username' => $lastUsername,
+                'error' => $error,
+                'csrf_token' => $csrfToken,
+            ]);
+        } 
+
+        elseif (null !== $session && $session->has($authErrorKey)) {
             $error = $session->get($authErrorKey);
             $session->remove($authErrorKey);
 
-           
+
             $lastUsername = (null === $session) ? '' : $session->get($lastUsernameKey);
 
-        $csrfToken = $this->has('security.csrf.token_manager')
+            $csrfToken = $this->has('security.csrf.token_manager')
             ? $this->get('security.csrf.token_manager')->getToken('authenticate')->getValue()
             : null;
 
-            return $this->showLogin(array(
-            'last_username' => $lastUsername,
-            'error' => $error,
-            'csrf_token' => $csrfToken,
-        ));
-        } else {
+            return $this->showLogin([
+                'last_username' => $lastUsername,
+                'error' => $error,
+                'csrf_token' => $csrfToken,
+            ]);
+        } 
+
+        else {
             $error = null;
         }
 
@@ -64,34 +67,35 @@ class SecurityController extends BaseController
         $lastUsername = (null === $session) ? '' : $session->get($lastUsernameKey);
 
         $csrfToken = $this->has('security.csrf.token_manager')
-            ? $this->get('security.csrf.token_manager')->getToken('authenticate')->getValue()
-            : null;
+        ? $this->get('security.csrf.token_manager')->getToken('authenticate')->getValue()
+        : null;
 
         if($request->isXmlHttpRequest()){
-            return $this->renderLogin(array(
-            'last_username' => $lastUsername,
-            'error' => $error,
-            'csrf_token' => $csrfToken,
-        ));
+            return $this->renderLogin([
+                'last_username' => $lastUsername,
+                'error' => $error,
+                'csrf_token' => $csrfToken,
+            ]);
         }
 
-        else {return $this->showLogin(array(
-            'last_username' => $lastUsername,
-            'error' => $error,
-            'csrf_token' => $csrfToken,
-        ));
-    }
-        
+        else {
+            return $this->showLogin([
+                'last_username' => $lastUsername,
+                'error' => $error,
+                'csrf_token' => $csrfToken,
+            ]);
+        }
+
     }
 
     /**
-     * Renders the login template with the given parameters. Overwrite this function in
-     * an extended controller to provide additional data for the login template.
-     *
-     * @param array $data
-     *
-     * @return Response
-     */
+    * Renders the login template with the given parameters. Overwrite this function in
+    * an extended controller to provide additional data for the login template.
+    *
+    * @param array $data
+    *
+    * @return Response
+    */
     protected function renderLogin(array $data)
     {
         return $this->render('@FOSUser/Security/login.html.twig', $data);
@@ -108,16 +112,14 @@ class SecurityController extends BaseController
     }
 
     /**
-     *
-     * @param array $data
-     *
-     * @return Response
-     */
-     protected function showLogin(array $data)
+    *
+    * @param array $data
+    *
+    * @return Response
+    */
+    protected function showLogin(array $data)
     {
         return $this->render('@FOSUser/Security/pop.html.twig', $data);
     }
 
-
-    
 }

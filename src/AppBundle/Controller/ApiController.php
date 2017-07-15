@@ -94,10 +94,6 @@ class ApiController extends FOSRestController
      */
     public function createObservationAction(Request $request)
     {   
-
-        
-
-        
         $session = $request->getSession();
         $imageId = $session->get('imageId');
 
@@ -121,9 +117,10 @@ class ApiController extends FOSRestController
 
         if ($imageId){
             
-        $image = $this->getDoctrine()->getManager()->getRepository('AppBundle:ObservationImage')->find($imageId);
-        $observation->setImage($image);
+            $image = $this->getDoctrine()->getManager()->getRepository('AppBundle:ObservationImage')->find($imageId);
+            $observation->setImage($image);
         }
+        
         $em = $this->getDoctrine()->getManager();
         $em->persist($observation);
         $em->flush();
@@ -196,12 +193,10 @@ class ApiController extends FOSRestController
      */
     public function listObservationEspaceProAction(Request $request)
     {
-        
         $data = $this->get('jms_serializer')->deserialize($request->getContent(), 'array', 'json');
         $listObs= $this->container->get('observation.filtrage')->filtreObsEspacePro($data); 
         
         return $listObs;
-
     }
 
 
@@ -232,12 +227,10 @@ class ApiController extends FOSRestController
      */
     public function listObservationCarteAction(Request $request)
     {
-            $data = $this->get('jms_serializer')->deserialize($request->getContent(), 'array', 'json');
+        $data = $this->get('jms_serializer')->deserialize($request->getContent(), 'array', 'json');
 
-
-            $listObs= $this->container->get('observation.filtrage')->filtreObsCarte($data);
-            
-        
+        $listObs= $this->container->get('observation.filtrage')->filtreObsCarte($data);
+                   
         return $listObs;
     }
 
@@ -277,7 +270,6 @@ class ApiController extends FOSRestController
     {
         $em = $this->getDoctrine()->getManager();
 
-
         if($observation->getImage()){
             $image = $this->getDoctrine()->getRepository('AppBundle:ObservationImage')->find($observation->getImage()->getId());
         $em->remove($image);      
@@ -285,13 +277,5 @@ class ApiController extends FOSRestController
 
         $em->remove($observation);
         $em->flush();
-        
-
     }
-
-
-
-    
-
-
 }

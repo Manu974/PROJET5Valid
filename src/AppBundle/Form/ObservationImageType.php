@@ -12,34 +12,32 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 class ObservationImageType extends AbstractType
 {
     /**
-     * {@inheritdoc}
-     */
+    * {@inheritdoc}
+    */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-             ->add('imageFile', VichFileType::class, [
+            ->add('imageFile', VichFileType::class, [
                 'required' => false,
                 'allow_delete' => true,
-             ])
-             ->add('Sauvegarder', SubmitType::class);
-            
-            
-        
-    }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function configureOptions(OptionsResolver $resolver)
-    {
-        $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\ObservationImage'
-        ));
+            ])
+            ->add('Sauvegarder', SubmitType::class);
+
     }
 
     /**
-     * {@inheritdoc}
-     */
+    * {@inheritdoc}
+    */
+    public function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver->setDefaults([
+            'data_class' => 'AppBundle\Entity\ObservationImage'
+        ]);
+    }
+
+    /**
+    * {@inheritdoc}
+    */
     public function getBlockPrefix()
     {
         return 'appbundle_observationimage';

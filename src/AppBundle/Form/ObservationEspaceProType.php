@@ -16,59 +16,57 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class ObservationEspaceProType extends AbstractType
 {
-    
+
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
             ->add('famille', EntityType::class, [
-                    'class'        => 'AppBundle:Bird',
-                    'choice_label' => 'famille',
-                    'multiple'     => false,
-                  ])
+                'class'        => 'AppBundle:Bird',
+                'choice_label' => 'famille',
+                'multiple'     => false,
+            ])
             ->add('nomVernaculaire', EntityType::class, [
                 'class'        => 'AppBundle:Bird',
                 'choice_label' => 'nomVern',
                 'multiple'     => false,
-              ])
+            ])
             ->add('nomScientifique', EntityType::class, [
                 'class'        => 'AppBundle:Bird',
                 'choice_label' => 'lb_nom',
                 'multiple'     => false,
-              ])
+            ])
             ->add('department', EntityType::class, [
                 'class'        => 'AppBundle:Departement',
                 'choice_label' => 'code',
                 'multiple'     => false,
-              ])
+            ])
             ->add('isValid', ChoiceType::class, [
-               'label' => 'Validée ?',
-               'choices'  => [
-                      'Validée' => true,
-                      'Non-Validée' => false,
-                  ],
-              ])           
+                'label' => 'Validée ?',
+                'choices'  => [
+                    'Validée' => true,
+                    'Non-Validée' => false,
+                ],
+            ])           
             ->add('author', EntityType::class, [
                 'class'        => 'AppBundle:Observation',
                 'choice_label' => 'author',
                 'multiple'     => false,
-              ])
+            ])
             ->add('createdAt', DateTimeType::class, [
                 'label' => 'Ajouter le'
             ])
             ->add('Rechercher',      SubmitType::class);
     }
-    
-    
-     /**
-     * {@inheritdoc}
-     */
+
+
+    /**
+    * {@inheritdoc}
+    */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'data_class' => 'AppBundle\Entity\Observation'
-        ));
+        ]);
     }
-        
-
 
 }

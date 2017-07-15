@@ -29,19 +29,19 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 class HomeController extends Controller
 {
     /**
-     * @Route("/", name="homepage")
-     *
-     *
-     */
+    * @Route("/", name="homepage")
+    *
+    *
+    */
     public function indexAction(Request $request)
     {
         return $this->render('default/index.html.twig');
     }
 
     /**
-     * @Route("/observation", name="observationpage")
-     * @Security("has_role('ROLE_USER')")
-     */
+    * @Route("/observation", name="observationpage")
+    * @Security("has_role('ROLE_USER')")
+    */
     public function observationAction(Request $request)
     {  
         $observation = new Observation();
@@ -51,88 +51,74 @@ class HomeController extends Controller
         $formImage->handleRequest($request);
 
         if ($formImage->isSubmitted() && $formImage->isValid()) {
-            
-              //$observation->upload();
-              // Le reste de la méthode reste inchangé
 
-              $em = $this->getDoctrine()->getManager();
+            $em = $this->getDoctrine()->getManager();
 
-              $em->persist($observationImage);
+            $em->persist($observationImage);
 
-              $helper = $this->container->get('vich_uploader.templating.helper.uploader_helper');
-              $path = $helper->asset($observationImage, 'imageFile');
+            $helper = $this->container->get('vich_uploader.templating.helper.uploader_helper');
+            $path = $helper->asset($observationImage, 'imageFile');
 
-              $observationImage->setUrl($path);
+            $observationImage->setUrl($path);
 
-              $em->flush();
+            $em->flush();
 
-              $session = $request->getSession();
-              $session->set('imageId', $observationImage->getId());
+            $session = $request->getSession();
+            $session->set('imageId', $observationImage->getId());
 
         }
 
-    return $this->render('observation/add.html.twig', array(
-      'form' => $form->createView(),
-      'formImage'=> $formImage->createView(),
-    ));
-
-
-
+        return $this->render('observation/add.html.twig', [
+            'form' => $form->createView(),
+            'formImage'=> $formImage->createView(),
+        ]);
     }
 
     /**
-     * @Route("/observation/carte", name="observationcartepage")
-     * @Security("has_role('ROLE_USER')")
-     */
+    * @Route("/observation/carte", name="observationcartepage")
+    * @Security("has_role('ROLE_USER')")
+    */
     public function observationCarteAction(Request $request)
     { 
+        $observation = new Observation();
 
-      $observation = new Observation();
-        
         $form   = $this->get('form.factory')->create(ObservationCarteType::class, $observation); 
 
-        return $this->render('observation/carte.html.twig', array(
-      'form' => $form->createView(),
-      
-    ));
-
-
-
+        return $this->render('observation/carte.html.twig', [
+            'form' => $form->createView(),
+        ]);
     }
 
     /**
-     * @Route("/observation/espacepro", name="observationpropage")
-     * @Security("has_role('ROLE_NATURALISTE')")
-     */
+    * @Route("/observation/espacepro", name="observationpropage")
+    * @Security("has_role('ROLE_NATURALISTE')")
+    */
     public function observationProAction(Request $request)
     {  
         $observation = new Observation();
 
         $form   = $this->get('form.factory')->create(ObservationEspaceProType::class, $observation);
 
-        return $this->render('observation/list.html.twig', array(
-      'form' => $form->createView(),
-
-    ));
-
+        return $this->render('observation/list.html.twig', [
+            'form' => $form->createView(),
+        ]);
     }
 
 
     /**
-     * @Route("/observation/validation/{id}", name="observationvalidpage")
-     * @Security("has_role('ROLE_NATURALISTE')")
-     */
+    * @Route("/observation/validation/{id}", name="observationvalidpage")
+    * @Security("has_role('ROLE_NATURALISTE')")
+    */
     public function observationValidAction(Request $request, $id)
     { 
-      $observation = $this->getDoctrine()->getManager()->getRepository('AppBundle:Observation')->find($id);
-      $observation->setIsValid(true);
-      $em = $this->getDoctrine()->getManager();
-      $em->persist($observation);
-      $em->flush();
-      return $this->redirectToRoute('observationpropage');
+        $observation = $this->getDoctrine()->getManager()->getRepository('AppBundle:Observation')->find($id);
+        $observation->setIsValid(true);
 
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($observation);
+        $em->flush();
+
+        return $this->redirectToRoute('observationpropage');
     }
 
-
-    
 }
