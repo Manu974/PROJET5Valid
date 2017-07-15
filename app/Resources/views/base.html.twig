@@ -13,6 +13,13 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
+        {% for type, flash_messages in app.session.flashBag.all %}
+            <div class="flash-message {{ type }}">
+                    {% for flash_message in flash_messages %}
+                            {{ flash_message }}
+                    {% endfor %}
+            </div>
+        {% endfor %}
         <header class="header">
             <div class="container">
                 <a href="{{ path('homepage') }}">
@@ -34,11 +41,11 @@
                         <p class="header-navbar-link">Deconnexion</p>
                     </a>
                     {% endif %}
-                    <a href="{{ path('observationcartepage') }}" class="header-navbar-item">
+                    <a href="{% if app.user %}{{ path('observationcartepage') }}{% else %}#{% endif %}" class="header-navbar-item {% if not app.user %} not-allowed {% endif %}">
                         <i class="icon icon--maps"></i>
                         <p class="header-navbar-link">Carte</p>
                     </a>
-                    <a href="{{ path('observationpage') }}" class="header-navbar-item">
+                    <a href="{% if app.user %}{{ path('observationpage') }}{% else %}#{% endif %}" class="header-navbar-item {% if not app.user %} not-allowed {% endif %}">
                         <i class="icon icon--obs"></i>
                         <p class="header-navbar-link">Observation</p>
                     </a>
@@ -178,7 +185,7 @@
                 <script>
                     (function () {
                         let pageLogin;
-                        let waitingPage = setInterval(function () {
+                        let waitingPageLogin = setInterval(function () {
                             pageLogin = document.querySelector('.login-content');
                             if (pageLogin !== null) {
                                 let adminColor = '#00A99D';
@@ -201,13 +208,15 @@
                                 titles.forEach(title => {
                                     title.style.color = adminColor;
                                 });
-                                clearInterval(waitingPage);
+                                clearInterval(waitingPageLogin);
                             }
                         }, 1000);
 
+
+
                     })();
-                </script>
             {% endif %}
+                </script>
         {% endblock %}
     </body>
 </html>

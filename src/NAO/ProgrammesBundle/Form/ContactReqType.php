@@ -16,18 +16,23 @@ class ContactReqType extends AbstractType
     {
         $builder
             ->add('nom', TextType::class, array(
+                'label' => 'Nom*',
                 'attr' => ['placeholder' => 'Votre nom',
                 'class' => 'nom']))
             ->add('prenom', TextType::class, array(
+                'label' => 'Prenom*',
                 'attr' => ['placeholder' => 'Votre prénom',
                 'class' => 'prenom']))
             ->add('email', EmailType::class, array(
+                'label' => 'Email*',
                 'attr' => ['placeholder' => 'Votre E-mail',
                 'class' => 'email']))
             ->add('sujet', TextType::class, array(
+                'label' => 'Sujet*',
                 'attr' => ['placeholder' => 'Sujet',
                 'class' => 'sujet']))
             ->add('message', TextareaType::class, array(
+                'label' => 'Message*',
                 'attr' => ['placeholder' => 'Votre message',
                 'class' => 'message']));
     }
