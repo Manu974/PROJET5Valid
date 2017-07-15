@@ -47,6 +47,10 @@ a {
 .divider--light {
     border-top-color: #FAFAFA;
 }
+/***** NOT ALLOWED *****/
+.not-allowed:hover {
+    cursor: not-allowed;
+}
 /***** LAYOUT *****/
 .center {
     display: flex;
