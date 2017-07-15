@@ -1,43 +1,50 @@
 {# src/NAO/NewsletterBundle/Resources/views/Admin/view.html.twig #}
-<h2>Newsletter Administration</h2>
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/pages/newsletter.css') }}">
+{% endblock %}
+{% block body %}
+    <div class="container container-newsletter admin">
+        <h2>Newsletter Administration</h2>
 
-{% if is_granted('ROLE_NATURALISTE') %}
-    <div>Nom utilisateur : {{ user.username }}</div>
-    <div>Email utilisateur : {{ user.email }}</div>
-    {%  if rsltSub %}
-        <p><a href="{{ path('nao_newsletter_unsub', { 'username': user.username }) }}">Se désabonner</a></p>
-    {%  else %}
-        <p><a href="{{ path('nao_newsletter_sub', { 'username': user.username, 'usermail': user.email}) }}">S'abonner</a></p>
-    {% endif %}
-    <p><a href="{{ path('nao_admin_diffnewsletter') }}">Diffuser la newsletter</a></p>
-    {% if app.session.flashBag.has('success') %}
-        <div class="alert alert-success" id="commande-success">
-            {% for msg in app.session.flashBag.get('success') %}
-                {{ msg }}
-            {% endfor %}
-        </div>
-    {% endif %}
-    {% if app.session.flashBag.has('error') %}
-        <div class="alert alert-danger" id="commande-error">
-            {% for msg in app.session.flashBag.get('error') %}
-                {{ msg }}
-            {% endfor %}
-        </div>
-    {% endif %}
-{% endif %}
-{%  if newsletter is empty %}
-    <p class="text-center">Aucune newsletter publiée pour le moment</p>
-{%  else %}
-    {% block body %}
-        <article class="newsletter">
-            <header>
-                <div class="date">Publié <time datetime="{{ newsletter.created|date('c') }}">le {{ newsletter.created|date('d-m-Y') }} à {{ newsletter.created|date('H:i:s') }}</time> - Auteur : <span class="highlight">{{newsletter.author}}</span></div>
-                <h2>{{ newsletter.title }}</h2>
-            </header>
-            <div class="newsletter_view">
-                <p>{{ newsletter.newsletter|raw }}</p>
+        {% if is_granted('ROLE_NATURALISTE') %}
+            <div class="btn-group">
+                {%  if rsltSub %}
+                    <p><a class="btn btn-red" href="{{ path('nao_newsletter_unsub', { 'username': user.username }) }}">Se désabonner</a></p>
+                {%  else %}
+                    <p><a class="btn" href="{{ path('nao_newsletter_sub', { 'username': user.username, 'usermail': user.email}) }}">S'abonner</a></p>
+                {% endif %}
+                <p><a class="btn" href="{{ path('nao_admin_majnewsletter') }}"> Modifier/Créer la newsletter</a></p>
+                <p><a class="btn" href="{{ path('nao_admin_diffnewsletter') }}">Diffuser la newsletter</a></p>
             </div>
-        </article>
-    {% endblock %}
-{% endif %}
-<p><a href="{{ path('nao_admin_majnewsletter') }}"> Modifier/Créer la newsletter</a></p>
+            {% if app.session.flashBag.has('success') %}
+                <div class="alert alert-success" id="commande-success">
+                    {% for msg in app.session.flashBag.get('success') %}
+                        {{ msg }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+            {% if app.session.flashBag.has('error') %}
+                <div class="alert alert-danger" id="commande-error">
+                    {% for msg in app.session.flashBag.get('error') %}
+                        {{ msg }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endif %}
+        {%  if newsletter is empty %}
+            <p class="text-center">Aucune newsletter publiée pour le moment</p>
+        {%  else %}
+            <article class="newsletter">
+                <header>
+                    <div class="date">Publié <time datetime="{{ newsletter.created|date('c') }}">le {{ newsletter.created|date('d-m-Y') }} à {{ newsletter.created|date('H:i:s') }}</time> - Auteur : <span class="highlight">{{newsletter.author}}</span></div>
+                    <h2>{{ newsletter.title }}</h2>
+                </header>
+                <div class="newsletter_view">
+                    <p>{{ newsletter.newsletter|raw }}</p>
+                </div>
+            </article>
+        {% endif %}
+    </div>
+{% endblock %}

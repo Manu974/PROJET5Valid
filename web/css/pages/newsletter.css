@@ -1,0 +1,38 @@
+.container-newsletter {
+    position: relative;
+    top: 140px;
+    margin-bottom: 160px;
+    color: #FAFAFA;
+}
+.container-newsletter .btn {
+    justify-content: center;
+    align-items: center;
+    border-radius: 22px;
+    height: 42px;
+    width: 180px;
+}
+.container-newsletter .btn-group {
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.container-newsletter.admin .btn {
+    background-color: #00A99D;
+}
+
+@media only screen and (max-width: 980px) {
+    .container-newsletter h2 {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+    .container-newsletter .btn {
+        width: 220px;
+    }
+    .container-newsletter .btn-group {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

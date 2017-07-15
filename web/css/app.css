@@ -56,6 +56,21 @@ a {
 .center--column {
     flex-direction: column;
 }
+/***** ALERT *****/
+.alert {
+    height: 35px;
+    padding: 10px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.alert-success {
+    background-color: #8CC63F;
+}
+.alert-danger {
+    background-color: #AA3333;
+}
 /***** BUTTONS *****/
 .btn {
     display: inline-flex;

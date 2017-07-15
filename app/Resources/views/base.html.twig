@@ -164,7 +164,7 @@
             </div>
         </footer>
         {% block javascripts %}
-            {% if is_granted('ROLE_ADMIN') %}
+            {% if is_granted('ROLE_NATURALISTE') %}
             <script src="{{ asset('js/src/admin/admin-pages.js') }}"></script>
             <script src="{{ asset('js/src/admin/admin-app.js') }}"></script>
             {% endif %}
@@ -173,7 +173,7 @@
             <script src="{{ asset('js/src/MenuSlider.js') }}"></script>
             <script src="{{ asset('js/src/getPage.js') }}"></script>
             <script src="{{ asset('js/app.js') }}"></script>
-            {% if is_granted('ROLE_ADMIN') %}
+            {% if is_granted('ROLE_NATURALISTE') %}
                 <script>
                     (function () {
                         let pageLogin;
