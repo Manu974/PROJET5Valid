@@ -8,6 +8,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use NAO\UserBundle\Form\UserType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use NAO\UserBundle\Form\ListUserNameType;
+use NAO\UserBundle\Form\ListUserMailType;
+use NAO\UserBundle\Entity\User;
 
 class AdminController extends Controller
 {
@@ -15,13 +18,49 @@ class AdminController extends Controller
      * @Security("has_role('ROLE_USER')")
      */
     // Compte
-    public function UserAction() {
+    public function UserAction(Request $request) {
 
-        // Liste des utilisateurs
         $userManager = $this->get('fos_user.user_manager');
         $users = $userManager->findUsers();
+        // Liste des utilisateurs
+        $userName = new User();
+        $userMail = new User();
 
-        return $this->render('NAOUserBundle:User:user.html.twig', array('users' => $users));
+        $formName   = $this->get('form.factory')->create(ListUserNameType::class, $userName);
+        $formMail   = $this->get('form.factory')->create(ListUserMailType::class, $userMail);
+
+        if ($request->isMethod('POST') && $formName->handleRequest($request)->isValid())
+        {   
+            $username = $formName["username"]->getData()->getUsername();
+            $userFindByName = $userManager->findUserBy(array('username'=>$username));
+
+            return $this->render('NAOUserBundle:User:user.html.twig', array(
+                'formName' => $formName->createView(),
+                'formMail' => $formMail->createView(),
+                'users' => $users,
+                'userFindByName'=> $userFindByName,
+            ));
+        }
+
+        if ($request->isMethod('POST') && $formMail->handleRequest($request)->isValid())
+        {
+            $usermail = $formMail["email"]->getData()->getEmail();
+            $userFindByEmail = $userManager->findUserBy(array('email'=>$usermail));
+           
+           return $this->render('NAOUserBundle:User:user.html.twig', array(
+                'formName' => $formName->createView(),
+                'formMail' => $formMail->createView(),
+                'users' => $users,
+                'userFindByEmail'=> $userFindByEmail,
+            ));
+    
+        }
+
+        return $this->render('NAOUserBundle:User:user.html.twig', array(
+            'formName' => $formName->createView(),
+            'formMail' => $formMail->createView(),
+            'users' => $users
+        ));
     }
 
     /**
@@ -38,13 +77,11 @@ class AdminController extends Controller
 
         $user->addRole('ROLE_NATURALISTE');
 
+        
         // Maj BDD
         $userManager->updateUser($user);
 
-        // Liste des utilisateurs
-        $users = $userManager->findUsers();
-
-        return $this->render('NAOUserBundle:User:user.html.twig', array('users' => $users));
+        return $this->redirectToRoute('nao_user_compte');
     }
 
     /**
@@ -64,10 +101,7 @@ class AdminController extends Controller
         // Maj BDD
         $userManager->updateUser($user);
 
-        // Liste des utilisateurs
-        $users = $userManager->findUsers();
-
-        return $this->render('NAOUserBundle:User:user.html.twig', array('users' => $users));
+        return $this->redirectToRoute('nao_user_compte');
     }
     /**
      * @Security("has_role('ROLE_USER')")
@@ -123,10 +157,7 @@ class AdminController extends Controller
         // suppression du compte
         $userManager->deleteUser($user);
 
-        // Liste des utilisateurs
-        $users = $userManager->findUsers();
-
-        return $this->render('NAOUserBundle:User:user.html.twig', array('users' => $users));
+        return $this->redirectToRoute('nao_user_compte');
     }
     /**
      * @Security("has_role('ROLE_USER')")
