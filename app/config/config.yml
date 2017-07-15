@@ -8,7 +8,7 @@ imports:
 parameters:
     locale: fr
     # Adresse de contact par mail
-    nao.emails.contact_email: nao@orange.fr
+    nao.emails.contact_email: emmanuel.dijoux16@gmail.com
     # Auteur des programmes par défaut
     nao_programmes.auteur: NAO association
     # Nombre d'articles à afficher par page pour les programmes

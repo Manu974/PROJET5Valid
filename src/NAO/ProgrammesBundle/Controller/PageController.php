@@ -55,9 +55,11 @@ class PageController extends Controller
         if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
            // Service d'envoi des messages des visiteurs par mail
            //-----------------------------------------------------
+          $contactMail = $form->getData()->getEmail();
+          
            $message = \Swift_Message::newInstance()
                ->setSubject("Contact depuis NAO.org")
-               ->setFrom(array('nao@gmail.com' => 'NAO.org'))
+               ->setFrom($contactMail)
                ->setTo($this->getParameter('nao.emails.contact_email'))
                ->setBody($this->renderView('NAOProgrammesBundle:Page:ContactEmail.html.twig',
                          array('contactreq' => $contactreq)),'text/html');

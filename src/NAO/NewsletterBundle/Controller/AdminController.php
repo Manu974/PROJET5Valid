@@ -110,7 +110,9 @@ class AdminController extends Controller
         // Service de diffusion de la newsletter
         //---------------------------------------
         $diffusion = $this->container->get('nao_newsletter.subdiffusion');
-        $rsltdiff =$diffusion->subdiffusion();
+        $sourceEmail = $this->getParameter('nao.emails.contact_email');
+
+        $rsltdiff =$diffusion->subdiffusion($sourceEmail);
 
         // Envoi effectué
         if ($rsltdiff) {

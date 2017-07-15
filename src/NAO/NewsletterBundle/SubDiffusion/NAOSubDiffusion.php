@@ -17,7 +17,7 @@ class NAOSubDiffusion
         $this->twig = $twig;
     }
 
-    public function subdiffusion()
+    public function subdiffusion($sourceEmail)
     {
         $subs = $this->em->getRepository('NAONewsletterBundle:Subscriber')->findAll();
         $newsletter = $this->em->getRepository('NAONewsletterBundle:Newsletter')->findOneBy([]);
@@ -32,7 +32,7 @@ class NAOSubDiffusion
                 if (!empty($sub))
                 {
                        $message->setSubject('Newsletter NAO')
-                            ->setFrom('emmanuel.dijoux16@gmail.com')
+                            ->setFrom($sourceEmail)
                             ->setTo($sub->getEmail())
                             ->setBody(
                                 $this->twig->render(
