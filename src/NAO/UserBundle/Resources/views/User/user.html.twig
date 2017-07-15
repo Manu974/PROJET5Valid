@@ -45,7 +45,7 @@
             <h3>Liste des users</h3>
             {% for user in users %}
                 {% for role in user.roles|slice(0,1)  %}
-                    {% if role != 'ROLE_ADMIN' %}
+                    {% if role != 'ROLE_ADMIN' and role != 'ROLE_SUPER_ADMIN' %}
                         <span class="user-name">Pseudo : {{ user.username|e }}</span>
                         <span>ID: {{user.id}} role :{{ role }}</span>
                         <div class="user-admin-edit">
@@ -56,8 +56,7 @@
                     {% endif %}
                 {% endfor %}
             {% endfor %}
-            <p>Identifiant : {{app.user.username}}</p>
-            <p>Email : {{app.user.email}}</p>
+           
             <h3>Modification Mot de passe</h3>
             <div class="user-delete-account admin">
                 {{ render(controller('FOSUserBundle:ChangePassword:changePassword' ))}}
