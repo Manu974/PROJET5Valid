@@ -36,7 +36,7 @@ class PageController extends Controller
                 'page' => $page
             ));
         } else {
-            return $this->render('NAOProgrammesBundle:Page:index.html.twig', array(
+            return $this->render('NAOProgrammesBundle:page:index.html.twig', array(
                 'blogs' => $blogs,
                 'nbPages' => $nbPages,
                 'page' => $page
@@ -61,7 +61,7 @@ class PageController extends Controller
                ->setSubject("Contact depuis NAO.org")
                ->setFrom($contactMail)
                ->setTo($this->getParameter('nao.emails.contact_email'))
-               ->setBody($this->renderView('NAOProgrammesBundle:Page:ContactEmail.html.twig',
+               ->setBody($this->renderView('NAOProgrammesBundle:page:ContactEmail.html.twig',
                          array('contactreq' => $contactreq)),'text/html');
            $envoiMail = $this->get('mailer')->send($message);
 
@@ -79,7 +79,7 @@ class PageController extends Controller
            }
         }
         $isAjaxCall = $request->isXmlHttpRequest();
-        return $this->render('NAOProgrammesBundle:Page:contact.html.twig', array(
+        return $this->render('NAOProgrammesBundle:page:contact.html.twig', array(
             'form' => $form->createView(),
             'isAjaxCall' => $isAjaxCall
         ));
