@@ -46,12 +46,16 @@
             {% for user in users %}
                 {% for role in user.roles|slice(0,1)  %}
                     {% if role != 'ROLE_ADMIN' and role != 'ROLE_SUPER_ADMIN' %}
-                        <span class="user-name">Pseudo : {{ user.username|e }}</span>
-                        <span>ID: {{user.id}} role :{{ role }}</span>
+                        <span class="user-name">PSEUDO : {{ user.username|e }}</span>
+                        <span>ROLE : {% if role == 'ROLE_USER'%} Utilisateur{% endif %}{% if role == 'ROLE_NATURALISTE'%}Naturaliste{% endif %}</span>
                         <div class="user-admin-edit">
                             <a href="{{ path('nao_user_admin_delete', { 'id': user.id }) }}"><input class="btn btn-red" type="submit" value="Supprimer"></a>
+                            {% if role == 'ROLE_NATURALISTE'%}
                             <a href="{{ path('nao_user_demote', { 'id': user.id }) }}"><input class="btn" type="submit" value="Rétrograder en utilisateur"></a>
+                            {% endif %}
+                            {% if role == 'ROLE_USER'%}
                             <a href="{{ path('nao_user_promote', { 'id': user.id }) }}"><input class="btn" type="submit" value="Promouvoir en naturalise"></a>
+                            {% endif %}
                         </div>
                     {% endif %}
                 {% endfor %}
