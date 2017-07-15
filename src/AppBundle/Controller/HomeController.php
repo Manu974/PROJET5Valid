@@ -121,4 +121,12 @@ class HomeController extends Controller
         return $this->redirectToRoute('observationpropage');
     }
 
+    /**
+    * @Route("/mentionslegales", name="mentionslegalespage")
+    */
+    public function mentionLegalesAction()
+    { 
+        return $this->render('default/mentions.html.twig');
+    }
+
 }
