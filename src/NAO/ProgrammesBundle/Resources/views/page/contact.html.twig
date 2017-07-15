@@ -1,20 +1,24 @@
 {# src/NAO/ProgrammesBundle/Resources/views/Page/contact.html.twig #}
 
 {% block stylesheets %}
-    {% if isAjaxCall %}
-        <link rel="stylesheet" href="{{ asset('css/pages/contactAjax.css') }}">
-    {% else %}
-        <link rel="stylesheet" href="{{ asset('css/Skeleton-2.0.4/css/normalize.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/Skeleton-2.0.4/css/skeleton.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/pages/contact.css') }}">
-    {% endif %}
+    <head>
+        {% if isAjaxCall %}
+            <link rel="stylesheet" href="{{ asset('css/pages/contactAjax.css') }}">
+        {% else %}
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+            <link rel="stylesheet" href="{{ asset('css/Skeleton-2.0.4/css/normalize.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/Skeleton-2.0.4/css/skeleton.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/pages/contact.css') }}">
+        {% endif %}
+    </head>
 {% endblock %}
 
 {% block body %}
     <div class="contact-content container">
         <header>
-            <h1 class="title"><span>Contact</span><i class="icon--large icon--contact is_active"></i></h1>
+            <h1 class="title"><span>Contact</span><i class="icon--large icon--contact is_active hidden-sm"></i></h1>
             <div class="divider"></div>
         </header>
 

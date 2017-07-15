@@ -110,18 +110,6 @@
                 <i class="icon icon--arrow"></i>
                 <a href="{{ path('nao_faq_homepage') }}" class="navbar-mobile-link">FAQ</a>
             </div>
-            <div class="navbar-mobile-item">
-                <i class="icon icon--arrow"></i>
-                <a href="{{ path('nao_blog_contact') }}" class="navbar-mobile-link">Contact</a>
-            </div>
-            <div class="navbar-mobile-item">
-                <i class="icon icon--arrow"></i>
-                <a href="{{ path('nao_newsletter_homepage') }}" class="navbar-mobile-link">Newsletter</a>
-            </div>
-            <div class="navbar-mobile-item">
-                <i class="icon icon--arrow"></i>
-                <a href="#" class="navbar-mobile-link">Mentions legales</a>
-            </div>
         </nav>
         {% block body %}{% endblock %}
         <footer class="footer">
@@ -134,11 +122,11 @@
                         </div>
                         <div class="footer-item">
                             <i class="icon icon--legalMention hidden-sm"></i>
-                            <a href="#" class="footer-link">Mentions legales</a>
+                            <a href="{{ path('mentionslegalespage') }}" class="footer-link">Mentions legales</a>
                         </div>
-                        <div class="footer-item">
+                        <div class="footer-item" id="footer-contact">
                             <i class="icon icon--contact hidden-sm"></i>
-                            <a href="{{ path('nao_blog_contact') }}" class="footer-link">Contact</a>
+                            <a href="#" class="footer-link">Contact</a>
                         </div>
                     </div>
                     <div class="six columns">
