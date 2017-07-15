@@ -1,5 +1,5 @@
 /***** FONT *****/
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
 body {
     font-family: "Open Sans", sans-serif;
     overflow-x: hidden;
@@ -169,6 +169,7 @@ a {
 .icon--contact {  background: url('../logo-icones/icone enveloppe-contact.svg') no-repeat 1px 0;  }
 .icon--newsletter {  background: url('../logo-icones/icone newsletter.svg') no-repeat 0 0;  }
 .icon--legalMention {  background: url('../logo-icones/icone-mentions-gris.svg') no-repeat 6px -1px; }
+.icon--legalMention.is_active {  background: url('../logo-icones/icone-mentions-green.svg') no-repeat 6px -1px; }
 .icon--youtube {  background: url('../logo-icones/icone you tube.svg') no-repeat 0 0; }
 .icon--youtube:hover {  background: url('../logo-icones/icone you tube-active.svg') no-repeat 0 0;  }
 .icon--facebook {  background: url('../logo-icones/icone facebook.svg') no-repeat 11px 0; }

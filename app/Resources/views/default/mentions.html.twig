@@ -1,1 +1,139 @@
-<h3>Mentions legales</h3>
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/pages/mentions.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="container container-mentions">
+        <h3>
+            <i class="icon--large is_active icon--legalMention"></i>
+            <span>Mentions Légales-Cookies</span>
+        </h3>
+        <div class="mentions-content">
+
+            <span class="anchor">AVERTISSEMENT</span>
+            <br>
+            <p>
+            Ce site a été développé dans le cadre d’un projet d’école (projet 5 - OpenClassRooms) dans le but de tester une interface web collaborative. Les éléments qui le constituent sous soumis aux mêmes droits qu’un site propriétaire.
+            <br><br>
+            Toutes les informations contenues dans les pages ont été soit inventées pour les besoins du projet, soit fournies gracieusement par des photographes ou naturalistes professionnels et amateurs.
+            </p>
+            <span class="anchor"> Objet du site</span>
+            <br>
+            Plateforme collaborative d’observations des oiseaux en France métropolitaine et départements et territoires d’Outre-Mer
+            Propriétaire/Editeur
+            <br><br>
+            Association Nos amis les Oiseaux
+            123, rue de la rue, Paris 11ème
+            Directeur de la publication
+            M. Dujardin
+            Développement
+            <br><br>
+            5Team Project , Paris 11
+            SA au capital de 5000 euros
+            Inscrite au Registre du Commerce et des Sociétés de Paris sous le numéro 12345
+            <br><br>
+            Hébergement
+            One and one, 152 avenue kléber Paris 11
+            SARL au capital de 500000 €
+            RCS : Paris
+            SIRET : 123456
+            TVA : FD123456789
+            <br><br>
+            <span class="anchor">Droits d’auteur/droits à l’image</span>
+            <br>
+            Images du site : libres d’usage commercial (source : https://www.flickr.com/search/?text=oiseaux&license=4%2C5%2C6%2C9%2C10)
+            <br><br>
+            <span class="anchor">Fonctionnement du site</span>
+            <br>
+            Les pages et le contenu de ce site sont générés par le frameworkSymfony 3, distribué sous licence MIT, c’est à dire libre et open source, non copyleft, permettant donc d'inclure des modifications sous d'autres licences, y compris non libres.
+            <br><br>
+            Vous pouvez l’utiliser librement pour réaliser votre propre site internet. Pour plus d’informations, reportez-vous au site : www.symfony.com
+            <br><br>
+            <span class="anchor">Contenu et droits de reproduction</span>
+            <br>
+            En application des articles L. 111-1 et L. 123-1 du Code de la Propriété Intellectuelle, l'ensemble des contenus de ce site (textes, images et tout média en général), sauf mention contraire explicite, est protégé par le droit d'auteur.
+            <br><br>
+            La reproduction, même partielle, des contenus des pages de ce site sans accord préalable de l’association Nos Amis les Oiseaux est strictement interdite.
+            <br><br>
+            <span class="achor">
+                Conditions d'utilisation
+                Acceptation de fait
+            </span>
+            <br><br>
+            En utilisant le site asso-nao.fr, l'internaute prend note et accepte les conditions ici énumérées.
+            <br><br>
+            <span class="anchor">Abus</span>
+            <br>
+            En application de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique, pour signaler un contenu litigieux ou si vous êtes victime d'une utilisation frauduleuse du site nao.fr, merci de contacter l'administrateur du site à l'adresse courriel : contact@asso-nao.org
+            <br><br>
+            <span class="anchor">Collecte et traitement de données personnelles</span>
+            <br>
+            Les informations éventuellement recueillies par le site asso-nao.org ne sont jamais communiquées à des tiers. Sauf cas particulier, ces informations proviennent de l'enregistrement volontaire d'une adresse courriel fournie par l'internaute, lui permettant de recevoir une documentation ou une newsletter ou de se renseigner sur un point quelconque.
+            <br><br>
+            En application de la loi n° 78-17 du 6 janvier 1978 relative à l'informatique, aux fichiers et aux libertés, l'internaute dispose d'un droit d'accès, de rectification et de suppression des informations personnelles le concernant stockées par le site asso-nao.org, qu'il peut exercer à tout moment auprès de l'administrateur du site nao.fr. Pour une demande de ce type, veuillez adresser un courrier à la l’association ou contacter l'adresse courriel : contact@ asso-nao.org
+            <br><br>
+            <span class="anchor">Limitation de responsabilité</span>
+            <br>
+            Le contenu mis à disposition sur ce site est fourni à titre informatif. Il appartient à l'internaute d'utiliser ces informations avec discernement. La responsabilité de l’association ne saurait être engagée de fait quant aux informations, opinions et recommandations formulées par des tiers.
+            <br><br>
+            Dans la mesure où l’association ne peut contrôler ces sites ou sources externes, elle ne peut être tenu pour responsable de la mise à disposition de ces sites ou sources externes et ne peut supporter aucune responsabilité quant aux contenus, publicités, produits, services ou tout autre matériel disponible sur ou à partir de ces sites ou sources externes. De plus, l’association ne pourra être tenu responsable de tous dommages ou pertes avérés ou allégués consécutifs ou en relation avec l'utilisation ou le fait d'avoir fait confiance au contenu, à des biens ou des services disponibles sur ces sites ou sources externes.
+            <br><br>
+            <span class="anchor" id="cookies">COOKIES</span>
+            <br>
+            Certaines informations nominatives et certains marqueurs témoins peuvent être enregistrées par le site asso-nao.org sur l'ordinateur personnel de l'internaute sans expression de la volonté de ce dernier (« cookies »). Sauf indication contraire explicite*, ces procédés techniques ne sont pas indispensables au bon fonctionnement du site nao.fr et leur utilisation peut bien entendu être désactivée dans le navigateur utilisé par l'internaute sans que sa navigation en soit affectée.
+            <br><br>
+            Aucune de ces informations n'est conservée par le site après déconnexion de l'internaute.
+            <br><br>
+            * Il est utile de préciser ici que les accès aux différents espaces privés du site peuvent nécessiter l'acceptation par l'internaute du dépôt d'un cookie sur son ordinateur personnel pour une question de sécurité.
+            <br><br>
+            © association NAO
+            <br><br>
+            <span class="anchor">Mentions légales</span>
+            <br>
+            Merci de lire avec attention les différentes modalités d’utilisation du présent site avant d’y parcourir ses pages. En vous connectant sur ce site, vous acceptez sans réserves les présentes modalités. Aussi, conformément à l’article n°6 de la Loi n°2004-575 du 21 Juin 2004 pour la confiance dans l’économie numérique, les responsables du présent site internet www.asso-nao.org sont :
+            Editeur du Site :
+            Association NAO Numéro de SIRET : 123456 Lorem Responsable editorial : Michel DUJARDIN 2, rue de la rue Téléphone :01 02 03 04 05 - Fax : 00 00 00 00 Email : contact@asso-nao.org Site Web : www.asso-nao.org
+            <br><br>
+            <span class="anchor">Hébergement :</span>
+            <br>
+            Hébergeur : One and One Paris Site Web : www.oneandone.fr
+            <br>
+            <span class="anchor">Développement :</span>
+            <br>
+            THE FIVE TEAM PROJECT Adresse : Oc PARIS Site Web : www.thefiveteamproject
+            <br><br>
+            <span class="anchor">Conditions d’utilisation :</span>
+            <br>
+            Ce site (www.asso-nao.org) est proposé en différents langages web (HTML, HTML5, Javascript, CSS, etc…) pour un meilleur confort d'utilisation et un graphisme plus agréable, nous vous recommandons de recourir à des navigateurs modernes comme Internet explorer, Safari, Firefox, Google Chrome, etc… Les mentions légales ont été générées sur le site Générateur de mentions légales, offert par Welye. Association NAO met en œuvre tous les moyens dont elle dispose, pour assurer une information fiable et une mise à jour fiable de ses sites internet. Toutefois, des erreurs ou omissions peuvent survenir. L'internaute devra donc s'assurer de l'exactitude des informations auprès de, et signaler toutes modifications du site qu'il jugerait utile. N’est en aucun cas responsable de l'utilisation faite de ces informations, et de tout préjudice direct ou indirect pouvant en découler. Cookies : Le site www.asso-nao.org peut-être amené à vous demander l’acceptation des cookies pour des besoins de statistiques et d'affichage. Un cookies est une information déposée sur votre disque dur par le serveur du site que vous visitez. Il contient plusieurs données qui sont stockées sur votre ordinateur dans un simple fichier texte auquel un serveur accède pour lire et enregistrer des informations. Certaines parties de ce site ne peuvent être fonctionnelles sans l’acceptation de cookies. Liens hypertextes : Les sites internet de peuvent offrir des liens vers d’autres sites internet ou d’autres ressources disponibles sur Internet. Association NAO ne dispose d'aucun moyen pour contrôler les sites en connexion avec ses sites internet. ne répond pas de la disponibilité de tels sites et sources externes, ni ne la garantit. Elle ne peut être tenue pour responsable de tout dommage, de quelque nature que ce soit, résultant du contenu de ces sites ou sources externes, et notamment des informations, produits ou services qu’ils proposent, ou de tout usage qui peut être fait de ces éléments. Les risques liés à cette utilisation incombent pleinement à l'internaute, qui doit se conformer à leurs conditions d'utilisation. Les utilisateurs, les abonnés et les visiteurs des sites internet de ne peuvent mettre en place un hyperlien en direction de ce site sans l'autorisation expresse et préalable de Association NAO. Dans l'hypothèse où un utilisateur ou visiteur souhaiterait mettre en place un hyperlien en direction d’un des sites internet de Association NAO, il lui appartiendra d'adresser un email accessible sur le site afin de formuler sa demande de mise en place d'un hyperlien. Association NAO se réserve le droit d’accepter ou de refuser un hyperlien sans avoir à en justifier sa décision.
+            <br><br>
+            <span class="anchor">Services fournis :</span>
+            <br>
+            L'ensemble des activités de la société ainsi que ses informations sont présentés sur notre site www.asso-nao.org.
+            Association NAO s’efforce de fournir sur le site www.asso-nao.org des informations aussi précises que possible. les renseignements figurant sur le site www.asso-nao.org ne sont pas exhaustifs et les photos non contractuelles. Ils sont donnés sous réserve de modifications ayant été apportées depuis leur mise en ligne. Par ailleurs, tous les informations indiquées sur le site www.asso-nao.org sont données à titre indicatif, et sont susceptibles de changer ou d’évoluer sans préavis.
+            <br><br>
+            <span class="anchor">Limitations contractuelles sur les données :</span>
+            <br>
+            Les informations contenues sur ce site sont aussi précises que possible et le site remis à jour à différentes périodes de l’année, mais peut toutefois contenir des inexactitudes ou des omissions. Si vous constatez une lacune, erreur ou ce qui parait être un dysfonctionnement, merci de bien vouloir le signaler par email, à l’adresse contact@asso-nao.org, en décrivant le problème de la manière la plus précise possible (page posant problème, type d’ordinateur et de navigateur utilisé, …). Tout contenu téléchargé se fait aux risques et périls de l'utilisateur et sous sa seule responsabilité. En conséquence, ne saurait être tenu responsable d'un quelconque dommage subi par l'ordinateur de l'utilisateur ou d'une quelconque perte de données consécutives au téléchargement. De plus, l’utilisateur du site s’engage à accéder au site en utilisant un matériel récent, ne contenant pas de virus et avec un navigateur de dernière génération mis-à-jour Les liens hypertextes mis en place dans le cadre du présent site internet en direction d'autres ressources présentes sur le réseau Internet ne sauraient engager la responsabilité de Association NAO.
+            <br><br>
+            <span class="anchor">Propriété intellectuelle :</span>
+            <br>
+            Tout le contenu du présent sur le site www.asso-nao.org, incluant, de façon non limitative, les graphismes, images, textes, vidéos, animations, sons, logos, gifs et icônes ainsi que leur mise en forme sont la propriété exclusive de la société à l'exception des marques, logos ou contenus appartenant à d'autres sociétés partenaires ou auteurs. Toute reproduction, distribution, modification, adaptation, retransmission ou publication, même partielle, de ces différents éléments est strictement interdite sans l'accord exprès par écrit de Association NAO. Cette représentation ou reproduction, par quelque procédé que ce soit, constitue une contrefaçon sanctionnée par les articles L.335-2 et suivants du Code de la propriété intellectuelle. Le non-respect de cette interdiction constitue une contrefaçon pouvant engager la responsabilité civile et pénale du contrefacteur. En outre, les propriétaires des Contenus copiés pourraient intenter une action en justice à votre encontre.
+            <br><br>
+            <span class="anchor">Déclaration à la CNIL :</span>
+            <br>
+            Conformément à la loi 78-17 du 6 janvier 1978 (modifiée par la loi 2004-801 du 6 août 2004 relative à la protection des personnes physiques à l'égard des traitements de données à caractère personnel) relative à l'informatique, aux fichiers et aux libertés, ce site a fait l'objet d'une déclaration 012345 auprès de la Commission nationale de l'informatique et des libertés (www.cnil.fr).
+            <br><br>
+            <span class="anchor">Litiges :</span>
+            <br>
+            Les présentes conditions du site www.asso-nao.org sont régies par les lois françaises et toute contestation ou litiges qui pourraient naître de l'interprétation ou de l'exécution de celles-ci seront de la compétence exclusive des tribunaux dont dépend le siège social de la société. La langue de référence, pour le règlement de contentieux éventuels, est le français.
+            <br><br>
+            <span class="anchor">Données personnelles :</span>
+            <br>
+            De manière générale, vous n’êtes pas tenu de nous communiquer vos données personnelles lorsque vous visitez notre site Internet www.asso-nao.org. Cependant, ce principe comporte certaines exceptions. En effet, pour certains services proposés par notre site, vous pouvez être amenés à nous communiquer certaines données telles que : votre nom, votre fonction, le nom de votre société, votre adresse électronique, et votre numéro de téléphone. Tel est le cas lorsque vous remplissez le formulaire qui vous est proposé en ligne, dans la rubrique « contact ». Dans tous les cas, vous pouvez refuser de fournir vos données personnelles. Dans ce cas, vous ne pourrez pas utiliser les services du site, notamment celui de solliciter des renseignements sur notre société, ou de recevoir les lettres d’information. Enfin, nous pouvons collecter de manière automatique certaines informations vous concernant lors d’une simple navigation sur notre site Internet, notamment : des informations concernant l’utilisation de notre site, comme les zones que vous visitez et les services auxquels vous accédez, votre adresse IP, le type de votre navigateur, vos temps d'accès. De telles informations sont utilisées exclusivement à des fins de statistiques internes, de manière à améliorer la qualité des services qui vous sont proposés. Les bases de données sont protégées par les dispositions de la loi du 1er juillet 1998 transposant la directive 96/9 du 11 mars 1996 relative à la protection juridique des bases de données.
+
+        </div>
+    </div>
+{% endblock %}

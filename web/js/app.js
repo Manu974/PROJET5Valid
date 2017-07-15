@@ -1,11 +1,15 @@
 'use strict';
+import MenuSlider from './src/MenuSlider'
+import HeaderShrink from './src/HeaderShrink'
+import getPage from './src/getPage'
 
 (function () {
+
     let menuBurger = new MenuSlider('.icon.icon--burger', '.navbar-mobile-content', '305px');
 
     new HeaderShrink('.header', 200, '88px', menuBurger);
-    let loginPage = new loadAjaxPage('#login-page', '/login', 'header .icon--connection, .home-container .icon--connection', '.login-content');
-    let contactPage = new loadAjaxPage('#contact-page', '/programmes/contact', 'header .icon--contact, #footer-contact', '.contact-content');
+    let loginPage = new getPage('#login-page', '/login', 'header .icon--connection, .home-container .icon--connection', '.login-content');
+    let contactPage = new getPage('#contact-page', '/programmes/contact', 'header .icon--contact, #footer-contact', '.contact-content');
 
     let messageFlash = document.querySelector('.flash-message');
     if (messageFlash) {
