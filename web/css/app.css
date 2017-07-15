@@ -368,6 +368,11 @@ a {
     width: 100%;
     display: none;
 }
+#contact-page {
+    position: absolute;
+    width: 100%;
+    display: none;
+}
 /***** PAGINATION *****/
 .pagination {
     display: flex;
