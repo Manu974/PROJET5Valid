@@ -1,4 +1,4 @@
-class loadAjaxPage {
+export default class getPage {
     /**
      *
      * @param element
@@ -13,14 +13,25 @@ class loadAjaxPage {
         this.getPage(elementOfTheloadedPage);
         let links = document.querySelectorAll(clickEvent);
         links.forEach((link) => {
-            link.parentNode.addEventListener('click', e => {
-                e.stopPropagation();
-                this.pageContent.style.display = 'block';
-                this.element.style.display = 'block';
-                setTimeout(() => {
-                    this.pageContent.style.left = 0;
-                }, 90);
-            });
+            if (link.id !== null) {
+                link.addEventListener('click', e => {
+                    e.stopPropagation();
+                    this.pageContent.style.display = 'block';
+                    this.element.style.display = 'block';
+                    setTimeout(() => {
+                        this.pageContent.style.left = 0;
+                    }, 90);
+                });
+            } else {
+                link.parentNode.addEventListener('click', e => {
+                    e.stopPropagation();
+                    this.pageContent.style.display = 'block';
+                    this.element.style.display = 'block';
+                    setTimeout(() => {
+                        this.pageContent.style.left = 0;
+                    }, 90);
+                });
+            }
         });
         document.body.addEventListener('click', e => {
             e.stopPropagation();

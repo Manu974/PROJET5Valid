@@ -1,4 +1,4 @@
-class MenuSlider {
+export default class MenuSlider {
     /**
      *
      * @param menu, Element to listen on the click

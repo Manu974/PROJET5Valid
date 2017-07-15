@@ -1,4 +1,4 @@
-class HeaderShrink {
+export default class HeaderShrink {
     /**
      *
      * @param header, The element for le listening
