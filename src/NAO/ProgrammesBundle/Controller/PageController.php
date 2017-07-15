@@ -48,10 +48,11 @@ class PageController extends Controller
     public function contactAction(Request $request)
     {
         $contactreq = new ContactReq();
-        $form = $this->get('form.factory')->create(ContactReqType::class, $contactreq);
+        $form = $this->get('form.factory')->create(ContactReqType::class, $contactreq, [
+            'action' => $this->generateUrl('nao_blog_contact')
+        ]);
 
-        if ($request->isMethod('POST') && $form->handleRequest($request)->isValid())
-       {
+        if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
            // Service d'envoi des messages des visiteurs par mail
            //-----------------------------------------------------
            $message = \Swift_Message::newInstance()
@@ -64,18 +65,21 @@ class PageController extends Controller
 
            // Envoi effectué
            if ($envoiMail) {
+               dump($envoiMail);
                // Message de confirmation de commande
                $this->addFlash('success', 'Message envoyé, merci');
-               return $this->redirectToRoute('nao_blog_contact');
+               return $this->redirectToRoute('homepage');
            } else { // Erreur d'envoi
                // Message d'erreur problème d'envoi
                $this->addFlash('error', 'L\'envoi du message n\'a pas abouti, réessayez ultèrieurement');
                // Transfert Objets commande et billets vers la view "récapitulative de la commande"
-               return $this->render('NAOProgrammesBundle:Page:index.html.twig');
+               return $this->redirectToRoute('homepage');
            }
         }
+        $isAjaxCall = $request->isXmlHttpRequest();
         return $this->render('NAOProgrammesBundle:Page:contact.html.twig', array(
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'isAjaxCall' => $isAjaxCall
         ));
     }
 }

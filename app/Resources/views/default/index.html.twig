@@ -12,7 +12,7 @@
                 <span>Bienvenue sur le site participatif "Nos Amis les Oiseaux"</span>
                 <span class="hidden-sm">Ensemble, observons, partageons, protégeons la biodiversité.</span>
             </h1>
-            <a href="#" class="btn btn--large btn--icon">
+            <a href="{{ path('observationpage') }}" class="btn btn--large btn--icon">
                 <i class="icon icon--prog is_active"></i>
                 <span>Contribuer aux programmes</span>
             </a>
@@ -24,11 +24,11 @@
                 <i class="icon--large icon--connection"></i>
                 <span>Connexion inscription</span>
             </a>
-            <a href="#" class="center center--column">
+            <a href="{% if app.user %}{{ path('observationcartepage') }}{% else %}#{% endif %}" class="center center--column {% if not app.user %} not-allowed {% endif %}">
                 <i class="icon--large icon--maps"></i>
                 <span>Carte interactive</span>
             </a>
-            <a href="#" class="center center--column">
+            <a href="{% if app.user %}{{ path('observationpage') }}{% else %}#{% endif %}" class="center center--column {% if not app.user %} not-allowed {% endif %}">
                 <i class="icon--large icon--obs"></i>
                 <span>Saisir une observation</span>
             </a>

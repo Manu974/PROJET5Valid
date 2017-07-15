@@ -48,6 +48,7 @@ section {
     margin-bottom:16px;
 }
 .home-row {
+    margin: 30px 0;
     display: flex;
     justify-content: space-between;
     width: 100%;

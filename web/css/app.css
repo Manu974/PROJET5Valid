@@ -47,6 +47,10 @@ a {
 .divider--light {
     border-top-color: #FAFAFA;
 }
+/***** NOT ALLOWED *****/
+.not-allowed:hover {
+    cursor: not-allowed;
+}
 /***** LAYOUT *****/
 .center {
     display: flex;
@@ -275,7 +279,6 @@ a {
 .is_pro.navbar-mobile-content .navbar-mobile-link:hover {
     color: #00A99D;
 }
-.icon:hover {  cursor: pointer;  }
 .navbar-mobile .icon--burger:hover {  background: url('../logo-icones/menu burger-green.svg') no-repeat;  }
 .navbar-mobile .is_pro.icon--burger:hover {  background: url('../logo-icones/menu-burger-pro-bleu.svg') no-repeat;  }
 
@@ -326,6 +329,9 @@ a {
     align-items: center;
 }
 .header-navbar-item:hover {  cursor: pointer;  }
+.header-navbar-item.not-allowed:hover {
+    cursor: not-allowed;
+}
 .header-navbar-item:hover .header-navbar-link {  color: #8CC63F;  }
 
 /***** HEADER ICONS *****/
@@ -368,7 +374,35 @@ a {
     width: 100%;
     display: none;
 }
-/***** PAGINATION *****/
+#contact-page {
+    position: absolute;
+    width: 100%;
+    display: none;
+}
+/***** FLASH MSG *****/
+.flash-message {
+    transition: 2.4s;
+    border-radius: 4px;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    right: 40px;
+    z-index: 50;
+    width: 190px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flash-message.error {
+    background-color: #a41e22;
+    border: 1px solid #660000;
+}
+.flash-message.success {
+    border: 1px solid #6b9311;
+    background-color: #8CC63F;
+}
+    /***** PAGINATION *****/
 .pagination {
     display: flex;
     justify-content: center;

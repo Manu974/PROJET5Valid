@@ -1,19 +1,37 @@
 {# src/NAO/ProgrammesBundle/Resources/views/Page/contact.html.twig #}
 
-{% block title %}Contact{% endblock%}
+{% block stylesheets %}
+    <head>
+        {% if isAjaxCall %}
+            <link rel="stylesheet" href="{{ asset('css/pages/contactAjax.css') }}">
+        {% else %}
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+            <link rel="stylesheet" href="{{ asset('css/Skeleton-2.0.4/css/normalize.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/Skeleton-2.0.4/css/skeleton.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/pages/contact.css') }}">
+        {% endif %}
+    </head>
+{% endblock %}
 
 {% block body %}
-    <header>
-        <h1 class="form_title"><i class="fa fa-envelope" aria-hidden="true"></i> Contacter L'association</h1>
-    </header>
+    <div class="contact-content container">
+        <header>
+            <h1 class="title"><span>Contact</span><i class="icon--large icon--contact is_active hidden-sm"></i></h1>
+            <div class="divider"></div>
+        </header>
 
-    {{ form_start(form, {'attr': {'class': 'well contact'}}) }}
-        {{ form_row(form.nom, {'attr': {'class': 'form-control'}}) }}
-        {{ form_row(form.prenom, {'attr': {'class': 'form-control'}}) }}
-        {{ form_row(form.email, {'attr': {'class': 'form-control'}}) }}
-        {{ form_row(form.sujet, {'attr': {'class': 'form-control'}}) }}
-        {{ form_row(form.message, {'attr': {'class': 'form-control'}}) }}
-        <input type="submit" value="Envoyer" class="btn btn-default btn-contact center-block"/>
-    {{ form_end(form) }}
-
+        {{ form_start(form, {'attr': {'class': 'well contact'}}) }}
+            {{ form_row(form.nom, {'attr': {'class': 'form-control'}}) }}
+            {{ form_row(form.prenom, {'attr': {'class': 'form-control'}}) }}
+            {{ form_row(form.email, {'attr': {'class': 'form-control'}}) }}
+            {{ form_row(form.sujet, {'attr': {'class': 'form-control'}}) }}
+            {{ form_row(form.message, {'attr': {'class': 'form-control'}}) }}
+            <button type="submit" class="btn btn--large">
+                <i class="icon--small icon--send"></i>
+                <span>Envoyer</span>
+            </button>
+        {{ form_end(form) }}
+    </div>
 {% endblock %}

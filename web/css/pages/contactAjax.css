@@ -1,0 +1,54 @@
+.contact-content {
+    display: block;
+    transition: all 1s;
+    padding: 42px;
+    top: 0;
+    left: -1500px;
+    background-color: #282829;
+    z-index: 10;
+    position: absolute;
+    box-shadow: 10px 4px 4px rgba(30, 30, 30, 0.8);
+    width: 65%;
+    height: 100vh;
+}
+.contact-content .title {
+    display: flex;
+    justify-content: space-between;
+}
+.contact-content header h1 {
+    color: #8CC63F;
+}
+.contact-content form div {
+    display: flex;
+    justify-content: space-between;
+}
+.contact-content form div input, .contact-content form div textarea {
+    width: 80%;
+}
+.contact-content form button {
+    margin-left: auto;
+    display: flex;
+    height: 42px;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 22px;
+}
+.contact-content form button .icon--send {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 2px;
+}
+.contact-content label {
+    color: #8CC63F;
+}
+@media only screen and (max-width: 980px) {
+    .contact-content form div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .contact-content form div input, .contact-content form div textarea {
+        width: 100%;
+    }
+}
