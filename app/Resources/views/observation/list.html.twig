@@ -194,7 +194,7 @@
               var nomScien = document.getElementById("observation_espace_pro_nomScientifique").options[document.getElementById("observation_espace_pro_nomScientifique").selectedIndex].text;
               var departement = document.getElementById("observation_espace_pro_department").options[document.getElementById("observation_espace_pro_department").selectedIndex].text;
               var status =  document.getElementById("observation_espace_pro_isValid").value;
-              var author = document.getElementById("observation_espace_pro_author").value;
+              var author = document.getElementById("observation_espace_pro_author").options[document.getElementById("observation_espace_pro_author").selectedIndex].text;
 
               var ListObs = {
                   "famille": famille,
@@ -218,6 +218,7 @@
                       $('#listObservation').css("display","table");
                       $('#detailObs').css("display","none");
                       deleteMarkers();
+                      console.log(data);
                       $.each(data, function(i, observation){
 
                           var marker = new google.maps.Marker({
