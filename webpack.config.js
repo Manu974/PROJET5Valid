@@ -6,8 +6,16 @@ Encore
     .setOutputPath('web/build/')
     .setPublicPath('/build')
     .cleanupOutputBeforeBuild()
-    .addEntry('app', './web/js/app.js')
+    .addEntry('src', './web/js/app.js')
+    .addEntry('admin', [
+        './web/js/src/admin/admin-app.js',
+        './web/js/src/admin/admin-pages.js'
+    ])
     .addStyleEntry('global', './web/css/app.css')
+    .addStyleEntry('bootstrap', [
+        './web/css/Skeleton-2.0.4/css/normalize.css',
+        './web/css/Skeleton-2.0.4/css/skeleton.css',
+    ])
     .enablePostCssLoader()
 ;
 

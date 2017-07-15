@@ -1,5 +1,6 @@
 {
-  "build/app.js": "/build/app.js",
+  "build/admin.js": "/build/admin.js",
+  "build/bootstrap.css": "/build/bootstrap.css",
   "build/global.css": "/build/global.css",
   "build/images/FAQ NAV-green.svg": "/build/images/FAQ NAV-green.svg",
   "build/images/FAQ NAV.svg": "/build/images/FAQ NAV.svg",
@@ -62,5 +63,6 @@
   "build/images/menu burger.svg": "/build/images/menu burger.svg",
   "build/images/menu-burger-pro-bleu.svg": "/build/images/menu-burger-pro-bleu.svg",
   "build/images/poubelle-verte.svg": "/build/images/poubelle-verte.svg",
-  "build/images/tag-icone-user-green.svg": "/build/images/tag-icone-user-green.svg"
+  "build/images/tag-icone-user-green.svg": "/build/images/tag-icone-user-green.svg",
+  "build/src.js": "/build/src.js"
 }

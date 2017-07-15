@@ -5,9 +5,8 @@
         <meta name="viewport" content="initial-scale=1, maximum-scale=1">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}
-            <link rel="stylesheet" href="{{ asset('css/Skeleton-2.0.4/css/normalize.css') }}">
-            <link rel="stylesheet" href="{{ asset('css/Skeleton-2.0.4/css/skeleton.css') }}">
-            <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+            <link rel="stylesheet" href="{{ asset('build/bootstrap.css') }}">
+            <link rel="stylesheet" href="{{ asset('build/global.css') }}">
             <link rel="stylesheet" href="{{ asset('css/pages/login_redirect.css') }}">
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
@@ -161,14 +160,10 @@
         </footer>
         {% block javascripts %}
             {% if is_granted('ROLE_NATURALISTE') %}
-            <script src="{{ asset('js/src/admin/admin-pages.js') }}"></script>
-            <script src="{{ asset('js/src/admin/admin-app.js') }}"></script>
+            <script src="{{ asset('build/admin.js') }}"></script>
             {% endif %}
             <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js"></script>
-            <script src="{{ asset('js/src/HeaderShrink.js') }}"></script>
-            <script src="{{ asset('js/src/MenuSlider.js') }}"></script>
-            <script src="{{ asset('js/src/getPage.js') }}"></script>
-            <script src="{{ asset('build/app.js') }}"></script>
+            <script src="{{ asset('build/src.js') }}"></script>
             {% if is_granted('ROLE_NATURALISTE') %}
                 <script>
                     (function () {
@@ -199,9 +194,6 @@
                                 clearInterval(waitingPageLogin);
                             }
                         }, 1000);
-
-
-
                     })();
             {% endif %}
                 </script>
