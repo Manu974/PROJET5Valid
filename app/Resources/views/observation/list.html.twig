@@ -68,7 +68,7 @@
 
           $('table').on("click",'button[name="validationObservation"]', function(){
 
-              window.location.replace('http://staging.asso-nao.org/observation/validation/'+this.id);
+              window.location.replace('http://localhost:8000/observation/validation/'+this.id);
           });
 
 
@@ -78,7 +78,7 @@
 
 
               $.ajax({
-                  url:'http://staging.asso-nao.org/api/observations/'+this.id,
+                  url:'http://localhost:8000/api/observations/'+this.id,
                   type : 'GET',
                   success: function(data){
 
@@ -106,7 +106,7 @@
 
           $('#detailObs').on("click",'button[name="detailsSupprimer"]', function(){
               $.ajax({
-                  url:'http://staging.asso-nao.org/api/observations/delete/'+this.id,
+                  url:'http://localhost:8000/observations/delete/'+this.id,
                   type : 'DELETE',
                   success: function(data){
                       alert("observaiton supprimer");
@@ -120,7 +120,7 @@
 
           $('#detailObs').on("click",'button[name="detailsValider"]', function(){
 
-              window.location.replace('http://staging.asso-nao.org/observation/validation/'+this.id);
+              window.location.replace('http://localhost:8000/observation/validation/'+this.id);
           });
 
           var familleNames = {};
@@ -165,7 +165,7 @@
           });
 
           $("#bouttonExport").on("click",function(){
-              window.location.replace('http://staging.asso-nao.org/observation/espacepro/export');
+              window.location.replace('http://localhost:8000/observation/espacepro/export');
           });
       });
   </script>
@@ -207,7 +207,7 @@
 
 
               $.ajax({
-                  url:'http://staging.asso-nao.org/api/observations/lists/carte/espacepro',
+                  url:'http://localhost:8000/api/observations/lists/carte/espacepro',
                   type : 'POST',
                   data: JSON.stringify(ListObs),
                   dataType: 'json',
