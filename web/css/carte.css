@@ -203,6 +203,20 @@ button[disabled=disabled] {
     box-shadow: 0 3px 6px black;
 }
 @media only screen and (max-width: 980px) {
+    .carte-container.pro .title {
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0 10px;
+    }
+    .carte-container.pro form {
+        width: 100%;
+    }
+    #observation_espace_pro div {
+        flex-direction: column;
+    }
+    #observation_espace_pro div select{
+        width: 100%;
+    }
     #listObservationCarte tr td, #listObservationCarte th {
         padding: 9px 9px;
     }
