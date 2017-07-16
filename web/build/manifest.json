@@ -38,6 +38,7 @@
   "build/images/icone-cadenas-connexion.svg": "/build/images/icone-cadenas-connexion.svg",
   "build/images/icone-cadenas-logout.svg": "/build/images/icone-cadenas-logout.svg",
   "build/images/icone-carte-pro.svg": "/build/images/icone-carte-pro.svg",
+  "build/images/icone-carteloupe-pro.svg": "/build/images/icone-carteloupe-pro.svg",
   "build/images/icone-carteloupe-user_vert.svg": "/build/images/icone-carteloupe-user_vert.svg",
   "build/images/icone-case-cochee.svg": "/build/images/icone-case-cochee.svg",
   "build/images/icone-contact-pro.svg": "/build/images/icone-contact-pro.svg",
@@ -65,6 +66,5 @@
   "build/images/menu-burger-pro-bleu.svg": "/build/images/menu-burger-pro-bleu.svg",
   "build/images/poubelle-verte.svg": "/build/images/poubelle-verte.svg",
   "build/images/tag-icone-user-green.svg": "/build/images/tag-icone-user-green.svg",
-  "build/src.js": "/build/src.js",
-  "build/images/icone-carteloupe-pro.svg": "/build/images/icone-carteloupe-pro.svg"
+  "build/src.js": "/build/src.js"
 }
