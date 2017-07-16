@@ -73,7 +73,7 @@
         $(window).one('load', function(){
 
           $.ajax({
-          url:'http://localhost:8000/api/observations/listsall/carte',
+          url:'http://staging.asso-nao.org/api/observations/listsall/carte',
           type : 'GET',
           success: function(data){
 
@@ -140,7 +140,7 @@
         
 
         $.ajax({
-          url:'http://localhost:8000/api/observations/lists/carte',
+          url:'http://staging.asso-nao.org/api/observations/lists/carte',
           type : 'POST',
           data: JSON.stringify(ListObs),
           dataType: 'json',
