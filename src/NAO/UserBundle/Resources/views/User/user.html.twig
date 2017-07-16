@@ -44,16 +44,17 @@
             </h3>
             <h3>Liste des users</h3>
             {% if formName is defined %}
-            <div class="well">
+            <div class="well admin">
                  {{ form(formName) }}
             </div>
             {% endif %}
             {% if formMail is defined %}
-            <div class="well">
+            <div class="well admin">
                  {{ form(formMail) }}
             </div>
             {% endif %}
             {% if userFindByName is defined %}
+                <h3>Resultats</h3>
             {% for role in userFindByName.roles|slice(0,1)  %}
                     {% if role != 'ROLE_ADMIN' and role != 'ROLE_SUPER_ADMIN' %}
                         <span class="user-name">PSEUDO : {{ userFindByName.username|e }}</span>
