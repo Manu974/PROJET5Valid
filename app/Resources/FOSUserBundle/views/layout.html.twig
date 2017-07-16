@@ -1,4 +1,5 @@
-<html>
+
+{% block body %}
     {% block style %}
     <head>
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
@@ -27,4 +28,4 @@
         {% block fos_user_content %}
         {% endblock fos_user_content %}
     </div>
-</html>
+ {% endblock %}
