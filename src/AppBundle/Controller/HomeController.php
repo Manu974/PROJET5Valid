@@ -130,23 +130,24 @@ class HomeController extends Controller
     }
 
     /**
-    * @Route("/observation/espacepro/bloque/{id}/{idObs}", name="bloquepage")
-    *
+    * @Route("/observation/espacepro/bloque/{username}", name="bloquepage")
+    *@Security("has_role('ROLE_NATURALISTE')")
     *
     */
-    public function bloqueUserAction(Request $request, $id, $idObs)
+    public function bloqueUserAction(Request $request, $username)
     {
         $userManager = $this->get('fos_user.user_manager');
         $em = $this->getDoctrine()->getManager();
-        $user= $userManager->findUserBy(array('id'=>$id));
-        $observation = $em->getRepository('AppBundle:Observation')->find($idObs);
-        
+        $user= $userManager->findUserBy(array('username'=>$username));
+        $observations = $em->getRepository('AppBundle:Observation')->findBy(array("author" => $username));
+        foreach ($observations as $observation) {
+            $observation->setStatusAuthor(true);
+            $em->persist($observation);
+        }
         $user->setStatus(true);
-        $observation->setStatusAuthor(true);
+        
         $userManager->updateUser($user);
         
-
-        $em->persist($observation);
         $em->flush();
 
         return $this->redirectToRoute('observationpropage');
@@ -154,23 +155,26 @@ class HomeController extends Controller
 
 
     /**
-    * @Route("/observation/espacepro/debloque/{id}/{idObs}", name="debloquepage")
-    *
+    * @Route("/observation/espacepro/debloque/{username}", name="debloquepage")
+    *@Security("has_role('ROLE_NATURALISTE')")
     *
     */
-    public function debloqueUserAction(Request $request, $id, $idObs)
+    public function debloqueUserAction(Request $request, $username)
     {
         $userManager = $this->get('fos_user.user_manager');
         $em = $this->getDoctrine()->getManager();
-        $user= $userManager->findUserBy(array('id'=>$id));
-        $observation = $em->getRepository('AppBundle:Observation')->find($idObs);
+        $user= $userManager->findUserBy(array('username'=>$username));
+        $observations = $em->getRepository('AppBundle:Observation')->findBy(array("author" => $username));
         
+        foreach ($observations as $observation) {
+            $observation->setStatusAuthor(false);
+            $em->persist($observation);
+        }
+
         $user->setStatus(false);
-        $observation->setStatusAuthor(false);
+        
         $userManager->updateUser($user);
         
-
-        $em->persist($observation);
         $em->flush();
 
         return $this->redirectToRoute('observationpropage');

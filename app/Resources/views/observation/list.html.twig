@@ -89,7 +89,7 @@
                       $('#Auteur').text(data.author);
                       $('#Commentaire').text(data.comment).show();
                       $('#detailObs').css("display","block");
-                      var buttonDetails = '<button class="btn" type="button" id="'+data.id+'" name="detailsBloque" style="background-color: #C1272D">Bloquer auteur</button><button class="btn" type="button" id="'+data.id+'" name="detailsDebloque">Débloquer auteur</button><button type="button" id="'+data.id+'" name="detailsSupprimer" style="background-color: #C1272D">Supprimer</button><button type="button" id="'+data.id+'" name="detailsValider" style="background-color: #8CC63F">Valider</button>';
+                      var buttonDetails = '<button class="btn" type="button" id="'+data.id+'" name="detailsBloque" style="background-color: #C1272D" auteur="'+data.author+'">Bloquer auteur</button><button class="btn" type="button" id="'+data.id+'" name="detailsDebloque" auteur="'+data.author+'">Débloquer auteur</button><button type="button" id="'+data.id+'" name="detailsSupprimer" style="background-color: #C1272D">Supprimer</button><button type="button" id="'+data.id+'" name="detailsValider" style="background-color: #8CC63F">Valider</button>';
 
                       $('#bouttonDetails').append(buttonDetails);
 
@@ -104,6 +104,16 @@
                       if(data.status_author == null || data.status_author == false){
                         $('[name$="detailsDebloque"]').attr("disabled",true);
                       }
+
+                      $('#detailObs').on("click",'button[name="detailsBloque"]', function(){
+              
+              window.location.replace('http://localhost:8000/observation/espacepro/bloque/'+data.author);
+          });
+
+          $('#detailObs').on("click",'button[name="detailsDebloque"]', function(){
+              
+              window.location.replace('http://localhost:8000/observation/espacepro/debloque/'+data.author);
+          });
 
                   },
                   error: function(){
@@ -131,15 +141,7 @@
               window.location.replace('http://localhost:8000/observation/validation/'+this.id);
           });
 
-          $('#detailObs').on("click",'button[name="detailsBloque"]', function(){
-              
-              window.location.replace('http://localhost:8000/observation/espacepro/bloque/{{app.user.id}}/'+this.id);
-          });
-
-          $('#detailObs').on("click",'button[name="detailsDebloque"]', function(){
-              
-              window.location.replace('http://localhost:8000/observation/espacepro/debloque/{{app.user.id}}/'+this.id);
-          });
+          
 
           var familleNames = {};
           var nomScientifiqueNames = {};
