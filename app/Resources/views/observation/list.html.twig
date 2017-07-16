@@ -68,7 +68,7 @@
 
           $('table').on("click",'button[name="validationObservation"]', function(){
 
-              window.location.replace('http://staging.asso-nao.org/observation/validation/'+this.id);
+              window.location.replace('http://localhost:8000/observation/validation/'+this.id);
           });
 
 
@@ -78,7 +78,7 @@
 
 
               $.ajax({
-                  url:'http://staging.asso-nao.org/api/observations/'+this.id,
+                  url:'http://localhost:8000/api/observations/'+this.id,
                   type : 'GET',
                   success: function(data){
 
@@ -89,12 +89,20 @@
                       $('#Auteur').text(data.author);
                       $('#Commentaire').text(data.comment).show();
                       $('#detailObs').css("display","block");
-                      var buttonDetails = '<button class="btn" type="button" id="detailsBloque" style="background-color: #C1272D">Bloquer auteur</button><button class="btn" type="button" id="detailsDebloque">Débloquer auteur</button><button type="button" id="'+data.id+'" name="detailsSupprimer" style="background-color: #C1272D">Supprimer</button><button type="button" id="'+data.id+'" name="detailsValider" style="background-color: #8CC63F">Valider</button>';
+                      var buttonDetails = '<button class="btn" type="button" id="'+data.id+'" name="detailsBloque" style="background-color: #C1272D">Bloquer auteur</button><button class="btn" type="button" id="'+data.id+'" name="detailsDebloque">Débloquer auteur</button><button type="button" id="'+data.id+'" name="detailsSupprimer" style="background-color: #C1272D">Supprimer</button><button type="button" id="'+data.id+'" name="detailsValider" style="background-color: #8CC63F">Valider</button>';
 
                       $('#bouttonDetails').append(buttonDetails);
 
                       if(data.is_valid==true){
                           $('[name$="detailsValider"]').attr("disabled",true);
+                      }
+
+                      if(data.status_author == true){
+                        $('[name$="detailsBloque"]').attr("disabled",true);
+                      }
+
+                      if(data.status_author == null || data.status_author == false){
+                        $('[name$="detailsDebloque"]').attr("disabled",true);
                       }
 
                   },
@@ -106,7 +114,7 @@
 
           $('#detailObs').on("click",'button[name="detailsSupprimer"]', function(){
               $.ajax({
-                  url:'http://staging.asso-nao.org/api/observations/delete/'+this.id,
+                  url:'http://localhost:8000/observations/delete/'+this.id,
                   type : 'DELETE',
                   success: function(data){
                       alert("observaiton supprimer");
@@ -120,7 +128,17 @@
 
           $('#detailObs').on("click",'button[name="detailsValider"]', function(){
 
-              window.location.replace('http://staging.asso-nao.org/observation/validation/'+this.id);
+              window.location.replace('http://localhost:8000/observation/validation/'+this.id);
+          });
+
+          $('#detailObs').on("click",'button[name="detailsBloque"]', function(){
+              
+              window.location.replace('http://localhost:8000/observation/espacepro/bloque/{{app.user.id}}/'+this.id);
+          });
+
+          $('#detailObs').on("click",'button[name="detailsDebloque"]', function(){
+              
+              window.location.replace('http://localhost:8000/observation/espacepro/debloque/{{app.user.id}}/'+this.id);
           });
 
           var familleNames = {};
@@ -165,7 +183,7 @@
           });
 
           $("#bouttonExport").on("click",function(){
-              window.location.replace('http://staging.asso-nao.org/observation/espacepro/export');
+              window.location.replace('http://localhost:8000/observation/espacepro/export');
           });
       });
   </script>
@@ -207,7 +225,7 @@
 
 
               $.ajax({
-                  url:'http://staging.asso-nao.org/api/observations/lists/carte/espacepro',
+                  url:'http://localhost:8000/api/observations/lists/carte/espacepro',
                   type : 'POST',
                   data: JSON.stringify(ListObs),
                   dataType: 'json',

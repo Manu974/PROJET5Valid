@@ -3,6 +3,7 @@
 {% block stylesheets %}
     {{ parent() }}
     <link rel="stylesheet" href="{{ asset('css/pages/home.css') }}">
+    
 {% endblock %}
 
 {% block body %}
@@ -12,7 +13,7 @@
                 <span>Bienvenue sur le site participatif "Nos Amis les Oiseaux"</span>
                 <span class="hidden-sm">Ensemble, observons, partageons, protégeons la biodiversité.</span>
             </h1>
-            <a href="{{ path('observationpage') }}" class="btn btn--large btn--icon">
+            <a href="{{ path('nao_blog_homepage') }}" class="btn btn--large btn--icon">
                 <i class="icon icon--prog is_active"></i>
                 <span>Contribuer aux programmes</span>
             </a>
@@ -34,6 +35,7 @@
             </a>
         </div>
     </section>
+
 {% endblock %}
 
 
@@ -46,5 +48,9 @@
             })();
         </script>
     {% endif %}
+   
+    
     {{ parent() }}
+
+     
 {% endblock %}

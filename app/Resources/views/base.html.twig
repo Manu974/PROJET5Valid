@@ -8,6 +8,8 @@
             <link rel="stylesheet" href="{{ asset('build/bootstrap.css') }}">
             <link rel="stylesheet" href="{{ asset('build/global.css') }}">
             <link rel="stylesheet" href="{{ asset('css/pages/login_redirect.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/pages/popup.css') }}">
+
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
@@ -111,6 +113,19 @@
             </div>
         </nav>
         {% block body %}{% endblock %}
+
+        <div class="popup" data-popup="popup-1">
+            <div class="popup-inner">
+                <h2>Connexion interdite</h2>
+                <p>pour des raison de sécurité votre compte a été bloqué. En cas de désaccord avec cette décision, veuillez prendre contact avec assosication</p>
+                <a href="http://localhost:8000/programmes/contact" class="header-navbar-item">
+                    <i class="icon icon--contact"></i>
+                    <p class="header-navbar-link">Contact</p>
+                </a>
+                <a class="popup-close" data-popup-close="popup-1" href="{{ path('fos_user_security_logout') }}">x</a>
+            </div>
+        </div>
+
         <footer class="footer">
             <div class="container">
                 <div class="row">
@@ -164,6 +179,7 @@
             {% endif %}
             <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js"></script>
             <script src="{{ asset('build/src.js') }}"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
             {% if is_granted('ROLE_NATURALISTE') %}
                 <script>
                     (function () {
@@ -222,6 +238,18 @@
                         data-moreinfo="/mentionslegales#cookies"
                         data-height="60px">
                 </script>
+                
+                {% if is_granted('ROLE_USER') %}
+    {% if app.user.status == true %}
+    <script>
+    $(function() {
+        $('.popup').fadeIn(50);
+        
+    });
+    
+        </script>
+    {% endif %}
+    {% endif %}
         {% endblock %}
     </body>
 </html>

@@ -3,12 +3,71 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Hateoas\Configuration\Annotation as Hateoas;
+
+
+
 
 /**
  * Observation
  *
  * @ORM\Table(name="observation")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\ObservationRepository")
+ * @Hateoas\Relation(
+ *      "self",
+ *      href = @Hateoas\Route(
+ *          "app_obs_show",
+ *          parameters = { "id" = "expr(object.getId())" },
+ *          absolute = true
+ *      )
+ * )
+* @Hateoas\Relation(
+ *      "create",
+ *      href = @Hateoas\Route(
+ *          "app_obs_create",
+ *          absolute = true
+ *      )
+ * )
+* @Hateoas\Relation(
+ *      "lists",
+ *      href = @Hateoas\Route(
+ *          "app_obs_lists",
+ *          absolute = true
+ *      )
+ * )
+ * @Hateoas\Relation(
+ *      "lists observation pour espace pro",
+ *      href = @Hateoas\Route(
+ *          "app_obs_espacepro_lists",
+ *          absolute = true
+ *      )
+ * )
+ *
+ * @Hateoas\Relation(
+ *      "lists observation pour carte",
+ *      href = @Hateoas\Route(
+ *          "app_obs_carte_lists",
+ *          absolute = true
+ *      )
+ * )
+ *
+ * @Hateoas\Relation(
+ *      "delete observation",
+ *      href = @Hateoas\Route(
+ *          "app_obs_delete",
+ *          parameters = { "id" = "expr(object.getId())" },
+ *          absolute = true
+ *      )
+ * )
+ * @Hateoas\Relation(
+ *     "image",
+ *     embedded = @Hateoas\Embedded("expr(object.getImage())")
+ * )
+ *
+ *
+ *
+ *
+ *
  */
 class Observation
 {
@@ -62,6 +121,12 @@ class Observation
      * @ORM\Column(name="author", type="text")
      */
     private $author;
+
+    /**
+     * @var boolean
+     * @ORM\Column(name="status_author", type="boolean",nullable=true)
+     */
+    private $status_author;
 
     /**
      * @var int
@@ -422,4 +487,56 @@ class Observation
     }
 
     
+
+    /**
+     * Set image
+     *
+     * @param \AppBundle\Entity\ObservationImage $image
+     *
+     * @return Observation
+     */
+    public function setImage(\AppBundle\Entity\ObservationImage $image = null)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return \AppBundle\Entity\ObservationImage
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    public function getObjectVars () {
+        return get_object_vars($this);
+    }
+
+    /**
+     * Set statusAuthor
+     *
+     * @param boolean $statusAuthor
+     *
+     * @return Observation
+     */
+    public function setStatusAuthor($statusAuthor)
+    {
+        $this->status_author = $statusAuthor;
+
+        return $this;
+    }
+
+    /**
+     * Get statusAuthor
+     *
+     * @return boolean
+     */
+    public function getStatusAuthor()
+    {
+        return $this->status_author;
+    }
 }
