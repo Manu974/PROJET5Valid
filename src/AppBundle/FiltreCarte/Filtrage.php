@@ -122,7 +122,7 @@ Class Filtrage
         }
 
         foreach ($listObs as $key => $observation) {
-            if($observation->getIsValid() == false){
+            if($observation->getIsValid() == false || $observation->getStatusAuthor()== true){
                 unset($listObs[$key]);
             }
         }
