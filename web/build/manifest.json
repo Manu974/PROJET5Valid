@@ -51,6 +51,7 @@
   "build/images/icone-mentions-gris.svg": "/build/images/icone-mentions-gris.svg",
   "build/images/icone-mon-compte-pro.svg": "/build/images/icone-mon-compte-pro.svg",
   "build/images/icone-newsletter-bleu-pros.svg": "/build/images/icone-newsletter-bleu-pros.svg",
+  "build/images/icone-newsletter-pro.svg": "/build/images/icone-newsletter-pro.svg",
   "build/images/icone-programme-green.svg": "/build/images/icone-programme-green.svg",
   "build/images/icone-programme-pro.svg": "/build/images/icone-programme-pro.svg",
   "build/images/icone-programme.svg": "/build/images/icone-programme.svg",
@@ -64,5 +65,6 @@
   "build/images/menu-burger-pro-bleu.svg": "/build/images/menu-burger-pro-bleu.svg",
   "build/images/poubelle-verte.svg": "/build/images/poubelle-verte.svg",
   "build/images/tag-icone-user-green.svg": "/build/images/tag-icone-user-green.svg",
-  "build/src.js": "/build/src.js"
+  "build/src.js": "/build/src.js",
+  "build/images/icone-carteloupe-pro.svg": "/build/images/icone-carteloupe-pro.svg"
 }

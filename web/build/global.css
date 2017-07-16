@@ -226,6 +226,8 @@ body > div.cookiebanner .cookiebanner-close {
 .is_pro.icon--faq {  background: url(/build/images/icone-faq-pro.svg) no-repeat 1px 0;  }
 .icon--contact {  background: url('/build/images/icone enveloppe-contact.svg') no-repeat 1px 0;  }
 .icon--newsletter {  background: url('/build/images/icone newsletter.svg') no-repeat 0 0;  }
+.icon--newsletter.is_pro {  background: url(/build/images/icone-newsletter-pro.svg) no-repeat 0 0;  }
+.icon--newsletter.is_pro:hover {  background: url(/build/images/icone-newsletter-pro.svg) no-repeat 0 0;  }
 .icon--legalMention {  background: url(/build/images/icone-mentions-gris.svg) no-repeat 6px -1px; }
 .icon--legalMention.is_active {  background: url(/build/images/icone-mentions-green.svg) no-repeat 6px -1px; }
 .icon--youtube {  background: url('/build/images/icone you tube.svg') no-repeat 0 0; }
@@ -420,6 +422,8 @@ body > div.cookiebanner .cookiebanner-close {
 .is_pro.header-navbar-item:hover .icon--faq {  background: url(/build/images/icone-faq-pro.svg) no-repeat 1px 0;  }
 .header-navbar-item:hover .icon--contact {  background: url('/build/images/icone enveloppe-contact-green.svg') no-repeat 1px 0;  }
 .is_pro.header-navbar-item:hover .icon--contact {  background: url(/build/images/icone-contact-pro.svg) no-repeat 1px 0;  }
+.is_pro.header-navbar-item:hover .icon--newsletter {  background: url(/build/images/icone-newsletter-bleu-pros.svg) no-repeat 0 0;  }
+.is_pro.header-navbar-item:hover .icon--search {  background: url(/build/images/icone-carteloupe-pro.svg) no-repeat 0 0;  }
 
 .header-navbar-item:hover .icon--home {  background: url('/build/images/MAISON  NAV DESK-green.svg') no-repeat;  }
 .header-navbar-item:hover .icon--connection {  background: url('/build/images/icone rapide connexion-green.svg') no-repeat 8px 0;  }

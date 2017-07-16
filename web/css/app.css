@@ -183,6 +183,8 @@ body > div.cookiebanner .cookiebanner-close {
 .is_pro.icon--faq {  background: url('../logo-icones/icone-faq-pro.svg') no-repeat 1px 0;  }
 .icon--contact {  background: url('../logo-icones/icone enveloppe-contact.svg') no-repeat 1px 0;  }
 .icon--newsletter {  background: url('../logo-icones/icone newsletter.svg') no-repeat 0 0;  }
+.icon--newsletter.is_pro {  background: url('../logo-icones/icone-newsletter-pro.svg') no-repeat 0 0;  }
+.icon--newsletter.is_pro:hover {  background: url('../logo-icones/icone-newsletter-pro.svg') no-repeat 0 0;  }
 .icon--legalMention {  background: url('../logo-icones/icone-mentions-gris.svg') no-repeat 6px -1px; }
 .icon--legalMention.is_active {  background: url('../logo-icones/icone-mentions-green.svg') no-repeat 6px -1px; }
 .icon--youtube {  background: url('../logo-icones/icone you tube.svg') no-repeat 0 0; }
@@ -367,6 +369,8 @@ body > div.cookiebanner .cookiebanner-close {
 .is_pro.header-navbar-item:hover .icon--faq {  background: url('../logo-icones/icone-faq-pro.svg') no-repeat 1px 0;  }
 .header-navbar-item:hover .icon--contact {  background: url('../logo-icones/icone enveloppe-contact-green.svg') no-repeat 1px 0;  }
 .is_pro.header-navbar-item:hover .icon--contact {  background: url('../logo-icones/icone-contact-pro.svg') no-repeat 1px 0;  }
+.is_pro.header-navbar-item:hover .icon--newsletter {  background: url('../logo-icones/icone-newsletter-bleu-pros.svg') no-repeat 0 0;  }
+.is_pro.header-navbar-item:hover .icon--search {  background: url('../logo-icones/icone-carteloupe-pro.svg') no-repeat 0 0;  }
 
 .header-navbar-item:hover .icon--home {  background: url('../logo-icones/MAISON  NAV DESK-green.svg') no-repeat;  }
 .header-navbar-item:hover .icon--connection {  background: url('../logo-icones/icone rapide connexion-green.svg') no-repeat 8px 0;  }
