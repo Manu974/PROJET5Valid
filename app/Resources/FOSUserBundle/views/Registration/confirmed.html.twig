@@ -3,8 +3,22 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 {% block fos_user_content %}
+    <head>
+        <style>
+            div {
+                color: #FAFAFA;
+            }
+            a {
+                color: #C1272D;
+            }
+            a.green {
+                color: #8CC63F;
+            }
+        </style>
+    </head>
     <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
     {% if targetUrl %}
     <p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>
     {% endif %}
+    <a class="green" href="{{ path('homepage') }}">Retour page d'accueil <a href="{{ path('homepage') }}"></a>
 {% endblock fos_user_content %}

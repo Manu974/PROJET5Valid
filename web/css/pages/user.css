@@ -34,6 +34,29 @@ h3.user-title span {
     justify-content: space-between;
     width: 79.5%;
 }
+.user-container .well.admin select {
+    color: #282829;
+    width: 40%;
+}
+.user-container .well.admin button {
+    width: 160px;
+    text-align: center;
+    font-size: 1.2em;
+    height: 26px;
+    line-height: 19px;
+    font-weight: bolder;
+    padding: 0;
+    background-color: #00A99D;
+    box-shadow: 0 5px 8px black;
+    color: #282829;
+    border: none;
+    font-variant-caps: all-small-caps;
+    border-radius: 16px;
+    transition: .2s;
+}
+.user-container .well.admin button:hover {
+    box-shadow: 0 3px 6px black;
+}
 .user-content {
     box-shadow: 0 10px 5px -4px #111;
     padding-bottom: 20px;
@@ -42,6 +65,9 @@ h3.user-title span {
 .user-mail form {
     display: flex;
     align-items: center;
+}
+.user-admin-edit {
+    display: flex;
 }
 .user-mail form div:nth-child(1) {
     width: 79.5%;
@@ -75,6 +101,7 @@ h3.user-title span {
     width: 160px;
     text-align: center;
     height: 22px;
+    font-size: 1.2em;
     line-height: 19px;
     font-weight: bolder;
     padding: 0;
