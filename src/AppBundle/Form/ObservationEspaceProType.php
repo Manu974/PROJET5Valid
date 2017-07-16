@@ -48,6 +48,7 @@ class ObservationEspaceProType extends AbstractType
                 ],
             ])           
             ->add('author', EntityType::class, [
+                'label' => 'Auteur',
                 'class'        => 'AppBundle:Observation',
                 'choice_label' => 'author',
                 'multiple'     => false,
