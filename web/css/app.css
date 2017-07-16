@@ -31,6 +31,21 @@ a {
     background-color: #BFBFBF;
     color: #282829;
 }
+/***** COOKIES BANNER *****/
+body > div.cookiebanner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #939498 !important;
+    font-size: 1.1em !important;
+    background-color: #282828 !important;
+    box-shadow: 0 -4px 5px #111;
+}
+body > div.cookiebanner .cookiebanner-close {
+    position: absolute;
+    top: 34.2%;
+    right: 20px;
+}
 /***** DIVIDER *****/
 .divider {
     display: block;
@@ -566,5 +581,18 @@ a {
     .button-group {
         flex-direction: column;
         align-items: center;
+    }
+    body > div.cookiebanner {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    body > div.cookiebanner span {
+        width: 190px;
+    }
+    body > div.cookiebanner .cookiebanner-close {
+        position: absolute;
+        top: 34.2%;
+        right: 10px;
     }
 }

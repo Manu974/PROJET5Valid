@@ -30,6 +30,28 @@ a {
     background-color: #BFBFBF;
     color: #282829;
 }
+/***** COOKIES BANNER *****/
+body > div.cookiebanner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: #939498 !important;
+    font-size: 1.1em !important;
+    background-color: #282828 !important;
+    -webkit-box-shadow: 0 -4px 5px #111;
+            box-shadow: 0 -4px 5px #111;
+}
+body > div.cookiebanner .cookiebanner-close {
+    position: absolute;
+    top: 34.2%;
+    right: 20px;
+}
 /***** DIVIDER *****/
 .divider {
     display: block;
@@ -653,5 +675,24 @@ a {
         -webkit-box-align: center;
             -ms-flex-align: center;
                 align-items: center;
+    }
+    body > div.cookiebanner {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
+    }
+    body > div.cookiebanner span {
+        width: 190px;
+    }
+    body > div.cookiebanner .cookiebanner-close {
+        position: absolute;
+        top: 34.2%;
+        right: 10px;
     }
 }
