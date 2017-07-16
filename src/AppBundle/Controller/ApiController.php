@@ -235,6 +235,39 @@ class ApiController extends FOSRestController
     }
 
     /**
+     * @Rest\Get(
+     *     path = "/api/observations/listsall/carte",
+     *     name = "app_obs_carte_listsall"
+     *     
+     * )
+     * @Rest\View(
+     *     statusCode = 200
+     * )
+     * @Doc\ApiDoc(
+     *     section="LISTAll",
+     *     resource=true,
+     *     description="list all observation for page carte on load.",
+     *      input="AppBundle\Form\ObservationCarteType",     
+     * ),
+     *     statusCodes={
+     *         200="Returned when successful",
+     *         400="Returned when a violation is raised by validation",
+     *         404={
+     *           "Returned when list observation is not found",
+     *           "Returned when something else is not found"
+     *         }
+     *     }
+     * 
+     */
+    public function listObservationAllCarteAction()
+    {
+
+        $listObs= $this->container->get('observation.filtrage')->filtreObsCarteAll();
+                   
+        return $listObs;
+    }
+
+    /**
      * @Rest\Delete(
      *     path = "/api/observations/delete/{id}",
      *     name = "app_obs_delete",

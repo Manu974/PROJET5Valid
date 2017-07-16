@@ -141,4 +141,19 @@ Class Filtrage
 
         return $listObsEspacePro;
     }
+
+    public function filtreObsCarteAll()
+    {       
+        $repository = $this->em->getRepository('AppBundle:Observation');
+        $listObsAll = $repository->findAll();
+
+        foreach ($listObsAll as $key => $observation) {
+            if($observation->getIsValid() == false || $observation->getStatusAuthor()== true){
+                unset($listObsAll[$key]);
+            }
+        }
+
+        return $listObsAll;
+
+    }
 }

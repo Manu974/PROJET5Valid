@@ -69,6 +69,40 @@
             nomVernaculaireNames[this.text] = this.value;
           }
         });
+
+        $(window).one('load', function(){
+
+          $.ajax({
+          url:'http://localhost:8000/api/observations/listsall/carte',
+          type : 'GET',
+          success: function(data){
+
+            $('tr').remove(".listTableau");
+            $('#listObservationCarte').css("display","table");
+
+            deleteMarkers();
+            $.each(data, function(i, observation){
+
+              var marker = new google.maps.Marker({
+                position: {lat: observation.location['x'], lng: observation.location['y']},
+                map: map
+              });
+              markers.push(marker);
+              var date = new Date(observation.created_at);
+              var dateFormatting = ('0'+(date.getDay())).slice(-2) + '/' + ('0'+(date.getMonth())).slice(-2) + '/' + date.getFullYear();
+
+              var trUser = '<tr class="listTableau"><td>'+observation.id+'</td><td>'+observation.department+'</td><td>'+dateFormatting+'</td><td>'+observation.famille+'</td><td>'+observation.nom_vernaculaire+'</td><td>'+observation.author+'</td></tr>';
+
+              $('#listObservationCarte').append(trUser);
+            });
+
+
+          },
+          error: function(xhr, ajaxOptions, thrownError){
+            alert("oupsss un soucis");
+          }
+        });
+        });
         
 
     });
