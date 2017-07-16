@@ -68,7 +68,7 @@
 
           $('table').on("click",'button[name="validationObservation"]', function(){
 
-              window.location.replace('http://localhost:8000/observation/validation/'+this.id);
+              window.location.replace('http://staging.asso-nao.org/observation/validation/'+this.id);
           });
 
 
@@ -78,7 +78,7 @@
 
 
               $.ajax({
-                  url:'http://localhost:8000/api/observations/'+this.id,
+                  url:'http://staging.asso-nao.org/api/observations/'+this.id,
                   type : 'GET',
                   success: function(data){
 
@@ -107,12 +107,12 @@
 
                       $('#detailObs').on("click",'button[name="detailsBloque"]', function(){
               
-              window.location.replace('http://localhost:8000/observation/espacepro/bloque/'+data.author);
+              window.location.replace('http://staging.asso-nao.org/observation/espacepro/bloque/'+data.author);
           });
 
           $('#detailObs').on("click",'button[name="detailsDebloque"]', function(){
               
-              window.location.replace('http://localhost:8000/observation/espacepro/debloque/'+data.author);
+              window.location.replace('http://staging.asso-nao.org/observation/espacepro/debloque/'+data.author);
           });
 
                   },
@@ -124,7 +124,7 @@
 
           $('#detailObs').on("click",'button[name="detailsSupprimer"]', function(){
               $.ajax({
-                  url:'http://localhost:8000/observations/delete/'+this.id,
+                  url:'http://staging.asso-nao.org/observations/delete/'+this.id,
                   type : 'DELETE',
                   success: function(data){
                       alert("observaiton supprimer");
@@ -138,7 +138,7 @@
 
           $('#detailObs').on("click",'button[name="detailsValider"]', function(){
 
-              window.location.replace('http://localhost:8000/observation/validation/'+this.id);
+              window.location.replace('http://staging.asso-nao.org/observation/validation/'+this.id);
           });
 
           
@@ -185,7 +185,7 @@
           });
 
           $("#bouttonExport").on("click",function(){
-              window.location.replace('http://localhost:8000/observation/espacepro/export');
+              window.location.replace('http://staging.asso-nao.org/observation/espacepro/export');
           });
       });
   </script>
@@ -227,7 +227,7 @@
 
 
               $.ajax({
-                  url:'http://localhost:8000/api/observations/lists/carte/espacepro',
+                  url:'http://staging.asso-nao.org/api/observations/lists/carte/espacepro',
                   type : 'POST',
                   data: JSON.stringify(ListObs),
                   dataType: 'json',
