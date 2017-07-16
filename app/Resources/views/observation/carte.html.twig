@@ -39,7 +39,7 @@
     <script>
     $(function() {
 
-      var familleNames = {};
+      var familleNames = {"inconnu": " "};
         var nomScientifiqueNames = {};
         var nomVernaculaireNames = {};
 
@@ -69,6 +69,7 @@
             nomVernaculaireNames[this.text] = this.value;
           }
         });
+        
 
     });
 
@@ -102,6 +103,7 @@
           "department": departement
         };
 
+        
 
         $.ajax({
           url:'http://localhost:8000/api/observations/lists/carte',
@@ -134,8 +136,7 @@
 
           },
           error: function(xhr, ajaxOptions, thrownError){
-            alert(xhr.status);
-            alert(thrownError);
+            alert("vous devez remplir au moins un filtre");
           }
         });
       });
