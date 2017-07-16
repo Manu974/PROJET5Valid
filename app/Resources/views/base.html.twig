@@ -213,6 +213,32 @@
                     })();
             {% endif %}
                 </script>
+                <script
+                        type="text/javascript" id="cookiebanner" src="https://cdnjs.cloudflare.com/ajax/libs/cookie-banner/1.0.0/cookiebanner.min.js"
+                        data-close-style="
+                            display: inline-flex;
+                            justify-content: center;
+                            text-align: center;
+                            min-width: 140px;
+                            height: 24px;
+                            line-height: 19px;
+                            font-weight: bolder;
+                            background-color: #282829;
+                            box-shadow: 0 5px 8px black;
+                            color: #939498;
+                            border: none;
+                            font-variant-caps: all-small-caps;
+                            font-size: 1.2em;
+                            border-radius: 16px;
+                            transition: .2s;
+                        "
+                        data-close-text="D'accord"
+                        data-linkmsg="en savoir plus ?"
+                        data-message="Ce site utilise des cookies, "
+                        data-moreinfo="/mentionslegales#cookies"
+                        data-height="60px">
+                </script>
+                
                 {% if is_granted('ROLE_USER') %}
     {% if app.user.status == true %}
     <script>
