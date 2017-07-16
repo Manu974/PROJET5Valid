@@ -129,4 +129,51 @@ class HomeController extends Controller
         return $this->render('default/mentions.html.twig');
     }
 
+    /**
+    * @Route("/observation/espacepro/bloque/{id}/{idObs}", name="bloquepage")
+    *
+    *
+    */
+    public function bloqueUserAction(Request $request, $id, $idObs)
+    {
+        $userManager = $this->get('fos_user.user_manager');
+        $em = $this->getDoctrine()->getManager();
+        $user= $userManager->findUserBy(array('id'=>$id));
+        $observation = $em->getRepository('AppBundle:Observation')->find($idObs);
+        
+        $user->setStatus(true);
+        $observation->setStatusAuthor(true);
+        $userManager->updateUser($user);
+        
+
+        $em->persist($observation);
+        $em->flush();
+
+        return $this->redirectToRoute('observationpropage');
+    }
+
+
+    /**
+    * @Route("/observation/espacepro/debloque/{id}/{idObs}", name="debloquepage")
+    *
+    *
+    */
+    public function debloqueUserAction(Request $request, $id, $idObs)
+    {
+        $userManager = $this->get('fos_user.user_manager');
+        $em = $this->getDoctrine()->getManager();
+        $user= $userManager->findUserBy(array('id'=>$id));
+        $observation = $em->getRepository('AppBundle:Observation')->find($idObs);
+        
+        $user->setStatus(false);
+        $observation->setStatusAuthor(false);
+        $userManager->updateUser($user);
+        
+
+        $em->persist($observation);
+        $em->flush();
+
+        return $this->redirectToRoute('observationpropage');
+    }
+
 }

@@ -18,7 +18,8 @@
     <div class="container observation-container">
         <h3 class="observation-title">
             <i class="icon--large icon--obs"></i>
-            <span>Saisir une observation</span>
+            <span>Saisir une observation </span>
+
         </h3>
         <div class="row">
             <div class="two columns icons-column">
@@ -139,9 +140,9 @@
               var nom_vernaculaire = $('#appbundle_observation_nomVernaculaire option:selected').text();
               var nom_scientifique = $('#appbundle_observation_nomScientifique option:selected' ).text();
               var famille = $('#appbundle_observation_famille option:selected').text();
-              var author = $('#appbundle_observation_author').val();
+              var author = '{{app.user.username}}';
 
-
+              console.log(author);
 
               geocoder.geocode({'address': address}, function(results, status) {
                   if (status === 'OK') {

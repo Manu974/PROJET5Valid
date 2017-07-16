@@ -22,6 +22,7 @@ class SecurityController extends BaseController
 
         // get the error if any (works with forward and redirect -- see below)
         if ($request->attributes->has($authErrorKey)) {
+            
             $error = $request->attributes->get($authErrorKey);
             $lastUsername = (null === $session) ? '' : $session->get($lastUsernameKey);
 
@@ -38,6 +39,7 @@ class SecurityController extends BaseController
         } 
 
         elseif (null !== $session && $session->has($authErrorKey)) {
+             
             $error = $session->get($authErrorKey);
             $session->remove($authErrorKey);
 
@@ -57,10 +59,12 @@ class SecurityController extends BaseController
 
         else {
             $error = null;
+
         }
 
         if (!$error instanceof AuthenticationException) {
             $error = null; // The value does not come from the security component.
+
         }
 
         // last username entered by the user

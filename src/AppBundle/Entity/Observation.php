@@ -123,6 +123,12 @@ class Observation
     private $author;
 
     /**
+     * @var boolean
+     * @ORM\Column(name="status_author", type="boolean",nullable=true)
+     */
+    private $status_author;
+
+    /**
      * @var int
      *
     * @ORM\Column(name="department", type="integer")
@@ -508,5 +514,29 @@ class Observation
 
     public function getObjectVars () {
         return get_object_vars($this);
+    }
+
+    /**
+     * Set statusAuthor
+     *
+     * @param boolean $statusAuthor
+     *
+     * @return Observation
+     */
+    public function setStatusAuthor($statusAuthor)
+    {
+        $this->status_author = $statusAuthor;
+
+        return $this;
+    }
+
+    /**
+     * Get statusAuthor
+     *
+     * @return boolean
+     */
+    public function getStatusAuthor()
+    {
+        return $this->status_author;
     }
 }
