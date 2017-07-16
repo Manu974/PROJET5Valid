@@ -104,10 +104,6 @@
                     <i class="icon icon--account is_active"></i>
                     <span>Mes infos</span>
                 </h3>
-                <label class="identifiant">
-                    <div>Identifiant</div>
-                    <input type="text" value="{{app.user.username}}">
-                </label>
                 <div class="user-mail">
                     {{ render(controller('NAOUserBundle:Admin:updMailUser' , {'id': app.user.id}  ))}}
                 </div>
