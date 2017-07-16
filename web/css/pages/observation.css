@@ -154,6 +154,14 @@ input[type=file] {
     margin: 0 auto;
     padding: 12px;
 }
+
+#appbundle_observation_author{
+    display: none;
+}
+
+label[for="appbundle_observation_author"]{
+    display: none;
+}
 @media only screen and (max-width: 980px) {
     .observation-title {
         flex-direction: column;

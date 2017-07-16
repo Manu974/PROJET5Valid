@@ -74,7 +74,7 @@ class ObservationType extends AbstractType
                 'required' => false
             ])
             ->add('comment', TextareaType::class)
-            ->add('author', TextType::class)
+            ->add('author', TextType::class, ['required' => false,])
             ->add('captcha', CaptchaType::class)
             ->add('Sauvegarder',      SubmitType::class);
 
