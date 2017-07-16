@@ -2,6 +2,7 @@
     "name": "emmanuel/projet5",
     "license": "proprietary",
     "type": "project",
+    "description": "Project Five of OpenClassRooms Degree",
     "autoload": {
         "psr-4": {
             "": "src/"
