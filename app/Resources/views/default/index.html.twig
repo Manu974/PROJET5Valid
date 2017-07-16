@@ -3,6 +3,7 @@
 {% block stylesheets %}
     {{ parent() }}
     <link rel="stylesheet" href="{{ asset('css/pages/home.css') }}">
+    
 {% endblock %}
 
 {% block body %}
@@ -34,6 +35,7 @@
             </a>
         </div>
     </section>
+
 {% endblock %}
 
 
@@ -46,5 +48,9 @@
             })();
         </script>
     {% endif %}
+   
+    
     {{ parent() }}
+
+     
 {% endblock %}
