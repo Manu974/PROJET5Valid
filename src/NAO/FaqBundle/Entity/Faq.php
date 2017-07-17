@@ -9,7 +9,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="NAO\FaqBundle\Repository\FaqRepository")
- * @ORM\Table(name="Faq")
+ * @ORM\Table(name="faq")
  * @ORM\HasLifecycleCallbacks()
  */
 class Faq
