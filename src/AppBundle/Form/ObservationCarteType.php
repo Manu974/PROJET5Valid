@@ -36,6 +36,7 @@ class ObservationCarteType extends AbstractType
                 'multiple'     => false,
             ])
             ->add('department', EntityType::class, [
+                'label'        => 'Département',
                 'class'        => 'AppBundle:Departement',
                 'choice_label' => 'code',
                 'multiple'     => false,
