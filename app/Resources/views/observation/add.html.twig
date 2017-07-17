@@ -179,7 +179,7 @@
 
                       console.log("famille: "+Observation['famille']);
                       $.ajax({
-                          url:'http://staging.asso-nao.org/api/observations',
+                          url:'http://localhost:8000/api/observations',
                           type : 'POST',
                           data: JSON.stringify(Observation),
                           dataType: 'json',
@@ -187,7 +187,7 @@
                           processData: false,
                           success: function(data){
                               alert("observation enregistrée");
-                              window.location.replace('http://staging.asso-nao.org/observation');
+                              window.location.replace('http://localhost:8000/observation');
                           },
                           error: function(xhr){
                               alert(xhr.responseText);
