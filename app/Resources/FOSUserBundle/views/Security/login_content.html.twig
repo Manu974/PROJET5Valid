@@ -3,6 +3,11 @@
 {% if error %}
     <div class="message-error">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 {% endif %}
+<div class="container warning-container">
+    <em>
+        "Pour des raisons de sécurité, de qualité des études et des données
+        scientifique échangées, nous vous demandons de bien vouloir vous connectez ou vous inscrire".</em>
+</div>
 
 <form action="{{ path("fos_user_security_check") }}" method="post" class="form-group">
     {% if csrf_token %}

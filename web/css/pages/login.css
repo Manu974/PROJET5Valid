@@ -126,6 +126,12 @@
     align-items: center;
     justify-content: center;
 }
+.warning-container {
+    color: #EBEBEB;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
 @media only screen and (max-width: 980px) {
     .login-content {
         padding: 34px;
