@@ -1,11 +1,13 @@
+
+
 {% trans_default_domain 'FOSUserBundle' %}
 
-{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'form-group form--register'}}) }}
-    {{ form_widget(form) }}
-    <div>
-        <button class="btn" type="submit">
-            <i class="icon icon--account is_active"></i>
-            {{  'registration.submit'|trans }}
-        </button>
-    </div>
-{{ form_end(form) }}
+    {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'form-group form--register'}}) }}
+        {{ form_widget(form) }}
+        <div>
+            <button class="btn" type="submit">
+                <i class="icon icon--account is_active"></i>
+                {{  'registration.submit'|trans }}
+            </button>
+        </div>
+    {{ form_end(form) }}

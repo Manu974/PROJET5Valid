@@ -121,7 +121,11 @@
     width: 100%;
     border: 1px solid #8CC63F;
 }
-
+.login-fullpage button.btn span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 @media only screen and (max-width: 980px) {
     .login-content {
         padding: 34px;

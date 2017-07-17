@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="initial-scale=1, maximum-scale=1">
@@ -54,7 +54,7 @@
                         <i class="icon icon--prog"></i>
                         <p class="header-navbar-link">Programme</p>
                     </a>
-                    <a href="{{ path('nao_user_compte') }}" class="header-navbar-item">
+                    <a href="{% if app.user %}{{ path('nao_user_compte') }}{% else %}#{% endif %}" class="header-navbar-item {% if not app.user %} not-allowed {% endif %}">
                         <i class="icon icon--account"></i>
                         <p class="header-navbar-link">Compte</p>
                     </a>
@@ -91,10 +91,17 @@
                 <i class="icon icon--arrow"></i>
                 <a href="{{ path('homepage') }}" class="navbar-mobile-link">Accueil</a>
             </div>
+            {% if not app.user %}
             <div class="navbar-mobile-item">
                 <i class="icon icon--arrow"></i>
                 <a href="{{ path('fos_user_security_login') }}" class="navbar-mobile-link">Connexion / Inscription</a>
             </div>
+            {% else %}
+            <div class="navbar-mobile-item">
+                <i class="icon icon--arrow"></i>
+                <a href="{{ path('fos_user_security_logout') }}" class="navbar-mobile-link" style="color: #a41e22">Deconnexion</a>
+            </div>
+            {% endif %}
             <div class="navbar-mobile-item">
                 <i class="icon icon--arrow"></i>
                 <a href="{{ path('observationcartepage') }}" class="navbar-mobile-link">Carte Interactive</a>
@@ -178,8 +185,18 @@
             <script src="{{ asset('build/admin.js') }}"></script>
             {% endif %}
             <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js"></script>
-            <script src="{{ asset('build/src.js') }}"></script>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="{{ asset('build/src.js') }}"></script>
+            <script src="{{ asset('js/src/CurrentPage.js') }}"></script>
+            <script>
+                (function () {
+                    let naturaliste = false;
+                    {% if is_granted('ROLE_NATURALISTE') %}
+                        naturaliste = true;
+                    {% endif %}
+                    new CurrentPage(naturaliste);
+                })();
+            </script>
             {% if is_granted('ROLE_NATURALISTE') %}
                 <script>
                     (function () {
@@ -239,17 +256,16 @@
                         data-height="60px">
                 </script>
                 
-                {% if is_granted('ROLE_USER') %}
-    {% if app.user.status == true %}
-    <script>
-    $(function() {
-        $('.popup').fadeIn(50);
-        
-    });
-    
-        </script>
-    {% endif %}
-    {% endif %}
-        {% endblock %}
+        {% if is_granted('ROLE_USER') %}
+            {% if app.user.status == true %}
+                <script>
+                    $(function() {
+                        $('.popup').fadeIn(50);
+
+                    });
+                </script>
+            {% endif %}
+        {% endif %}
+    {% endblock %}
     </body>
 </html>

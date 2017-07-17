@@ -59,7 +59,7 @@
               display: 'flex',
               justifyContent: 'flex-end'
           })
-          var button = $("<button class='btn btn--large' type='button' id='geolocalisation'><i class='icon icon--maps{% if is_granted('ROLE_ADMIN') %} is_pro{% endif %} is_active'></i>Me Localiser</button>");
+          var button = $("<button class='btn btn--large' type='button' id='geolocalisation'><i class='icon icon--maps{% if is_granted('ROLE_NATURALISTE') %} is_pro{% endif %} is_active'></i>Me Localiser</button>");
           button.css({
               backgroundColor: '#282826',
               color: '#FAFAFA',
