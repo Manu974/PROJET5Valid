@@ -9,7 +9,7 @@ table, th, td {
     height: 90%;
     width: 90%;
 }
-      /* Optional: Makes the sample page fill the window. */
+/* Optional: Makes the sample page fill the window. */
 html, body {
     height: 100%;
     margin: 0;
@@ -26,14 +26,23 @@ html, body {
     margin-bottom: 140px;
 }
 .carte-container .title {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-shadow: 0 8px 5px -2px #111;
     box-shadow: 0 8px 5px -2px #111;
     padding-bottom: 30px;
     color: #8CC63F;
 }
 .carte-container.pro .title {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     padding: 0 20px;
 }
@@ -43,7 +52,11 @@ html, body {
 }
 .carte-container .title a {
     width: 100px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 .carte-container .title p {
@@ -51,11 +64,19 @@ html, body {
     text-align: center;
 }
 .carte-container .well {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
 }
 .carte-container .well button {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     text-align: center;
     min-width: 155px;
@@ -63,6 +84,7 @@ html, body {
     line-height: 19px;
     font-weight: bolder;
     background-color: #282829;
+    -webkit-box-shadow: 0 5px 8px black;
     box-shadow: 0 5px 8px black;
     color: #FAFAFA;
     border: none;
@@ -70,14 +92,21 @@ html, body {
     font-size: 1.2em;
     border-radius: 20px;
     margin-left: auto;
+    -webkit-transition: .2s;
+    -o-transition: .2s;
     transition: .2s;
 }
 .carte-container .well button:hover {
+    -webkit-box-shadow: 0 3px 6px black;
     box-shadow: 0 3px 6px black;
 }
 .search-title {
     margin: 30px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     color: #8CC63F;
 }
@@ -100,7 +129,11 @@ html, body {
     margin-top: 40px;
 }
 #observation_espace_pro div {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
 }
 #observation_espace_pro div input, #observation_espace_pro div select, #observation_espace_pro div textarea {
@@ -139,6 +172,7 @@ html, body {
     color: #8CC63F;
 }
 #listObservationCarte tbody tr {
+    -webkit-box-shadow: 0px -5px 4px -2px #111;
     box-shadow: 0px -5px 4px -2px #111;
 }
 #listObservationCarte th:first-child, td:first-child {
@@ -148,7 +182,11 @@ html, body {
     color: #FAFAFA;
 }
 .listTableau button {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     text-align: center;
     min-width: 115px;
@@ -156,6 +194,7 @@ html, body {
     line-height: 19px;
     font-weight: bolder;
     background-color: #00A99D;
+    -webkit-box-shadow: 0 5px 8px black;
     box-shadow: 0 5px 8px black;
     color: #FAFAFA;
     border: none;
@@ -163,13 +202,17 @@ html, body {
     font-size: 1.2em;
     border-radius: 20px;
     margin-left: 4px;
+    -webkit-transition: .2s;
+    -o-transition: .2s;
     transition: .2s;
 }
 .listTableau button:hover {
+    -webkit-box-shadow: 0 3px 6px black;
     box-shadow: 0 3px 6px black;
 }
 button[disabled=disabled] {
     cursor: not-allowed;
+    -webkit-filter: grayscale(50);
     filter: grayscale(50);
 }
 #detailObs #Commentaire {
@@ -179,11 +222,18 @@ button[disabled=disabled] {
 }
 #detailObs #bouttonDetails {
     padding: 0 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-pack: distribute;
     justify-content: space-around;
 }
 #bouttonDetails button {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     text-align: center;
     min-width: 115px;
@@ -191,20 +241,29 @@ button[disabled=disabled] {
     line-height: 19px;
     font-weight: bolder;
     background-color: #00A99D;
+    -webkit-box-shadow: 0 5px 8px black;
     box-shadow: 0 5px 8px black;
     color: #FAFAFA;
     border: none;
     font-variant-caps: all-small-caps;
     font-size: 1.2em;
     border-radius: 20px;
+    -webkit-transition: .2s;
+    -o-transition: .2s;
     transition: .2s;
 }
 #bouttonDetails button:hover {
+    -webkit-box-shadow: 0 3px 6px black;
     box-shadow: 0 3px 6px black;
 }
 @media only screen and (max-width: 980px) {
     .carte-container.pro .title {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: space-between;
         padding: 0 10px;
     }
@@ -212,6 +271,9 @@ button[disabled=disabled] {
         width: 100%;
     }
     #observation_espace_pro div {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
     }
     #observation_espace_pro div select{

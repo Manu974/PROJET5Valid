@@ -32,7 +32,7 @@ h3.user-title span {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 79.5%;
+    width: 79%;
 }
 .user-container .well.admin select {
     color: #282829;
@@ -42,7 +42,7 @@ h3.user-title span {
     width: 160px;
     text-align: center;
     font-size: 1.2em;
-    height: 26px;
+    height: auto;
     line-height: 19px;
     font-weight: bolder;
     padding: 0;
@@ -76,7 +76,7 @@ h3.user-title span {
     justify-content: space-between;
 }
 .user-mail form div:nth-child(2) {
-    width: 20.5%;
+    width: 21%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -98,13 +98,15 @@ h3.user-title span {
     margin-left: 40px;
 }
 .user-password form > div:nth-child(2) input {
-    width: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
     text-align: center;
     height: 22px;
     font-size: 1.2em;
     line-height: 19px;
     font-weight: bolder;
-    padding: 0;
     background-color: #8CC63F;
     box-shadow: 0 5px 8px black;
     color: #282829;
@@ -238,5 +240,8 @@ h3.user-title span {
     .user-admin-edit {
         display: flex;
         flex-direction: column;
+    }
+    .user-container .well.admin button {
+        width: 200px;
     }
 }

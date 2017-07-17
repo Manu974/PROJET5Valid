@@ -1,7 +1,16 @@
 .observation-container .icons-column {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     height: 430px;
 }
@@ -11,9 +20,16 @@
 }
 .observation-title {
     margin: 25px 0 50px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-shadow: 0 8px 4px -2px #111;
     box-shadow: 0 8px 4px -2px #111;
     padding-bottom: 25px;
 }
@@ -30,14 +46,25 @@
     font-size: 1.2em;
 }
 .well form > div div {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
 }
 .well form > div div:first-child div:first-child {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
 }
 #appbundle_observation button[type=submit]{
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     text-align: center;
     min-width: 155px;
@@ -45,12 +72,15 @@
     line-height: 19px;
     font-weight: bolder;
     background-color: #8CC63F;
+    -webkit-box-shadow: 0 5px 8px black;
     box-shadow: 0 5px 8px black;
     color: #282829;
     border: none;
     font-variant-caps: all-small-caps;
     font-size: 1.2em;
     border-radius: 16px;
+    -webkit-transition: .2s;
+    -o-transition: .2s;
     transition: .2s;
     margin: 0 auto;
 }
@@ -62,7 +92,12 @@
     width: 100%;
 }
 #appbundle_observation_createdAt_date {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
 }
 #appbundle_observation_createdAt_date select {
@@ -70,6 +105,8 @@
     margin-left: 10px;
 }
 #appbundle_observation_createdAt_time {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
     justify-content: flex-end;
 }
 #appbundle_observation_createdAt_time select {
@@ -81,6 +118,8 @@
 }
 #appbundle_observation_nidification.nidification-checkbox {
     width: 60%;
+    -webkit-transform: scale(1.6);
+    -ms-transform: scale(1.6);
     transform: scale(1.6);
 }
 #appbundle_observation_nidification.nidification-checkbox:checked:before {
@@ -88,6 +127,8 @@
     position: relative;
     left: 39%;
     bottom: 4px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
     color: #FAFAFA;
     width: 35px;
@@ -97,11 +138,15 @@
     position: relative;
     left: 39%;
     bottom: 4px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
     color: #FAFAFA;
     width: 35px;
 }
 .save-image-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 .save-image-container img {
@@ -109,7 +154,11 @@
 }
 .save-image-container form {
     margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
@@ -118,7 +167,11 @@
     margin-right: 20px;
 }
 .save-image-container form button[type=submit] {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     text-align: center;
     min-width: 155px;
@@ -126,12 +179,15 @@
     line-height: 19px;
     font-weight: bolder;
     background-color: #8CC63F;
+    -webkit-box-shadow: 0 5px 8px black;
     box-shadow: 0 5px 8px black;
     color: #282829;
     border: none;
     font-variant-caps: all-small-caps;
     font-size: 1.2em;
     border-radius: 16px;
+    -webkit-transition: .2s;
+    -o-transition: .2s;
     transition: .2s;
 }
 .save-image-container label {
@@ -141,7 +197,12 @@
     color: #8CC63F;
 }
 #appbundle_observationimage > div {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
 }
 input[type=file] {
@@ -149,7 +210,11 @@ input[type=file] {
 }
 .choose-img-title {
     color: #8CC63F;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     margin: 0 auto;
     padding: 12px;
@@ -164,16 +229,27 @@ label[for="appbundle_observation_author"]{
 }
 @media only screen and (max-width: 980px) {
     .observation-title {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
     }
     .well form > div div {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
     }
     .well form select, .well form input, .well form textarea {
         width: 100%;
     }
     #appbundle_observation_createdAt_time {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
         flex-direction: row;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
     }
     #appbundle_observation_nidification.nidification-checkbox:checked:before {
@@ -181,6 +257,8 @@ label[for="appbundle_observation_author"]{
         position: relative;
         left: 29%;
         bottom: 4px;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
         display: inline-flex;
         color: #FAFAFA;
         width: 35px;
@@ -190,12 +268,19 @@ label[for="appbundle_observation_author"]{
         position: relative;
         left: 29%;
         bottom: 4px;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
         display: inline-flex;
         color: #FAFAFA;
         width: 35px;
     }
     .save-image-container {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         margin-bottom: 20px;
     }

@@ -1,31 +1,53 @@
-.container-register {
+body, html {
+    padding: 0;
+    margin: 0;
+    background-color: #282829;
+    font-family: "Open Sans", sans-serif;
+}
+#register {
     position: relative;
     top: 140px;
     margin-bottom: 160px;
     color: #FAFAFA;
     display: flex;
 }
-.container-register li {
+#register li {
     color: #a41e22;
     list-style-type: none;
-    margin: 0 12px;
 }
-.container-register form {
+#register form {
     width: 100%;
 }
-.container-register #fos_user_registration_form div {
-    justify-content: space-between;
+#register #fos_user_registration_form div {
     display: flex;
+    flex-direction: column;
     width: 100%;
 }
-.container-register #fos_user_registration_form input {
-    width: 60%;
+#register #fos_user_registration_form input {
+    color: #282829;
+}
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    text-align: center;
+    min-width: 155px;
+    height: 24px;
+    line-height: 19px;
+    font-weight: bolder;
+    background-color: #8CC63F;
+    box-shadow: 0 5px 8px black;
+    color: #282829;
+    border: none;
+    font-variant-caps: all-small-caps;
+    font-size: 1.2em;
+    border-radius: 16px;
+    transition: .2s;
 }
 @media only screen and (max-width: 980px) {
-    .container-register #fos_user_registration_form input {
+    #register #fos_user_registration_form input {
         width: 100%;
     }
-    .container-register li {
+    #register li {
         color: #a41e22;
         list-style-type: none;
         margin: 0;
