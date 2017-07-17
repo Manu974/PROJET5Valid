@@ -194,7 +194,7 @@
                     {% if is_granted('ROLE_NATURALISTE') %}
                         naturaliste = true;
                     {% endif %}
-                    new CurrentPage(nat);
+                    new CurrentPage(naturaliste);
                 })();
             </script>
             {% if is_granted('ROLE_NATURALISTE') %}
