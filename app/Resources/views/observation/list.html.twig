@@ -125,7 +125,7 @@
 
           $('#detailObs').on("click",'button[name="detailsSupprimer"]', function(){
               $.ajax({
-                  url:'http://staging.asso-nao.org/observations/delete/'+this.id,
+                  url:'http://staging.asso-nao.org/api/observations/delete/'+this.id,
                   type : 'DELETE',
                   success: function(data){
                       alert("observaiton supprimer");
@@ -276,7 +276,7 @@
                           markers.push(marker);
 
                           date = new Date(observation.created_at);
-                          var dateFormatting = date.toLocaleDateString();
+              var dateFormatting = date.toLocaleDateString();
 
                           //console.log(observation);
                           var trUser = '<tr class="listTableau"><td name="status" is_valid = '+observation.is_valid+' id="'+observation.id+'"></td><td>'+observation.id+'</td><td>'+dateFormatting+'</td><td>'+observation.department+'</td><td>'+observation.famille+'</td><td>'+observation.nom_vernaculaire+'</td><td>'+observation.author+'</td><td><button name="validationObservation" type="button" id="'+observation.id+'"><i class="icon--small icon--checked"></i>valider</button><button name="vueDetails" type="button" id="'+observation.id+'">Vue Detailee</button></td></tr>';
