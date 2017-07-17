@@ -7,13 +7,16 @@ use NAO\ProgrammesBundle\Entity\ContactReq;
 use NAO\ProgrammesBundle\Form\ContactReqType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 class PageController extends Controller
 {
     // Page d'accueil / liste des articles avec pagination
+    /**
+     * @Security("has_role('ROLE_USER')")
+     */
     public function indexAction($page)
     {
-
         if ($page < 1) {
             throw $this->createNotFoundException("La page ".$page." n'existe pas.");
         }

@@ -4,6 +4,7 @@
 namespace NAO\ProgrammesBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 /**
  * Controleur du Blog.
@@ -11,6 +12,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class BlogController extends Controller
 {
     // Affichage Article / Commentaires
+    /**
+     * @Security("has_role('ROLE_USER')")
+     */
     public function viewAction($id, $slug)
     {
         $em = $this->getDoctrine()->getManager();

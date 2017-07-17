@@ -142,8 +142,18 @@
               var famille = $('#appbundle_observation_famille option:selected').text();
               var author = '{{app.user.username}}';
 
-              console.log(author);
+              var dateDay = $('#appbundle_observation_createdAt_date_day option:selected').text();
+              var dateMonth = $('#appbundle_observation_createdAt_date_month option:selected').text();
+              var dateYear = $('#appbundle_observation_createdAt_date_year option:selected').text();
 
+              var dateHour = $('#appbundle_observation_createdAt_time_hour option:selected').text();
+              var dateMinutes= $('#appbundle_observation_createdAt_time_minute option:selected').text();
+              
+              var dateObs = dateYear+"-"+dateMonth+"-"+dateDay+" "+dateHour+":"+dateMinutes;
+
+              console.log(dateObs);
+
+              
               geocoder.geocode({'address': address}, function(results, status) {
                   if (status === 'OK') {
                       latGeolocalise = results[0].geometry.location.lat();
@@ -157,6 +167,7 @@
                           "comment": comment,
                           "author": author,
                           "image": "",
+                          "created_at": dateObs,
                           "department": department,
                           "nombreOiseaux": nombreOiseaux,
                           "maturite": maturite,
@@ -166,9 +177,9 @@
                           "famille": famille
                       };
 
-
+                      console.log("famille: "+Observation['famille']);
                       $.ajax({
-                          url:'http://staging.asso-nao.org/api/observations',
+                          url:'http://localhost:8000/api/observations',
                           type : 'POST',
                           data: JSON.stringify(Observation),
                           dataType: 'json',
@@ -176,11 +187,10 @@
                           processData: false,
                           success: function(data){
                               alert("observation enregistrée");
-                              window.location.replace('http://staging.asso-nao.org/observation');
+                              window.location.replace('http://localhost:8000/observation');
                           },
-                          error: function(xhr, ajaxOptions, thrownError){
-                              alert(xhr.status);
-                              alert(thrownError);
+                          error: function(xhr){
+                              alert(xhr.responseText);
                           }
                       });
 
@@ -194,6 +204,13 @@
           var familleNames = {};
           var nomScientifiqueNames = {};
           var nomVernaculaireNames = {};
+
+          $("select[name= 'appbundle_observation[nomScientifique]']").prepend('<option value="" selected="selected"></option>');
+
+          $("select[name= 'appbundle_observation[nomVernaculaire]']").prepend('<option value="" selected="selected"></option>');
+
+          $("select[name='appbundle_observation[famille]']").prepend('<option value="" selected="selected"></option>');
+
 
           $("select[name='appbundle_observation[famille]'] > option").each(function () {
               if(familleNames[this.text]) {

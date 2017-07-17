@@ -25,7 +25,10 @@ class ObservationType extends AbstractType
     {
         $builder
             ->add('createdAt', DateTimeType::class, [
-                'label' => 'Date et Heure'
+                'label' => 'Date et Heure',
+                'widget' => 'choice',
+                'date_format' => 'yyyy-MM-dd HH:i',
+
             ])
             ->add('department', EntityType::class, [
                 'class'        => 'AppBundle:Departement',
@@ -33,7 +36,8 @@ class ObservationType extends AbstractType
                 'choice_label' => 'code',
                 'multiple'     => false,
             ])
-            ->add('location')
+            ->add('location', TextType::class, [
+                'label' => 'Adresse',])
             ->add('nomVernaculaire', EntityType::class, [
                 'class'        => 'AppBundle:Bird',
                 'choice_label' => 'nomVern',

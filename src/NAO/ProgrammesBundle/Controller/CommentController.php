@@ -15,6 +15,9 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 class CommentController extends Controller
 {
     // Formulaire - Nouveau commentaire
+    /**
+     * @Security("has_role('ROLE_USER')")
+     */
     public function createAction($idblog, Request $request)
     {
         $blog = $this->getBlog($idblog);
@@ -54,6 +57,9 @@ class CommentController extends Controller
     }
 
     // Affichage des commentaires liés au sujet sélectionné
+    /**
+     * @Security("has_role('ROLE_USER')")
+     */
     protected function getBlog($idblog)
     {
         $em = $this->getDoctrine()->getManager();
@@ -67,6 +73,9 @@ class CommentController extends Controller
     }
 
     // Gestion des signalements de commentaire
+    /**
+     * @Security("has_role('ROLE_USER')")
+     */
     public function reportAction($idcomment, $idblog, $slug, $page)
     {
         $em = $this->getDoctrine()->getManager();

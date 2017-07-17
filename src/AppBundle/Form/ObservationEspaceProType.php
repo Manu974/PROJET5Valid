@@ -44,7 +44,6 @@ class ObservationEspaceProType extends AbstractType
                 'label' => 'Validée ?',
                 'choices'  => [
                     'Validée' => true,
-                    'Non-Validée' => false,
                 ],
             ])           
             ->add('author', EntityType::class, [
@@ -53,9 +52,12 @@ class ObservationEspaceProType extends AbstractType
                 'choice_label' => 'author',
                 'multiple'     => false,
             ])
-            ->add('createdAt', DateTimeType::class, [
-                'label' => 'Ajouter le'
-            ])
+            /*->add('createdAt', EntityType::class, [
+                'label' => 'Ajouter le',
+                'class'        => 'AppBundle:Observation',
+                'choice_label' => 'createdAt',
+                'multiple'     => false,
+            ])*/
             ->add('Rechercher',      SubmitType::class);
     }
 

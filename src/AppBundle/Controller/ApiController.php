@@ -107,10 +107,23 @@ class ApiController extends FOSRestController
         
         $localisation = $request->get('location');
         $observation->setLocation(new Point($localisation["x"], $localisation["y"]));
-        $observation->setCreatedAt(new \DateTime('now'));
+        
+        $observation->setCreatedAt(new \DateTime($request->get('created_at')));
 
         $observation->setNomVernaculaire($request->get('nom_vernaculaire'));
         $observation->setNomScientifique($request->get('nom_scientifique'));
+
+        $famille = $request->get('famille');
+        $nomVern = $request->get('nom_vernaculaire');
+        $nomScien = $request->get('nom_scientifique');
+
+        if($famille=="" and $nomVern=="" and $nomScien=="" ){
+           
+            exit("il faut au moin un choix entre famille, nom vernaculaire et le nom scientifique");
+            
+        }
+
+
         $observation->setFamille($request->get('famille'));
         $observation->setDepartment($request->get('department'));
         $observation->setIsValid(0);
@@ -194,9 +207,21 @@ class ApiController extends FOSRestController
     public function listObservationEspaceProAction(Request $request)
     {
         $data = $this->get('jms_serializer')->deserialize($request->getContent(), 'array', 'json');
-        $listObs= $this->container->get('observation.filtrage')->filtreObsEspacePro($data); 
+        //$date = $data['created_at'];
+
+        //$dateTime = new \DateTime($date);
+        //$dateTimeformat = $dateTime->format('yyyy-MM-dd');
+        //$data['created_at'] = $dateTime;
+        /*dump($data);
+        die();*/
+        $listObs= $this->container->get('observation.filtrage')->filtreObsEspaceProTwo($data); 
+        if(isset($listObs)){
+            return $listObs;
+        }
+        else{
+            exit("aucune observation pour cette recherche");
+        }
         
-        return $listObs;
     }
 
 

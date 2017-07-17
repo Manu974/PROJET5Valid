@@ -5,10 +5,14 @@ namespace NAO\FaqBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 class FaqController extends Controller
 {
     // Page d'accueil / liste des articles avec pagination
+    /**
+     * 
+     */
     public function indexAction($page)
     {
 

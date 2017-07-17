@@ -4,6 +4,7 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Hateoas\Configuration\Annotation as Hateoas;
+use Symfony\Component\Validator\Constraints as Assert;
 
 
 
@@ -179,6 +180,12 @@ class Observation
 
 
 
+     public function __construct()
+    {
+         
+        $this->createdAt  =  new \Datetime('now', new \DateTimeZone('Europe/Paris'));
+       
+    }
 
     /**
      * Get id

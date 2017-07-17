@@ -13,6 +13,9 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 class NewsletterController extends Controller
 {
     // Affichage Newsletter
+    /**
+     * @Security("has_role('ROLE_USER')")
+     */
     public function viewAction()
     {
         $em = $this->getDoctrine()->getManager();
